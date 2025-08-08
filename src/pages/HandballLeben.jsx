@@ -1,99 +1,94 @@
 export default function HandballLeben() {
   return (
-    <div className="p-8 max-w-4xl mx-auto space-y-6 text-dark leading-relaxed">
-      <h1 className="text-3xl font-bold text-primary">Handball als Schule fürs Leben</h1>
+    <div className="space-y-10">
+      {/* Section 1 */}
+      <section className="bg-green-100/30 p-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto text-dark space-y-4"
+        >
+          <h1 className="text-3xl font-bold text-primary">
+            Handball als Schule fürs Leben
+          </h1>
 
-      <p>Wir entwickeln nicht nur Spieler:innen – wir stärken Menschen.</p>
+          <p>
+            <span className="text-primary font-semibold">Wir entwickeln nicht nur Spieler:innen</span> – wir stärken Menschen.
+            Handball ist für uns kein Selbstzweck. Er ist ein Mittel, um Kinder und Jugendliche in ihrer Persönlichkeit zu stärken.
+          </p>
 
-      <p>
-        Handball ist für uns kein Selbstzweck. Er ist ein Mittel, um Kinder und Jugendliche in ihrer Persönlichkeit zu
-        stärken. Wer beim SV Laim trainiert, lernt nicht nur Wurftechniken oder Spielzüge – sondern Mut, Haltung und
-        Miteinander.
-      </p>
+          <p>
+            Wer beim SV Laim trainiert, lernt nicht nur Wurftechniken oder Spielzüge – sondern <span className="bg-yellow-100 px-1 rounded">Mut, Haltung und Miteinander</span>.
+          </p>
 
-      <p>Denn jede Trainingseinheit und jedes Spiel ist auch ein Lebenslernraum:</p>
-      <ul className="list-disc list-inside space-y-1">
-        <li>Im Spiel lernt man, mit Druck umzugehen.</li>
-        <li>In der Mannschaft lernt man, Verantwortung zu übernehmen.</li>
-        <li>In der Niederlage lernt man, sich neu aufzurichten.</li>
-        <li>Im Erfolg lernt man, Respekt zu behalten.</li>
-      </ul>
+          <p className="text-sm text-gray-700 italic">
+            Denn jede Trainingseinheit und jedes Spiel ist auch ein Lebenslernraum:
+          </p>
 
-      <p>Diese Erfahrungen machen stark – im Sport wie auch im Leben.</p>
+          <ul className="list-disc list-inside ml-4 space-y-1">
+            <li>Im Spiel lernt man, mit Druck umzugehen.</li>
+            <li>In der Mannschaft lernt man, Verantwortung zu übernehmen.</li>
+            <li>In der Niederlage lernt man, sich neu aufzurichten.</li>
+            <li>Im Erfolg lernt man, Respekt zu behalten.</li>
+          </ul>
 
-      <h2 className="text-2xl font-semibold mt-8">Was Spieler:innen bei uns lernen:</h2>
+          <p>Diese Erfahrungen machen stark – im Sport wie auch im Leben.</p>
+        </motion.div>
+      </section>
 
-      <table className="w-full table-auto border border-gray-300 mt-4">
-        <thead className="bg-gray-100">
-          <tr>
-            <th className="border px-4 py-2 text-left">Kompetenzfeld</th>
-            <th className="border px-4 py-2 text-left">Beispielhafte Entwicklungsschritte</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="border px-4 py-2">Selbstvertrauen</td>
-            <td className="border px-4 py-2">
-              Mut, Entscheidungen zu treffen. Fehler als Teil des Lernens begreifen.
-            </td>
-          </tr>
-          <tr>
-            <td className="border px-4 py-2">Frustrationstoleranz</td>
-            <td className="border px-4 py-2">
-              Niederlagen einordnen, dranbleiben, neu versuchen.
-            </td>
-          </tr>
-          <tr>
-            <td className="border px-4 py-2">Empathie & Kommunikation</td>
-            <td className="border px-4 py-2">
-              Im Team zuhören, mitdenken, Andere stärken.
-            </td>
-          </tr>
-          <tr>
-            <td className="border px-4 py-2">Verantwortung</td>
-            <td className="border px-4 py-2">
-              Eigene Rolle annehmen, Aufgaben übernehmen, Feedback umsetzen.
-            </td>
-          </tr>
-          <tr>
-            <td className="border px-4 py-2">Selbstorganisation</td>
-            <td className="border px-4 py-2">
-              Pünktlich sein, sich vorbereiten, selbstständig trainieren.
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      {/* Section 2 */}
+      <section className="bg-white/40 p-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto space-y-4"
+        >
+          <div className="bg-white/60 p-4 rounded-xl shadow">
+            <h2 className="font-bold mb-2 text-primary">Was Spieler:innen bei uns lernen:</h2>
+            <ul className="list-disc list-inside space-y-1">
+              <li><span className="font-semibold">Selbstvertrauen:</span> Mut, Entscheidungen zu treffen. Fehler als Teil des Lernens begreifen.</li>
+              <li><span className="font-semibold">Frustrationstoleranz:</span> Niederlagen einordnen, dranbleiben, neu versuchen.</li>
+              <li><span className="font-semibold">Empathie & Kommunikation:</span> Im Team zuhören, mitdenken, Andere stärken.</li>
+              <li><span className="font-semibold">Verantwortung:</span> Eigene Rolle annehmen, Aufgaben übernehmen, Feedback umsetzen.</li>
+              <li><span className="font-semibold">Selbstorganisation:</span> Pünktlich sein, sich vorbereiten, selbstständig trainieren.</li>
+            </ul>
+          </div>
 
-      <p>Diese Kompetenzen entstehen nicht nebenbei – sie sind Teil unserer Ausbildungslogik.</p>
-      <p>Wir trainieren nicht nur Körper und Technik – wir trainieren Charakter.</p>
+          <p>Diese Kompetenzen entstehen nicht nebenbei – sie sind Teil unserer Ausbildungslogik.</p>
+          <p className="font-semibold">Wir trainieren nicht nur Körper und Technik – wir trainieren Charakter.</p>
 
-      <h2 className="text-2xl font-semibold mt-8">Haltung im Alltag:</h2>
-      <ul className="list-disc list-inside space-y-1">
-        <li>Wir schaffen Erlebnisse, die in Erinnerung bleiben – nicht nur Ergebnisse.</li>
-        <li>Wir nehmen Spieler:innen ernst – auch wenn sie jung sind.</li>
-        <li>Wir geben Verantwortung ab – weil Vertrauen wächst, wenn man es schenkt.</li>
-        <li>
-          Wir machen Spieler:innen zu Mitgestalter:innen – nicht zu Befehlsempfänger:innen.
-        </li>
-      </ul>
+          <ul className="list-disc list-inside space-y-1">
+            <li>Wir schaffen Erlebnisse, die in Erinnerung bleiben – nicht nur Ergebnisse.</li>
+            <li>Wir nehmen Spieler:innen ernst – auch wenn sie jung sind.</li>
+            <li>Wir geben Verantwortung ab – weil Vertrauen wächst, wenn man es schenkt.</li>
+            <li>Wir machen Spieler:innen zu Mitgestalter:innen – nicht zu Befehlsempfänger:innen.</li>
+          </ul>
+        </motion.div>
+      </section>
 
-      <p className="font-semibold">Trainerimpuls:</p>
-      <p>
-        Frage dich regelmäßig: „Was nehmen meine Spieler:innen heute fürs Leben mit?" Nutze Spielsituationen, um über
-        Teamgeist, Resilienz oder Kommunikation zu sprechen. Du bildest Persönlichkeiten – jeden Tag.
-      </p>
+      {/* Section 3 */}
+      <section className="bg-green-100/30 p-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto space-y-6"
+        >
+          <div className="border-l-4 border-primary bg-white/50 p-4 italic rounded">
+            <strong>Trainerimpuls:</strong> Frage dich regelmäßig: „Was nehmen meine Spieler:innen heute fürs Leben mit?" Nutze Spielsituationen, um über Teamgeist, Resilienz oder Kommunikation zu sprechen. Du bildest Persönlichkeiten – jeden Tag.
+          </div>
 
-      <p className="font-semibold">Elternblick:</p>
-      <p>
-        Handball bietet Ihrem Kind mehr als Bewegung: Er vermittelt Werte, Haltung und Selbstvertrauen. Diese
-        Erfahrungen wirken weit über das Spielfeld hinaus – und begleiten Ihr Kind in Schule, Beruf und Alltag.
-      </p>
+          <div className="border-l-4 border-primary bg-white/50 p-4 italic rounded">
+            <strong>Elternblick:</strong> Handball bietet Ihrem Kind mehr als Bewegung: Er vermittelt Werte, Haltung und Selbstvertrauen. Diese Erfahrungen wirken weit über das Spielfeld hinaus – und begleiten Ihr Kind in Schule, Beruf und Alltag.
+          </div>
 
-      <p className="font-semibold">Für Spieler:innen – kurz erklärt:</p>
-      <p>
-        Hier lernst du nicht nur Handball – du lernst fürs Leben. Du wirst sicherer, stärker, mutiger. Im Spiel lernst
-        du: Du kannst was – und du kannst wachsen. Und das bleibt, auch wenn der Ball mal ruht.
-      </p>
+          <div className="border-l-4 border-primary bg-white/50 p-4 italic rounded">
+            <strong>Für Spieler:innen – kurz erklärt:</strong> Hier lernst du nicht nur Handball – du lernst fürs Leben. Du wirst sicherer, stärker, mutiger. Im Spiel lernst du: Du kannst was – und du kannst wachsen. Und das bleibt, auch wenn der Ball mal ruht.
+          </div>
+        </motion.div>
+      </section>
     </div>
   );
 }
