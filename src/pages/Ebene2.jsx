@@ -115,18 +115,23 @@ export default function Ebene2() {
           className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"
         >
           {jugenden.map(({ titel, frage }, index) => (
-            <motion.div
+            <Link
+              to={titel.includes("F-Jugend") ? "/f-jugend" : "#"}
               key={titel}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="bg-white/60 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20"
+              className="block"
             >
-              <h3 className="text-xl font-bold text-primary mb-3">{titel}</h3>
-              <p className="italic text-sm text-gray-800 leading-relaxed">{frage}</p>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-white/60 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 cursor-pointer"
+              >
+                <h3 className="text-xl font-bold text-primary mb-3">{titel}</h3>
+                <p className="italic text-sm text-gray-800 leading-relaxed">{frage}</p>
+              </motion.div>
+            </Link>
           ))}
         </motion.div>
       </section>
