@@ -10,6 +10,13 @@ import Ebene2 from "./pages/Ebene2";
 import Ebene3 from "./pages/Ebene3";
 import Ebene4 from "./pages/Ebene4";
 import Ausbildungsprinzipien from "./pages/Ausbildungsprinzipien";
+import FJugendPage from "./pages/f-jugend";
+import FJugendM1 from "./pages/f-jugend-m1";
+import FJugendM2 from "./pages/f-jugend-m2";
+import FJugendM3 from "./pages/f-jugend-m3";
+import FJugendM4 from "./pages/f-jugend-m4";
+import FJugendM5 from "./pages/f-jugend-m5";
+import FJugendM6 from "./pages/f-jugend-m6";
 
 const KontaktPage = () => (
   <main className="min-h-screen bg-lightgray p-8">
@@ -70,6 +77,13 @@ function App() {
           <Route path="/ebene4" element={<Ebene4 />} />
           <Route path="/ausbildungsprinzipien" element={<Ausbildungsprinzipien />} />
           <Route path="/kontakt" element={<KontaktPage />} />
+          <Route path="/f-jugend" element={<FJugendPage />} />
+          <Route path="/f-jugend-m1" element={<FJugendM1 />} />
+          <Route path="/f-jugend-m2" element={<FJugendM2 />} />
+          <Route path="/f-jugend-m3" element={<FJugendM3 />} />
+          <Route path="/f-jugend-m4" element={<FJugendM4 />} />
+          <Route path="/f-jugend-m5" element={<FJugendM5 />} />
+          <Route path="/f-jugend-m6" element={<FJugendM6 />} />
           <Route path="/kinderbereich" element={<AltersLeistungsstufen />} />
           <Route path="/jugendbereich" element={<Ebene2 />} />
           <Route path="/kompetenzkompass" element={<Ebene3 />} />
