@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Leitbild from "./pages/Leitbild";
 
 const Navbar = () => (
   <nav className="bg-primary text-white px-6 py-4 flex gap-4">
@@ -118,6 +119,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/leitbild" element={<Leitbild />} />
           <Route path="/kontakt" element={<KontaktPage />} />
           <Route path="*" element={<Home />} />
         </Routes>
