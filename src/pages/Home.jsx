@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const links = [
   {
@@ -55,47 +56,96 @@ export default function Home() {
   return (
     <main>
       {/* Section 1: Einleitung */}
-      <section className="bg-white py-16 px-4 text-center">
+      <motion.section 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="py-16 px-4 text-center"
+      >
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl font-bold text-primary mb-6">Ausbildung mit Herz & Verstand</h1>
-          <p className="text-lg text-dark">
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl font-bold text-primary mb-6"
+          >
+            Ausbildung mit Herz & Verstand
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-lg text-dark font-light"
+          >
             Dieses Handbuch bietet Trainer:innen, Eltern und Spieler:innen unseres Vereins einen umfassenden Überblick
             über Ziele, Inhalte und Methoden der Nachwuchsausbildung im Handball.
-          </p>
+          </motion.p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Section 2: Themenkarten */}
-      <section className="bg-lightgray py-16 px-4">
+      <motion.section 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="py-16 px-4"
+      >
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {links.map((item) => (
-            <Link
+          {links.map((item, index) => (
+            <motion.div
               key={item.title}
-              to={item.link}
-              className="block bg-white p-8 rounded-lg shadow-lg hover:shadow-xl hover:bg-secondary hover:text-white transition-all duration-200"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
-              <p className="text-sm">{item.description}</p>
-            </Link>
+              <Link
+                to={item.link}
+                className="block glass-card p-8 hover:shadow-xl hover:bg-secondary hover:text-white transition-all duration-200"
+              >
+                <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
+                <p className="text-sm font-light">{item.description}</p>
+              </Link>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Section 3: Gesamtfazit */}
-      <section className="bg-white py-16 px-4">
+      <motion.section 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="py-16 px-4"
+      >
         <div className="max-w-3xl mx-auto space-y-4 text-dark text-lg">
-          <h2 className="text-2xl font-bold text-primary mb-4">Gesamtfazit</h2>
-          <p>
-            Unsere Ausbildung verfolgt ein Ziel: ein durchgängiges, individuelles und werteorientiertes Fördersystem zu schaffen – für Kinder und Jugendliche aller Leistungsstufen.
-          </p>
-          <p>
-            Sie basiert auf einem klaren pädagogischen Fundament, ist modular aufgebaut, transparent, teamorientiert und offen für Weiterentwicklung. Sie bietet Trainer:innen Orientierung und Eltern Vertrauen.
-          </p>
-          <p>
-            Dieses Konzept ist lebendig – es lebt vom Austausch, vom Ausprobieren und vom gemeinsamen Ziel: Kinder zu begleiten, stark zu machen und für den Handball zu begeistern.
-          </p>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-2xl font-bold text-primary mb-4"
+          >
+            Gesamtfazit
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-4"
+          >
+            <p className="font-light">
+              Unsere Ausbildung verfolgt ein Ziel: ein durchgängiges, individuelles und werteorientiertes Fördersystem zu schaffen – für Kinder und Jugendliche aller Leistungsstufen.
+            </p>
+            <p className="font-light">
+              Sie basiert auf einem klaren pädagogischen Fundament, ist modular aufgebaut, transparent, teamorientiert und offen für Weiterentwicklung. Sie bietet Trainer:innen Orientierung und Eltern Vertrauen.
+            </p>
+            <p className="font-light">
+              Dieses Konzept ist lebendig – es lebt vom Austausch, vom Ausprobieren und vom gemeinsamen Ziel: Kinder zu begleiten, stark zu machen und für den Handball zu begeistern.
+            </p>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </main>
   );
 }

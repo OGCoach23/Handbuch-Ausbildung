@@ -28,7 +28,7 @@ const KontaktPage = () => (
 function App() {
   return (
     <Router>
-      <div className="bg-lightgray min-h-screen">
+      <div className="min-h-screen">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

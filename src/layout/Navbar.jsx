@@ -15,8 +15,8 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-white shadow-md sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
+                    <nav className="glass-card sticky top-0 z-50">
+                <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
           <Link to="/" className="text-2xl font-bold text-primary">
             SV Laim
           </Link>

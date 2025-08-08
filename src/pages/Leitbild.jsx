@@ -1,6 +1,13 @@
+import { motion } from "framer-motion";
+
 export default function Leitbild() {
   return (
-    <div className="p-8 max-w-4xl mx-auto space-y-6 text-dark leading-relaxed">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="p-8 max-w-4xl mx-auto space-y-6 text-dark leading-relaxed"
+    >
       <h1 className="text-3xl font-bold text-primary">Leitbild & Zielsetzung</h1>
 
       <p>Wir entwickeln Menschen durch Handball weiter.</p>
@@ -85,6 +92,6 @@ export default function Leitbild() {
         lernst, die dir helfen können. Dass du den Verein als deine Heimat wahrnimmst. Dafür geben wir dir Raum,
         Rückenwind – und echte Aufgaben.
       </p>
-    </div>
-  );
-}
+          </motion.div>
+    );
+  }
