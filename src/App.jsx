@@ -7,6 +7,7 @@ import HandballLeben from "./pages/HandballLeben";
 import Trainingsmethodik from "./pages/Trainingsmethodik";
 import AltersLeistungsstufen from "./pages/AltersLeistungsstufen";
 import Ebene2 from "./pages/Ebene2";
+import Ebene3 from "./pages/Ebene3";
 import Ausbildungsprinzipien from "./pages/Ausbildungsprinzipien";
 import Navbar from "./layout/Navbar";
 
@@ -40,6 +41,7 @@ function App() {
           <Route path="/trainingsmethodik" element={<Trainingsmethodik />} />
           <Route path="/stufen" element={<AltersLeistungsstufen />} />
           <Route path="/ebene2" element={<Ebene2 />} />
+          <Route path="/ebene3" element={<Ebene3 />} />
           <Route path="/ausbildungsprinzipien" element={<Ausbildungsprinzipien />} />
           <Route path="/kontakt" element={<KontaktPage />} />
           <Route path="*" element={<Home />} />
