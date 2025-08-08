@@ -37,15 +37,20 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/leitbild" element={<Leitbild />} />
-          <Route path="/zielgruppen" element={<Zielgruppen />} />
-          <Route path="/schule-fuers-leben" element={<HandballLeben />} />
-          <Route path="/trainingsmethodik" element={<Trainingsmethodik />} />
-          <Route path="/stufen" element={<AltersLeistungsstufen />} />
+          <Route path="/prinzipien" element={<Ausbildungsprinzipien />} />
+          <Route path="/schule-leben" element={<HandballLeben />} />
+          <Route path="/trainingsaufbau" element={<Trainingsmethodik />} />
+          <Route path="/altersstufen" element={<AltersLeistungsstufen />} />
           <Route path="/ebene2" element={<Ebene2 />} />
           <Route path="/ebene3" element={<Ebene3 />} />
           <Route path="/ebene4" element={<Ebene4 />} />
           <Route path="/ausbildungsprinzipien" element={<Ausbildungsprinzipien />} />
           <Route path="/kontakt" element={<KontaktPage />} />
+          <Route path="/kinderbereich" element={<AltersLeistungsstufen />} />
+          <Route path="/jugendbereich" element={<Ebene2 />} />
+          <Route path="/kompetenzkompass" element={<Ebene3 />} />
+          <Route path="/positionsprofile" element={<Ebene3 />} />
+          <Route path="/spielsysteme" element={<Ebene3 />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </div>

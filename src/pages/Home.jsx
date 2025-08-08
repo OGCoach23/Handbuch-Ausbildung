@@ -8,19 +8,19 @@ const cards = [
   },
   {
     title: "Ausbildungsprinzipien & Werte",
-    link: "/ausbildungsprinzipien",
+    link: "/prinzipien",
   },
   {
     title: "Handball als Schule fürs Leben",
-    link: "/schule-fuers-leben",
+    link: "/schule-leben",
   },
   {
     title: "Trainingsaufbau & Methodik",
-    link: "/trainingsmethodik",
+    link: "/trainingsaufbau",
   },
   {
     title: "Alters & Leistungsstufen",
-    link: "/stufen",
+    link: "/altersstufen",
   },
   {
     title: "Ebene 2 – Modulbasierte Ausbildungslogik",
@@ -39,7 +39,7 @@ const cards = [
 export default function Home() {
   return (
     <div>
-      {/* Neuer Header */}
+      {/* Integrierter Header */}
       <header className="bg-green-700 text-white p-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between max-w-7xl mx-auto">
           <div className="flex items-center space-x-4 mb-4 md:mb-0">
@@ -47,13 +47,15 @@ export default function Home() {
             <h1 className="text-2xl font-bold">Laimer Ausbildungshandbuch Handball</h1>
           </div>
           <nav className="flex flex-wrap gap-x-4 gap-y-2 text-sm justify-center md:justify-end">
+            <a href="/" className="hover:underline">Start</a>
             <a href="/leitbild" className="hover:underline">Leitbild</a>
-            <a href="/trainingsmethodik" className="hover:underline">Trainingsaufbau & Jahresplanung</a>
-            <a href="/stufen" className="hover:underline">Kinderbereich</a>
-            <a href="/ebene2" className="hover:underline">Jugendbereich</a>
-            <a href="/ebene3" className="hover:underline">Kompetenzkompass</a>
-            <a href="/ebene3" className="hover:underline">Entwicklung Positionen</a>
-            <a href="/ebene3" className="hover:underline">Entwicklung Spielsysteme</a>
+            <a href="/kontakt" className="hover:underline">Kontakt</a>
+            <a href="/trainingsaufbau" className="hover:underline">Trainingsaufbau & Jahresplanung</a>
+            <a href="/kinderbereich" className="hover:underline">Kinderbereich</a>
+            <a href="/jugendbereich" className="hover:underline">Jugendbereich</a>
+            <a href="/kompetenzkompass" className="hover:underline">Kompetenzkompass</a>
+            <a href="/positionsprofile" className="hover:underline">Entwicklung Positionen</a>
+            <a href="/spielsysteme" className="hover:underline">Entwicklung Spielsysteme</a>
           </nav>
         </div>
       </header>
