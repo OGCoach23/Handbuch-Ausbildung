@@ -19,44 +19,59 @@ const Navbar = () => (
 
 const Home = () => {
   const links = [
-    { title: "F-Jugend", link: "/jugend/f", description: "Infos & Inhalte für F-Jugend" },
-    { title: "E-Jugend", link: "/jugend/e", description: "Trainings- und Spielinfos" },
-    { title: "D-Jugend", link: "/jugend/d", description: "Lernziele & Methodik" },
-    { title: "C-Jugend", link: "/jugend/c", description: "Technik & Taktik" },
-    { title: "B-Jugend", link: "/jugend/b", description: "Weiterführende Inhalte" },
-    { title: "A-Jugend", link: "/jugend/a", description: "Übergang in den Erwachsenenbereich" },
-    { title: "Kompetenzkompass", link: "/themen/kompetenz", description: "Kompetenzraster & Bewertung" },
-    { title: "Entwicklung Positionen", link: "/themen/positionen", description: "Spielerrollen & Anforderungen" },
-    { title: "Entwicklung Spielsysteme", link: "/themen/systeme", description: "Taktische Konzepte" },
-    { title: "Laimkademie", link: "https://laimkademie.de", description: "Externer Link zur Akademie" },
+    {
+      title: "Leitbild & Zielsetzung",
+      link: "/leitbild",
+      description: "Wir wollen langfristig, planvoll und mit Leidenschaft ausbilden. Unser Ziel: starke Persönlichkeiten auf und neben dem Spielfeld.",
+    },
+    {
+      title: "Ausbildungsprinzipien & Werte",
+      link: "/prinzipien",
+      description: "Unser Handeln basiert auf pädagogischen, sportlichen und sozialen Prinzipien – mit Fokus auf Haltung, Kommunikation und Entwicklungsfreude.",
+    },
+    {
+      title: "Handball als Schule für's Leben",
+      link: "/schule-fuers-leben",
+      description: "Kinder stark machen – nicht nur im Spiel, sondern fürs Leben. Handball als Ort für Selbstwirksamkeit, Gemeinschaft und Lernen.",
+    },
+    {
+      title: "Trainingsaufbau & Methodik",
+      link: "/trainingsmethodik",
+      description: "Wie wir Training gestalten: strukturiert, altersgerecht, abwechslungsreich – mit klaren methodischen Bausteinen.",
+    },
+    {
+      title: "Alters- & Leistungsstufen",
+      link: "/stufen",
+      description: "Was wann gelernt wird: Entwicklungsstufen und pädagogische Ausrichtung von der F-Jugend bis zur A-Jugend.",
+    },
+    {
+      title: "Ebene 2: Modulbasierte Ausbildungslogik",
+      link: "/ebene2",
+      description: "Unsere Inhalte sind modular aufgebaut – logisch, strukturiert, wiederholbar. So entsteht ein roter Faden über Jahre hinweg.",
+    },
+    {
+      title: "Ebene 3: Kompetenzkompass, Durchgängigkeit & Positionen",
+      link: "/ebene3",
+      description: "Mit dem Kompetenzkompass schaffen wir Vergleichbarkeit, Individualisierung und Entwicklung über Positionen hinweg.",
+    },
+    {
+      title: "Ebene 4: Umsetzung & Weiterentwicklung",
+      link: "/ebene4",
+      description: "Wie wir Ideen in die Halle bringen, Feedback nutzen und als Verein gemeinsam besser werden.",
+    },
   ];
 
   return (
     <main className="min-h-screen bg-lightgray p-8">
       <section className="max-w-4xl mx-auto mb-10 text-center">
         <h1 className="text-4xl font-bold text-primary mb-4">Willkommen im Ausbildungshandbuch</h1>
-        <section className="max-w-3xl mx-auto text-dark space-y-4 leading-relaxed text-lg">
-          <p>Bei uns geht's nicht nur um Handball. Es geht um viel mehr: um Gemeinschaft, um Herzblut, um Kinder, die mit leuchtenden Augen in die Halle rennen. Um Trainer, die Woche für Woche alles geben. Um Eltern, die anfeuern, trösten, fahren, helfen. Und um einen Verein, der all das möglich macht.</p>
-
-          <p>Wir sind der SV Laim, ein Traditionsverein (seit 1910) mit erfolgreichen Wurzeln im Handball, wir sind zentral in München eingebettet und engagieren uns weit über den Sport hinaus.</p>
-
-          <p>Das vorliegende Konzept ist unsere Einladung an euch alle: Trainer, Eltern, Spielerinnen und Spieler. Es ist unser gemeinsamer Wegweiser, unser Kompass, unser Versprechen. Denn wir wollen nicht einfach nur „irgendwie" ausbilden – wir wollen es richtig machen. Mit Plan. Mit Leidenschaft. Mit einem roten Faden von den Kleinsten bis zur A-Jugend.</p>
-
-          <p>Wir glauben an den langfristigen Weg. An Entwicklung statt Schnellschuss. An Spielfreude UND Struktur. Und ja – wir glauben an unseren Verein. Weil wir wissen, was wir gemeinsam schaffen können.</p>
-
-          <p>Dieses Handbuch ist keine trockene Theorie. Es ist voll mit Leben, Ideen, Praxis. Es wurde geschrieben aus vielen Gesprächen, aus Erfahrungen in der Halle, aus Erfolgen und Fehlern. Es zeigt dir, was wirklich zählt: Wann du was trainieren solltest. Wie du individuell förderst. Wie du Kinder stark machst – nicht nur im Spiel, sondern fürs Leben.</p>
-
-          <p>Vielleicht wirst du beim Lesen schmunzeln, nicken, kritisch hinterfragen. Vielleicht bekommst du an manchen Stellen Gänsehaut – weil du spürst: „Ja, genau so wollen wir Handball machen."</p>
-
-          <p>Dieses Konzept ist nicht perfekt. Aber es ist ehrlich. Und es wächst mit jedem, der es lebt.</p>
-
-          <p className="font-semibold text-primary">Also: Lass dich inspirieren. Mach mit. Gib dem, was wir gemeinsam aufgebaut haben, ein noch stärkeres Fundament. Für unseren Verein. Für unsere Kinder. Für echten Handball.</p>
-
-          <p className="italic text-sm text-gray-700">Auf den ersten Blick mag das Konzept erschlagend wirken. Es ist umfangreich, das stimmt. Es steckt auch sehr viel Herzblut und Zeit drin. Es öffnet den Blick für die unterschiedlichen Rollen und Beteiligten. Es ist transparent und schafft Verständnis für die Sichtweise der jeweils anderen. Nimm dir Zeit, die für dich relevanten Inhalte herauszufiltern, denn dann ist es plötzlich gar nicht mehr so viel Text. Es wird dir gefallen und dich inspirieren. Lass es zu.</p>
-        </section>
+        <p className="text-lg text-dark">
+          Dieses Handbuch bietet Trainer:innen, Eltern und Spieler:innen unseres Vereins einen umfassenden Überblick
+          über Ziele, Inhalte und Methoden der Nachwuchsausbildung im Handball.
+        </p>
       </section>
 
-      <section className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
         {links.map((item) => (
           <a
             key={item.title}
@@ -67,6 +82,19 @@ const Home = () => {
             <p className="text-sm">{item.description}</p>
           </a>
         ))}
+      </section>
+
+      <section className="max-w-3xl mx-auto text-dark space-y-4 leading-relaxed text-lg bg-white p-6 rounded-xl shadow">
+        <h2 className="text-2xl font-bold text-primary mb-2">Gesamtfazit</h2>
+        <p>
+          Unsere Ausbildung verfolgt ein Ziel: ein durchgängiges, individuelles und werteorientiertes Fördersystem zu schaffen – für Kinder und Jugendliche aller Leistungsstufen.
+        </p>
+        <p>
+          Sie basiert auf einem klaren pädagogischen Fundament, ist modular aufgebaut, transparent, teamorientiert und offen für Weiterentwicklung. Sie bietet Trainer:innen Orientierung und Eltern Vertrauen.
+        </p>
+        <p>
+          Dieses Konzept ist lebendig – es lebt vom Austausch, vom Ausprobieren und vom gemeinsamen Ziel: Kinder zu begleiten, stark zu machen und für den Handball zu begeistern.
+        </p>
       </section>
     </main>
   );
