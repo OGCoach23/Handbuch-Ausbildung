@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
 
 const cards = [
@@ -47,15 +48,15 @@ export default function Home() {
             <h1 className="text-2xl font-bold">Laimer Ausbildungshandbuch Handball</h1>
           </div>
           <nav className="flex flex-wrap gap-x-4 gap-y-2 text-sm justify-center md:justify-end">
-            <a href="/" className="hover:underline">Start</a>
-            <a href="/leitbild" className="hover:underline">Leitbild</a>
-            <a href="/kontakt" className="hover:underline">Kontakt</a>
-            <a href="/trainingsaufbau" className="hover:underline">Trainingsaufbau & Jahresplanung</a>
-            <a href="/kinderbereich" className="hover:underline">Kinderbereich</a>
-            <a href="/jugendbereich" className="hover:underline">Jugendbereich</a>
-            <a href="/kompetenzkompass" className="hover:underline">Kompetenzkompass</a>
-            <a href="/positionsprofile" className="hover:underline">Entwicklung Positionen</a>
-            <a href="/spielsysteme" className="hover:underline">Entwicklung Spielsysteme</a>
+            <Link to="/" className="hover:underline">Start</Link>
+            <Link to="/leitbild" className="hover:underline">Leitbild</Link>
+            <Link to="/kontakt" className="hover:underline">Kontakt</Link>
+            <Link to="/trainingsaufbau" className="hover:underline">Trainingsaufbau & Jahresplanung</Link>
+            <Link to="/kinderbereich" className="hover:underline">Kinderbereich</Link>
+            <Link to="/jugendbereich" className="hover:underline">Jugendbereich</Link>
+            <Link to="/kompetenzkompass" className="hover:underline">Kompetenzkompass</Link>
+            <Link to="/positionsprofile" className="hover:underline">Entwicklung Positionen</Link>
+            <Link to="/spielsysteme" className="hover:underline">Entwicklung Spielsysteme</Link>
           </nav>
         </div>
       </header>
@@ -85,13 +86,13 @@ export default function Home() {
       <section className="bg-white/40 p-8">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {cards.map(({ title, link }) => (
-            <a
+            <Link
               key={title}
-              href={link}
+              to={link}
               className="bg-white/60 p-6 rounded-xl shadow hover:shadow-lg transition duration-300 h-full flex items-center justify-center text-center"
             >
               <h3 className="text-lg font-bold text-primary">{title}</h3>
-            </a>
+            </Link>
           ))}
         </div>
       </section>
