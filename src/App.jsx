@@ -4,6 +4,8 @@ import Leitbild from "./pages/Leitbild";
 import Home from "./pages/Home";
 import Zielgruppen from "./pages/Zielgruppen";
 import HandballLeben from "./pages/HandballLeben";
+import Trainingsmethodik from "./pages/Trainingsmethodik";
+import AltersLeistungsstufen from "./pages/AltersLeistungsstufen";
 import Navbar from "./layout/Navbar";
 
 
@@ -33,6 +35,8 @@ function App() {
           <Route path="/leitbild" element={<Leitbild />} />
           <Route path="/zielgruppen" element={<Zielgruppen />} />
           <Route path="/schule-fuers-leben" element={<HandballLeben />} />
+          <Route path="/trainingsmethodik" element={<Trainingsmethodik />} />
+          <Route path="/stufen" element={<AltersLeistungsstufen />} />
           <Route path="/kontakt" element={<KontaktPage />} />
           <Route path="*" element={<Home />} />
         </Routes>
