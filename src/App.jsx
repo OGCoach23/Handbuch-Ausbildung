@@ -10,14 +10,6 @@ import Ebene2 from "./pages/Ebene2";
 import Ebene3 from "./pages/Ebene3";
 import Ebene4 from "./pages/Ebene4";
 import Ausbildungsprinzipien from "./pages/Ausbildungsprinzipien";
-import Navbar from "./layout/Navbar";
-
-
-
-
-
-
-
 const KontaktPage = () => (
   <main className="min-h-screen bg-lightgray p-8">
     <div className="max-w-4xl mx-auto">
@@ -33,7 +25,6 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen">
-        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/leitbild" element={<Leitbild />} />
@@ -51,6 +42,10 @@ function App() {
           <Route path="/kompetenzkompass" element={<Ebene3 />} />
           <Route path="/positionsprofile" element={<Ebene3 />} />
           <Route path="/spielsysteme" element={<Ebene3 />} />
+          <Route path="/zielgruppen" element={<Zielgruppen />} />
+          <Route path="/schule-fuers-leben" element={<HandballLeben />} />
+          <Route path="/trainingsmethodik" element={<Trainingsmethodik />} />
+          <Route path="/stufen" element={<AltersLeistungsstufen />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </div>
