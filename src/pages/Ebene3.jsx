@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const themen = [
   {
@@ -162,9 +163,9 @@ export default function Ebene3() {
             Raum für Entwicklung.
           </p>
           <p className="text-sm">
-            <a href="/ebene4" className="text-primary underline hover:text-secondary transition-colors">
+            <Link to="/ebene4" className="text-primary underline hover:text-secondary transition-colors">
               ➔ Hier geht's weiter zu Ebene 4
-            </a>
+            </Link>
           </p>
         </motion.div>
       </section>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const jugenden = [
   {
@@ -176,9 +177,9 @@ export default function Ebene2() {
             wie unser System über alle Jahrgänge hinweg wiedererkennbar bleibt.
           </p>
           <p className="text-sm">
-            <a href="/ebene3" className="text-primary underline hover:text-secondary transition-colors">
+            <Link to="/ebene3" className="text-primary underline hover:text-secondary transition-colors">
               ➜ Hier geht's weiter zu Ebene 3
-            </a>
+            </Link>
           </p>
         </motion.div>
       </section>
