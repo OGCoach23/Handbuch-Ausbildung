@@ -32,3 +32,5 @@ npm run dev
 ## Deployment
 
 Das Projekt wird automatisch über Vercel deployed.
+
+**Live-URL:** [handbuch-ausbildung.vercel.app](https://handbuch-ausbildung.vercel.app)
