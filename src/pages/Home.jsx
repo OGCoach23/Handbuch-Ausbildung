@@ -39,21 +39,23 @@ const cards = [
 export default function Home() {
   return (
     <div>
-      {/* Header */}
-      <header className="bg-green-700 text-white p-6 flex justify-between items-center">
-        <div className="flex items-center space-x-4">
-          <img src={logo} alt="SV Laim" className="w-12 h-12" />
-          <h1 className="text-2xl font-bold">Laimer Ausbildungshandbuch Handball</h1>
+      {/* Neuer Header */}
+      <header className="bg-green-700 text-white p-6">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between max-w-7xl mx-auto">
+          <div className="flex items-center space-x-4 mb-4 md:mb-0">
+            <img src={logo} alt="SV Laim" className="w-12 h-12" />
+            <h1 className="text-2xl font-bold">Laimer Ausbildungshandbuch Handball</h1>
+          </div>
+          <nav className="flex flex-wrap gap-x-4 gap-y-2 text-sm justify-center md:justify-end">
+            <a href="/leitbild" className="hover:underline">Leitbild</a>
+            <a href="/trainingsmethodik" className="hover:underline">Trainingsaufbau & Jahresplanung</a>
+            <a href="/stufen" className="hover:underline">Kinderbereich</a>
+            <a href="/ebene2" className="hover:underline">Jugendbereich</a>
+            <a href="/ebene3" className="hover:underline">Kompetenzkompass</a>
+            <a href="/ebene3" className="hover:underline">Entwicklung Positionen</a>
+            <a href="/ebene3" className="hover:underline">Entwicklung Spielsysteme</a>
+          </nav>
         </div>
-        <nav className="space-x-4 text-sm hidden md:block">
-          <a href="/leitbild" className="hover:underline">Leitbild</a>
-          <a href="/trainingsmethodik" className="hover:underline">Trainingsaufbau & Jahresplanung</a>
-          <a href="/stufen" className="hover:underline">Kinderbereich</a>
-          <a href="/ebene2" className="hover:underline">Jugendbereich</a>
-          <a href="/ebene3" className="hover:underline">Kompetenzkompass</a>
-          <a href="/ebene3" className="hover:underline">Entwicklung Positionen</a>
-          <a href="/ebene3" className="hover:underline">Entwicklung Spielsysteme</a>
-        </nav>
       </header>
 
       {/* Einleitungstext */}
@@ -80,24 +82,19 @@ export default function Home() {
       {/* Karten */}
       <section className="bg-white/40 p-8">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {cards.map(({ title, link }, index) => (
-            <motion.a
+          {cards.map(({ title, link }) => (
+            <a
               key={title}
               href={link}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="bg-white/60 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex items-center justify-center text-center border border-white/20"
+              className="bg-white/60 p-6 rounded-xl shadow hover:shadow-lg transition duration-300 h-full flex items-center justify-center text-center"
             >
               <h3 className="text-lg font-bold text-primary">{title}</h3>
-            </motion.a>
+            </a>
           ))}
         </div>
       </section>
 
-      {/* Fazit */}
+      {/* Gesamtfazit */}
       <section className="bg-green-100/30 p-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -109,9 +106,16 @@ export default function Home() {
           <p className="font-semibold italic">
             Dieses Konzept ist ehrlich. Es wächst mit jedem, der es lebt.
           </p>
-          <p>
-            Lass dich inspirieren. Mach mit. Gib dem, was wir gemeinsam aufgebaut haben, ein noch stärkeres Fundament. Für unseren Verein. Für unsere Kinder. Für echten Handball.
-          </p>
+          <p>Dieses Ausbildungskonzept ist mehr als eine Sammlung von Trainingsplänen und Ideen. Es ist ein Ausdruck dessen, was uns als SV Laim ausmacht: Wir bilden nicht nur Spieler:innen aus – wir begleiten Menschen auf ihrem Weg. Wir schaffen ein Umfeld, in dem Kinder wachsen, Jugendliche über sich hinauswachsen und Erwachsene Verantwortung übernehmen.</p>
+          <p>Wir haben einen Weg beschrieben, der fordert, aber nicht überfordert. Der motiviert, ohne Druck zu machen. Der klare Strukturen bietet – und dennoch Raum lässt für Kreativität, Persönlichkeit und Bauchgefühl. Ein Konzept, das sich nicht an kurzfristigen Ergebnissen orientiert, sondern an nachhaltiger Entwicklung. Für jede Altersstufe, für jede Leistungsebene, für jeden einzelnen Menschen in unserem Verein.</p>
+          <p>Unser Ziel ist es, dass alle, die mit uns Handball erleben – auf dem Feld oder daneben – das Gefühl haben: „Hier bin ich richtig." Weil sie spüren: Hier geht es um mehr. Um Werte. Um Team. Um echte Entwicklung.</p>
+          <p>Dieses Handbuch ist unser gemeinsamer Nenner, unsere Plattform, unser Versprechen. Aber es ist nur dann wirkungsvoll, wenn wir es gemeinsam mit Leben füllen:</p>
+          <ul className="list-disc list-inside pl-4">
+            <li>durch Trainer:innen, die mutig, neugierig und verantwortungsvoll vorangehen.</li>
+            <li>durch Eltern, die begleiten, vertrauen und mitgestalten.</li>
+            <li>durch Spieler:innen, die sich einbringen, ausprobieren und dranbleiben.</li>
+          </ul>
+          <p>Wir stehen am Anfang eines Weges, der nie ganz fertig sein wird. Aber jeder Schritt, den wir gemeinsam gehen, macht unseren Verein stärker. Lasst uns diesen Weg entschlossen, mit Freude und einem klaren Ziel vor Augen gehen: bessere Spieler, bessere Menschen, ein starker Verein.</p>
         </motion.div>
       </section>
     </div>
