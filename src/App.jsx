@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Leitbild from "./pages/Leitbild";
 import Home from "./pages/Home";
 import Zielgruppen from "./pages/Zielgruppen";
+import HandballLeben from "./pages/HandballLeben";
 import Navbar from "./layout/Navbar";
 
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/leitbild" element={<Leitbild />} />
           <Route path="/zielgruppen" element={<Zielgruppen />} />
+          <Route path="/schule-fuers-leben" element={<HandballLeben />} />
           <Route path="/kontakt" element={<KontaktPage />} />
           <Route path="*" element={<Home />} />
         </Routes>
