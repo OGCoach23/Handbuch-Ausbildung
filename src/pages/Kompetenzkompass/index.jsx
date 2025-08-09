@@ -128,6 +128,15 @@ export default function Kompetenzkompass() {
           ))}
         </div>
       </motion.div>
+
+      {/* Klickbare Modul-Badges oben */}
+      <div className="flex flex-wrap gap-3 mt-6">
+        {modules.filter(m => m.to.includes('/modul')).map(({ title, to }, i) => (
+          <Link key={i} to={to} className="rounded-full px-4 py-2 text-white font-semibold shadow hover:opacity-90 transition" style={{ backgroundColor: clubBlue }}>
+            {title}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
