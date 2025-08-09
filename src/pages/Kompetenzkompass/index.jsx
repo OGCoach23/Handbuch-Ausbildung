@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Kompetenzkompass() {
   const clubBlue = "#004b87"; // Blau aus dem Wappen
@@ -48,13 +49,13 @@ export default function Kompetenzkompass() {
   ];
 
   const modules = [
-    "M1: Entwicklungsmerkmale & Methodik",
-    "M2: Athletik & Motorik",
-    "M3: Technik & Taktik",
-    "M4: Mentale & soziale Entwicklung",
-    "M5: Spielsysteme & Positionsspiel",
-    "M6: Teamkultur & Kommunikation",
-    "Praktische Anwendung"
+    { title: "Praktische Anwendung", to: "/kompetenzkompass/praxis" },
+    { title: "M1: Entwicklungsmerkmale & Methodik", to: "/kompetenzkompass/modul1" },
+    { title: "M2: Athletik & Motorik", to: "/kompetenzkompass/modul2" },
+    { title: "M3: Technik & Taktik", to: "/kompetenzkompass/modul3" },
+    { title: "M4: Mentale & soziale Entwicklung", to: "/kompetenzkompass/modul4" },
+    { title: "M5: Spielsysteme & Positionsspiel", to: "/kompetenzkompass/modul5" },
+    { title: "M6: Teamkultur & Kommunikation", to: "/kompetenzkompass/modul6" }
   ];
 
   return (
@@ -117,12 +118,13 @@ export default function Kompetenzkompass() {
         transition={{ delay: 0.6 }}
         className="bg-white rounded-xl shadow p-4"
       >
-        <h2 className="text-xl font-semibold mb-3" style={{ color: clubBlue }}>Die 7 Kompetenzkarten</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {modules.map((mod, i) => (
-            <div key={i} className="bg-gray-50 rounded-lg p-4 border border-gray-200 shadow-sm text-center font-medium">
-              {mod}
-            </div>
+          {modules.map(({ title, to }, i) => (
+            <Link key={i} to={to} className="block">
+              <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 shadow-sm text-center font-medium hover:shadow-md hover:scale-[1.01] transition">
+                {title}
+              </div>
+            </Link>
           ))}
         </div>
       </motion.div>
