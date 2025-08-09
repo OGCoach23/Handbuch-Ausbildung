@@ -60,6 +60,21 @@ export default function Kompetenzkompass() {
 
   return (
     <div className="bg-white/70 p-8 rounded-2xl shadow-xl max-w-6xl mx-auto">
+      {/* Klickbare Modul-Chips oben */}
+      <div className="flex flex-wrap gap-3 justify-center mb-6">
+        {modules
+          .filter(({ to }) => to.includes('/modul'))
+          .map(({ title, to }, i) => (
+            <Link
+              key={i}
+              to={to}
+              className="rounded-full px-4 py-2 text-white font-semibold shadow hover:opacity-90 transition"
+              style={{ backgroundColor: clubBlue }}
+            >
+              {title}
+            </Link>
+          ))}
+      </div>
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
