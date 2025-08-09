@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation, Link, useNavigate } from "react-router-dom";
 import Leitbild from "./pages/Leitbild";
 import Home from "./pages/Home";
 import Zielgruppen from "./pages/Zielgruppen";
@@ -54,6 +54,7 @@ const KontaktPage = () => (
 // Globale Navigation für alle Unterseiten
 const GlobalNavigation = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   
   // Navigation nicht auf der Home-Seite anzeigen
   if (location.pathname === "/") {
@@ -70,7 +71,10 @@ const GlobalNavigation = () => {
           <h1 className="text-xl font-bold">Laimer Ausbildungshandbuch</h1>
         </div>
         <nav className="flex flex-wrap gap-x-4 gap-y-2 text-sm justify-center md:justify-end">
-          <Link to="/" className="hover:underline bg-white/10 px-2 py-1 rounded">← Zurück zur Startseite</Link>
+          <button onClick={() => (window.history.length > 1 ? navigate(-1) : navigate("/"))} className="hover:underline bg-white/10 px-2 py-1 rounded">
+            ← Zurück
+          </button>
+          <Link to="/" className="hover:underline">Startseite</Link>
           <Link to="/leitbild" className="hover:underline">Leitbild</Link>
           <Link to="/prinzipien" className="hover:underline">Prinzipien</Link>
           <Link to="/ebene2" className="hover:underline">Ebene 2</Link>

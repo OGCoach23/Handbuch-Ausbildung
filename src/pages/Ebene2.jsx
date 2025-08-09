@@ -6,31 +6,37 @@ const jugenden = [
     titel: "F-Jugend (4–8 Jahre)",
     frage:
       "Wie begleite ich Kinder zwischen 4 und 8 Jahren liebevoll, bewegungsreich und entwicklungsfördernd ins Handballspielen?",
+    path: "/f-jugend",
   },
   {
     titel: "E-Jugend (9–10 Jahre)",
     frage:
       "Worauf muss ich als Trainer:in bei 9- bis 10-jährigen besonders achten?",
+    path: "/e-jugend",
   },
   {
     titel: "D-Jugend (11–12 Jahre)",
     frage:
       "Wie gestalten wir ein motivierendes, entwicklungsfreundliches Training für Kinder, die sich mitten im Umbruch befinden – körperlich, geistig und sozial?",
+    path: "/d-jugend",
   },
   {
     titel: "C-Jugend (13–14 Jahre)",
     frage:
       "Wie entwickeln wir gemeinsam ein leistungsorientiertes, wertschätzendes Miteinander – auf und neben dem Feld?",
+    path: "/c-jugend",
   },
   {
     titel: "B-Jugend (15–16 Jahre)",
     frage:
       "Wie begleite ich Jugendliche individuell und verantwortungsvoll in einer Phase zwischen Selbstbehauptung, Leistungswunsch und Orientierungsbedürfnis?",
+    path: "/b-jugend",
   },
   {
     titel: "A-Jugend (17–18 Jahre)",
     frage:
       "Wie begleite ich junge Erwachsene in ihrer letzten Jugendphase – zwischen Leistung, Identität und dem Übergang ins Aktivenleben?",
+    path: "/a-jugend",
   },
 ];
 
@@ -114,9 +120,9 @@ export default function Ebene2() {
           transition={{ duration: 0.6 }}
           className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"
         >
-          {jugenden.map(({ titel, frage }, index) => (
+          {jugenden.map(({ titel, frage, path }, index) => (
             <Link
-              to={titel.includes("F-Jugend") ? "/f-jugend" : "#"}
+              to={path}
               key={titel}
               className="block"
             >
