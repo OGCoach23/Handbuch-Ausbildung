@@ -1,101 +1,131 @@
 import { motion } from "framer-motion";
 
 export default function Kompetenzkompass() {
+  const clubBlue = "#004b87"; // Blau aus dem Wappen
+
+  const sections = [
+    {
+      title: "Ziel des Kompetenzkompasses",
+      items: [
+        "Strukturierter, nachvollziehbarer Ausbildungsweg unabhängig vom Lebensalter",
+        "Differenzierte, sichtbare Entwicklung von Spieler:innen in fünf Kompetenzstufen",
+        "Förderdiagnostik & Motivationstool: Orientierung, Feedback, Zielsetzung",
+        "Klare Kriterien für Trainer:innen zur Beurteilung & Trainingssteuerung",
+        "Integration von Quereinsteiger:innen & Hochentwickelten möglich",
+        "Ergänzt die 6 Module jeder Altersstufe um eine übergreifende Entwicklungslogik"
+      ]
+    },
+    {
+      title: "Grundprinzipien",
+      items: [
+        "Altersunabhängig – der Kompass bewertet nicht, wie alt ein Kind ist, sondern was es kann",
+        "Modular – für jedes der 6 Module (M1–M6) gibt es spezifische Stufen",
+        "Sichtbar – mit Symbolsystem (z. B. Farben, Etiketten, Armbänder, digital)",
+        "Fördernd, nicht bewertend – ‚Wo stehst du – was brauchst du, um weiterzukommen?‘",
+        "Umsetzbar durch Trainer:innen im normalen Trainingsbetrieb"
+      ]
+    },
+    {
+      title: "Anwendung in der Praxis",
+      items: [
+        "Zielkarten: Jeder Spieler hat alle 6 Module mit 5 Stufen in einer persönlichen Übersicht",
+        "Trainingstagebuch oder Feedbackrunde: ‚Was habe ich heute in M3 gezeigt?‘",
+        "Zwischengespräche: Trainer:innen bewerten gemeinsam mit Spieler:innen den Stand – mind. 2× pro Saison",
+        "Kompetenz-Abzeichen oder Zertifikat bei Erreichen einer neuen Stufe",
+        "Integration in Spielerauswahl & Förderung"
+      ]
+    },
+    {
+      title: "Vorteile",
+      items: [
+        "Spieler:innen verstehen ihr eigenes Training besser",
+        "Trainer:innen haben ein differenziertes Werkzeug zur individuellen Förderung",
+        "Eltern erkennen transparent: ‚Worum geht es in der Ausbildung wirklich?‘",
+        "Hohe Bindung durch sichtbare Entwicklung & Wertschätzung",
+        "Klarer Unterschied zwischen Breite & Spitze, aber ohne Ausschluss"
+      ]
+    }
+  ];
+
+  const modules = [
+    "M1: Entwicklungsmerkmale & Methodik",
+    "M2: Athletik & Motorik",
+    "M3: Technik & Taktik",
+    "M4: Mentale & soziale Entwicklung",
+    "M5: Spielsysteme & Positionsspiel",
+    "M6: Teamkultur & Kommunikation",
+    "Praktische Anwendung"
+  ];
+
   return (
     <div className="bg-white/70 p-8 rounded-2xl shadow-xl max-w-6xl mx-auto">
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-3xl font-bold text-purple-800 mb-6"
+        className="text-3xl font-bold mb-6"
+        style={{ color: clubBlue }}
       >
         🧭 Kompetenzkompass
       </motion.h1>
 
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-purple-700 mb-3">Ziel des Kompetenzkompasses</h2>
-        <ul className="list-disc ml-5 space-y-1">
-          <li>Strukturierter, nachvollziehbarer Ausbildungsweg unabhängig vom Lebensalter</li>
-          <li>Differenzierte, sichtbare Entwicklung in fünf Kompetenzstufen</li>
-          <li>Förderdiagnostik & Motivationstool</li>
-          <li>Klare Kriterien für Trainer:innen zur Beurteilung & Trainingssteuerung</li>
-          <li>Integration von Quereinsteiger:innen & Hochentwickelten möglich</li>
-          <li>Übergreifende Entwicklungslogik für alle Module</li>
-        </ul>
-      </section>
+      {sections.map((section, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: idx * 0.1 }}
+          className="bg-white rounded-xl shadow p-4 mb-6"
+        >
+          <h2 className="text-xl font-semibold mb-3" style={{ color: clubBlue }}>{section.title}</h2>
+          <ul className="list-disc ml-5 space-y-1">
+            {section.items.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        </motion.div>
+      ))}
 
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-purple-700 mb-3">Grundprinzipien</h2>
-        <ul className="list-disc ml-5 space-y-1">
-          <li>Altersunabhängig – bewertet, was Spieler:innen können, nicht ihr Alter</li>
-          <li>Modular – spezifische Stufen für jedes Modul (M1–M6)</li>
-          <li>Sichtbar – Symbolsystem (Farben, Etiketten, Armbänder, digital)</li>
-          <li>Fördernd, nicht bewertend</li>
-          <li>Umsetzbar im normalen Trainingsbetrieb</li>
-        </ul>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-purple-700 mb-3">Anwendung in der Praxis</h2>
-        <ul className="list-disc ml-5 space-y-1">
-          <li>Zielkarten mit allen Modulen & Stufen</li>
-          <li>Trainingstagebuch & Feedbackrunden</li>
-          <li>Zwischengespräche mind. 2× pro Saison</li>
-          <li>Kompetenz-Abzeichen/Zertifikate bei neuen Stufen</li>
-          <li>Integration in Spielerauswahl & Förderung</li>
-        </ul>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-purple-700 mb-3">Vorteile</h2>
-        <ul className="list-disc ml-5 space-y-1">
-          <li>Besseres Verständnis des Trainings</li>
-          <li>Differenziertes Förderwerkzeug für Trainer:innen</li>
-          <li>Transparenz für Eltern</li>
-          <li>Hohe Bindung durch sichtbare Entwicklung</li>
-          <li>Unterschied zwischen Breite & Spitze sichtbar ohne Ausgrenzung</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-semibold text-purple-700 mb-3">Die 5 Kompetenzstufen</h2>
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5 }}
+        className="bg-white rounded-xl shadow p-4 mb-6"
+      >
+        <h2 className="text-xl font-semibold mb-3" style={{ color: clubBlue }}>Die 5 Kompetenzstufen</h2>
         <table className="w-full border border-gray-300">
-          <thead className="bg-purple-100">
-            <tr>
+          <thead style={{ backgroundColor: clubBlue }}>
+            <tr className="text-white">
               <th className="p-2 text-left">Stufe</th>
               <th className="p-2 text-left">Symbol</th>
               <th className="p-2 text-left">Beschreibung</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td className="p-2">Basis</td>
-              <td className="p-2">⚪️ Weiß</td>
-              <td className="p-2">Ich kenne die Grundlagen – ich kann mitmachen.</td>
-            </tr>
-            <tr>
-              <td className="p-2">Stabil</td>
-              <td className="p-2">🟡 Gelb</td>
-              <td className="p-2">Ich kann das Geübte sicher in Spielformen anwenden.</td>
-            </tr>
-            <tr>
-              <td className="p-2">Flexibel</td>
-              <td className="p-2">🟢 Grün</td>
-              <td className="p-2">Ich erkenne Situationen und finde eigene Lösungen.</td>
-            </tr>
-            <tr>
-              <td className="p-2">Spielbestimmend</td>
-              <td className="p-2">🔵 Blau</td>
-              <td className="p-2">Ich kann Spiele aktiv mitgestalten – auch unter Druck.</td>
-            </tr>
-            <tr>
-              <td className="p-2">Führend</td>
-              <td className="p-2">🔴 Rot</td>
-              <td className="p-2">Ich beeinflusse Mitspieler:innen & Spielverlauf strategisch und kommunikativ.</td>
-            </tr>
+            <tr><td className="p-2">Basis</td><td className="p-2">⚪️ Weiß</td><td className="p-2">Ich kenne die Grundlagen – ich kann mitmachen.</td></tr>
+            <tr><td className="p-2">Stabil</td><td className="p-2">🟡 Gelb</td><td className="p-2">Ich kann das Geübte sicher und in Spielformen anwenden.</td></tr>
+            <tr><td className="p-2">Flexibel</td><td className="p-2">🟢 Grün</td><td className="p-2">Ich erkenne Situationen und finde eigene Lösungen.</td></tr>
+            <tr><td className="p-2">Spielbestimmend</td><td className="p-2">🔵 Blau</td><td className="p-2">Ich kann Spiele aktiv mitgestalten – auch unter Druck.</td></tr>
+            <tr><td className="p-2">Führend</td><td className="p-2">🔴 Rot</td><td className="p-2">Ich beeinflusse Mitspieler:innen & Spielverlauf strategisch und kommunikativ.</td></tr>
           </tbody>
         </table>
-      </section>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6 }}
+        className="bg-white rounded-xl shadow p-4"
+      >
+        <h2 className="text-xl font-semibold mb-3" style={{ color: clubBlue }}>Die 7 Kompetenzkarten</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {modules.map((mod, i) => (
+            <div key={i} className="bg-gray-50 rounded-lg p-4 border border-gray-200 shadow-sm text-center font-medium">
+              {mod}
+            </div>
+          ))}
+        </div>
+      </motion.div>
     </div>
   );
 }
