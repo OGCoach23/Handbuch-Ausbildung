@@ -127,31 +127,30 @@ export default function Kompetenzkompass() {
         </table>
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6 }}
-        className="bg-white rounded-xl shadow p-4"
-      >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {modules.map(({ title, to }, i) => (
-            <Link key={i} to={to} className="block">
-              <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 shadow-sm text-center font-medium hover:shadow-md hover:scale-[1.01] transition">
-                {title}
-              </div>
-            </Link>
-          ))}
-        </div>
-      </motion.div>
+      {null}
 
-      {/* Klickbare Modul-Badges oben */}
-      <div className="flex flex-wrap gap-3 mt-6">
+      {/* Klickbare Modul-Badges oben (bereits vorhanden) */}
+      <div className="flex flex-wrap gap-3 mt-6 justify-center">
         {modules.filter(m => m.to.includes('/modul')).map(({ title, to }, i) => (
           <Link key={i} to={to} className="rounded-full px-4 py-2 text-white font-semibold shadow hover:opacity-90 transition" style={{ backgroundColor: clubBlue }}>
             {title}
           </Link>
         ))}
       </div>
+
+      {/* Highlight: Praktische Anwendung */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6 }}
+        className="rounded-xl shadow-xl p-6 ring-2 ring-offset-2"
+        style={{ borderColor: clubBlue, background: 'linear-gradient(90deg, #eff6ff 0%, #ffffff 60%)' }}
+      >
+        <Link to="/kompetenzkompass/praxis" className="block rounded-xl">
+          <h2 className="text-xl font-bold mb-2" style={{ color: clubBlue }}>📌 Praktische Anwendung</h2>
+          <p className="text-gray-800">Zur praktischen Umsetzung des Kompetenzkompasses: Zielkarten, Planung, Feedback, Zertifikate u.v.m.</p>
+        </Link>
+      </motion.div>
     </div>
   );
 }
