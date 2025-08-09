@@ -4,27 +4,27 @@ import { Link } from "react-router-dom";
 const moduleData = [
   {
     title: "Modul 1: Entwicklungsmerkmale & Methodik",
-    to: "/Kompetenzkompass/Modul1"
+    to: "/kompetenzkompass/modul1"
   },
   {
     title: "Modul 2: Athletik & Motorik",
-    to: "/Kompetenzkompass/Modul2"
+    to: "/kompetenzkompass/modul2"
   },
   {
     title: "Modul 3: Technik & Taktik",
-    to: "/Kompetenzkompass/Modul3"
+    to: "/kompetenzkompass/modul3"
   },
   {
     title: "Modul 4: Mentales & Soziales",
-    to: "/Kompetenzkompass/Modul4"
+    to: "/kompetenzkompass/modul4"
   },
   {
     title: "Modul 5: Spielsysteme",
-    to: "/Kompetenzkompass/Modul5"
+    to: "/kompetenzkompass/modul5"
   },
   {
     title: "Modul 6: Teamkultur & Kommunikation",
-    to: "/Kompetenzkompass/Modul6"
+    to: "/kompetenzkompass/modul6"
   }
 ];
 

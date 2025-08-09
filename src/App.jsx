@@ -17,6 +17,28 @@ import FJugendM3 from "./pages/f-jugend-m3";
 import FJugendM4 from "./pages/f-jugend-m4";
 import FJugendM5 from "./pages/f-jugend-m5";
 import FJugendM6 from "./pages/f-jugend-m6";
+// Kompetenzkompass
+import KompetenzkompassIndex from "./pages/Kompetenzkompass";
+import KompetenzkompassModule from "./pages/Kompetenzkompass/Module";
+import KompetenzModul1 from "./pages/Kompetenzkompass/Modul1";
+import KompetenzModul2 from "./pages/Kompetenzkompass/Modul2";
+import KompetenzModul3 from "./pages/Kompetenzkompass/Modul3";
+import KompetenzModul4 from "./pages/Kompetenzkompass/Modul4";
+import KompetenzModul5 from "./pages/Kompetenzkompass/Modul5";
+import KompetenzModul6 from "./pages/Kompetenzkompass/Modul6";
+// Jugend-Übersichten
+import AJugendUebersicht from "./pages/AJugend/AJugendUebersicht";
+import BJugendUebersicht from "./pages/BJugend/BJugendUebersicht";
+import CJugendUebersicht from "./pages/CJugend/CJugendUebersicht";
+import DJugendUebersicht from "./pages/DJugend/DJugendUebersicht";
+import EJugendUebersicht from "./pages/EJugend/EJugendUebersicht";
+// E-Jugend Module
+import EJugendModul1 from "./pages/EJugend/Modul1";
+import EJugendModul2 from "./pages/EJugend/Modul2";
+import EJugendModul3 from "./pages/EJugend/Modul3";
+import EJugendModul4 from "./pages/EJugend/Modul4";
+import EJugendModul5 from "./pages/EJugend/Modul5";
+import EJugendModul6 from "./pages/EJugend/Modul6";
 
 const KontaktPage = () => (
   <main className="min-h-screen bg-lightgray p-8">
@@ -77,6 +99,8 @@ function App() {
           <Route path="/ebene4" element={<Ebene4 />} />
           <Route path="/ausbildungsprinzipien" element={<Ausbildungsprinzipien />} />
           <Route path="/kontakt" element={<KontaktPage />} />
+
+          {/* F-Jugend */}
           <Route path="/f-jugend" element={<FJugendPage />} />
           <Route path="/f-jugend-m1" element={<FJugendM1 />} />
           <Route path="/f-jugend-m2" element={<FJugendM2 />} />
@@ -84,9 +108,35 @@ function App() {
           <Route path="/f-jugend-m4" element={<FJugendM4 />} />
           <Route path="/f-jugend-m5" element={<FJugendM5 />} />
           <Route path="/f-jugend-m6" element={<FJugendM6 />} />
+
+          {/* Jugendbereiche Übersichten */}
+          <Route path="/e-jugend" element={<EJugendUebersicht />} />
+          <Route path="/d-jugend" element={<DJugendUebersicht />} />
+          <Route path="/c-jugend" element={<CJugendUebersicht />} />
+          <Route path="/b-jugend" element={<BJugendUebersicht />} />
+          <Route path="/a-jugend" element={<AJugendUebersicht />} />
+
+          {/* E-Jugend Module */}
+          <Route path="/e-jugend/modul1" element={<EJugendModul1 />} />
+          <Route path="/e-jugend/modul2" element={<EJugendModul2 />} />
+          <Route path="/e-jugend/modul3" element={<EJugendModul3 />} />
+          <Route path="/e-jugend/modul4" element={<EJugendModul4 />} />
+          <Route path="/e-jugend/modul5" element={<EJugendModul5 />} />
+          <Route path="/e-jugend/modul6" element={<EJugendModul6 />} />
+
+          {/* Kompetenzkompass */}
+          <Route path="/kompetenzkompass" element={<KompetenzkompassIndex />} />
+          <Route path="/kompetenzkompass/module" element={<KompetenzkompassModule />} />
+          <Route path="/kompetenzkompass/modul1" element={<KompetenzModul1 />} />
+          <Route path="/kompetenzkompass/modul2" element={<KompetenzModul2 />} />
+          <Route path="/kompetenzkompass/modul3" element={<KompetenzModul3 />} />
+          <Route path="/kompetenzkompass/modul4" element={<KompetenzModul4 />} />
+          <Route path="/kompetenzkompass/modul5" element={<KompetenzModul5 />} />
+          <Route path="/kompetenzkompass/modul6" element={<KompetenzModul6 />} />
+
+          {/* Alias-Routen */}
           <Route path="/kinderbereich" element={<AltersLeistungsstufen />} />
           <Route path="/jugendbereich" element={<Ebene2 />} />
-          <Route path="/kompetenzkompass" element={<Ebene3 />} />
           <Route path="/positionsprofile" element={<Ebene3 />} />
           <Route path="/spielsysteme" element={<Ebene3 />} />
           <Route path="/zielgruppen" element={<Zielgruppen />} />

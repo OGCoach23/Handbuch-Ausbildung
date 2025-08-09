@@ -96,20 +96,25 @@ export default function Ebene3() {
           className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"
         >
           {themen.map(({ titel, beschreibung, highlight }, index) => (
-            <motion.div
+            <Link
+              to={titel === "Kompetenzkompass" ? "/kompetenzkompass" : "#"}
               key={titel}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className={`p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 ${
-                highlight ? "bg-yellow-100/60" : "bg-white/60"
-              }`}
+              className="block"
             >
-              <h3 className="text-xl font-bold text-primary mb-3">{titel}</h3>
-              <p className="text-sm text-gray-800 italic leading-relaxed">{beschreibung}</p>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className={`p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 cursor-pointer ${
+                  highlight ? "bg-yellow-100/60" : "bg-white/60"
+                }`}
+              >
+                <h3 className="text-xl font-bold text-primary mb-3">{titel}</h3>
+                <p className="text-sm text-gray-800 italic leading-relaxed">{beschreibung}</p>
+              </motion.div>
+            </Link>
           ))}
         </motion.div>
       </section>

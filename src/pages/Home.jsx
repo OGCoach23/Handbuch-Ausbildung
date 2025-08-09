@@ -54,7 +54,7 @@ export default function Home() {
             <Link to="/trainingsaufbau" className="hover:underline">Trainingsaufbau & Jahresplanung</Link>
             <Link to="/kinderbereich" className="hover:underline">Kinderbereich</Link>
             <Link to="/jugendbereich" className="hover:underline">Jugendbereich</Link>
-            <Link to="/kompetenzkompass" className="hover:underline">Kompetenzkompass</Link>
+            {/* Kompetenzkompass-Link entfernt */}
             <Link to="/positionsprofile" className="hover:underline">Entwicklung Positionen</Link>
             <Link to="/spielsysteme" className="hover:underline">Entwicklung Spielsysteme</Link>
           </nav>

@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
+const moduleCards = [
+  { title: "Modul 1: Entwicklungsmerkmale & Methodik", to: "/kompetenzkompass/modul1" },
+  { title: "Modul 2: Athletik & Motorik", to: "/kompetenzkompass/modul2" },
+  { title: "Modul 3: Technik & Taktik", to: "/kompetenzkompass/modul3" },
+  { title: "Modul 4: Mentale & soziale Entwicklung", to: "/kompetenzkompass/modul4" },
+  { title: "Modul 5: Spielsysteme", to: "/kompetenzkompass/modul5" },
+  { title: "Modul 6: Teamkultur & Kommunikation", to: "/kompetenzkompass/modul6" },
+];
+
 export default function KompetenzkompassIndex() {
   return (
     <div className="bg-white/40 p-8">
@@ -58,11 +67,21 @@ export default function KompetenzkompassIndex() {
           <li><strong>Stufe 5 (Rot) - Führend:</strong> Ich beeinflusse Mitspieler:innen & Spielverlauf strategisch und kommunikativ.</li>
         </ul>
 
-        <p>Ein Spieler kann z. B. in Modul 3 (Technik & Taktik) schon auf Stufe 4 sein, aber in Modul 4 (Mentales & Soziales) noch auf Stufe 2 → individuelles Förderprofil!</p>
-
-        <Link to="/kompetenzkompass/module" className="inline-block mt-4 px-6 py-2 bg-primary text-white rounded-xl shadow">
-          Zu den Modulen
-        </Link>
+        {/* Modul-Karten direkt auf der Index-Seite */}
+        <div className="pt-6">
+          <h3 className="text-xl font-bold text-primary mb-4">Module</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {moduleCards.map(({ title, to }) => (
+              <Link
+                key={title}
+                to={to}
+                className="bg-white/60 p-5 rounded-xl shadow hover:shadow-lg hover:scale-[1.02] transition duration-300 text-center"
+              >
+                <span className="font-semibold text-primary">{title}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
       </motion.div>
     </div>
   );
