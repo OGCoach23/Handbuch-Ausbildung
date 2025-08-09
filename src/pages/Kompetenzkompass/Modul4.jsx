@@ -103,7 +103,7 @@ export default function Modul4MentaleSoziale() {
   const [activeTab, setActiveTab] = useState("persoenlichkeit");
 
   return (
-    <div className="bg-white/70 p-8 rounded-2xl shadow-xl max-w-6xl mx-auto">
+    <div className="bg-green-100/30 p-8 rounded-2xl shadow-xl max-w-6xl mx-auto">
       <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-3xl font-bold text-green-800 mb-6">
         Modul 4: Mentale & soziale Entwicklung
       </motion.h1>
@@ -120,6 +120,11 @@ export default function Modul4MentaleSoziale() {
         {data[activeTab].map((item, idx) => (
           <motion.div key={idx} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.1 }} className={`${stufen[idx].color} p-4 rounded-xl shadow-md`}>
             <h3 className="text-xl font-bold mb-2">{stufen[idx].icon} {stufen[idx].title}</h3>
+            <div className="flex gap-1 mb-3">
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className={`w-3 h-3 rounded-full ${i <= idx ? "bg-green-700" : "bg-gray-300"}`}></div>
+              ))}
+            </div>
             <p className="font-semibold mb-2">Ziel: {item.ziel}</p>
             <ul className="list-disc ml-5 mb-2">
               {item.merkmale.map((m, i) => <li key={i}>{m}</li>)}

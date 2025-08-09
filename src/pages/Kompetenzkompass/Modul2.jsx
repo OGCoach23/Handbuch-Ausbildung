@@ -103,7 +103,7 @@ export default function Modul2AthletikMotorik() {
   const [activeTab, setActiveTab] = useState("koordination");
 
   return (
-    <div className="bg-white/70 p-8 rounded-2xl shadow-xl max-w-6xl mx-auto">
+    <div className="bg-green-100/30 p-8 rounded-2xl shadow-xl max-w-6xl mx-auto">
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -141,6 +141,11 @@ export default function Modul2AthletikMotorik() {
             <h3 className="text-xl font-bold mb-2">
               {stufen[idx].icon} {stufen[idx].title}
             </h3>
+            <div className="flex gap-1 mb-3">
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className={`w-3 h-3 rounded-full ${i <= idx ? "bg-green-700" : "bg-gray-300"}`}></div>
+              ))}
+            </div>
             <p className="font-semibold mb-2">Ziel: {item.ziel}</p>
             <ul className="list-disc ml-5 mb-2">
               {item.merkmale.map((m, i) => (
