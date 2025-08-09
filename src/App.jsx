@@ -26,6 +26,8 @@ import KompetenzModul3 from "./pages/Kompetenzkompass/Modul3";
 import KompetenzModul4 from "./pages/Kompetenzkompass/Modul4";
 import KompetenzModul5 from "./pages/Kompetenzkompass/Modul5";
 import KompetenzModul6 from "./pages/Kompetenzkompass/Modul6";
+import KompetenzkompassStart from "./pages/Kompetenzkompass/Kompetenzkompass";
+import PraktischeAnwendung from "./pages/Kompetenzkompass/PraktischeAnwendung";
 // Jugend-Übersichten
 import AJugendUebersicht from "./pages/AJugend/AJugendUebersicht";
 import BJugendUebersicht from "./pages/BJugend/BJugendUebersicht";
@@ -131,6 +133,8 @@ function App() {
           {/* Kompetenzkompass */}
           <Route path="/kompetenzkompass" element={<KompetenzkompassIndex />} />
           <Route path="/kompetenzkompass/module" element={<KompetenzkompassModule />} />
+          <Route path="/kompetenzkompass/ueberblick" element={<KompetenzkompassStart />} />
+          <Route path="/kompetenzkompass/praxis" element={<PraktischeAnwendung />} />
           <Route path="/kompetenzkompass/modul1" element={<KompetenzModul1 />} />
           <Route path="/kompetenzkompass/modul2" element={<KompetenzModul2 />} />
           <Route path="/kompetenzkompass/modul3" element={<KompetenzModul3 />} />

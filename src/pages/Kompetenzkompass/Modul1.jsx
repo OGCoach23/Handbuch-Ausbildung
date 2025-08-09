@@ -104,7 +104,7 @@ export default function Modul1() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="max-w-7xl mx-auto p-6">
+    <div className="bg-green-100/30 p-8 rounded-2xl shadow-xl max-w-6xl mx-auto">
       <h1 className="text-3xl font-bold text-green-800 mb-6">M1: Entwicklungsmerkmale & Methodik</h1>
 
       {/* Tabs */}
