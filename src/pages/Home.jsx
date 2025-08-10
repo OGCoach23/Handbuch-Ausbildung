@@ -82,15 +82,13 @@ export default function Home() {
               <h1 className="text-2xl font-bold">Laimer Ausbildungshandbuch Handball</h1>
             </div>
             <nav className="flex flex-wrap gap-x-4 gap-y-2 text-sm justify-center md:justify-end">
-              <Link to="/" className="hover:underline">Start</Link>
-              <Link to="/leitbild" className="hover:underline">Leitbild</Link>
-              <Link to="/kontakt" className="hover:underline">Kontakt</Link>
-              <Link to="/trainingsaufbau" className="hover:underline">Trainingsaufbau & Jahresplanung</Link>
-              <Link to="/kinderbereich" className="hover:underline">Kinderbereich</Link>
-              <Link to="/jugendbereich" className="hover:underline">Jugendbereich</Link>
-              {/* Kompetenzkompass-Link entfernt */}
-              <Link to="/positionsprofile" className="hover:underline">Entwicklung Positionen</Link>
-              <Link to="/spielsysteme" className="hover:underline">Entwicklung Spielsysteme</Link>
+              <Link to="/" className="px-4 py-2 rounded-full transition-all duration-300 hover:bg-white hover:text-green-700">Home</Link>
+              <Link to="/leitbild" className="px-4 py-2 rounded-full transition-all duration-300 hover:bg-white hover:text-green-700">Leitbild</Link>
+              <Link to="/trainingsaufbau" className="px-4 py-2 rounded-full transition-all duration-300 hover:bg-white hover:text-green-700">Trainingsaufbau</Link>
+              <Link to="/kompetenzkompass" className="px-4 py-2 rounded-full transition-all duration-300 hover:bg-white hover:text-green-700">Kompetenzkompass</Link>
+              <Link to="/kinderbereich" className="px-4 py-2 rounded-full transition-all duration-300 hover:bg-white hover:text-green-700">Kinderbereich</Link>
+              <Link to="/jugendbereich" className="px-4 py-2 rounded-full transition-all duration-300 hover:bg-white hover:text-green-700">Jugendbereich</Link>
+              <Link to="/positionsprofile" className="px-4 py-2 rounded-full transition-all duration-300 hover:bg-white hover:text-green-700">Entwicklung Positionen</Link>
             </nav>
           </div>
         </div>
@@ -118,8 +116,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Einleitungstext */}
-      <section className="bg-green-100/40 p-8">
+             {/* Einleitungstext */}
+       <section className="bg-green-100/20 p-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -139,18 +137,18 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Karten mit Card-Komponente */}
-      <section className="bg-white/40 p-8">
+             {/* Karten mit Card-Komponente */}
+       <section className="bg-white/20 p-8">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {cards.map(({ title, link }) => (
             <Link key={title} to={link} className="block">
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="bg-white/60 p-6 rounded-xl shadow transition-all duration-300 transform hover:scale-105 hover:bg-[#005aa7] hover:text-white hover:shadow-2xl h-full"
-              >
+                             <motion.div
+                 initial={{ opacity: 0.3, y: 30 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true, margin: "-100px" }}
+                 transition={{ duration: 0.6, ease: "easeOut" }}
+                 className="bg-white/60 p-6 rounded-xl shadow transition-all duration-300 transform hover:scale-110 hover:bg-[#005aa7] hover:text-white hover:shadow-2xl h-full"
+               >
                 <h3 className="text-lg font-bold mb-2">{title}</h3>
               </motion.div>
             </Link>
@@ -158,8 +156,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gesamtfazit */}
-      <section className="bg-green-100/30 p-8">
+             {/* Gesamtfazit */}
+       <section className="bg-green-100/15 p-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
