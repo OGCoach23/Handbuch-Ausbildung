@@ -9,27 +9,27 @@ const moduleBJugend = [
   },
   {
     titel: "Modul 2: Athletik & Motorik",
-    frage: "Wie trainiere ich leistungsorientiert und individuell Kraft, Ausdauer und Schnelligkeit – mit wachsendem Anspruch und persönlicher Entwicklung?",
+    frage: "Wie entwickle ich athletische Grundlagen individuell und leistungsorientiert – ohne die Belastbarkeit und Motivation der Jugendlichen zu überfordern?",
     path: "/b-jugend-m2",
   },
   {
     titel: "Modul 3: Technik & Taktik",
-    frage: "Wie entwickle ich komplexe Handballtechniken und taktische Konzepte – mit eigenständigem Spielverständnis und kreativen Lösungen?",
+    frage: "Wie entwickle ich in der B-Jugend Technikkompetenz unter Belastung – und verknüpfe sie systematisch mit taktischer Spielintelligenz?",
     path: "/b-jugend-m3",
   },
   {
     titel: "Modul 4: Mentale & soziale Entwicklung",
-    frage: "Wie fördere ich mentale Stärke, Führungsqualitäten und Verantwortung – in einer Phase der Persönlichkeitsentwicklung und Identitätsfindung?",
+    frage: "Wie unterstütze ich Jugendliche in der Phase zwischen Identitätsfindung und Leistungsanspruch mental stark, reflektiert und teamfähig zu bleiben?",
     path: "/b-jugend-m4",
   },
   {
     titel: "Modul 5: Spielsysteme & Positionsspiel",
-    frage: "Wie entwickle ich flexible Spielsysteme und individuelle Positionsprofile – mit taktischem Verständnis und kreativen Lösungen?",
+    frage: "Wie entwickle ich ein kollektives Spielverständnis – und stärke individuelle Rollen, ohne starre Positionsfixierung?",
     path: "/b-jugend-m5",
   },
   {
     titel: "Modul 6: Teamkultur & Kommunikation",
-    frage: "Wie schaffe ich eine Leistungskultur, die fordert, fördert und Fairplay lebt – bei Spielern, Eltern und Trainern?",
+    frage: "Wie gestalte ich eine leistungsfördernde, wertorientierte Teamkultur – in einer Lebensphase zwischen Selbstbehauptung und Zugehörigkeitsbedürfnis?",
     path: "/b-jugend-m6",
   },
 ];
