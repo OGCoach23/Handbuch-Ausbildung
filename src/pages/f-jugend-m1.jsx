@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -67,26 +67,35 @@ export default function Modul1FJugend() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedCard, setSelectedCard] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
-
-  // Dynamische Größen
   const [carouselConfig, setCarouselConfig] = useState({
     radius: 300,
     cardWidth: 320,
     cardHeight: 420,
-    containerHeight: 700,
+    availableHeight: 700,
   });
+
+  const headerRef = useRef(null);
+  const footerRef = useRef(null);
 
   useEffect(() => {
     const updateSizes = () => {
       const vw = window.innerWidth;
+      const vh = window.innerHeight;
 
       const cardWidth = Math.min(320, vw * 0.25);
       const cardHeight = cardWidth * 1.3;
-
       const radius = Math.max(200, vw * 0.2);
-      const containerHeight = cardHeight + radius * 0.6;
 
-      setCarouselConfig({ radius, cardWidth, cardHeight, containerHeight });
+      const headerHeight = headerRef.current
+        ? headerRef.current.offsetHeight
+        : 0;
+      const footerHeight = footerRef.current
+        ? footerRef.current.offsetHeight
+        : 0;
+
+      const availableHeight = vh - headerHeight - footerHeight;
+
+      setCarouselConfig({ radius, cardWidth, cardHeight, availableHeight });
     };
 
     updateSizes();
@@ -134,16 +143,25 @@ export default function Modul1FJugend() {
   };
 
   return (
-    <div className="bg-white min-h-screen flex flex-col items-center justify-center p-8">
-      <div className="flex flex-col items-center justify-center flex-1">
+    <>
+      {/* Header */}
+      <header ref={headerRef}>
         {/* Zurück Button */}
-        <Link
-          to="/f-jugend"
-          className="mb-4 rounded-full bg-white text-green-600 px-6 py-2 shadow-md hover:bg-blue-600 hover:text-white transition-colors duration-300"
-        >
-          ← Zurück zur F-Jugend Übersicht
-        </Link>
+        <div className="flex justify-center pt-8 pb-4">
+          <Link
+            to="/f-jugend"
+            className="rounded-full bg-white text-green-600 px-6 py-2 shadow-md hover:bg-blue-600 hover:text-white transition-colors duration-300"
+          >
+            ← Zurück zur F-Jugend Übersicht
+          </Link>
+        </div>
+      </header>
 
+      {/* Hauptbereich: vertikal perfekt mittig */}
+      <div
+        className="flex flex-col items-center justify-center"
+        style={{ height: carouselConfig.availableHeight }}
+      >
         {/* Überschrift */}
         <motion.div
           initial={{ opacity: 0, y: -50, rotateX: -15 }}
@@ -164,10 +182,7 @@ export default function Modul1FJugend() {
         </motion.div>
 
         {/* Karussell */}
-        <div
-          className="relative flex items-center justify-center overflow-visible"
-          style={{ height: carouselConfig.containerHeight }}
-        >
+        <div className="relative flex items-center justify-center overflow-visible">
           {/* Pfeil links */}
           <button
             onClick={rotateLeft}
@@ -267,6 +282,11 @@ export default function Modul1FJugend() {
         </div>
       </div>
 
+      {/* Footer */}
+      <footer ref={footerRef}>
+        {/* Footer-Bereich für zukünftige Erweiterungen */}
+      </footer>
+
       {/* Modal */}
       <AnimatePresence>
         {selectedCard && (
@@ -311,6 +331,6 @@ export default function Modul1FJugend() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </>
   );
 }
