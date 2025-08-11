@@ -146,7 +146,15 @@ export default function Modul1FJugend() {
     <>
       {/* Header */}
       <header ref={headerRef}>
-        {/* Dein bestehender Header */}
+        {/* Zurück Button */}
+        <div className="flex justify-center pt-8 pb-4">
+          <Link
+            to="/f-jugend"
+            className="rounded-full bg-white text-green-600 px-6 py-2 shadow-md hover:bg-blue-600 hover:text-white transition-colors duration-300"
+          >
+            ← Zurück zur F-Jugend Übersicht
+          </Link>
+        </div>
       </header>
 
       {/* Hauptbereich */}
@@ -184,7 +192,7 @@ export default function Modul1FJugend() {
             <ChevronLeft size={24} />
           </button>
 
-          {/* Karten Container */}
+          {/* Karten Container - WELTKLASSE 3D-Zentrierung */}
           <div
             className="relative"
             style={{
@@ -213,6 +221,7 @@ export default function Modul1FJugend() {
                     height: carouselConfig.cardHeight,
                     backgroundColor: "rgba(255,255,255,0.95)",
                     color: "#166534",
+                    // WELTKLASSE-Positionierung: Perfekte Zentrierung im 3D-Raum
                     left: "50%",
                     top: "50%",
                     transform: `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
@@ -258,12 +267,73 @@ export default function Modul1FJugend() {
             <ChevronRight size={24} />
           </button>
         </div>
+
+        {/* Indikatoren - WELTKLASSE Navigation */}
+        <div className="mt-6 flex space-x-3">
+          {cardsData.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToCard(index)}
+              disabled={isAnimating}
+              className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                index === currentIndex
+                  ? "bg-blue-600 scale-125 shadow-lg"
+                  : "bg-gray-300 hover:bg-gray-400"
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Footer */}
       <footer ref={footerRef}>
-        {/* Dein bestehender Footer */}
+        {/* Footer-Bereich für zukünftige Erweiterungen */}
       </footer>
+
+      {/* Modal - WELTKLASSE Benutzererfahrung */}
+      <AnimatePresence>
+        {selectedCard && (
+          <motion.div
+            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedCard(null)}
+          >
+            <motion.div
+              className="bg-white rounded-xl p-8 max-w-3xl w-full shadow-2xl overflow-y-auto max-h-[85vh]"
+              initial={{ scale: 0.8, opacity: 0, y: 50 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 50 }}
+              transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h2
+                className={`text-3xl font-bold mb-6 ${
+                  selectedCard.highlight
+                    ? "text-yellow-600"
+                    : "text-green-600"
+                }`}
+              >
+                {selectedCard.title}
+              </h2>
+              <ul className="list-disc pl-6 space-y-3 text-gray-700 text-lg">
+                {selectedCard.content.map((item, i) => (
+                  <li key={i} className="leading-relaxed">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <button
+                onClick={() => setSelectedCard(null)}
+                className="mt-8 px-8 py-4 bg-green-600 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300 font-medium text-lg"
+              >
+                Schließen
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
