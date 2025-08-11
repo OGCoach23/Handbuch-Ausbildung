@@ -50,25 +50,25 @@ export default function Ebene2() {
           className="max-w-4xl mx-auto text-dark space-y-4"
         >
           <h1 className="text-3xl font-bold text-primary">
-            Ebene 2 – Altersgerechte Ausbildungslogik
+            Ebene 2 – Modulbasierte Ausbildungslogik
           </h1>
           <p>
-            Jetzt wird's konkret. Wir haben unsere Haltung geschärft, unsere Prinzipien festgelegt und ein flexibles Gerüst aus Alters- und Leistungsstufen aufgebaut. Jetzt machen wir daraus ein lebendiges System – altersgerecht, wiedererkennbar und praxisnah.
+            Jetzt wird's konkret. Wir haben unsere Haltung geschärft, unsere Prinzipien festgelegt und ein flexibles Gerüst aus Alters- und Leistungsstufen aufgebaut. Jetzt machen wir daraus ein lebendiges System – modular, wiedererkennbar und praxisnah.
           </p>
           <p>
             Denn gute Ausbildung braucht Struktur. Und Struktur braucht Inhalte, die zur Entwicklungsphase passen. In dieser Ebene zeigen wir, wie wir die Laimer Werte im Trainingsalltag umsetzen – und was Spieler:innen in welcher Phase lernen sollen.
           </p>
           <p>
-            Unsere sechs Jugendstufen bilden das Herzstück der Ausbildung: <br />
-            ● F-Jugend (4–8 Jahre) – Wie begleite ich Kinder liebevoll, bewegungsreich und entwicklungsfördernd ins Handballspielen? <br />
-            ● E-Jugend (9–10 Jahre) – Worauf muss ich als Trainer:in bei 9- bis 10-jährigen besonders achten? <br />
-            ● D-Jugend (11–12 Jahre) – Wie gestalten wir ein motivierendes Training für Kinder im Umbruch? <br />
-            ● C-Jugend (13–14 Jahre) – Wie entwickeln wir ein leistungsorientiertes, wertschätzendes Miteinander? <br />
-            ● B-Jugend (15–16 Jahre) – Wie begleite ich Jugendliche zwischen Selbstbehauptung und Orientierung? <br />
-            ● A-Jugend (17–18 Jahre) – Wie begleite ich junge Erwachsene in ihrer letzten Jugendphase?
+            Unsere sechs Module bilden das Herzstück der Ausbildung: <br />
+            Modul 1: Entwicklungsmerkmale & Methodik – Wie lernen Kinder und Jugendliche – und wie richten wir unser Training darauf aus? <br />
+            Modul 2: Athletik & Motorik – Bewegungskompetenz als Fundament: kindgerecht, vielseitig, handballspezifisch. <br />
+            Modul 3: Technik & Taktik – Vom ersten Prellen bis zum komplexen Umschaltspiel – wir strukturieren den Weg. <br />
+            Modul 4: Mentale & soziale Entwicklung – Persönlichkeit stärken, Teamverhalten fördern, mit Druck und Fehlern umgehen. <br />
+            Modul 5: Spielsysteme & Positionsspiel – Was Spieler:innen wann über Räume, Rollen und Systeme lernen sollen – ohne zu überfordern. <br />
+            Modul 6: Teamkultur & Kommunikation – Miteinander wachsen – durch Sprache, Werte und gelebte Verantwortung.
           </p>
           <p>
-            Jede Jugendstufe ist altersgerecht aufbereitet – mit klaren Entwicklungszielen, Trainingsimpulsen und Methodentipps. Du bekommst kein starres Raster, sondern ein System mit Spielraum: für deinen Stil, dein Team, deinen Alltag.
+            Jedes Modul ist altersgerecht aufbereitet – mit klaren Entwicklungszielen, Trainingsimpulsen und Methodentipps. Du bekommst kein starres Raster, sondern ein System mit Spielraum: für deinen Stil, dein Team, deinen Alltag.
           </p>
         </motion.div>
       </section>
@@ -112,8 +112,8 @@ export default function Ebene2() {
           className="max-w-4xl mx-auto text-dark space-y-4"
         >
           <h2 className="text-2xl font-bold text-primary">Fazit Ebene 2: Ausbildung mit System</h2>
-          <p>Wir haben die Haltung mit Inhalt gefüllt. In dieser Ebene ist sichtbar geworden, wie unser Ausbildungssystem funktioniert – altersgerecht, zielgerichtet und entwicklungsfördernd. Jede Jugendstufe hat gezeigt: Entwicklung lässt sich planen, ohne starr zu werden. Und sie gewinnt an Tiefe, wenn sie auf mehreren Ebenen gleichzeitig wirkt – körperlich, technisch, taktisch, mental und sozial.</p>
-          <p>Unsere Jugendstufen geben Trainer:innen Struktur – und Spieler:innen Orientierung.</p>
+          <p>Wir haben die Haltung mit Inhalt gefüllt. In dieser Ebene ist sichtbar geworden, wie unser Ausbildungssystem funktioniert – modular, zielgerichtet und entwicklungsfördernd. Jedes Modul hat gezeigt: Entwicklung lässt sich planen, ohne starr zu werden. Und sie gewinnt an Tiefe, wenn sie auf mehreren Ebenen gleichzeitig wirkt – körperlich, technisch, taktisch, mental und sozial.</p>
+          <p>Unsere Module geben Trainer:innen Struktur – und Spieler:innen Orientierung.</p>
           <ul className="list-disc list-inside">
             <li>Entwicklung folgt keiner Einbahnstraße – sie braucht Raum für Umwege und Sprünge.</li>
             <li>Inhalte wirken stärker, wenn sie zur Entwicklungsphase passen – nicht zu früh, nicht zu spät.</li>
