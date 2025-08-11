@@ -19,6 +19,12 @@ import FJugendM3 from "./pages/f-jugend-m3";
 import FJugendM4 from "./pages/f-jugend-m4";
 import FJugendM5 from "./pages/f-jugend-m5";
 import FJugendM6 from "./pages/f-jugend-m6";
+// Neue 3D-Karten-Komponenten für alle Jugendstufen
+import EJugend from "./pages/e-jugend";
+import DJugend from "./pages/d-jugend";
+import CJugend from "./pages/c-jugend";
+import BJugend from "./pages/b-jugend";
+import AJugend from "./pages/a-jugend";
 // Kompetenzkompass
 import KompetenzkompassIndex from "./pages/Kompetenzkompass";
 import KompetenzkompassModule from "./pages/Kompetenzkompass/Module";
@@ -30,19 +36,6 @@ import KompetenzModul5 from "./pages/Kompetenzkompass/Modul5";
 import KompetenzModul6 from "./pages/Kompetenzkompass/Modul6";
 import KompetenzkompassStart from "./pages/Kompetenzkompass/Kompetenzkompass";
 import PraktischeAnwendung from "./pages/Kompetenzkompass/PraktischeAnwendung";
-// Jugend-Übersichten
-import AJugendUebersicht from "./pages/AJugend/AJugendUebersicht";
-import BJugendUebersicht from "./pages/BJugend/BJugendUebersicht";
-import CJugendUebersicht from "./pages/CJugend/CJugendUebersicht";
-import DJugendUebersicht from "./pages/DJugend/DJugendUebersicht";
-import EJugendUebersicht from "./pages/EJugend/EJugendUebersicht";
-// E-Jugend Module
-import EJugendModul1 from "./pages/EJugend/Modul1";
-import EJugendModul2 from "./pages/EJugend/Modul2";
-import EJugendModul3 from "./pages/EJugend/Modul3";
-import EJugendModul4 from "./pages/EJugend/Modul4";
-import EJugendModul5 from "./pages/EJugend/Modul5";
-import EJugendModul6 from "./pages/EJugend/Modul6";
 
 const KontaktPage = () => (
   <main className="min-h-screen bg-lightgray p-8">
@@ -95,20 +88,12 @@ function App() {
             <Route path="/f-jugend-m5" element={<FJugendM5 />} />
             <Route path="/f-jugend-m6" element={<FJugendM6 />} />
 
-            {/* Jugendbereiche Übersichten */}
-            <Route path="/e-jugend" element={<EJugendUebersicht />} />
-            <Route path="/d-jugend" element={<DJugendUebersicht />} />
-            <Route path="/c-jugend" element={<CJugendUebersicht />} />
-            <Route path="/b-jugend" element={<BJugendUebersicht />} />
-            <Route path="/a-jugend" element={<AJugendUebersicht />} />
-
-            {/* E-Jugend Module */}
-            <Route path="/e-jugend/modul1" element={<EJugendModul1 />} />
-            <Route path="/e-jugend/modul2" element={<EJugendModul2 />} />
-            <Route path="/e-jugend/modul3" element={<EJugendModul3 />} />
-            <Route path="/e-jugend/modul4" element={<EJugendModul4 />} />
-            <Route path="/e-jugend/modul5" element={<EJugendModul5 />} />
-            <Route path="/e-jugend/modul6" element={<EJugendModul6 />} />
+            {/* Neue 3D-Karten-Komponenten für alle Jugendstufen */}
+            <Route path="/e-jugend" element={<EJugend />} />
+            <Route path="/d-jugend" element={<DJugend />} />
+            <Route path="/c-jugend" element={<CJugend />} />
+            <Route path="/b-jugend" element={<BJugend />} />
+            <Route path="/a-jugend" element={<AJugend />} />
 
             {/* Kompetenzkompass */}
             <Route path="/kompetenzkompass" element={<KompetenzkompassIndex />} />
