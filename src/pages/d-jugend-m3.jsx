@@ -3,66 +3,65 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// --- Daten für die Karten ---
 const cardsData = [
   {
     title: "Zielsetzung dieses Moduls",
     content: [
-      "Entwicklung grundlegender Handballtechniken im Spielkontext",
-      "Aufbau erster taktischer Grundlagen und Spielverständnis",
-      "Förderung der Entscheidungsfähigkeit unter Druck",
-      "Schaffung einer Basis für späteres, komplexeres Spiel",
-    ],
+      "Spieler:innen beherrschen die technischen Grundformen unter wachsendem Druck und in Kombination.",
+      "Sie verstehen: Technik ist kein Selbstzweck, sondern ein Werkzeug für taktische Lösungen.",
+      "Taktische Grundprinzipien wie Freilaufen, Raumöffnung und Entscheidungsverhalten werden aufgebaut.",
+      "Trainer:innen fördern Spielintelligenz, Variation und Kreativität – statt Drill oder Standardabläufe."
+    ]
   },
   {
-    title: "Entwicklungsmerkmale der D-Jugend",
+    title: "Technikstufen im Training (Kompetenzmodell)",
     content: [
-      "Körperlich: Erste Pubertätszeichen, Wachstumsschübe, Koordinationsdellen",
-      "Technisch: Grundlegende Ballaktionen möglich, aber noch unkoordiniert",
-      "Kognitiv: Reflektierteres Denken, erste taktische Logik möglich",
-      "Sozial: Freundschaften & Anerkennung gewinnen an Bedeutung",
-    ],
+      "1: Erkennen – Technik wird bewusst wahrgenommen, benannt und ohne Druck ausgeführt",
+      "2: Anwenden – Technik wird bewusst unter einfachen Bedingungen eingesetzt",
+      "3: Variieren – Technik wird an Raum, Gegner oder Spielsituation angepasst",
+      "4: Kombinieren – Technik wird mit anderen Techniken oder Bewegungen verknüpft",
+      "5: Gestalten – Technik wird kreativ, bewusst und situationsabhängig eingesetzt"
+    ]
   },
   {
-    title: "Was Trainer:innen besonders beachten müssen",
+    title: "Must-have & Nice-to-have Inhalte",
     content: [
-      "Individuelle Entwicklung ernst nehmen – Wachstum & Reife sind extrem unterschiedlich",
-      "Spieler:innen fordern, aber nicht überfordern – viel erklären, aber nicht zupredigen",
-      "Stabilität durch Rituale & Struktur – feste Abläufe, Wiederholungen",
-      "Leistung sichtbar machen – nicht vergleichen: 'Heute besser als gestern'",
-      "Fragen statt Korrekturen: 'Was hätte dir geholfen?'",
-    ],
+      "Passen: Must-have – Prellpass, Pass in Bewegung, Schlagwurfpässe / Nice-to-have – Sprungpass, No-Look, Gegenlaufpass",
+      "Fangen: Must-have – beidhändig in Bewegung, nach Richtungswechsel / Nice-to-have – einhändig, mit Gegnerdruck",
+      "Werfen: Must-have – Standwurf, Sprungwurf, Zielwurf / Nice-to-have – Wurf unter Bedrängnis, kreative Varianten",
+      "Prellen: Must-have – Raumgewinn + Gegnerdruck / Nice-to-have – Täuschung, Wechselhand, Rhythmuswechsel",
+      "Täuschung: Must-have – Körpertäuschung, Passtäuschung / Nice-to-have – Abdrehtäuschung, Doppelhaken"
+    ]
   },
   {
-    title: "Methodik & Organisation",
+    title: "Taktische Prinzipien & Schwerpunkte",
     content: [
-      "Trainingsdauer & Aufbau: 75–90 Minuten, Struktur: Warm-up → Technik/Spiel → Intensivspiel → Reflexion",
-      "Gruppengestaltung: Heterogene Gruppen, wechselnde Aufgaben & Rollen, Rücksicht auf Reifegrade",
-      "Kommunikationsstil: 'Du kannst das.' / 'Was war dein bester Moment heute?' / Rückfragen erwünscht",
-      "Spielorientierung bleibt: Technik wird immer im Spielkontext vermittelt",
-      "Verantwortung fördern: Aufwärmleitung, Regelvorschläge, Trainingsfeedback von Spieler:innen",
-    ],
+      "Spiel ohne Ball – Freilaufen frontal, seitlich, Lösen zum/vom Ball",
+      "Spiel mit Ball – situatives Prellen, Körperschutz, Entscheidung nach Gegnerreaktion",
+      "Kleingruppe – 2:2 oder 3:3 mit Einläufer, Parallelstoß, Richtungswechsel",
+      "Abwehr – 1:1 mit Kontaktkontrolle, Antizipation, gemeinsames Halten von Räumen"
+    ]
   },
   {
-    title: "Typische Trainerfehler (und wie du sie vermeidest)",
+    title: "Methodik & Umsetzung",
     content: [
-      "'Du bist der Spielmacher' → Jede:r darf jede Rolle erleben – Positionsverständnis statt Festlegung",
-      "'Ihr müsst euch jetzt konzentrieren!' → 'Was hilft euch gerade, besser bei der Sache zu bleiben?'",
-      "Lange Monologe → Max. 60 Sek. Reden – dann ausprobieren lassen",
-      "Technikdrill ohne Spielbezug → Technik direkt ins Spiel integrieren",
-      "Gruppenvergleiche → Fokus auf individuelle Entwicklung im Teamkontext",
-    ],
+      "Technikübungen mit Gegnerdruck, Ziel, Zeit oder Entscheidung verbinden",
+      "Beidseitigkeit fördern – links wie rechts trainieren",
+      "Differenzierung je nach Level",
+      "Fehler als Lernchance nutzen",
+      "Technik immer mit Spielhandlung verknüpfen"
+    ]
   },
   {
     title: "Ergebnis für den Trainer",
     highlight: true,
     content: [
-      "Du gestaltest ein Training, das weder überfordert noch unterfordert.",
-      "Du schaffst eine Atmosphäre, in der sich Spieler:innen ernst genommen, gefordert und sicher fühlen.",
-      "Du legst den Grundstein für spielintelligente, selbstbewusste und teamfähige Jugendliche.",
-      "Ziel: Spieler:innen, die Spaß am Handball haben, sich selbst entdecken – und wachsen wollen, weil sie dürfen.",
-    ],
-  },
+      "Du förderst nicht nur Bewegung – du entwickelst Handlung.",
+      "Du machst Technik verständlich, anwendbar und wirkungsvoll.",
+      "Du schaffst ein Umfeld, in dem Fehler Teil des Spiels sind – und Fortschritt Spaß macht.",
+      "Ziel: Spieler:innen, die Technik als Werkzeug begreifen – und mutig, bewusst und erfolgreich im Spiel einsetzen."
+    ]
+  }
 ];
 
 export default function Modul3DJugend() {
@@ -111,13 +110,14 @@ export default function Modul3DJugend() {
 
   return (
     <div className="bg-white min-h-screen p-8 flex flex-col items-center">
-      <Link
-        to="/d-jugend"
+      <Link 
+        to="/d-jugend" 
         className="mb-8 rounded-full bg-white text-green-600 px-6 py-2 shadow-md hover:bg-blue-600 hover:text-white transition-colors duration-300"
       >
         ← Zurück zur D-Jugend Übersicht
       </Link>
 
+      {/* Überschrift und Leitfrage */}
       <motion.div
         initial={{ opacity: 0, y: -50, rotateX: -15 }}
         animate={{ opacity: 1, y: 0, rotateX: 0 }}
@@ -137,7 +137,9 @@ export default function Modul3DJugend() {
         </div>
       </motion.div>
 
+      {/* 3D Karussell */}
       <div className="relative w-full max-w-8xl h-[900px] flex items-center justify-center overflow-hidden">
+        {/* Linker Pfeil */}
         <button
           onClick={rotateLeft}
           disabled={isAnimating}
@@ -146,13 +148,19 @@ export default function Modul3DJugend() {
           <ChevronLeft size={24} />
         </button>
 
+        {/* Karussell Container */}
         <div className="relative w-full h-full flex items-center justify-center">
-          <div className="relative w-[800px] h-[700px]" style={{ perspective: "1200px", transformStyle: "preserve-3d" }}>
+          <div 
+            className="relative w-[800px] h-[700px]"
+            style={{ perspective: "1200px", transformStyle: "preserve-3d" }}
+          >
             {cardsData.map((card, index) => {
               const { x, z, angle, offset } = getCardPosition(index);
               const isFront = offset === 0;
               const isVisible = offset <= 3 || offset >= cardsData.length - 3;
+
               if (!isVisible) return null;
+
               return (
                 <motion.div
                   key={index}
@@ -166,9 +174,19 @@ export default function Modul3DJugend() {
                     zIndex: isFront ? 20 : 10 - Math.abs(offset),
                     filter: isFront ? "none" : `brightness(${1 - Math.abs(offset) * 0.1})`,
                   }}
-                  animate={{ x, z, rotateY: angle, scale: isFront ? 1 : 0.9, opacity: isFront ? 1 : 0.8 }}
+                  animate={{
+                    x,
+                    z,
+                    rotateY: angle,
+                    scale: isFront ? 1 : 0.9,
+                    opacity: isFront ? 1 : 0.8
+                  }}
                   transition={{ duration: 0.6, ease: "easeInOut" }}
-                  whileHover={{ scale: isFront ? 1.05 : 0.95, zIndex: 25, transition: { duration: 0.2 } }}
+                  whileHover={{
+                    scale: isFront ? 1.05 : 0.95,
+                    zIndex: 25,
+                    transition: { duration: 0.2 }
+                  }}
                   onClick={() => handleCardClick(index)}
                 >
                   <div className="p-6">
@@ -180,6 +198,7 @@ export default function Modul3DJugend() {
           </div>
         </div>
 
+        {/* Rechter Pfeil */}
         <button
           onClick={rotateRight}
           disabled={isAnimating}
@@ -188,6 +207,7 @@ export default function Modul3DJugend() {
           <ChevronRight size={24} />
         </button>
 
+        {/* Indikator-Punkte */}
         <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
           {cardsData.map((_, index) => (
             <button
@@ -195,13 +215,21 @@ export default function Modul3DJugend() {
               onClick={() => goToCard(index)}
               disabled={isAnimating}
               className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "bg-blue-600 scale-125 shadow-lg" : "bg-gray-300 hover:bg-gray-400"
+                index === currentIndex 
+                  ? "bg-blue-600 scale-125 shadow-lg" 
+                  : "bg-gray-300 hover:bg-gray-400"
               }`}
             />
           ))}
         </div>
+
+        {/* Position Anzeige */}
+        <div className="absolute top-12 left-1/2 transform -translate-x-1/2 text-gray-600 font-medium z-30">
+          {currentIndex + 1} von {cardsData.length}
+        </div>
       </div>
 
+      {/* Modal für Karteninhalt */}
       <AnimatePresence>
         {selectedCard && (
           <motion.div
@@ -219,7 +247,9 @@ export default function Modul3DJugend() {
               transition={{ duration: 0.3 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <h2 className={`text-3xl font-bold mb-6 ${selectedCard.highlight ? "text-yellow-600" : "text-green-600"}`}>
+              <h2 className={`text-3xl font-bold mb-6 ${
+                selectedCard.highlight ? "text-yellow-600" : "text-green-600"
+              }`}>
                 {selectedCard.title}
               </h2>
               <ul className="list-disc pl-6 space-y-3 text-gray-700 text-lg">

@@ -3,66 +3,66 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// --- Daten für die Karten ---
 const cardsData = [
   {
     title: "Zielsetzung dieses Moduls",
     content: [
-      "Erste spielerische Erfahrungen mit Raum und Positionen sammeln",
-      "Entwicklung von Raumgefühl und Orientierung ohne Systemdruck",
-      "Förderung der Spielfreude und des Entdeckungsdrangs",
-      "Aufbau erster taktischer Grundlagen spielerisch",
-    ],
+      "Spieler:innen verstehen einfache taktische Prinzipien und ihre Rolle im Team.",
+      "Das Spielsystem wird als Orientierung vermittelt – nicht als starre Vorgabe.",
+      "Alle Positionen werden erlebt – kein Kind wird frühzeitig festgelegt.",
+      "Trainer:innen legen die Basis für Spiellogik, Umschalten und Abwehrverhalten."
+    ]
   },
   {
-    title: "Entwicklungsmerkmale der D-Jugend",
+    title: "Spielprinzipien & Raumverhalten",
     content: [
-      "Körperlich: Erste Pubertätszeichen, Wachstumsschübe, Koordinationsdellen",
-      "Taktisch: Erste Raumwahrnehmung, noch kein Systemverständnis",
-      "Kognitiv: Reflektierteres Denken, erste taktische Logik möglich",
-      "Sozial: Freundschaften & Anerkennung gewinnen an Bedeutung",
-    ],
+      "Breite & Tiefe – Feld in Zonen unterteilen, Ziel: Breite halten und Tiefe anstoßen.",
+      "Zusammenspiel Kleingruppe – 2:2 / 3:3 mit Einläufer, Rückpass, Wechselspiel.",
+      "Abwehrverhalten – 1:1-Training mit Hilfeprinzip, Grundhaltung.",
+      "Umschaltspiel – 3:2 nach Ballgewinn: Entscheidung sofort oder sichern?",
+      "Raum lesen & reagieren – Aufgaben wie 'nur in Zone 3 darf geworfen werden'."
+    ]
   },
   {
-    title: "Was Trainer:innen besonders beachten müssen",
+    title: "Positionen verstehen – ohne festzulegen",
     content: [
-      "Individuelle Entwicklung ernst nehmen – Wachstum & Reife sind extrem unterschiedlich",
-      "Spieler:innen fordern, aber nicht überfordern – viel erklären, aber nicht zupredigen",
-      "Stabilität durch Rituale & Struktur – feste Abläufe, Wiederholungen",
-      "Leistung sichtbar machen – nicht vergleichen: 'Heute besser als gestern'",
-      "Fragen statt Korrekturen: 'Was hätte dir geholfen?'",
-    ],
+      "Alle Positionen rotieren – niemand wird früh festgelegt.",
+      "LA/RA – Laufwege nach außen, Einlaufen, Angriff aus Breite.",
+      "Rückraum – Stoßen mit Tiefe, Passen, einfache Auslösehandlung.",
+      "Kreis – Lücke erkennen, anspielbar werden.",
+      "Mitte – Überblick entwickeln, Pass weiterdenken."
+    ]
   },
   {
-    title: "Methodik & Organisation",
+    title: "Methodische Umsetzung",
     content: [
-      "Trainingsdauer & Aufbau: 75–90 Minuten, Struktur: Warm-up → Technik/Spiel → Intensivspiel → Reflexion",
-      "Gruppengestaltung: Heterogene Gruppen, wechselnde Aufgaben & Rollen, Rücksicht auf Reifegrade",
-      "Kommunikationsstil: 'Du kannst das.' / 'Was war dein bester Moment heute?' / Rückfragen erwünscht",
-      "Spielorientierung bleibt: Technik wird immer im Spielkontext vermittelt",
-      "Verantwortung fördern: Aufwärmleitung, Regelvorschläge, Trainingsfeedback von Spieler:innen",
-    ],
+      "Systemspiel = Prinzipien – keine starren Laufwege.",
+      "Rollentausch fördern – nach 5 Min./1 Tor/3 Kontakten Position wechseln.",
+      "Abwehr aktiv gestalten – Fokus 1:1, Beinarbeit, Kommunikation.",
+      "Positionsverständnis schulen – Frageformate im Training.",
+      "Spielzüge selbst erfinden – Spielzug-Baukasten nutzen."
+    ]
   },
   {
-    title: "Typische Trainerfehler (und wie du sie vermeidest)",
+    title: "Spielformen & Organisationsideen",
     content: [
-      "'Du bist der Spielmacher' → Jede:r darf jede Rolle erleben – Positionsverständnis statt Festlegung",
-      "'Ihr müsst euch jetzt konzentrieren!' → 'Was hilft euch gerade, besser bei der Sache zu bleiben?'",
-      "Lange Monologe → Max. 60 Sek. Reden – dann ausprobieren lassen",
-      "Technikdrill ohne Spielbezug → Technik direkt ins Spiel integrieren",
-      "Gruppenvergleiche → Fokus auf individuelle Entwicklung im Teamkontext",
-    ],
+      "4-Zonen-Spiel.",
+      "Spielzug-Werkstatt – Kinder erfinden eigenen Spielzug.",
+      "Wechsel-Spiel – wer passt, muss Position tauschen.",
+      "Abwehr-Angriff-Rotation.",
+      "Überzahlspiel + Coaching (2:1 oder 3:2)."
+    ]
   },
   {
     title: "Ergebnis für den Trainer",
     highlight: true,
     content: [
-      "Du gestaltest ein Training, das weder überfordert noch unterfordert.",
-      "Du schaffst eine Atmosphäre, in der sich Spieler:innen ernst genommen, gefordert und sicher fühlen.",
-      "Du legst den Grundstein für spielintelligente, selbstbewusste und teamfähige Jugendliche.",
-      "Ziel: Spieler:innen, die Spaß am Handball haben, sich selbst entdecken – und wachsen wollen, weil sie dürfen.",
-    ],
-  },
+      "Du führst die Kinder in ein erstes taktisches Verständnis – über Prinzipien, nicht Vorschriften.",
+      "Du machst sie neugierig auf Räume, Rollen und Zusammenhänge.",
+      "Du legst die Basis für flexibles, mutiges Bewegen im System.",
+      "Ziel: Spieler:innen, die verstehen, warum sie etwas tun – und flexibel reagieren."
+    ]
+  }
 ];
 
 export default function Modul5DJugend() {
@@ -111,13 +111,14 @@ export default function Modul5DJugend() {
 
   return (
     <div className="bg-white min-h-screen p-8 flex flex-col items-center">
-      <Link
-        to="/d-jugend"
+      <Link 
+        to="/d-jugend" 
         className="mb-8 rounded-full bg-white text-green-600 px-6 py-2 shadow-md hover:bg-blue-600 hover:text-white transition-colors duration-300"
       >
         ← Zurück zur D-Jugend Übersicht
       </Link>
 
+      {/* Überschrift und Leitfrage */}
       <motion.div
         initial={{ opacity: 0, y: -50, rotateX: -15 }}
         animate={{ opacity: 1, y: 0, rotateX: 0 }}
@@ -137,7 +138,9 @@ export default function Modul5DJugend() {
         </div>
       </motion.div>
 
+      {/* 3D Karussell */}
       <div className="relative w-full max-w-8xl h-[900px] flex items-center justify-center overflow-hidden">
+        {/* Linker Pfeil */}
         <button
           onClick={rotateLeft}
           disabled={isAnimating}
@@ -146,13 +149,19 @@ export default function Modul5DJugend() {
           <ChevronLeft size={24} />
         </button>
 
+        {/* Karussell Container */}
         <div className="relative w-full h-full flex items-center justify-center">
-          <div className="relative w-[800px] h-[700px]" style={{ perspective: "1200px", transformStyle: "preserve-3d" }}>
+          <div 
+            className="relative w-[800px] h-[700px]"
+            style={{ perspective: "1200px", transformStyle: "preserve-3d" }}
+          >
             {cardsData.map((card, index) => {
               const { x, z, angle, offset } = getCardPosition(index);
               const isFront = offset === 0;
               const isVisible = offset <= 3 || offset >= cardsData.length - 3;
+
               if (!isVisible) return null;
+
               return (
                 <motion.div
                   key={index}
@@ -166,9 +175,19 @@ export default function Modul5DJugend() {
                     zIndex: isFront ? 20 : 10 - Math.abs(offset),
                     filter: isFront ? "none" : `brightness(${1 - Math.abs(offset) * 0.1})`,
                   }}
-                  animate={{ x, z, rotateY: angle, scale: isFront ? 1 : 0.9, opacity: isFront ? 1 : 0.8 }}
+                  animate={{
+                    x,
+                    z,
+                    rotateY: angle,
+                    scale: isFront ? 1 : 0.9,
+                    opacity: isFront ? 1 : 0.8
+                  }}
                   transition={{ duration: 0.6, ease: "easeInOut" }}
-                  whileHover={{ scale: isFront ? 1.05 : 0.95, zIndex: 25, transition: { duration: 0.2 } }}
+                  whileHover={{
+                    scale: isFront ? 1.05 : 0.95,
+                    zIndex: 25,
+                    transition: { duration: 0.2 }
+                  }}
                   onClick={() => handleCardClick(index)}
                 >
                   <div className="p-6">
@@ -180,6 +199,7 @@ export default function Modul5DJugend() {
           </div>
         </div>
 
+        {/* Rechter Pfeil */}
         <button
           onClick={rotateRight}
           disabled={isAnimating}
@@ -188,6 +208,7 @@ export default function Modul5DJugend() {
           <ChevronRight size={24} />
         </button>
 
+        {/* Indikator-Punkte */}
         <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
           {cardsData.map((_, index) => (
             <button
@@ -195,13 +216,21 @@ export default function Modul5DJugend() {
               onClick={() => goToCard(index)}
               disabled={isAnimating}
               className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "bg-blue-600 scale-125 shadow-lg" : "bg-gray-300 hover:bg-gray-400"
+                index === currentIndex 
+                  ? "bg-blue-600 scale-125 shadow-lg" 
+                  : "bg-gray-300 hover:bg-gray-400"
               }`}
             />
           ))}
         </div>
+
+        {/* Position Anzeige */}
+        <div className="absolute top-12 left-1/2 transform -translate-x-1/2 text-gray-600 font-medium z-30">
+          {currentIndex + 1} von {cardsData.length}
+        </div>
       </div>
 
+      {/* Modal für Karteninhalt */}
       <AnimatePresence>
         {selectedCard && (
           <motion.div
@@ -219,7 +248,9 @@ export default function Modul5DJugend() {
               transition={{ duration: 0.3 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <h2 className={`text-3xl font-bold mb-6 ${selectedCard.highlight ? "text-yellow-600" : "text-green-600"}`}>
+              <h2 className={`text-3xl font-bold mb-6 ${
+                selectedCard.highlight ? "text-yellow-600" : "text-green-600"
+              }`}>
                 {selectedCard.title}
               </h2>
               <ul className="list-disc pl-6 space-y-3 text-gray-700 text-lg">

@@ -3,66 +3,65 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// --- Daten für die Karten ---
 const cardsData = [
   {
     title: "Zielsetzung dieses Moduls",
     content: [
-      "Entwicklung von Selbstvertrauen und emotionaler Stabilität",
-      "Aufbau von Teamfähigkeit und sozialen Kompetenzen",
-      "Förderung der Frustrationstoleranz und des Durchhaltevermögens",
-      "Stärkung der Persönlichkeit und des Selbstbewusstseins",
-    ],
+      "Spieler:innen lernen, mit Frust, Erfolg, Rückschlägen und Verantwortung umzugehen.",
+      "Sie entwickeln ein stärkeres Selbstbild – unabhängig von Toren oder Spielzeit.",
+      "Trainer:innen schaffen Strukturen, die emotionale Reife, Konfliktfähigkeit und Teamverantwortung fördern.",
+      "Mentale Stärke wird spielnah gefördert – durch klare Kommunikation, Rituale und gezielte Impulse."
+    ]
   },
   {
-    title: "Entwicklungsmerkmale der D-Jugend",
+    title: "Entwicklungsschwerpunkte in der D-Jugend",
     content: [
-      "Körperlich: Erste Pubertätszeichen, Wachstumsschübe, Koordinationsdellen",
-      "Emotional: Stolz, Scham, Frust wechseln schnell – Feedback wirkt stark",
-      "Sozial: Freundschaften & Anerkennung gewinnen an Bedeutung",
-      "Kognitiv: Reflektierteres Denken, erste taktische Logik möglich",
-    ],
+      "Selbstbild – Leistung wird als Wertmaßstab erlebt",
+      "Teamverhalten – Gruppendynamiken, Cliquen, Ausgrenzung möglich",
+      "Kritikfähigkeit – schwankend, zwischen Überempfindlichkeit und Gleichgültigkeit",
+      "Emotionen – Frust, Wut, Unsicherheit – brauchen Rahmen & Sprache",
+      "Leistungsdruck – Erwartungshaltung wächst, Vergleich mit anderen"
+    ]
   },
   {
-    title: "Was Trainer:innen besonders beachten müssen",
+    title: "Entwicklungsfördernde Maßnahmen",
     content: [
-      "Individuelle Entwicklung ernst nehmen – Wachstum & Reife sind extrem unterschiedlich",
-      "Spieler:innen fordern, aber nicht überfordern – viel erklären, aber nicht zupredigen",
-      "Stabilität durch Rituale & Struktur – feste Abläufe, Wiederholungen",
-      "Leistung sichtbar machen – nicht vergleichen: 'Heute besser als gestern'",
-      "Fragen statt Korrekturen: 'Was hätte dir geholfen?'",
-    ],
+      "Selbstvertrauen stärken – Stärkenkarten, Warm-up anleiten lassen",
+      "Frustration regulieren – Frust-Farbskala, Stopp-Regel",
+      "Teamverantwortung fördern – Teamrollen rotieren lassen",
+      "Fehlerfreundlichkeit leben – Mut-Moment statt MVP",
+      "Konflikte klären – Reflexionszirkel, Ich-Botschaften"
+    ]
   },
   {
-    title: "Methodik & Organisation",
+    title: "Übungen & Methoden aus der Praxis",
     content: [
-      "Trainingsdauer & Aufbau: 75–90 Minuten, Struktur: Warm-up → Technik/Spiel → Intensivspiel → Reflexion",
-      "Gruppengestaltung: Heterogene Gruppen, wechselnde Aufgaben & Rollen, Rücksicht auf Reifegrade",
-      "Kommunikationsstil: 'Du kannst das.' / 'Was war dein bester Moment heute?' / Rückfragen erwünscht",
-      "Spielorientierung bleibt: Technik wird immer im Spielkontext vermittelt",
-      "Verantwortung fördern: Aufwärmleitung, Regelvorschläge, Trainingsfeedback von Spieler:innen",
-    ],
+      "Gefühlsampel (rot/gelb/grün)",
+      "Ich habe geholfen, als… – Reflexion im Kreis",
+      "Wer hat heute Mut gezeigt? – positive Verstärkung",
+      "1:1-Selbstgespräch",
+      "Partneraufgabe: positives Feedback geben"
+    ]
   },
   {
-    title: "Typische Trainerfehler (und wie du sie vermeidest)",
+    title: "Kommunikation & Feedbackkultur",
     content: [
-      "'Du bist der Spielmacher' → Jede:r darf jede Rolle erleben – Positionsverständnis statt Festlegung",
-      "'Ihr müsst euch jetzt konzentrieren!' → 'Was hilft euch gerade, besser bei der Sache zu bleiben?'",
-      "Lange Monologe → Max. 60 Sek. Reden – dann ausprobieren lassen",
-      "Technikdrill ohne Spielbezug → Technik direkt ins Spiel integrieren",
-      "Gruppenvergleiche → Fokus auf individuelle Entwicklung im Teamkontext",
-    ],
+      "Mini-Gespräche – konkret, ehrlich, zeitnah",
+      "Feedbackrad – 3 Fragen im Kreis",
+      "Wertestationen – Bonus für faires Verhalten",
+      "Fragekarten im Abschluss – z. B. Wann warst du mutig?"
+    ]
   },
   {
     title: "Ergebnis für den Trainer",
     highlight: true,
     content: [
-      "Du gestaltest ein Training, das weder überfordert noch unterfordert.",
-      "Du schaffst eine Atmosphäre, in der sich Spieler:innen ernst genommen, gefordert und sicher fühlen.",
-      "Du legst den Grundstein für spielintelligente, selbstbewusste und teamfähige Jugendliche.",
-      "Ziel: Spieler:innen, die Spaß am Handball haben, sich selbst entdecken – und wachsen wollen, weil sie dürfen.",
-    ],
-  },
+      "Du gestaltest emotionale Sicherheit – nicht durch Nachsicht, sondern durch Klarheit.",
+      "Du hilfst Spieler:innen, sich selbst besser zu verstehen – und Verantwortung im Team zu übernehmen.",
+      "Mentale Entwicklung ist das Fundament für alles Weitere.",
+      "Ziel: Spieler:innen, die sich reflektieren, Emotionen steuern und im Team wachsen wollen."
+    ]
+  }
 ];
 
 export default function Modul4DJugend() {
@@ -111,13 +110,14 @@ export default function Modul4DJugend() {
 
   return (
     <div className="bg-white min-h-screen p-8 flex flex-col items-center">
-      <Link
-        to="/d-jugend"
+      <Link 
+        to="/d-jugend" 
         className="mb-8 rounded-full bg-white text-green-600 px-6 py-2 shadow-md hover:bg-blue-600 hover:text-white transition-colors duration-300"
       >
         ← Zurück zur D-Jugend Übersicht
       </Link>
 
+      {/* Überschrift und Leitfrage */}
       <motion.div
         initial={{ opacity: 0, y: -50, rotateX: -15 }}
         animate={{ opacity: 1, y: 0, rotateX: 0 }}
@@ -137,7 +137,9 @@ export default function Modul4DJugend() {
         </div>
       </motion.div>
 
+      {/* 3D Karussell */}
       <div className="relative w-full max-w-8xl h-[900px] flex items-center justify-center overflow-hidden">
+        {/* Linker Pfeil */}
         <button
           onClick={rotateLeft}
           disabled={isAnimating}
@@ -146,13 +148,19 @@ export default function Modul4DJugend() {
           <ChevronLeft size={24} />
         </button>
 
+        {/* Karussell Container */}
         <div className="relative w-full h-full flex items-center justify-center">
-          <div className="relative w-[800px] h-[700px]" style={{ perspective: "1200px", transformStyle: "preserve-3d" }}>
+          <div 
+            className="relative w-[800px] h-[700px]"
+            style={{ perspective: "1200px", transformStyle: "preserve-3d" }}
+          >
             {cardsData.map((card, index) => {
               const { x, z, angle, offset } = getCardPosition(index);
               const isFront = offset === 0;
               const isVisible = offset <= 3 || offset >= cardsData.length - 3;
+
               if (!isVisible) return null;
+
               return (
                 <motion.div
                   key={index}
@@ -166,9 +174,19 @@ export default function Modul4DJugend() {
                     zIndex: isFront ? 20 : 10 - Math.abs(offset),
                     filter: isFront ? "none" : `brightness(${1 - Math.abs(offset) * 0.1})`,
                   }}
-                  animate={{ x, z, rotateY: angle, scale: isFront ? 1 : 0.9, opacity: isFront ? 1 : 0.8 }}
+                  animate={{
+                    x,
+                    z,
+                    rotateY: angle,
+                    scale: isFront ? 1 : 0.9,
+                    opacity: isFront ? 1 : 0.8
+                  }}
                   transition={{ duration: 0.6, ease: "easeInOut" }}
-                  whileHover={{ scale: isFront ? 1.05 : 0.95, zIndex: 25, transition: { duration: 0.2 } }}
+                  whileHover={{
+                    scale: isFront ? 1.05 : 0.95,
+                    zIndex: 25,
+                    transition: { duration: 0.2 }
+                  }}
                   onClick={() => handleCardClick(index)}
                 >
                   <div className="p-6">
@@ -180,6 +198,7 @@ export default function Modul4DJugend() {
           </div>
         </div>
 
+        {/* Rechter Pfeil */}
         <button
           onClick={rotateRight}
           disabled={isAnimating}
@@ -188,6 +207,7 @@ export default function Modul4DJugend() {
           <ChevronRight size={24} />
         </button>
 
+        {/* Indikator-Punkte */}
         <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
           {cardsData.map((_, index) => (
             <button
@@ -195,13 +215,21 @@ export default function Modul4DJugend() {
               onClick={() => goToCard(index)}
               disabled={isAnimating}
               className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "bg-blue-600 scale-125 shadow-lg" : "bg-gray-300 hover:bg-gray-400"
+                index === currentIndex 
+                  ? "bg-blue-600 scale-125 shadow-lg" 
+                  : "bg-gray-300 hover:bg-gray-400"
               }`}
             />
           ))}
         </div>
+
+        {/* Position Anzeige */}
+        <div className="absolute top-12 left-1/2 transform -translate-x-1/2 text-gray-600 font-medium z-30">
+          {currentIndex + 1} von {cardsData.length}
+        </div>
       </div>
 
+      {/* Modal für Karteninhalt */}
       <AnimatePresence>
         {selectedCard && (
           <motion.div
@@ -219,7 +247,9 @@ export default function Modul4DJugend() {
               transition={{ duration: 0.3 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <h2 className={`text-3xl font-bold mb-6 ${selectedCard.highlight ? "text-yellow-600" : "text-green-600"}`}>
+              <h2 className={`text-3xl font-bold mb-6 ${
+                selectedCard.highlight ? "text-yellow-600" : "text-green-600"
+              }`}>
                 {selectedCard.title}
               </h2>
               <ul className="list-disc pl-6 space-y-3 text-gray-700 text-lg">
