@@ -36,7 +36,11 @@ const moduleAJugend = [
 
 export default function AJugend() {
   return (
-    <div className="bg-white min-h-screen flex items-center justify-center p-8">
+    <div className="bg-white min-h-screen flex flex-col items-center justify-start p-8">
+      {/* Überschrift */}
+      <h1 className="text-green-600 text-4xl font-bold mb-12">A - Jugend</h1>
+
+      {/* Karten-Stack */}
       <div className="flex space-x-[-120px] relative" style={{ perspective: "1000px" }}>
         {moduleAJugend.map((mod, index) => (
           <Link to={mod.path} key={index}>
