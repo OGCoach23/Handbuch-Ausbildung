@@ -1,44 +1,44 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const moduleEJugend = [
+const moduleDJugend = [
   {
     titel: "Modul 1: Entwicklungsmerkmale & Methodik",
-    frage: "Worauf muss ich als Trainer:in bei 9- bis 10-jährigen besonders achten?",
-    path: "/e-jugend-m1",
+    frage: "Wie gestalten wir ein motivierendes, entwicklungsfreundliches Training für Kinder, die sich mitten im Umbruch befinden – körperlich, geistig und sozial?",
+    path: "/d-jugend-m1",
   },
   {
     titel: "Modul 2: Athletik & Motorik",
-    frage: "Wie trainiere ich altersgerecht Koordination, Ausdauer und Kraft – mit Spaß, Struktur und ohne Überforderung?",
-    path: "/e-jugend-m2",
+    frage: "Wie entwickle ich systematisch Kraft, Ausdauer und Koordination – mit altersgerechten Methoden und wachsendem Anspruch?",
+    path: "/d-jugend-m2",
   },
   {
     titel: "Modul 3: Technik & Taktik",
-    frage: "Wie lernen Kinder handballtypische Techniken – mit Spielbezug, Motivation und eigener Entscheidungsfreude?",
-    path: "/e-jugend-m3",
+    frage: "Wie vermittle ich komplexere Handballtechniken – mit steigendem Schwierigkeitsgrad und taktischem Verständnis?",
+    path: "/d-jugend-m3",
   },
   {
     titel: "Modul 4: Mentale & soziale Entwicklung",
-    frage: "Wie fördere ich Selbstbewusstsein, Teamgeist & Verantwortung – mit kindgerechten Methoden und echten Erlebnissen?",
-    path: "/e-jugend-m4",
+    frage: "Wie fördere ich Selbstständigkeit, Kritikfähigkeit und Verantwortung – in einer Phase der Identitätsfindung?",
+    path: "/d-jugend-m4",
   },
   {
     titel: "Modul 5: Spielsysteme & Positionsspiel",
-    frage: "Wie baue ich erstes Spielverständnis auf – ohne feste Positionen, aber mit Klarheit im Raum und Zusammenspiel?",
-    path: "/e-jugend-m5",
+    frage: "Wie baue ich erstes taktisches Verständnis auf – mit einfachen Spielsystemen und wachsender Positionsverantwortung?",
+    path: "/d-jugend-m5",
   },
   {
     titel: "Modul 6: Teamkultur & Kommunikation",
-    frage: "Wie entsteht ein Teamgefühl, das trägt, begeistert und entwickelt – bei Kindern, Eltern und Trainer:innen?",
-    path: "/e-jugend-m6",
+    frage: "Wie entwickle ich eine Teamkultur, die Konflikte konstruktiv löst und gemeinsame Ziele verfolgt?",
+    path: "/d-jugend-m6",
   },
 ];
 
-export default function EJugend() {
+export default function DJugend() {
   return (
     <div className="bg-white min-h-screen flex items-center justify-center p-8">
       <div className="flex space-x-[-120px] relative" style={{ perspective: "1000px" }}>
-        {moduleEJugend.map((mod, index) => (
+        {moduleDJugend.map((mod, index) => (
           <Link to={mod.path} key={index}>
             <motion.div
               whileHover={{
@@ -52,7 +52,7 @@ export default function EJugend() {
               className="w-[300px] h-[400px] border rounded-2xl shadow-xl p-6 flex flex-col justify-center items-center cursor-pointer transform transition-all duration-300"
               style={{
                 transform: `translateX(${index * 120}px) rotateY(${index * 0.5}deg)`,
-                zIndex: moduleEJugend.length - index,
+                zIndex: moduleDJugend.length - index,
               }}
             >
               <h2 className="text-lg font-bold text-center mb-3">
