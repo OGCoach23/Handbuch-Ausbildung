@@ -59,7 +59,7 @@ export default function Navbar() {
               <div className="flex items-center space-x-3">
                 <img src={logo} alt="Vereinslogo" className="h-10 w-10" />
                 <span className="text-[#004b87] font-bold text-lg">
-                  Laimer Handbuch zur Ausbildung
+                  Laimer Handbuch zum Training
                 </span>
               </div>
 
