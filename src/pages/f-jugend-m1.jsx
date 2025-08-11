@@ -186,7 +186,7 @@ export default function Modul1FJugend() {
 
           {/* Karten Container */}
           <div
-            className="relative flex items-center justify-center"
+            className="relative"
             style={{
               width: carouselConfig.cardWidth * 2.5,
               height: carouselConfig.cardHeight * 1.2,
@@ -203,7 +203,7 @@ export default function Modul1FJugend() {
               return (
                 <motion.div
                   key={index}
-                  className={`absolute left-1/2 top-1/2 rounded-xl shadow-2xl flex items-center justify-center text-center cursor-pointer ${
+                  className={`absolute rounded-xl shadow-2xl flex items-center justify-center text-center cursor-pointer ${
                     card.highlight
                       ? "border-4 border-yellow-400"
                       : "border border-gray-200"
@@ -213,6 +213,8 @@ export default function Modul1FJugend() {
                     height: carouselConfig.cardHeight,
                     backgroundColor: "rgba(255,255,255,0.95)",
                     color: "#166534",
+                    left: "50%",
+                    top: "50%",
                     transform: `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
                     zIndex: isFront ? 20 : 10 - Math.abs(offset),
                     filter: isFront
