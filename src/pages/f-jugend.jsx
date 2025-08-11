@@ -1,59 +1,68 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const moduleCards = [
+const moduleFJugend = [
   {
-    title: "M1: Entwicklungsmerkmale & Methodik",
-    link: "/f-jugend-m1",
+    titel: "Modul 1: Entwicklungsmerkmale & Methodik",
+    frage: "Wie begleite ich Kinder zwischen 4 und 8 Jahren liebevoll, bewegungsreich und entwicklungsfördernd ins Handballspielen?",
+    path: "/f-jugend-m1",
   },
   {
-    title: "M2: Athletik & Motorik",
-    link: "/f-jugend-m2",
+    titel: "Modul 2: Athletik & Motorik",
+    frage: "Wie entwickle ich mit Spaß, Fantasie und Bewegungslust die motorische Basis für alles, was später kommt?",
+    path: "/f-jugend-m2",
   },
   {
-    title: "M3: Technik & Taktik",
-    link: "/f-jugend-m3",
+    titel: "Modul 3: Technik & Taktik",
+    frage: "Wie erleben Kinder erste Ballaktionen spielerisch, ohne Technikdruck – und entwickeln ein Gefühl für Richtung, Raum und Zusammenspiel?",
+    path: "/f-jugend-m3",
   },
   {
-    title: "M4: Mentale & soziale Entwicklung",
-    link: "/f-jugend-m4",
+    titel: "Modul 4: Mentale & soziale Entwicklung",
+    frage: "Wie helfe ich Kindern, sich selbst zu entdecken, mit anderen zu spielen – und als Teil einer Gruppe stark zu werden?",
+    path: "/f-jugend-m4",
   },
   {
-    title: "M5: Spielsysteme & Positionsspiel",
-    link: "/f-jugend-m5",
+    titel: "Modul 5: Spielsysteme & Positionsspiel",
+    frage: "Wie können Kinder Handball spielen – ohne System, aber mit Raumgefühl, Bewegungslust und ersten Spiellogiken?",
+    path: "/f-jugend-m5",
   },
   {
-    title: "M6: Teamkultur & Kommunikation",
-    link: "/f-jugend-m6",
+    titel: "Modul 6: Teamkultur & Kommunikation",
+    frage: "Wie entsteht in einer wilden, bunten, lauten Kindergruppe ein echtes Wir-Gefühl – das verbindet, stärkt und Spaß macht?",
+    path: "/f-jugend-m6",
   },
 ];
 
-export default function FJugendPage() {
+export default function FJugend() {
   return (
-    <div className="bg-green-50 min-h-screen p-6">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="max-w-4xl mx-auto"
-      >
-        <h1 className="text-2xl font-bold text-primary mb-6">F-Jugend (4–8 Jahre)</h1>
-        <p className="text-lg mb-8 italic">
-          Leitfrage: „Wie begleite ich Kinder zwischen 4 und 8 Jahren liebevoll, bewegungsreich und entwicklungsfördernd ins Handballspielen?"
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {moduleCards.map(({ title, link }) => (
-            <Link
-              to={link}
-              key={title}
-              className="bg-white/60 backdrop-blur-md p-5 rounded-xl shadow hover:shadow-lg hover:scale-[1.02] transition duration-300"
+    <div className="bg-white min-h-screen flex items-center justify-center p-8">
+      <div className="relative w-full max-w-6xl h-[600px]">
+        {moduleFJugend.map((mod, index) => (
+          <Link to={mod.path} key={index}>
+            <motion.div
+              initial={{ y: index * 20, scale: 0.95 }}
+              whileHover={{
+                scale: 1.05,
+                y: 0,
+                backgroundColor: "#005baa",
+                zIndex: 10,
+              }}
+              transition={{ duration: 0.3 }}
+              className="absolute top-0 left-0 w-full h-full bg-white border rounded-2xl shadow-2xl p-8 flex flex-col justify-center items-center cursor-pointer transform transition-all duration-300"
+              style={{
+                zIndex: moduleFJugend.length - index,
+                transform: `translateY(${index * 10}px)`,
+              }}
             >
-              <h3 className="font-bold text-primary text-center">{title}</h3>
-            </Link>
-          ))}
-        </div>
-      </motion.div>
+              <h2 className="text-2xl font-bold text-primary text-center mb-4">
+                {mod.titel}
+              </h2>
+              <p className="text-center text-lg">{mod.frage}</p>
+            </motion.div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
