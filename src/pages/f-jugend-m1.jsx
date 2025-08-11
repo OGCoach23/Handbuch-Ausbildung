@@ -28,7 +28,7 @@ const cardsData = [
     content: [
       "Spielen statt Üben: Lernen durch Bewegung, nicht durch Instruktion",
       "Rituale geben Sicherheit: Begrüßung, Schlusskreis, Wiederholungen – reduzieren Unsicherheit",
-      "Jedes Kind ist König: Jedes Kind will gesehen, gehört, bestärkt werden – unabhängig von „Leistung"",
+      "Jedes Kind ist König: Jedes Kind will gesehen, gehört, bestärkt werden – unabhängig von \"Leistung\"",
       "Fehler gibt es nicht: Technik wird nicht bewertet – alle Bewegungsformen sind erlaubt",
       "Beziehung vor Inhalt: Bindung sichert Teilnahme und Wiederkommen",
     ],
@@ -38,8 +38,8 @@ const cardsData = [
     content: [
       "Trainingsformate: Bewegungsgeschichten, Kleingruppenspiele, Fantasieparcours",
       "Organisation: Stationen mit freier Wahl, Bewegungsbaustellen, Alltagsmaterialien",
-      "Sprache & Kommunikation: Bildhafte Sprache („Raketenlauf"), kurze klare Ansagen",
-      "Feedback & Motivation: Viel Lob, Aufgabenorientierung („Schaffst du es…?")",
+      "Sprache & Kommunikation: Bildhafte Sprache (\"Raketenlauf\"), kurze klare Ansagen",
+      "Feedback & Motivation: Viel Lob, Aufgabenorientierung (\"Schaffst du es...?\")",
       "Zeitstruktur: 45–60 Min: Warm-up – Bewegungsreise – Spielform – Schlussritual",
     ],
   },
@@ -48,7 +48,7 @@ const cardsData = [
     content: [
       "Vereinsbindung: Ball-Führerschein, Zaubertrikot, Bewegungsfest mit Eltern",
       "Elternintegration: Eltern spielen mit, Mini-Feedback mit 3 Fragen",
-      "Wertearbeit: Wochenthemen mit Symbolen („Lächeln hilft")",
+      "Wertearbeit: Wochenthemen mit Symbolen (\"Lächeln hilft\")",
       "Kreativideen: Handball-Memory, Tier- und Bewegungsimitation, Musik- oder Rhythmusspiele",
     ],
   },
