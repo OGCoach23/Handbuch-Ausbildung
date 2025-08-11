@@ -1,90 +1,290 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function FJugendM6() {
+// --- Daten für die Karten ---
+const cardsData = [
+  {
+    title: "Zielsetzung dieses Moduls",
+    content: [
+      "Entwicklung einer positiven Teamkultur und Zusammengehörigkeitsgefühl",
+      "Aufbau von Kommunikationsfähigkeiten und sozialen Kompetenzen",
+      "Förderung von Werten wie Respekt, Fairplay und Hilfsbereitschaft",
+      "Schaffung einer sicheren, wertschätzenden Umgebung für alle Kinder",
+    ],
+  },
+  {
+    title: "Entwicklungsmerkmale",
+    content: [
+      "Körperlich: Sehr hohe Bewegungsfreude, geringe Ausdauer, grobe Koordination",
+      "Sozial: Egozentrisch, aber neugierig auf gemeinsame Aktivitäten",
+      "Kommunikativ: Erste Sprachfähigkeiten, lernen durch Nachahmung",
+      "Emotional: Spontane Freude & Frust, hohe emotionale Impulsivität",
+    ],
+  },
+  {
+    title: "Was Trainer:innen besonders beachten müssen",
+    content: [
+      "Vorbild sein: Kinder lernen durch Beobachtung und Nachahmung",
+      "Positive Sprache: Ermutigende Worte, konstruktive Rückmeldung",
+      "Werte leben: Respekt, Fairplay und Hilfsbereitschaft vorleben",
+      "Gemeinsam statt einsam: Kooperationsspiele fördern Teamgeist",
+      "Jedes Kind ist wichtig: Individuelle Bedürfnisse erkennen und respektieren",
+    ],
+  },
+  {
+    title: "Methodik & Organisation",
+    content: [
+      "Trainingsformate: Kooperationsspiele, Wertegeschichten, Teamchallenges",
+      "Organisation: Kleine Gruppen, Partnerarbeit, gemeinsame Rituale",
+      "Sprache & Kommunikation: Ermutigende Sprache, Werte benennen",
+      "Feedback & Motivation: Viel Lob, konstruktive Rückmeldung, Teamgeist stärken",
+      "Zeitstruktur: 45–60 Min: Warm-up – Kooperationsspiele – Wertearbeit – Schlussritual",
+    ],
+  },
+  {
+    title: "Extras & kreative Impulse",
+    content: [
+      "Vereinsbindung: Teamabzeichen, Freundschaftsarmbänder, Teamfest mit Eltern",
+      "Elternintegration: Eltern als Vorbilder, Mini-Feedback mit 3 Fragen",
+      "Wertearbeit: Wochenthemen mit Symbolen (\"Freundschaft macht stark\")",
+      "Kreativideen: Vertrauensspiele, Kooperationsparcours, Teamchallenges",
+    ],
+  },
+  {
+    title: "Ergebnis für den Trainer",
+    highlight: true,
+    content: [
+      "Du schaffst eine sichere, wertschätzende Umgebung für Teamkultur.",
+      "Du förderst Kommunikation und soziale Kompetenzen spielerisch.",
+      "Du legst den Grundstein für starke, selbstbewusste Persönlichkeiten.",
+      "Ziel: Spieler:innen sollen sich als Teil eines Teams fühlen und wertgeschätzt werden.",
+    ],
+  },
+];
+
+export default function Modul6FJugend() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedCard, setSelectedCard] = useState(null);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const rotateLeft = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentIndex((prev) => (prev - 1 + cardsData.length) % cardsData.length);
+    setTimeout(() => setIsAnimating(false), 600);
+  };
+
+  const rotateRight = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentIndex((prev) => (prev + 1) % cardsData.length);
+    setTimeout(() => setIsAnimating(false), 600);
+  };
+
+  const goToCard = (index) => {
+    if (isAnimating || index === currentIndex) return;
+    setIsAnimating(true);
+    setCurrentIndex(index);
+    setTimeout(() => setIsAnimating(false), 600);
+  };
+
+  const handleCardClick = (index) => {
+    if (isAnimating) return;
+    
+    if (index === currentIndex) {
+      setSelectedCard(cardsData[index]);
+    } else {
+      goToCard(index);
+    }
+  };
+
+  // Berechne Positionen für alle Karten
+  const getCardPosition = (index) => {
+    const offset = (index - currentIndex + cardsData.length) % cardsData.length;
+    const angle = (offset * 360) / cardsData.length;
+    const radius = 300;
+    
+    const x = Math.sin((angle * Math.PI) / 180) * radius;
+    const z = Math.cos((angle * Math.PI) / 180) * radius;
+    
+    return { x, z, angle, offset };
+  };
+
   return (
-    <div className="bg-green-50 min-h-screen p-6">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="max-w-4xl mx-auto space-y-6"
+    <div className="bg-white min-h-screen p-8 flex flex-col items-center">
+      {/* Zurück Button */}
+      <Link
+        to="/f-jugend"
+        className="mb-8 rounded-full bg-white text-green-600 px-6 py-2 shadow-md hover:bg-blue-600 hover:text-white transition-colors duration-300"
       >
-        <div className="mb-6">
-          <Link to="/f-jugend" className="text-primary hover:underline">
-            ← Zurück zur F-Jugend Übersicht
-          </Link>
-        </div>
-        
-        <h1 className="text-2xl font-bold text-primary">Modul 6: Teamkultur & Kommunikation</h1>
+        ← Zurück zur F-Jugend Übersicht
+      </Link>
 
-        <p className="font-semibold">Leitfrage:</p>
-        <p className="bg-yellow-100 px-2 py-1 rounded">„Wie entsteht in einer wilden, bunten, lauten Kindergruppe ein echtes Wir-Gefühl – das verbindet, stärkt und Spaß macht?"</p>
-
-        <div className="bg-white/60 backdrop-blur-md p-6 rounded-xl shadow space-y-4">
-          <div>
-            <h3 className="font-semibold text-primary">Zielsetzung dieses Moduls</h3>
-            <ul className="list-disc list-inside space-y-1">
-              <li>Aufbau einer kindgerechten, stabilen Teamkultur durch Rituale, Sprache und Beziehung</li>
-              <li>Förderung erster sozialer Regeln: Rücksicht, Helfen, Zuhören, Mitfreuen</li>
-              <li>Kommunikation als Spielimpuls – nicht als Belehrung</li>
-              <li>Eltern als Teil des Ganzen mitdenken und einbinden</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-primary">Grundlagen für Teamverhalten in der F-Jugend</h3>
-            <ul className="list-disc list-inside space-y-1">
-              <li><strong>Beziehung:</strong> Jedes Kind wird begrüßt, gesehen, verabschiedet – Kontakt durch Namen, Lächeln, Geste</li>
-              <li><strong>Verlässlichkeit & Regeln:</strong> 2–3 feste Teamregeln gemeinsam festgelegt („Wir helfen", „Wir hören zu", „Wir lachen")</li>
-              <li><strong>Wir-Gefühl stärken:</strong> Spiele in Paaren & Gruppen, kein Einzeldrill, gemeinsam gewinnen = gemeinsam spielen</li>
-              <li><strong>Sprache entwickeln:</strong> Bildhafte Sätze („Du warst ein Löwe beim Verteidigen"), Ich-Botschaften im Spiel</li>
-              <li><strong>Konflikte lösen lernen:</strong> „Wie fühlst du dich?", „Was können wir tun?" – mit Symbolkarten, Emotionshänden</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-primary">Spielformen & Rituale für Teamkultur</h3>
-            <ul className="list-disc list-inside space-y-1">
-              <li><strong>Applauskreis:</strong> Am Ende: Jede:r bekommt Applaus für etwas Positives</li>
-              <li><strong>Mutstein:</strong> Wandert wöchentlich: Wer war mutig, fair, hilfsbereit?</li>
-              <li><strong>Du-und-Ich-Spiel:</strong> Passen, fangen, loben – Kinder lernen: Wir brauchen einander</li>
-              <li><strong>Stopp-Ball:</strong> Bei Konflikt ruft jemand „Stopp" → Spiel pausiert, alle sprechen kurz darüber</li>
-              <li><strong>Abschlussritual:</strong> „Ich war heute…", „Ich will morgen…", „Ich danke…" – in Bild-, Wort- oder Gestenform</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-primary">Eltern als Kulturträger:innen mitdenken</h3>
-            <ul className="list-disc list-inside space-y-1">
-              <li><strong>Begrüßung & Verabschiedung:</strong> Eltern aktiv begrüßen → Beziehung beginnt nicht erst in der Halle</li>
-              <li><strong>Elterninfo kreativ gestalten:</strong> Z. B. Teamposter mit Fotos, Mini-Newsletter, „Was wir üben" in Bildform</li>
-              <li><strong>Eltern-Kind-Bewegungsspiele:</strong> Ballspiele gemeinsam erleben – Bindung stärken, Verständnis aufbauen</li>
-              <li><strong>Feedbackimpuls nach dem Training:</strong> „Was hat dir gefallen?" – kleine Gesprächsanlässe schaffen</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-primary">Was Trainer:innen besonders beachten müssen</h3>
-            <ul className="list-disc list-inside space-y-1">
-              <li>Sprache, Mimik, Gestik = Training für die Seele</li>
-              <li>Beziehung schlägt Konzept – immer</li>
-              <li>Konflikte nicht vermeiden, sondern gemeinsam bewältigen lernen</li>
-              <li>Eltern sind keine Gegner – sie wollen verstehen und unterstützen</li>
-            </ul>
-          </div>
-
-          <div className="bg-yellow-100/60 p-4 rounded-lg">
-            <h3 className="font-semibold text-primary">Ergebnis für den Trainer</h3>
-            <p className="mb-2">
-              Du bist nicht nur Spielanleiter:in, sondern Kulturstifter:in. Du baust eine Trainingswelt, 
-              in der Kinder sich aufgehoben, verbunden und sicher fühlen. Du trainierst Haltung, Beziehung 
-              und soziale Entwicklung – mit Fantasie, Herz und viel Bewegung.
+      {/* Überschrift und Leitfrage in 3D-Karte */}
+      <motion.div
+        initial={{ opacity: 0, y: -50, rotateX: -15 }}
+        animate={{ opacity: 1, y: 0, rotateX: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="mb-16 w-full max-w-4xl"
+        style={{ perspective: "1000px" }}
+      >
+        <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100 transform-gpu hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] hover:-rotate-y-1">
+          <h1 className="text-4xl font-bold text-green-600 text-center mb-6">
+            Modul 6: Teamkultur & Kommunikation
+          </h1>
+          <div className="text-center">
+            <p className="text-xl text-green-700 italic leading-relaxed">
+              "Wie entsteht in einer wilden, bunten, lauten Kindergruppe ein echtes Wir-Gefühl – das verbindet, stärkt und Spaß macht?"
             </p>
-            <p><strong>Ziel:</strong> Spieler:innen, die sich trauen, fragen, lachen, helfen – und gerne wiederkommen.</p>
           </div>
         </div>
       </motion.div>
+
+      {/* Karussell Container */}
+      <div className="relative w-full max-w-8xl h-[900px] flex items-center justify-center overflow-hidden">
+        {/* Pfeil links */}
+        <button
+          onClick={rotateLeft}
+          disabled={isAnimating}
+          className="absolute left-8 z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
+        >
+          <ChevronLeft size={24} />
+        </button>
+
+        {/* 3D Karussell */}
+        <div className="relative w-full h-full flex items-center justify-center">
+          <div 
+            className="relative w-[800px] h-[700px]" 
+            style={{ 
+              perspective: "1200px",
+              transformStyle: "preserve-3d"
+            }}
+          >
+            {cardsData.map((card, index) => {
+              const { x, z, angle, offset } = getCardPosition(index);
+              const isFront = offset === 0;
+              const isVisible = offset <= 3 || offset >= cardsData.length - 3;
+
+              if (!isVisible) return null;
+
+              return (
+                <motion.div
+                  key={index}
+                  className={`absolute top-1/2 left-1/2 w-[320px] h-[420px] rounded-xl shadow-2xl flex items-center justify-center text-center cursor-pointer ${
+                    card.highlight ? "border-4 border-yellow-400" : "border border-gray-200"
+                  }`}
+                  style={{
+                    backgroundColor: "rgba(255,255,255,0.95)",
+                    color: "#166534",
+                    transform: `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
+                    zIndex: isFront ? 20 : 10 - Math.abs(offset),
+                    filter: isFront ? "none" : `brightness(${1 - Math.abs(offset) * 0.1})`,
+                  }}
+                  initial={false}
+                  animate={{
+                    x: x,
+                    z: z,
+                    rotateY: angle,
+                    scale: isFront ? 1 : 0.9,
+                    opacity: isFront ? 1 : 0.8,
+                  }}
+                  transition={{ 
+                    duration: 0.6,
+                    ease: "easeInOut"
+                  }}
+                  whileHover={{
+                    scale: isFront ? 1.05 : 0.95,
+                    zIndex: 25,
+                    transition: { duration: 0.2 }
+                  }}
+                  onClick={() => handleCardClick(index)}
+                >
+                  <div className="p-6">
+                    <h3 className="font-bold text-xl leading-tight">{card.title}</h3>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Pfeil rechts */}
+        <button
+          onClick={rotateRight}
+          disabled={isAnimating}
+          className="absolute right-8 z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
+        >
+          <ChevronRight size={24} />
+        </button>
+
+        {/* Indikator für aktuelle Position */}
+        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
+          {cardsData.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToCard(index)}
+              disabled={isAnimating}
+              className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                index === currentIndex 
+                  ? "bg-blue-600 scale-125 shadow-lg" 
+                  : "bg-gray-300 hover:bg-gray-400"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Aktuelle Position Anzeige */}
+        <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-30">
+          <div className="bg-white/90 px-4 py-2 rounded-full shadow-lg">
+            <span className="text-sm font-medium text-gray-700">
+              {currentIndex + 1} von {cardsData.length}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Ausgewählte Karte im Vordergrund */}
+      <AnimatePresence>
+        {selectedCard && (
+          <motion.div
+            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedCard(null)}
+          >
+            <motion.div
+              className="bg-white rounded-xl p-8 max-w-3xl w-full shadow-2xl overflow-y-auto max-h-[85vh]"
+              initial={{ scale: 0.8, opacity: 0, y: 50 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 50 }}
+              transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h2
+                className={`text-3xl font-bold mb-6 ${
+                  selectedCard.highlight ? "text-yellow-600" : "text-green-600"
+                }`}
+              >
+                {selectedCard.title}
+              </h2>
+              <ul className="list-disc pl-6 space-y-3 text-gray-700 text-lg">
+                {selectedCard.content.map((item, i) => (
+                  <li key={i} className="leading-relaxed">{item}</li>
+                ))}
+              </ul>
+              <button
+                onClick={() => setSelectedCard(null)}
+                className="mt-8 px-8 py-4 bg-green-600 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300 font-medium text-lg"
+              >
+                Schließen
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

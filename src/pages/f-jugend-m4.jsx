@@ -1,90 +1,290 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function FJugendM4() {
+// --- Daten für die Karten ---
+const cardsData = [
+  {
+    title: "Zielsetzung dieses Moduls",
+    content: [
+      "Entwicklung von Selbstbewusstsein und sozialen Kompetenzen",
+      "Aufbau von Teamgeist und Zusammengehörigkeitsgefühl",
+      "Förderung von Empathie und Perspektivübernahme",
+      "Stärkung der emotionalen Stabilität und Frustrationstoleranz",
+    ],
+  },
+  {
+    title: "Entwicklungsmerkmale",
+    content: [
+      "Körperlich: Sehr hohe Bewegungsfreude, geringe Ausdauer, grobe Koordination",
+      "Emotional: Spontane Freude & Frust, hohe emotionale Impulsivität",
+      "Sozial: Egozentrisch, aber neugierig auf gemeinsame Aktivitäten",
+      "Kognitiv: Kurze Aufmerksamkeitsspanne, lernen durch Nachahmung",
+    ],
+  },
+  {
+    title: "Was Trainer:innen besonders beachten müssen",
+    content: [
+      "Beziehung vor Leistung: Bindung sichert Teilnahme und Wiederkommen",
+      "Jedes Kind ist einzigartig: Individuelle Bedürfnisse erkennen und respektieren",
+      "Emotionen sind okay: Freude, Frust, Angst - alles darf sein",
+      "Gemeinsam statt einsam: Kooperationsspiele fördern Teamgeist",
+      "Lob und Anerkennung: Jeden Erfolg feiern, auch kleine Fortschritte",
+    ],
+  },
+  {
+    title: "Methodik & Organisation",
+    content: [
+      "Trainingsformate: Kooperationsspiele, Vertrauensübungen, Rollenspiele",
+      "Organisation: Kleine Gruppen, Partnerarbeit, gemeinsame Rituale",
+      "Sprache & Kommunikation: Ermutigende Sprache, Gefühle benennen",
+      "Feedback & Motivation: Viel Lob, konstruktive Rückmeldung, Teamgeist stärken",
+      "Zeitstruktur: 45–60 Min: Warm-up – Kooperationsspiele – Vertrauensübungen – Schlussritual",
+    ],
+  },
+  {
+    title: "Extras & kreative Impulse",
+    content: [
+      "Vereinsbindung: Teamabzeichen, Freundschaftsarmbänder, Teamfest mit Eltern",
+      "Elternintegration: Eltern als Vorbilder, Mini-Feedback mit 3 Fragen",
+      "Wertearbeit: Wochenthemen mit Symbolen (\"Freundschaft macht stark\")",
+      "Kreativideen: Vertrauensspiele, Kooperationsparcours, Teamchallenges",
+    ],
+  },
+  {
+    title: "Ergebnis für den Trainer",
+    highlight: true,
+    content: [
+      "Du schaffst eine sichere, wertschätzende Umgebung für emotionale Entwicklung.",
+      "Du förderst Teamgeist und soziale Kompetenzen spielerisch.",
+      "Du legst den Grundstein für starke, selbstbewusste Persönlichkeiten.",
+      "Ziel: Spieler:innen sollen sich als Teil eines Teams fühlen und wertgeschätzt werden.",
+    ],
+  },
+];
+
+export default function Modul4FJugend() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedCard, setSelectedCard] = useState(null);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const rotateLeft = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentIndex((prev) => (prev - 1 + cardsData.length) % cardsData.length);
+    setTimeout(() => setIsAnimating(false), 600);
+  };
+
+  const rotateRight = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentIndex((prev) => (prev + 1) % cardsData.length);
+    setTimeout(() => setIsAnimating(false), 600);
+  };
+
+  const goToCard = (index) => {
+    if (isAnimating || index === currentIndex) return;
+    setIsAnimating(true);
+    setCurrentIndex(index);
+    setTimeout(() => setIsAnimating(false), 600);
+  };
+
+  const handleCardClick = (index) => {
+    if (isAnimating) return;
+    
+    if (index === currentIndex) {
+      setSelectedCard(cardsData[index]);
+    } else {
+      goToCard(index);
+    }
+  };
+
+  // Berechne Positionen für alle Karten
+  const getCardPosition = (index) => {
+    const offset = (index - currentIndex + cardsData.length) % cardsData.length;
+    const angle = (offset * 360) / cardsData.length;
+    const radius = 300;
+    
+    const x = Math.sin((angle * Math.PI) / 180) * radius;
+    const z = Math.cos((angle * Math.PI) / 180) * radius;
+    
+    return { x, z, angle, offset };
+  };
+
   return (
-    <div className="bg-green-50 min-h-screen p-6">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="max-w-4xl mx-auto space-y-6"
+    <div className="bg-white min-h-screen p-8 flex flex-col items-center">
+      {/* Zurück Button */}
+      <Link
+        to="/f-jugend"
+        className="mb-8 rounded-full bg-white text-green-600 px-6 py-2 shadow-md hover:bg-blue-600 hover:text-white transition-colors duration-300"
       >
-        <div className="mb-6">
-          <Link to="/f-jugend" className="text-primary hover:underline">
-            ← Zurück zur F-Jugend Übersicht
-          </Link>
-        </div>
-        
-        <h1 className="text-2xl font-bold text-primary">Modul 4: Mentale & soziale Entwicklung</h1>
+        ← Zurück zur F-Jugend Übersicht
+      </Link>
 
-        <p className="font-semibold">Leitfrage:</p>
-        <p className="bg-yellow-100 px-2 py-1 rounded">„Wie helfe ich Kindern, sich selbst zu entdecken, mit anderen zu spielen – und als Teil einer Gruppe stark zu werden?"</p>
-
-        <div className="bg-white/60 backdrop-blur-md p-6 rounded-xl shadow space-y-4">
-          <div>
-            <h3 className="font-semibold text-primary">Zielsetzung dieses Moduls</h3>
-            <ul className="list-disc list-inside space-y-1">
-              <li>Entwicklung eines positiven Selbstbilds durch Erfolgserlebnisse & emotionale Sicherheit</li>
-              <li>Förderung von ersten sozialen Kompetenzen wie Teilen, Rücksichtnahme und Hilfsbereitschaft</li>
-              <li>Aufbau eines wertschätzenden Umgangs miteinander – spielerisch, kindgerecht und durch Vorleben</li>
-              <li>Emotionale Bindung an Trainer:in, Team und Verein als Basis für Entwicklung und Teilhabe</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-primary">Entwicklungsmerkmale & Zielverhalten</h3>
-            <ul className="list-disc list-inside space-y-1">
-              <li><strong>Selbstbild:</strong> Kinder wollen gesehen und gehört werden – jedes Kind ist wichtig</li>
-              <li><strong>Frust & Emotionen:</strong> Schnelle Stimmungswechsel, Frust bei Misserfolg – brauchen klare Worte & emotionale Begleitung</li>
-              <li><strong>Beziehungsfähigkeit:</strong> Erste Teamgefühle entstehen, aber Ich-Perspektive dominiert</li>
-              <li><strong>Rücksicht & Empathie:</strong> Anfangsstufen: „Ich helfe, weil ich darf" – gefördert durch Lob & Geschichten</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-primary">Methodische Prinzipien</h3>
-            <ul className="list-disc list-inside space-y-1">
-              <li>Gemeinsam vor Gegeneinander</li>
-              <li>Gefühle sichtbar machen</li>
-              <li>Erfolge stärken Selbstbild</li>
-              <li>Wertschätzung als Haltung</li>
-              <li>Wiederholung & Rituale</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-primary">Spiele & Rituale für soziales Lernen</h3>
-            <ul className="list-disc list-inside space-y-1">
-              <li><strong>Freundschafts-Fangspiel:</strong> Wer gefangen wird, bekommt ein Lob oder eine Frage: „Was hat dir heute Spaß gemacht?"</li>
-              <li><strong>Zauberkreis:</strong> Abschlussspiel: Jede:r darf sagen, wer heute mutig, freundlich oder hilfsbereit war</li>
-              <li><strong>Ball der Gefühle:</strong> Wer den Ball hat, darf sagen, wie es ihm geht – Wort oder Bild zeigen</li>
-              <li><strong>Werte-Karten:</strong> Karten mit Symbolen: Freundschaft, Mut, Hilfe – Kinder wählen ihre Wochenkarte</li>
-              <li><strong>Team-Geschichte:</strong> Gemeinsam mit Trainer:in erfinden – jede Woche ein Kapitel („Wie wurde unser Team mutig?")</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-primary">Hinweise für Trainer:innen</h3>
-            <ul className="list-disc list-inside space-y-1">
-              <li>Keine Konkurrenzspiele mit Sieger:innen – stattdessen: Erlebnisse, bei denen alle strahlen können</li>
-              <li>Kinder brauchen Beziehung – und keine Bewertung</li>
-              <li>Es zählt, wie sich Kinder fühlen – nicht nur, was sie „leisten"</li>
-              <li>Lob wirkt stärker als Kritik – und Blickkontakt wirkt Wunder</li>
-            </ul>
-          </div>
-
-          <div className="bg-yellow-100/60 p-4 rounded-lg">
-            <h3 className="font-semibold text-primary">Ergebnis für den Trainer</h3>
-            <p className="mb-2">
-              Du schaffst ein Umfeld, in dem jedes Kind sich sicher, willkommen und gebraucht fühlt. 
-              Du hilfst ihnen, ein positives Selbstbild aufzubauen und erste soziale Fähigkeiten zu entwickeln – 
-              mit Fantasie, Ritualen und echter Zuwendung.
+      {/* Überschrift und Leitfrage in 3D-Karte */}
+      <motion.div
+        initial={{ opacity: 0, y: -50, rotateX: -15 }}
+        animate={{ opacity: 1, y: 0, rotateX: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="mb-16 w-full max-w-4xl"
+        style={{ perspective: "1000px" }}
+      >
+        <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100 transform-gpu hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] hover:-rotate-y-1">
+          <h1 className="text-4xl font-bold text-green-600 text-center mb-6">
+            Modul 4: Mentale & soziale Entwicklung
+          </h1>
+          <div className="text-center">
+            <p className="text-xl text-green-700 italic leading-relaxed">
+              "Wie helfe ich Kindern, sich selbst zu entdecken, mit anderen zu spielen – und als Teil einer Gruppe stark zu werden?"
             </p>
-            <p><strong>Ziel:</strong> Spieler:innen, die lachen, helfen, mutig fragen – und sich im Handball zuhause fühlen.</p>
           </div>
         </div>
       </motion.div>
+
+      {/* Karussell Container */}
+      <div className="relative w-full max-w-8xl h-[900px] flex items-center justify-center overflow-hidden">
+        {/* Pfeil links */}
+        <button
+          onClick={rotateLeft}
+          disabled={isAnimating}
+          className="absolute left-8 z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
+        >
+          <ChevronLeft size={24} />
+        </button>
+
+        {/* 3D Karussell */}
+        <div className="relative w-full h-full flex items-center justify-center">
+          <div 
+            className="relative w-[800px] h-[700px]" 
+            style={{ 
+              perspective: "1200px",
+              transformStyle: "preserve-3d"
+            }}
+          >
+            {cardsData.map((card, index) => {
+              const { x, z, angle, offset } = getCardPosition(index);
+              const isFront = offset === 0;
+              const isVisible = offset <= 3 || offset >= cardsData.length - 3;
+
+              if (!isVisible) return null;
+
+              return (
+                <motion.div
+                  key={index}
+                  className={`absolute top-1/2 left-1/2 w-[320px] h-[420px] rounded-xl shadow-2xl flex items-center justify-center text-center cursor-pointer ${
+                    card.highlight ? "border-4 border-yellow-400" : "border border-gray-200"
+                  }`}
+                  style={{
+                    backgroundColor: "rgba(255,255,255,0.95)",
+                    color: "#166534",
+                    transform: `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
+                    zIndex: isFront ? 20 : 10 - Math.abs(offset),
+                    filter: isFront ? "none" : `brightness(${1 - Math.abs(offset) * 0.1})`,
+                  }}
+                  initial={false}
+                  animate={{
+                    x: x,
+                    z: z,
+                    rotateY: angle,
+                    scale: isFront ? 1 : 0.9,
+                    opacity: isFront ? 1 : 0.8,
+                  }}
+                  transition={{ 
+                    duration: 0.6,
+                    ease: "easeInOut"
+                  }}
+                  whileHover={{
+                    scale: isFront ? 1.05 : 0.95,
+                    zIndex: 25,
+                    transition: { duration: 0.2 }
+                  }}
+                  onClick={() => handleCardClick(index)}
+                >
+                  <div className="p-6">
+                    <h3 className="font-bold text-xl leading-tight">{card.title}</h3>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Pfeil rechts */}
+        <button
+          onClick={rotateRight}
+          disabled={isAnimating}
+          className="absolute right-8 z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
+        >
+          <ChevronRight size={24} />
+        </button>
+
+        {/* Indikator für aktuelle Position */}
+        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
+          {cardsData.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToCard(index)}
+              disabled={isAnimating}
+              className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                index === currentIndex 
+                  ? "bg-blue-600 scale-125 shadow-lg" 
+                  : "bg-gray-300 hover:bg-gray-400"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Aktuelle Position Anzeige */}
+        <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-30">
+          <div className="bg-white/90 px-4 py-2 rounded-full shadow-lg">
+            <span className="text-sm font-medium text-gray-700">
+              {currentIndex + 1} von {cardsData.length}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Ausgewählte Karte im Vordergrund */}
+      <AnimatePresence>
+        {selectedCard && (
+          <motion.div
+            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedCard(null)}
+          >
+            <motion.div
+              className="bg-white rounded-xl p-8 max-w-3xl w-full shadow-2xl overflow-y-auto max-h-[85vh]"
+              initial={{ scale: 0.8, opacity: 0, y: 50 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 50 }}
+              transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h2
+                className={`text-3xl font-bold mb-6 ${
+                  selectedCard.highlight ? "text-yellow-600" : "text-green-600"
+                }`}
+              >
+                {selectedCard.title}
+              </h2>
+              <ul className="list-disc pl-6 space-y-3 text-gray-700 text-lg">
+                {selectedCard.content.map((item, i) => (
+                  <li key={i} className="leading-relaxed">{item}</li>
+                ))}
+              </ul>
+              <button
+                onClick={() => setSelectedCard(null)}
+                className="mt-8 px-8 py-4 bg-green-600 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300 font-medium text-lg"
+              >
+                Schließen
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
