@@ -79,13 +79,12 @@ export default function Modul1FJugend() {
   useEffect(() => {
     const updateSizes = () => {
       const vw = window.innerWidth;
-      const vh = window.innerHeight;
 
-      const cardWidth = Math.min(320, vw * 0.25); // Karten max 320px
-      const cardHeight = cardWidth * 1.3; // Höhe proportional
+      const cardWidth = Math.min(320, vw * 0.25);
+      const cardHeight = cardWidth * 1.3;
 
-      const radius = Math.max(200, vw * 0.2); // mind. 200px
-      const containerHeight = cardHeight + radius * 0.6; // Platz oben/unten
+      const radius = Math.max(200, vw * 0.2);
+      const containerHeight = cardHeight + radius * 0.6;
 
       setCarouselConfig({ radius, cardWidth, cardHeight, containerHeight });
     };
@@ -136,135 +135,136 @@ export default function Modul1FJugend() {
 
   return (
     <div className="bg-white min-h-screen flex flex-col items-center justify-center p-8">
-      {/* Zurück Button */}
-      <Link
-        to="/f-jugend"
-        className="mb-4 rounded-full bg-white text-green-600 px-6 py-2 shadow-md hover:bg-blue-600 hover:text-white transition-colors duration-300"
-      >
-        ← Zurück zur F-Jugend Übersicht
-      </Link>
-
-      {/* Überschrift */}
-      <motion.div
-        initial={{ opacity: 0, y: -50, rotateX: -15 }}
-        animate={{ opacity: 1, y: 0, rotateX: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="mb-8 w-full max-w-4xl"
-        style={{ perspective: "1000px" }}
-      >
-        <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
-          <h1 className="text-4xl font-bold text-green-600 text-center mb-6">
-            Modul 1: Entwicklungsmerkmale & Methodik
-          </h1>
-          <p className="text-center text-xl text-green-700 italic leading-relaxed">
-            "Wie begleite ich Kinder zwischen 4 und 8 Jahren liebevoll,
-            bewegungsreich und entwicklungsfördernd ins Handballspielen?"
-          </p>
-        </div>
-      </motion.div>
-
-      {/* Karussell */}
-      <div
-        className="relative w-full max-w-[1200px] flex items-center justify-center overflow-visible"
-        style={{ height: carouselConfig.containerHeight }}
-      >
-        {/* Pfeil links */}
-        <button
-          onClick={rotateLeft}
-          disabled={isAnimating}
-          className="absolute left-4 z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
+      <div className="flex flex-col items-center justify-center flex-1">
+        {/* Zurück Button */}
+        <Link
+          to="/f-jugend"
+          className="mb-4 rounded-full bg-white text-green-600 px-6 py-2 shadow-md hover:bg-blue-600 hover:text-white transition-colors duration-300"
         >
-          <ChevronLeft size={24} />
-        </button>
+          ← Zurück zur F-Jugend Übersicht
+        </Link>
 
-        {/* Karten Container */}
+        {/* Überschrift */}
+        <motion.div
+          initial={{ opacity: 0, y: -50, rotateX: -15 }}
+          animate={{ opacity: 1, y: 0, rotateX: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-6 w-full max-w-4xl"
+          style={{ perspective: "1000px" }}
+        >
+          <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+            <h1 className="text-4xl font-bold text-green-600 text-center mb-4">
+              Modul 1: Entwicklungsmerkmale & Methodik
+            </h1>
+            <p className="text-center text-xl text-green-700 italic leading-relaxed">
+              "Wie begleite ich Kinder zwischen 4 und 8 Jahren liebevoll,
+              bewegungsreich und entwicklungsfördernd ins Handballspielen?"
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Karussell */}
         <div
-          className="relative"
-          style={{
-            width: carouselConfig.cardWidth * 2.5,
-            height: carouselConfig.cardHeight * 1.2,
-            perspective: "1200px",
-            transformStyle: "preserve-3d",
-          }}
+          className="relative flex items-center justify-center overflow-visible"
+          style={{ height: carouselConfig.containerHeight }}
         >
-          {cardsData.map((card, index) => {
-            const { x, z, angle, offset } = getCardPosition(index);
-            const isFront = offset === 0;
-            const isVisible = offset <= 3 || offset >= cardsData.length - 3;
-            if (!isVisible) return null;
+          {/* Pfeil links */}
+          <button
+            onClick={rotateLeft}
+            disabled={isAnimating}
+            className="absolute left-[-60px] z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
+          >
+            <ChevronLeft size={24} />
+          </button>
 
-            return (
-              <motion.div
-                key={index}
-                className={`absolute top-1/2 left-1/2 rounded-xl shadow-2xl flex items-center justify-center text-center cursor-pointer ${
-                  card.highlight
-                    ? "border-4 border-yellow-400"
-                    : "border border-gray-200"
-                }`}
-                style={{
-                  width: carouselConfig.cardWidth,
-                  height: carouselConfig.cardHeight,
-                  backgroundColor: "rgba(255,255,255,0.95)",
-                  color: "#166534",
-                  transform: `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
-                  zIndex: isFront ? 20 : 10 - Math.abs(offset),
-                  filter: isFront
-                    ? "none"
-                    : `brightness(${1 - Math.abs(offset) * 0.1})`,
-                }}
-                initial={false}
-                animate={{
-                  x: x,
-                  z: z,
-                  rotateY: angle,
-                  scale: isFront ? 1 : 0.9,
-                  opacity: isFront ? 1 : 0.8,
-                }}
-                transition={{
-                  duration: 0.6,
-                  ease: "easeInOut",
-                }}
-                whileHover={{
-                  scale: isFront ? 1.05 : 0.95,
-                  zIndex: 25,
-                  transition: { duration: 0.2 },
-                }}
-                onClick={() => handleCardClick(index)}
-              >
-                <div className="p-6">
-                  <h3 className="font-bold text-xl leading-tight">
-                    {card.title}
-                  </h3>
-                </div>
-              </motion.div>
-            );
-          })}
+          {/* Karten Container */}
+          <div
+            className="relative"
+            style={{
+              width: carouselConfig.cardWidth * 2.5,
+              height: carouselConfig.cardHeight * 1.2,
+              perspective: "1200px",
+              transformStyle: "preserve-3d",
+            }}
+          >
+            {cardsData.map((card, index) => {
+              const { x, z, angle, offset } = getCardPosition(index);
+              const isFront = offset === 0;
+              const isVisible = offset <= 3 || offset >= cardsData.length - 3;
+              if (!isVisible) return null;
+
+              return (
+                <motion.div
+                  key={index}
+                  className={`absolute top-1/2 left-1/2 rounded-xl shadow-2xl flex items-center justify-center text-center cursor-pointer ${
+                    card.highlight
+                      ? "border-4 border-yellow-400"
+                      : "border border-gray-200"
+                  }`}
+                  style={{
+                    width: carouselConfig.cardWidth,
+                    height: carouselConfig.cardHeight,
+                    backgroundColor: "rgba(255,255,255,0.95)",
+                    color: "#166534",
+                    transform: `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
+                    zIndex: isFront ? 20 : 10 - Math.abs(offset),
+                    filter: isFront
+                      ? "none"
+                      : `brightness(${1 - Math.abs(offset) * 0.1})`,
+                  }}
+                  animate={{
+                    x: x,
+                    z: z,
+                    rotateY: angle,
+                    scale: isFront ? 1 : 0.9,
+                    opacity: isFront ? 1 : 0.8,
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeInOut",
+                  }}
+                  whileHover={{
+                    scale: isFront ? 1.05 : 0.95,
+                    zIndex: 25,
+                    transition: { duration: 0.2 },
+                  }}
+                  onClick={() => handleCardClick(index)}
+                >
+                  <div className="p-6">
+                    <h3 className="font-bold text-xl leading-tight">
+                      {card.title}
+                    </h3>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Pfeil rechts */}
+          <button
+            onClick={rotateRight}
+            disabled={isAnimating}
+            className="absolute right-[-60px] z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
+          >
+            <ChevronRight size={24} />
+          </button>
         </div>
 
-        {/* Pfeil rechts */}
-        <button
-          onClick={rotateRight}
-          disabled={isAnimating}
-          className="absolute right-4 z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
-        >
-          <ChevronRight size={24} />
-        </button>
-      </div>
-
-      {/* Indikatoren */}
-      <div className="mt-6 flex space-x-3">
-        {cardsData.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToCard(index)}
-            disabled={isAnimating}
-            className={`w-4 h-4 rounded-full transition-all duration-300 ${
-              index === currentIndex
-                ? "bg-blue-600 scale-125 shadow-lg"
-                : "bg-gray-300 hover:bg-gray-400"
-            }`}
-          />
-        ))}
+        {/* Indikatoren */}
+        <div className="mt-6 flex space-x-3">
+          {cardsData.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToCard(index)}
+              disabled={isAnimating}
+              className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                index === currentIndex
+                  ? "bg-blue-600 scale-125 shadow-lg"
+                  : "bg-gray-300 hover:bg-gray-400"
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Modal */}
