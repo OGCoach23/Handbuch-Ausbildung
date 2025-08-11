@@ -9,27 +9,27 @@ const moduleCJugend = [
   },
   {
     titel: "Modul 2: Athletik & Motorik",
-    frage: "Wie trainiere ich leistungsorientiert Kraft, Ausdauer und Schnelligkeit – mit steigendem Anspruch und individueller Förderung?",
+    frage: "Wie trainieren wir unseren Körper so, dass er uns im Spiel schneller, stabiler und belastbarer macht – ohne ihn zu überlasten?",
     path: "/c-jugend-m2",
   },
   {
     titel: "Modul 3: Technik & Taktik",
-    frage: "Wie vermittle ich komplexe Handballtechniken und taktische Konzepte – mit wachsendem Spielverständnis und Entscheidungsfreude?",
+    frage: "Wie wähle ich unter Druck die richtige Technik – und wie bringe ich sie schnell, sicher und wirkungsvoll ins Spiel?",
     path: "/c-jugend-m3",
   },
   {
     titel: "Modul 4: Mentale & soziale Entwicklung",
-    frage: "Wie fördere ich mentale Stärke, Führungsqualitäten und Verantwortung – in einer Phase der Persönlichkeitsentwicklung?",
+    frage: "Wie entwickeln wir mentale Stärke, Teamverantwortung und soziale Kompetenzen – und wie verankern wir sie nachhaltig im Trainingsalltag?",
     path: "/c-jugend-m4",
   },
   {
     titel: "Modul 5: Spielsysteme & Positionsspiel",
-    frage: "Wie entwickle ich komplexe Spielsysteme und Positionsprofile – mit taktischem Verständnis und flexiblen Lösungen?",
+    frage: "Wie funktioniert unser Teamspiel in Angriff und Abwehr – und wie finde ich meine Rolle darin, ohne festgelegt zu sein?",
     path: "/c-jugend-m5",
   },
   {
     titel: "Modul 6: Teamkultur & Kommunikation",
-    frage: "Wie schaffe ich eine Leistungskultur, die fordert, fördert und Fairplay lebt – bei Spielern, Eltern und Trainern?",
+    frage: "Wie wachsen wir als Team zusammen – und wie gehe ich mit Herausforderungen, Emotionen und Verantwortung im Spiel um?",
     path: "/c-jugend-m6",
   },
 ];
