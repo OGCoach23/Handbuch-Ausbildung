@@ -37,28 +37,28 @@ const moduleFJugend = [
 export default function FJugend() {
   return (
     <div className="bg-white min-h-screen flex items-center justify-center p-8">
-      <div className="relative w-full max-w-6xl h-[600px]">
+      <div className="flex space-x-[-120px] relative" style={{ perspective: "1000px" }}>
         {moduleFJugend.map((mod, index) => (
           <Link to={mod.path} key={index}>
             <motion.div
-              initial={{ y: index * 20, scale: 0.95 }}
               whileHover={{
                 scale: 1.05,
-                y: 0,
                 backgroundColor: "#005baa",
+                color: "#ffffff",
                 zIndex: 10,
               }}
+              initial={{ backgroundColor: "rgba(255,255,255,0.8)", color: "#000" }}
               transition={{ duration: 0.3 }}
-              className="absolute top-0 left-0 w-full h-full bg-white border rounded-2xl shadow-2xl p-8 flex flex-col justify-center items-center cursor-pointer transform transition-all duration-300"
+              className="w-[300px] h-[400px] border rounded-2xl shadow-xl p-6 flex flex-col justify-center items-center cursor-pointer transform transition-all duration-300"
               style={{
+                transform: `translateX(${index * 120}px) rotateY(${index * 0.5}deg)`,
                 zIndex: moduleFJugend.length - index,
-                transform: `translateY(${index * 10}px)`,
               }}
             >
-              <h2 className="text-2xl font-bold text-primary text-center mb-4">
+              <h2 className="text-lg font-bold text-center mb-3">
                 {mod.titel}
               </h2>
-              <p className="text-center text-lg">{mod.frage}</p>
+              <p className="text-center text-sm">{mod.frage}</p>
             </motion.div>
           </Link>
         ))}
