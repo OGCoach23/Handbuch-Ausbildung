@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Leitbild() {
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 mt-100">
       {/* Section 1 */}
       <section className="bg-green-100/30 p-8">
         <motion.div

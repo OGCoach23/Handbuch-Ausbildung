@@ -92,7 +92,7 @@ export default function Home() {
 
   return (
     <motion.div
-      className="bg-gradient-to-r from-white to-gray-100 min-h-screen relative p-6 overflow-hidden"
+      className="min-h-screen relative p-6 overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}

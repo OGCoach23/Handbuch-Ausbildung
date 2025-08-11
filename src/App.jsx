@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation, Link, useNavigate } from "react-router-dom";
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
@@ -55,10 +55,22 @@ const KontaktPage = () => (
   </main>
 );
 
+// Scroll-to-Top Komponente
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 function App() {
   return (
     <Router>
-      <div className="min-h-screen">
+      <ScrollToTop />
+      <div className="min-h-screen bg-gradient-to-r from-white to-gray-100">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
