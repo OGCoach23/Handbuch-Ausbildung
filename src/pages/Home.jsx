@@ -103,7 +103,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="bg-green-100/40 backdrop-blur-md border border-green-200 p-6 rounded-2xl shadow-lg max-w-5xl mx-auto mt-32 flex flex-col items-center justify-center min-h-[40vh]"
+        className="bg-green-100/40 backdrop-blur-md border border-green-200 p-6 rounded-2xl shadow-lg max-w-5xl mx-auto mt-48 flex flex-col items-center justify-center min-h-[40vh]"
       >
         <p className="text-2xl text-center text-justify">
           Wir sind der SV Laim, ein Traditionsverein (seit 1910) mit erfolgreichen Wurzeln im Handball, wir sind zentral in München eingebettet und engagieren uns weit über den Sport hinaus.
@@ -119,7 +119,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false }}
         transition={{ duration: 0.6 }}
-        className={`mt-20 max-w-5xl mx-auto space-y-6 ${textColor} transition-colors duration-500`}
+        className={`mt-80 max-w-5xl mx-auto space-y-6 ${textColor} transition-colors duration-500`}
       >
         <p className="text-4xl text-justify">
           Das vorliegende Konzept ist unsere Einladung an euch alle: Trainer, Eltern, Spielerinnen und Spieler. Es ist unser gemeinsamer Wegweiser, unser Kompass, unser Versprechen. Denn wir wollen nicht einfach nur "irgendwie" ausbilden – wir wollen es richtig machen. Mit Plan. Mit Leidenschaft. Mit einem roten Faden von den Kleinsten bis zur A-Jugend.

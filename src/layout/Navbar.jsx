@@ -65,11 +65,12 @@ export default function Navbar() {
 
               {/* Rechts: Links + Menu */}
               <div className="flex items-center space-x-6">
-                <Link to="/leitbild" className="text-[#004b87] hover:underline">Leitbild</Link>
-                <Link to="/kontakt" className="text-[#004b87] hover:underline">Kontakt</Link>
+                <Link to="/" className="text-[#004b87] hover:bg-green-600 hover:text-white px-4 py-2 rounded-full transition-all duration-300">Home</Link>
+                <Link to="/leitbild" className="text-[#004b87] hover:bg-green-600 hover:text-white px-4 py-2 rounded-full transition-all duration-300">Leitbild</Link>
+                <Link to="/kontakt" className="text-[#004b87] hover:bg-green-600 hover:text-white px-4 py-2 rounded-full transition-all duration-300">Kontakt</Link>
                 <button
                   onClick={() => setMenuOpen(true)}
-                  className="text-[#004b87] hover:text-green-700"
+                  className="text-[#004b87] hover:bg-green-600 hover:text-white p-2 rounded-full transition-all duration-300"
                 >
                   <Menu size={28} />
                 </button>
