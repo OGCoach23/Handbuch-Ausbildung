@@ -71,6 +71,19 @@ export default function Modul1FJugend() {
   const rotateLeft = () => setCurrentIndex((prev) => (prev - 1 + cardsData.length) % cardsData.length);
   const rotateRight = () => setCurrentIndex((prev) => (prev + 1) % cardsData.length);
 
+  const handleCardClick = (cardIndex) => {
+    // Berechne den Offset der angeklickten Karte
+    const offset = (cardIndex - currentIndex + cardsData.length) % cardsData.length;
+    
+    // Wenn es eine seitliche Karte ist, drehe das Karussell zu ihr
+    if (offset !== 0) {
+      setCurrentIndex(cardIndex);
+    } else {
+      // Wenn es die vordere Karte ist, öffne den Inhalt
+      setSelectedCard(cardsData[cardIndex]);
+    }
+  };
+
   return (
     <div className="bg-white min-h-screen p-8 flex flex-col items-center">
       {/* Zurück Button */}
@@ -123,16 +136,17 @@ export default function Modul1FJugend() {
                     zIndex: isFront ? 10 : 5 - Math.abs(offset),
                   }}
                   whileHover={{
-                    backgroundColor: isFront ? "#005baa" : "rgba(255,255,255,0.98)",
-                    color: isFront ? "#ffffff" : "#166534",
-                    scale: isFront ? 1.05 : 1.02,
+                    backgroundColor: "rgba(255,255,255,0.98)",
+                    color: "#166534",
+                    scale: 1.02,
                     zIndex: 15,
+                    transition: { duration: 0.2 }
                   }}
                   transition={{ 
-                    duration: 0.6,
+                    duration: 0.8,
                     ease: "easeInOut"
                   }}
-                  onClick={() => isFront && setSelectedCard(card)}
+                  onClick={() => handleCardClick(index)}
                 >
                   <div className="p-4">
                     <h3 className="font-bold text-lg leading-tight">{card.title}</h3>
