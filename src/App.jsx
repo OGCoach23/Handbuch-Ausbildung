@@ -72,66 +72,68 @@ function App() {
       <ScrollToTop />
       <div className="min-h-screen bg-gradient-to-r from-white to-gray-100">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/leitbild" element={<Leitbild />} />
-          <Route path="/prinzipien" element={<Ausbildungsprinzipien />} />
-          <Route path="/schule-leben" element={<HandballLeben />} />
-          <Route path="/trainingsaufbau" element={<Trainingsmethodik />} />
-          <Route path="/altersstufen" element={<AltersLeistungsstufen />} />
-          <Route path="/ebene2" element={<Ebene2 />} />
-          <Route path="/ebene3" element={<Ebene3 />} />
-          <Route path="/ebene4" element={<Ebene4 />} />
-          <Route path="/ausbildungsprinzipien" element={<Ausbildungsprinzipien />} />
-          <Route path="/kontakt" element={<KontaktPage />} />
+        <div className="pt-48"> {/* Globaler Abstand für alle Unterseiten */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/leitbild" element={<Leitbild />} />
+            <Route path="/prinzipien" element={<Ausbildungsprinzipien />} />
+            <Route path="/schule-leben" element={<HandballLeben />} />
+            <Route path="/trainingsaufbau" element={<Trainingsmethodik />} />
+            <Route path="/altersstufen" element={<AltersLeistungsstufen />} />
+            <Route path="/ebene2" element={<Ebene2 />} />
+            <Route path="/ebene3" element={<Ebene3 />} />
+            <Route path="/ebene4" element={<Ebene4 />} />
+            <Route path="/ausbildungsprinzipien" element={<Ausbildungsprinzipien />} />
+            <Route path="/kontakt" element={<KontaktPage />} />
 
-          {/* F-Jugend */}
-          <Route path="/f-jugend" element={<FJugendPage />} />
-          <Route path="/f-jugend-m1" element={<FJugendM1 />} />
-          <Route path="/f-jugend-m2" element={<FJugendM2 />} />
-          <Route path="/f-jugend-m3" element={<FJugendM3 />} />
-          <Route path="/f-jugend-m4" element={<FJugendM4 />} />
-          <Route path="/f-jugend-m5" element={<FJugendM5 />} />
-          <Route path="/f-jugend-m6" element={<FJugendM6 />} />
+            {/* F-Jugend */}
+            <Route path="/f-jugend" element={<FJugendPage />} />
+            <Route path="/f-jugend-m1" element={<FJugendM1 />} />
+            <Route path="/f-jugend-m2" element={<FJugendM2 />} />
+            <Route path="/f-jugend-m3" element={<FJugendM3 />} />
+            <Route path="/f-jugend-m4" element={<FJugendM4 />} />
+            <Route path="/f-jugend-m5" element={<FJugendM5 />} />
+            <Route path="/f-jugend-m6" element={<FJugendM6 />} />
 
-          {/* Jugendbereiche Übersichten */}
-          <Route path="/e-jugend" element={<EJugendUebersicht />} />
-          <Route path="/d-jugend" element={<DJugendUebersicht />} />
-          <Route path="/c-jugend" element={<CJugendUebersicht />} />
-          <Route path="/b-jugend" element={<BJugendUebersicht />} />
-          <Route path="/a-jugend" element={<AJugendUebersicht />} />
+            {/* Jugendbereiche Übersichten */}
+            <Route path="/e-jugend" element={<EJugendUebersicht />} />
+            <Route path="/d-jugend" element={<DJugendUebersicht />} />
+            <Route path="/c-jugend" element={<CJugendUebersicht />} />
+            <Route path="/b-jugend" element={<BJugendUebersicht />} />
+            <Route path="/a-jugend" element={<AJugendUebersicht />} />
 
-          {/* E-Jugend Module */}
-          <Route path="/e-jugend/modul1" element={<EJugendModul1 />} />
-          <Route path="/e-jugend/modul2" element={<EJugendModul2 />} />
-          <Route path="/e-jugend/modul3" element={<EJugendModul3 />} />
-          <Route path="/e-jugend/modul4" element={<EJugendModul4 />} />
-          <Route path="/e-jugend/modul5" element={<EJugendModul5 />} />
-          <Route path="/e-jugend/modul6" element={<EJugendModul6 />} />
+            {/* E-Jugend Module */}
+            <Route path="/e-jugend/modul1" element={<EJugendModul1 />} />
+            <Route path="/e-jugend/modul2" element={<EJugendModul2 />} />
+            <Route path="/e-jugend/modul3" element={<EJugendModul3 />} />
+            <Route path="/e-jugend/modul4" element={<EJugendModul4 />} />
+            <Route path="/e-jugend/modul5" element={<EJugendModul5 />} />
+            <Route path="/e-jugend/modul6" element={<EJugendModul6 />} />
 
-          {/* Kompetenzkompass */}
-          <Route path="/kompetenzkompass" element={<KompetenzkompassIndex />} />
-          <Route path="/kompetenzkompass/module" element={<KompetenzkompassModule />} />
-          <Route path="/kompetenzkompass/ueberblick" element={<KompetenzkompassStart />} />
-          <Route path="/kompetenzkompass/praxis" element={<PraktischeAnwendung />} />
-          <Route path="/kompetenzkompass/modul1" element={<KompetenzModul1 />} />
-          <Route path="/kompetenzkompass/modul2" element={<KompetenzModul2 />} />
-          <Route path="/kompetenzkompass/modul3" element={<KompetenzModul3 />} />
-          <Route path="/kompetenzkompass/modul4" element={<KompetenzModul4 />} />
-          <Route path="/kompetenzkompass/modul5" element={<KompetenzModul5 />} />
-          <Route path="/kompetenzkompass/modul6" element={<KompetenzModul6 />} />
+            {/* Kompetenzkompass */}
+            <Route path="/kompetenzkompass" element={<KompetenzkompassIndex />} />
+            <Route path="/kompetenzkompass/module" element={<KompetenzkompassModule />} />
+            <Route path="/kompetenzkompass/ueberblick" element={<KompetenzkompassStart />} />
+            <Route path="/kompetenzkompass/praxis" element={<PraktischeAnwendung />} />
+            <Route path="/kompetenzkompass/modul1" element={<KompetenzModul1 />} />
+            <Route path="/kompetenzkompass/modul2" element={<KompetenzModul2 />} />
+            <Route path="/kompetenzkompass/modul3" element={<KompetenzModul3 />} />
+            <Route path="/kompetenzkompass/modul4" element={<KompetenzModul4 />} />
+            <Route path="/kompetenzkompass/modul5" element={<KompetenzModul5 />} />
+            <Route path="/kompetenzkompass/modul6" element={<KompetenzModul6 />} />
 
-          {/* Alias-Routen */}
-          <Route path="/kinderbereich" element={<AltersLeistungsstufen />} />
-          <Route path="/jugendbereich" element={<Ebene2 />} />
-          <Route path="/positionsprofile" element={<Ebene3 />} />
-          <Route path="/spielsysteme" element={<Ebene3 />} />
-          <Route path="/zielgruppen" element={<Zielgruppen />} />
-          <Route path="/schule-fuers-leben" element={<HandballLeben />} />
-          <Route path="/trainingsmethodik" element={<Trainingsmethodik />} />
-          <Route path="/stufen" element={<AltersLeistungsstufen />} />
-          <Route path="*" element={<Home />} />
-        </Routes>
+            {/* Alias-Routen */}
+            <Route path="/kinderbereich" element={<AltersLeistungsstufen />} />
+            <Route path="/jugendbereich" element={<Ebene2 />} />
+            <Route path="/positionsprofile" element={<Ebene3 />} />
+            <Route path="/spielsysteme" element={<Ebene3 />} />
+            <Route path="/zielgruppen" element={<Zielgruppen />} />
+            <Route path="/schule-fuers-leben" element={<HandballLeben />} />
+            <Route path="/trainingsmethodik" element={<Trainingsmethodik />} />
+            <Route path="/stufen" element={<AltersLeistungsstufen />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </div>
         <Footer />
       </div>
     </Router>
