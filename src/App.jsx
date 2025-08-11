@@ -25,6 +25,13 @@ import DJugend from "./pages/d-jugend";
 import CJugend from "./pages/c-jugend";
 import BJugend from "./pages/b-jugend";
 import AJugend from "./pages/a-jugend";
+// D-Jugend Module
+import Modul1DJugend from "./pages/d-jugend-m1";
+import Modul2DJugend from "./pages/d-jugend-m2";
+import Modul3DJugend from "./pages/d-jugend-m3";
+import Modul4DJugend from "./pages/d-jugend-m4";
+import Modul5DJugend from "./pages/d-jugend-m5";
+import Modul6DJugend from "./pages/d-jugend-m6";
 // Kompetenzkompass
 import KompetenzkompassIndex from "./pages/Kompetenzkompass";
 import KompetenzkompassModule from "./pages/Kompetenzkompass/Module";
@@ -94,6 +101,14 @@ function App() {
             <Route path="/c-jugend" element={<CJugend />} />
             <Route path="/b-jugend" element={<BJugend />} />
             <Route path="/a-jugend" element={<AJugend />} />
+
+            {/* D-Jugend Module */}
+            <Route path="/d-jugend-m1" element={<Modul1DJugend />} />
+            <Route path="/d-jugend-m2" element={<Modul2DJugend />} />
+            <Route path="/d-jugend-m3" element={<Modul3DJugend />} />
+            <Route path="/d-jugend-m4" element={<Modul4DJugend />} />
+            <Route path="/d-jugend-m5" element={<Modul5DJugend />} />
+            <Route path="/d-jugend-m6" element={<Modul6DJugend />} />
 
             {/* Kompetenzkompass */}
             <Route path="/kompetenzkompass" element={<KompetenzkompassIndex />} />
