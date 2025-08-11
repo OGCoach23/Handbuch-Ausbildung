@@ -123,8 +123,28 @@ export default function Modul1FJugend() {
         ← Zurück zur F-Jugend Übersicht
       </Link>
 
+      {/* Überschrift und Leitfrage in 3D-Karte */}
+      <motion.div
+        initial={{ opacity: 0, y: -50, rotateX: -15 }}
+        animate={{ opacity: 1, y: 0, rotateX: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="mb-12 w-full max-w-4xl"
+        style={{ perspective: "1000px" }}
+      >
+        <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100 transform-gpu hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] hover:-rotate-y-1">
+          <h1 className="text-4xl font-bold text-green-600 text-center mb-6">
+            Modul 1: Entwicklungsmerkmale & Methodik
+          </h1>
+          <div className="text-center">
+            <p className="text-xl text-green-700 italic leading-relaxed">
+              "Wie begleite ich Kinder zwischen 4 und 8 Jahren liebevoll, bewegungsreich und entwicklungsfördernd ins Handballspielen?"
+            </p>
+          </div>
+        </div>
+      </motion.div>
+
       {/* Karussell Container */}
-      <div className="relative w-full max-w-7xl h-[700px] flex items-center justify-center overflow-hidden">
+      <div className="relative w-full max-w-7xl h-[800px] flex items-center justify-center overflow-hidden">
         {/* Pfeil links */}
         <button
           onClick={rotateLeft}
