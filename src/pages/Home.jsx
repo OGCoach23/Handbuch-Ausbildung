@@ -176,6 +176,29 @@ export default function Home() {
         </p>
       </motion.div>
 
+      {/* EbenenSection - Übersicht aller Ebenen und Links */}
+      <div className="mt-90 bg-gray-50 py-12 border-t">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          {Object.entries(sectionLinks).map(([title, links]) => (
+            <div key={title}>
+              <h3 className="font-bold text-lg text-gray-800 mb-4">{title}</h3>
+              <ul className="space-y-2">
+                {links.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      to={link.path}
+                      className="text-gray-600 hover:text-[#004b87] transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Scroll-Pfeil am unteren Rand */}
       <motion.div
         initial={{ opacity: 0 }}

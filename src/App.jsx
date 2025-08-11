@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation, Link, useNavigate } from "react-router-dom";
 import Navbar from "./layout/Navbar";
+import Footer from "./layout/Footer";
 import Leitbild from "./pages/Leitbild";
 import Home from "./pages/Home";
 import Zielgruppen from "./pages/Zielgruppen";
@@ -119,6 +120,7 @@ function App() {
           <Route path="/stufen" element={<AltersLeistungsstufen />} />
           <Route path="*" element={<Home />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
