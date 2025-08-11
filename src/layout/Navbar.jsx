@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png"; // Passe den Pfad zu deinem Wappen an
+import logo from "../assets/logo.svg"; // Logo als SVG
 
 export default function Navbar() {
   const [showHeader, setShowHeader] = useState(true);
