@@ -15,6 +15,41 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const sectionLinks = {
+    "Ebene 1: Grundlagen & Philosophie": [
+      { name: "Leitbild & Zielsetzung", path: "/leitbild" },
+      { name: "Zielgruppen & Rollenverständnis", path: "/zielgruppen" },
+      { name: "Ausbildungsprinzipien & Werte", path: "/prinzipien" },
+      { name: "Handball als Schule fürs Leben", path: "/schule-leben" },
+      { name: "Trainingsaufbau & Methodik", path: "/trainingsaufbau" },
+      { name: "Alters- und Leistungsstufen", path: "/altersstufen" },
+      { name: "Fazit Ebene 1", path: "/fazit1" },
+    ],
+    "Ebene 2: Modulbasierte Ausbildungslogik": [
+      { name: "F – Jugend", path: "/f-jugend" },
+      { name: "E – Jugend", path: "/e-jugend" },
+      { name: "D – Jugend", path: "/d-jugend" },
+      { name: "C – Jugend", path: "/c-jugend" },
+      { name: "B – Jugend", path: "/b-jugend" },
+      { name: "A – Jugend", path: "/a-jugend" },
+      { name: "Fazit Ebene 2", path: "/fazit2" },
+    ],
+    "Ebene 3: Kompetenzraster, Durchgängigkeit & Positionen, Spielsysteme": [
+      { name: "Kompetenzkompass", path: "/kompetenzkompass" },
+      { name: "Entwicklung der Positionen", path: "/positionen" },
+      { name: "Entwicklung der Spielsysteme", path: "/spielsysteme" },
+      { name: "Quer- und Neueinsteiger, Drop-Out-Prophylaxe", path: "/quereinsteiger" },
+      { name: "Breitensport vs. Leistungssport", path: "/breitensport" },
+      { name: "Fazit Ebene 3", path: "/fazit3" },
+    ],
+    "Ebene 4: Umsetzung & Weiterentwicklung": [
+      { name: "Trainingsprinzipien & Jahresplanung", path: "/trainingsprinzipien" },
+      { name: "Laimkademie", path: "/laimkademie" },
+      { name: "Evaluation, Feedback, Zielsystem", path: "/evaluation" },
+      { name: "Fazit Ebene 4", path: "/fazit4" },
+    ],
+  };
+
   const rightCards = [
     { title: "Ausbildungsprinzipien & Werte", link: "/prinzipien" },
     { title: "Handball: Schule fürs Leben", link: "/schule-leben" },
