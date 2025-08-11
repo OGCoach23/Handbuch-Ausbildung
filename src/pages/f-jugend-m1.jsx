@@ -181,7 +181,7 @@ export default function Modul1FJugend() {
           </div>
         </motion.div>
 
-        {/* Karussell */}
+        {/* Karussell - PERFEKTE ZENTRIERUNG */}
         <div className="relative flex items-center justify-center overflow-visible">
           {/* Pfeil links */}
           <button
@@ -192,7 +192,7 @@ export default function Modul1FJugend() {
             <ChevronLeft size={24} />
           </button>
 
-          {/* Karten Container - WELTKLASSE 3D-Zentrierung */}
+          {/* Karten Container - MATHEMATISCH KORREKTE 3D-ZENTRIERUNG */}
           <div
             className="relative"
             style={{
@@ -221,9 +221,9 @@ export default function Modul1FJugend() {
                     height: carouselConfig.cardHeight,
                     backgroundColor: "rgba(255,255,255,0.95)",
                     color: "#166534",
-                    // WELTKLASSE-Positionierung: Perfekte Zentrierung im 3D-Raum
-                    left: "50%",
-                    top: "50%",
+                    // PERFEKTE ZENTRIERUNG: Jede Karte wird vom Mittelpunkt des Containers aus positioniert
+                    left: `${carouselConfig.cardWidth * 1.25}px`,
+                    top: `${carouselConfig.cardHeight * 0.6}px`,
                     transform: `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
                     zIndex: isFront ? 20 : 10 - Math.abs(offset),
                     filter: isFront
@@ -268,7 +268,7 @@ export default function Modul1FJugend() {
           </button>
         </div>
 
-        {/* Indikatoren - WELTKLASSE Navigation */}
+        {/* Indikatoren */}
         <div className="mt-6 flex space-x-3">
           {cardsData.map((_, index) => (
             <button
@@ -290,7 +290,7 @@ export default function Modul1FJugend() {
         {/* Footer-Bereich für zukünftige Erweiterungen */}
       </footer>
 
-      {/* Modal - WELTKLASSE Benutzererfahrung */}
+      {/* Modal */}
       <AnimatePresence>
         {selectedCard && (
           <motion.div
