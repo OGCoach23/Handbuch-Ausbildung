@@ -81,88 +81,125 @@ export default function Modul1FJugend() {
         ← Zurück zur F-Jugend Übersicht
       </Link>
 
-      {/* Karussell */}
-      <div className="relative w-full h-[500px] flex items-center justify-center overflow-hidden">
+      {/* Karussell Container */}
+      <div className="relative w-full max-w-6xl h-[600px] flex items-center justify-center overflow-hidden">
         {/* Pfeil links */}
         <button
           onClick={rotateLeft}
-          className="absolute left-4 z-10 bg-white/80 rounded-full p-2 shadow hover:bg-blue-500 hover:text-white transition-colors"
+          className="absolute left-4 z-20 bg-white/90 rounded-full p-3 shadow-lg hover:bg-blue-500 hover:text-white transition-all duration-300"
         >
           <ChevronLeft size={24} />
         </button>
 
-        {/* Karten im Kreis */}
-        <div className="relative w-[800px] h-[400px]" style={{ perspective: "1500px" }}>
-          {cardsData.map((card, index) => {
-            const offset = (index - currentIndex + cardsData.length) % cardsData.length;
-            const angle = (360 / cardsData.length) * offset;
-            const isFront = offset === 0;
+        {/* Karten im 3D-Kreis */}
+        <div className="relative w-full h-full flex items-center justify-center">
+          <div 
+            className="relative w-[600px] h-[500px]" 
+            style={{ 
+              perspective: "1200px",
+              transformStyle: "preserve-3d"
+            }}
+          >
+            {cardsData.map((card, index) => {
+              const offset = (index - currentIndex + cardsData.length) % cardsData.length;
+              const angle = (360 / cardsData.length) * offset;
+              const radius = 250; // Radius des Kreises
+              const isFront = offset === 0;
+              const isVisible = offset <= 2 || offset >= cardsData.length - 2; // Nur sichtbare Karten rendern
 
-            return (
-              <motion.div
-                key={index}
-                className={`absolute top-1/2 left-1/2 w-[250px] h-[350px] rounded-xl shadow-2xl flex items-center justify-center text-center cursor-pointer ${
-                  card.highlight ? "border-4 border-yellow-300" : ""
-                }`}
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.8)",
-                  color: "#166534",
-                  transform: `rotateY(${angle}deg) translateZ(400px)`,
-                }}
-                whileHover={{
-                  backgroundColor: "#005baa",
-                  color: "#ffffff",
-                  scale: isFront ? 1.05 : 1,
-                }}
-                transition={{ duration: 0.5 }}
-                onClick={() => isFront && setSelectedCard(card)}
-              >
-                <h3 className="font-bold px-2">{card.title}</h3>
-              </motion.div>
-            );
-          })}
+              if (!isVisible) return null;
+
+              return (
+                <motion.div
+                  key={index}
+                  className={`absolute top-1/2 left-1/2 w-[280px] h-[380px] rounded-xl shadow-2xl flex items-center justify-center text-center cursor-pointer transform-gpu ${
+                    card.highlight ? "border-4 border-yellow-400" : "border border-gray-200"
+                  }`}
+                  style={{
+                    backgroundColor: "rgba(255,255,255,0.95)",
+                    color: "#166534",
+                    transform: `translate(-50%, -50%) rotateY(${angle}deg) translateZ(${radius}px)`,
+                    backfaceVisibility: "hidden",
+                    zIndex: isFront ? 10 : 5 - Math.abs(offset),
+                  }}
+                  whileHover={{
+                    backgroundColor: isFront ? "#005baa" : "rgba(255,255,255,0.98)",
+                    color: isFront ? "#ffffff" : "#166534",
+                    scale: isFront ? 1.05 : 1.02,
+                    zIndex: 15,
+                  }}
+                  transition={{ 
+                    duration: 0.6,
+                    ease: "easeInOut"
+                  }}
+                  onClick={() => isFront && setSelectedCard(card)}
+                >
+                  <div className="p-4">
+                    <h3 className="font-bold text-lg leading-tight">{card.title}</h3>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
 
         {/* Pfeil rechts */}
         <button
           onClick={rotateRight}
-          className="absolute right-4 z-10 bg-white/80 rounded-full p-2 shadow hover:bg-blue-500 hover:text-white transition-colors"
+          className="absolute right-4 z-20 bg-white/90 rounded-full p-3 shadow-lg hover:bg-blue-500 hover:text-white transition-all duration-300"
         >
           <ChevronRight size={24} />
         </button>
+
+        {/* Indikator für aktuelle Position */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {cardsData.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentIndex 
+                  ? "bg-blue-600 scale-125" 
+                  : "bg-gray-300 hover:bg-gray-400"
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Ausgewählte Karte im Vordergrund */}
       <AnimatePresence>
         {selectedCard && (
           <motion.div
-            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            onClick={() => setSelectedCard(null)}
           >
             <motion.div
               className="bg-white rounded-xl p-8 max-w-2xl w-full shadow-2xl overflow-y-auto max-h-[80vh]"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
+              initial={{ scale: 0.8, opacity: 0, y: 50 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 50 }}
               transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
             >
               <h2
-                className={`text-2xl font-bold mb-4 ${
-                  selectedCard.highlight ? "text-yellow-500" : "text-green-600"
+                className={`text-2xl font-bold mb-6 ${
+                  selectedCard.highlight ? "text-yellow-600" : "text-green-600"
                 }`}
               >
                 {selectedCard.title}
               </h2>
-              <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <ul className="list-disc pl-6 space-y-3 text-gray-700 text-lg">
                 {selectedCard.content.map((item, i) => (
-                  <li key={i}>{item}</li>
+                  <li key={i} className="leading-relaxed">{item}</li>
                 ))}
               </ul>
               <button
                 onClick={() => setSelectedCard(null)}
-                className="mt-6 px-4 py-2 bg-green-600 text-white rounded hover:bg-blue-600 transition-colors"
+                className="mt-8 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300 font-medium"
               >
                 Schließen
               </button>
