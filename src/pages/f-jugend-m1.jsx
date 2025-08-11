@@ -104,7 +104,7 @@ export default function Modul1FJugend() {
   const getCardPosition = (index) => {
     const offset = (index - currentIndex + cardsData.length) % cardsData.length;
     const angle = (offset * 360) / cardsData.length;
-    const radius = 280;
+    const radius = 300; // Größerer Radius für bessere Verteilung
     
     // Konvertiere Polar- zu Kartesischen Koordinaten
     const x = Math.sin((angle * Math.PI) / 180) * radius;
@@ -128,7 +128,7 @@ export default function Modul1FJugend() {
         initial={{ opacity: 0, y: -50, rotateX: -15 }}
         animate={{ opacity: 1, y: 0, rotateX: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="mb-12 w-full max-w-4xl"
+        className="mb-16 w-full max-w-4xl"
         style={{ perspective: "1000px" }}
       >
         <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100 transform-gpu hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] hover:-rotate-y-1">
@@ -143,23 +143,23 @@ export default function Modul1FJugend() {
         </div>
       </motion.div>
 
-      {/* Karussell Container */}
-      <div className="relative w-full max-w-7xl h-[800px] flex items-center justify-center overflow-hidden">
+      {/* Karussell Container - Größer und besser zentriert */}
+      <div className="relative w-full max-w-8xl h-[900px] flex items-center justify-center overflow-hidden">
         {/* Pfeil links */}
         <button
           onClick={rotateLeft}
           disabled={isAnimating}
-          className="absolute left-4 z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
+          className="absolute left-8 z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
         >
           <ChevronLeft size={24} />
         </button>
 
-        {/* 3D Karussell */}
+        {/* 3D Karussell - Größerer Container */}
         <div className="relative w-full h-full flex items-center justify-center">
           <div 
-            className="relative w-[700px] h-[600px]" 
+            className="relative w-[800px] h-[700px]" 
             style={{ 
-              perspective: "1000px",
+              perspective: "1200px",
               transformStyle: "preserve-3d"
             }}
           >
@@ -173,7 +173,7 @@ export default function Modul1FJugend() {
               return (
                 <motion.div
                   key={index}
-                  className={`absolute top-1/2 left-1/2 w-[300px] h-[400px] rounded-xl shadow-2xl flex items-center justify-center text-center cursor-pointer ${
+                  className={`absolute top-1/2 left-1/2 w-[320px] h-[420px] rounded-xl shadow-2xl flex items-center justify-center text-center cursor-pointer ${
                     card.highlight ? "border-4 border-yellow-400" : "border border-gray-200"
                   }`}
                   style={{
@@ -215,13 +215,13 @@ export default function Modul1FJugend() {
         <button
           onClick={rotateRight}
           disabled={isAnimating}
-          className="absolute right-4 z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
+          className="absolute right-8 z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
         >
           <ChevronRight size={24} />
         </button>
 
         {/* Indikator für aktuelle Position */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
+        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
           {cardsData.map((_, index) => (
             <button
               key={index}
@@ -237,7 +237,7 @@ export default function Modul1FJugend() {
         </div>
 
         {/* Aktuelle Position Anzeige */}
-        <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-30">
+        <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-30">
           <div className="bg-white/90 px-4 py-2 rounded-full shadow-lg">
             <span className="text-sm font-medium text-gray-700">
               {currentIndex + 1} von {cardsData.length}
