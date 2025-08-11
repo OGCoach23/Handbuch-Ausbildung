@@ -41,6 +41,38 @@ const jugenden = [
 export default function Ebene2() {
   return (
     <div className="bg-white">
+      {/* Einleitung */}
+      <section className="bg-green-100/30 p-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto text-dark space-y-4"
+        >
+          <h1 className="text-3xl font-bold text-primary">
+            Ebene 2 – Altersgerechte Ausbildungslogik
+          </h1>
+          <p>
+            Jetzt wird's konkret. Wir haben unsere Haltung geschärft, unsere Prinzipien festgelegt und ein flexibles Gerüst aus Alters- und Leistungsstufen aufgebaut. Jetzt machen wir daraus ein lebendiges System – altersgerecht, wiedererkennbar und praxisnah.
+          </p>
+          <p>
+            Denn gute Ausbildung braucht Struktur. Und Struktur braucht Inhalte, die zur Entwicklungsphase passen. In dieser Ebene zeigen wir, wie wir die Laimer Werte im Trainingsalltag umsetzen – und was Spieler:innen in welcher Phase lernen sollen.
+          </p>
+          <p>
+            Unsere sechs Jugendstufen bilden das Herzstück der Ausbildung: <br />
+            ● F-Jugend (4–8 Jahre) – Wie begleite ich Kinder liebevoll, bewegungsreich und entwicklungsfördernd ins Handballspielen? <br />
+            ● E-Jugend (9–10 Jahre) – Worauf muss ich als Trainer:in bei 9- bis 10-jährigen besonders achten? <br />
+            ● D-Jugend (11–12 Jahre) – Wie gestalten wir ein motivierendes Training für Kinder im Umbruch? <br />
+            ● C-Jugend (13–14 Jahre) – Wie entwickeln wir ein leistungsorientiertes, wertschätzendes Miteinander? <br />
+            ● B-Jugend (15–16 Jahre) – Wie begleite ich Jugendliche zwischen Selbstbehauptung und Orientierung? <br />
+            ● A-Jugend (17–18 Jahre) – Wie begleite ich junge Erwachsene in ihrer letzten Jugendphase?
+          </p>
+          <p>
+            Jede Jugendstufe ist altersgerecht aufbereitet – mit klaren Entwicklungszielen, Trainingsimpulsen und Methodentipps. Du bekommst kein starres Raster, sondern ein System mit Spielraum: für deinen Stil, dein Team, deinen Alltag.
+          </p>
+        </motion.div>
+      </section>
+
       {/* Karten-Slider */}
       <div className="mt-12 max-w-6xl mx-auto px-4">
         <Swiper
@@ -70,6 +102,46 @@ export default function Ebene2() {
           ))}
         </Swiper>
       </div>
+
+      {/* Fazit */}
+      <section className="bg-green-100/30 p-8 mt-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto text-dark space-y-4"
+        >
+          <h2 className="text-2xl font-bold text-primary">Fazit Ebene 2: Ausbildung mit System</h2>
+          <p>Wir haben die Haltung mit Inhalt gefüllt. In dieser Ebene ist sichtbar geworden, wie unser Ausbildungssystem funktioniert – altersgerecht, zielgerichtet und entwicklungsfördernd. Jede Jugendstufe hat gezeigt: Entwicklung lässt sich planen, ohne starr zu werden. Und sie gewinnt an Tiefe, wenn sie auf mehreren Ebenen gleichzeitig wirkt – körperlich, technisch, taktisch, mental und sozial.</p>
+          <p>Unsere Jugendstufen geben Trainer:innen Struktur – und Spieler:innen Orientierung.</p>
+          <ul className="list-disc list-inside">
+            <li>Entwicklung folgt keiner Einbahnstraße – sie braucht Raum für Umwege und Sprünge.</li>
+            <li>Inhalte wirken stärker, wenn sie zur Entwicklungsphase passen – nicht zu früh, nicht zu spät.</li>
+            <li>Gute Ausbildung entsteht dort, wo Systematik und Menschenkenntnis zusammenkommen.</li>
+          </ul>
+          <p>Jetzt wissen wir, was wir wann trainieren – und wie wir es altersgerecht vermitteln.</p>
+          <p>Der nächste Schritt: Wir machen Entwicklung sichtbar und vergleichbar.</p>
+          <div className="mt-6 flex justify-center">
+            <Link to="/ebene-3">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="bg-blue-500 text-white px-8 py-6 rounded-xl shadow-lg cursor-pointer"
+              >
+                Ausblick auf Ebene 3: Entwicklung messen – ohne zu bewerten
+              </motion.div>
+            </Link>
+          </div>
+          <p>In Ebene 3 schärfen wir unser Verständnis von Kompetenz: Was bedeutet Fortschritt konkret – auf Technik-, Spiel- oder Haltungsebene?</p>
+          <ul className="list-disc list-inside">
+            <li>wie unser Kompetenzkompass (inkl. 5-Stufen-Modell) Orientierung bietet</li>
+            <li>wie sich Positionsprofile und Spielsysteme über die Jahrgänge hinweg entwickeln</li>
+            <li>wie wir mit Quer- und Neueinsteigern umgehen – ohne sie zu verlieren</li>
+            <li>wie wir Breitensport und Leistungssport parallel und durchlässig gestalten</li>
+            <li>und wie unser System über alle Jahrgänge hinweg wiedererkennbar bleibt – durch klare Raster, aber flexible Wege</li>
+          </ul>
+          <p>Es geht um Durchgängigkeit mit Leben, nicht um Gleichmacherei. Wir schaffen ein gemeinsames Verständnis von Qualität – ohne den Menschen aus dem Blick zu verlieren. Jetzt geht es darum, den roten Faden sichtbar zu machen – von der F-Jugend bis zur A-Jugend, vom Einstieg bis zum Übergang in den Erwachsenenbereich.</p>
+        </motion.div>
+      </section>
     </div>
   );
 }
