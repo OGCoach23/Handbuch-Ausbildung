@@ -13,7 +13,7 @@ import Ebene3 from "./pages/Ebene3";
 import Ebene4 from "./pages/Ebene4";
 import Ausbildungsprinzipien from "./pages/Ausbildungsprinzipien";
 import EvaluationFeedbackZielsystem from "./pages/evaluation-feedback-zielsystem";
-import Training from "./pages/training";
+import Training from "./pages/training.jsx";
 import FJugendPage from "./pages/f-jugend";
 import FJugendM1 from "./pages/f-jugend-m1";
 import FJugendM2 from "./pages/f-jugend-m2";

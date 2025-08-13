@@ -64,7 +64,7 @@ const principlesData = [
     details: [
       {
         subtitle: "Leitidee",
-        content: "Wir fördern nicht nur „die Guten" – wir fördern alle, die besser werden wollen."
+        content: "Wir fördern nicht nur \"die Guten\" – wir fördern alle, die besser werden wollen."
       },
       {
         subtitle: "Methodischer Anspruch",
