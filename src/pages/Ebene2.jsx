@@ -42,13 +42,14 @@ export default function Ebene2() {
   return (
     <div className="bg-white">
       {/* Einleitung */}
-      <section className="bg-green-100/30 p-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-dark space-y-4"
-        >
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="bg-green-50 p-8 rounded-2xl shadow-lg">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-dark space-y-4"
+          >
           <h1 className="text-3xl font-bold text-primary">
             Ebene 2 – Modulbasierte Ausbildungslogik
           </h1>
@@ -71,7 +72,8 @@ export default function Ebene2() {
             Jedes Modul ist altersgerecht aufbereitet – mit klaren Entwicklungszielen, Trainingsimpulsen und Methodentipps. Du bekommst kein starres Raster, sondern ein System mit Spielraum: für deinen Stil, dein Team, deinen Alltag.
           </p>
         </motion.div>
-      </section>
+        </div>
+      </div>
 
       {/* Karten-Slider */}
       <div className="mt-12 max-w-6xl mx-auto px-4">
@@ -104,13 +106,14 @@ export default function Ebene2() {
       </div>
 
       {/* Fazit */}
-      <section className="bg-green-100/30 p-8 mt-24">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-dark space-y-4"
-        >
+      <div className="max-w-4xl mx-auto px-4 py-8 mt-24">
+        <div className="bg-green-50 p-8 rounded-2xl shadow-lg">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-dark space-y-4"
+          >
           <h2 className="text-2xl font-bold text-primary">Fazit Ebene 2: Ausbildung mit System</h2>
           <p>Wir haben die Haltung mit Inhalt gefüllt. In dieser Ebene ist sichtbar geworden, wie unser Ausbildungssystem funktioniert – modular, zielgerichtet und entwicklungsfördernd. Jedes Modul hat gezeigt: Entwicklung lässt sich planen, ohne starr zu werden. Und sie gewinnt an Tiefe, wenn sie auf mehreren Ebenen gleichzeitig wirkt – körperlich, technisch, taktisch, mental und sozial.</p>
           <p>Unsere Module geben Trainer:innen Struktur – und Spieler:innen Orientierung.</p>
@@ -141,7 +144,8 @@ export default function Ebene2() {
           </ul>
           <p>Es geht um Durchgängigkeit mit Leben, nicht um Gleichmacherei. Wir schaffen ein gemeinsames Verständnis von Qualität – ohne den Menschen aus dem Blick zu verlieren. Jetzt geht es darum, den roten Faden sichtbar zu machen – von der F-Jugend bis zur A-Jugend, vom Einstieg bis zum Übergang in den Erwachsenenbereich.</p>
         </motion.div>
-      </section>
+        </div>
+      </div>
     </div>
   );
 }

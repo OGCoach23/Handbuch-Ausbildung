@@ -4,7 +4,8 @@ export default function AltersLeistungsstufen() {
   return (
     <div className="space-y-10">
       {/* Section 1 */}
-      <section className="bg-green-100/30 p-8">
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="bg-green-50 p-8 rounded-2xl shadow-lg">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -28,7 +29,8 @@ export default function AltersLeistungsstufen() {
             Erwartungen passen wir daran an – ohne starre Übergänge, aber mit klarem Blick für Entwicklungsfenster.
           </p>
         </motion.div>
-      </section>
+        </div>
+      </div>
 
       {/* Section 2 */}
       <section className="bg-white/40 p-8">
@@ -67,10 +69,12 @@ export default function AltersLeistungsstufen() {
             </div>
           </div>
         </motion.div>
-      </section>
+        </div>
+      </div>
 
       {/* Section 3 */}
-      <section className="bg-green-100/30 p-8">
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="bg-green-50 p-8 rounded-2xl shadow-lg">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -96,7 +100,8 @@ export default function AltersLeistungsstufen() {
             schaffen, in denen sich jede:r entfalten kann – mit Lust, Verantwortung und Perspektive.
           </p>
         </motion.div>
-      </section>
+        </div>
+      </div>
 
       {/* Section 4 */}
       <section className="bg-white/40 p-8">
@@ -118,7 +123,8 @@ export default function AltersLeistungsstufen() {
             <strong>Für Spieler:innen – kurz erklärt:</strong> Es gibt viele Wege im Handball – und du darfst deinen finden. Ob du einfach mit Spaß spielst oder ganz nach oben willst: Wir begleiten dich. Wichtig ist nicht, wie gut du jetzt bist – sondern dass du Lust hast, besser zu werden.
           </div>
         </motion.div>
-      </section>
+        </div>
+      </div>
     </div>
   );
 }

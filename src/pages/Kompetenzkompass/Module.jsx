@@ -30,7 +30,8 @@ const moduleData = [
 
 export default function KompetenzkompassModule() {
   return (
-    <div className="bg-green-100/30 py-10 px-6">
+    <div className="max-w-6xl mx-auto px-4 py-10">
+      <div className="bg-green-50 p-8 rounded-2xl shadow-lg">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -52,6 +53,7 @@ export default function KompetenzkompassModule() {
           ))}
         </div>
       </motion.div>
+      </div>
     </div>
   );
 }

@@ -4,88 +4,122 @@ export default function Trainingsmethodik() {
   return (
     <div className="space-y-10">
       {/* Section 1 */}
-      <section className="bg-green-100/30 p-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-dark space-y-4"
-        >
-          <h1 className="text-3xl font-bold text-primary">Trainingsaufbau & Methodik</h1>
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="bg-green-50 p-8 rounded-2xl shadow-lg">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-dark space-y-4"
+          >
+          <h1 className="text-3xl font-bold text-primary">Trainingsmethodik & Aufbau</h1>
 
           <p>
-            <span className="text-primary font-semibold">Training ist mehr als Üben – es ist bewusstes Entwickeln.</span>
-            Wir verstehen Training als aktiven Lernprozess – nicht als Wiederholung. Wer trainiert, wächst: körperlich,
-            technisch, taktisch – aber auch mental und sozial.
+            <span className="text-primary font-semibold">Gutes Training entsteht nicht zufällig.</span>
+            Es braucht eine klare Struktur, durchdachte Methoden und ein systematisches Vorgehen.
+            Unser Trainingsaufbau folgt bewährten sportwissenschaftlichen Prinzipien und ist speziell
+            auf die Bedürfnisse des Handballsports und die verschiedenen Altersstufen angepasst.
           </p>
 
           <p>
-            Unser Ziel ist es, Einheiten zu gestalten, die mehr auslösen als nur Bewegung. 
-            <span className="bg-yellow-100 px-1 rounded">Wir schaffen Lernräume – mit Struktur, Tiefe und Sinn.</span>
+            Dabei stehen nicht nur die technischen und taktischen Inhalte im Fokus, sondern auch
+            die Art und Weise, wie wir diese vermitteln. Denn nur wenn Spieler:innen verstehen,
+            warum sie etwas tun, und wenn sie sich dabei wohlfühlen, kann echtes Lernen stattfinden.
           </p>
 
-          <p className="text-sm text-gray-700 italic">
-            Deshalb folgen unsere Einheiten klaren Prinzipien:
-          </p>
-
-          <ul className="list-disc list-inside ml-4 space-y-1">
-            <li>Vom Einfachen zum Komplexen</li>
-            <li>Vom Spieler zum Mitgestalter</li>
-            <li>Vom Instrukteur zum Lernbegleiter</li>
-          </ul>
-        </motion.div>
-      </section>
-
-      {/* Section 2 */}
-      <section className="bg-white/40 p-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto space-y-4"
-        >
           <div className="bg-white/60 p-4 rounded-xl shadow">
-            <h2 className="font-bold mb-2 text-primary">Jede Trainingseinheit verbindet daher:</h2>
+            <h2 className="font-bold mb-2 text-primary">Unsere methodischen Grundsätze:</h2>
             <ul className="list-disc list-inside space-y-1">
-              <li><span className="font-semibold">Technik mit Spielnähe</span></li>
-              <li><span className="font-semibold">Taktik mit Verantwortung</span></li>
-              <li><span className="font-semibold">Athletik mit Spielfähigkeit</span></li>
-              <li><span className="font-semibold">Mentale Stärke mit Reflexion</span></li>
-              <li><span className="font-semibold">Teamgeist mit Kommunikation</span></li>
+              <li>Vom Einfachen zum Komplexen</li>
+              <li>Spielerische Vermittlung vor analytischem Training</li>
+              <li>Positive Fehlerkultur und konstruktives Feedback</li>
+              <li>Altersgerechte Anforderungen und Belastungen</li>
+              <li>Individualisierung innerhalb der Gruppenarbeit</li>
             </ul>
           </div>
 
           <p>
-            Entwicklung verläuft nicht linear – sie verläuft in Stufen, in Sprüngen, mit Rückschlägen und Erkenntnissen.
-            Unsere Trainingsmethodik spiegelt das wider: Spieler:innen sollen durch Aufgaben wachsen, nicht durch Vorgaben.
-            Durch Entscheidungen, nicht durch Drill.
+            Unser Ziel ist es, Trainer:innen praktische Werkzeuge an die Hand zu geben, mit denen
+            sie abwechslungsreiche, effektive und motivierende Trainingseinheiten gestalten können.
+            Dabei berücksichtigen wir sowohl die fachlichen Aspekte als auch die gruppendynamischen
+            und pädagogischen Herausforderungen.
           </p>
 
-          <p className="font-semibold">Wir trainieren nicht für das Spiel – wir trainieren durch das Spiel.</p>
-        </motion.div>
-      </section>
-
-      {/* Section 3 */}
-      <section className="bg-green-100/30 p-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto space-y-6"
-        >
           <div className="border-l-4 border-primary bg-white/50 p-4 italic rounded">
-            <strong>Trainerimpuls:</strong> Plane nicht nur Übungen – plane Entwicklung. Denk nicht in Technikbausteinen, sondern in Handlungsfeldern. Dein Ziel ist nicht, dass alle gleich funktionieren – sondern dass jede:r wirksam wird.
-          </div>
-
-          <div className="border-l-4 border-primary bg-white/50 p-4 italic rounded">
-            <strong>Elternblick:</strong> Unsere Trainings sind mehr als Bewegungseinheiten. Sie sind Räume, in denen Ihr Kind Selbstvertrauen, Entscheidungsfähigkeit und Teamkompetenz entwickelt. Hier wird nicht nur geworfen – hier wird fürs Leben gelernt.
-          </div>
-
-          <div className="border-l-4 border-primary bg-white/50 p-4 italic rounded">
-            <strong>Für Spieler:innen – kurz erklärt:</strong> Du lernst bei uns, wie du selbst klug handelst – nicht nur, wie du Anweisungen umsetzt. Unser Training fordert dich – aber es hilft dir, zu wachsen. Mit Ball, mit Team, mit dir selbst.
+            <strong>Unser Ansatz:</strong> Trainingsmethodik ist mehr als nur Übungsauswahl. 
+            Es geht um die richtige Balance zwischen Fordern und Fördern, zwischen Struktur und Kreativität,
+            zwischen Einzelentwicklung und Teamarbeit.
           </div>
         </motion.div>
-      </section>
+        </div>
+      </div>
+
+      {/* Section 2 */}
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="bg-green-50 p-8 rounded-2xl shadow-lg">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+          <h2 className="text-2xl font-bold text-primary">Trainingsaufbau & Struktur</h2>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white/60 p-4 rounded-xl shadow">
+              <h3 className="font-bold mb-2 text-primary">Aufwärmung (15-20 Min)</h3>
+              <ul className="list-disc list-inside space-y-1 text-sm">
+                <li>Allgemeine Aktivierung</li>
+                <li>Ballgewöhnung</li>
+                <li>Koordinative Aufgaben</li>
+                <li>Erste technische Elemente</li>
+              </ul>
+            </div>
+
+            <div className="bg-white/60 p-4 rounded-xl shadow">
+              <h3 className="font-bold mb-2 text-primary">Hauptteil (30-40 Min)</h3>
+              <ul className="list-disc list-inside space-y-1 text-sm">
+                <li>Technikerlernung/-verbesserung</li>
+                <li>Taktische Grundlagen</li>
+                <li>Spielformen</li>
+                <li>Konditionelle Aspekte</li>
+              </ul>
+            </div>
+
+            <div className="bg-white/60 p-4 rounded-xl shadow">
+              <h3 className="font-bold mb-2 text-primary">Spielphase (15-20 Min)</h3>
+              <ul className="list-disc list-inside space-y-1 text-sm">
+                <li>Anwendung des Gelernten</li>
+                <li>Wettkampfcharakter</li>
+                <li>Freie Spielentwicklung</li>
+                <li>Spaß und Motivation</li>
+              </ul>
+            </div>
+
+            <div className="bg-white/60 p-4 rounded-xl shadow">
+              <h3 className="font-bold mb-2 text-primary">Ausklang (5-10 Min)</h3>
+              <ul className="list-disc list-inside space-y-1 text-sm">
+                <li>Entspannung</li>
+                <li>Reflexion</li>
+                <li>Organisatorisches</li>
+                <li>Positive Verstärkung</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="bg-primary/10 p-4 rounded-xl">
+            <h3 className="font-bold mb-2 text-primary">Wichtige Prinzipien:</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li><strong>Variabilität:</strong> Abwechslungsreiche Übungen und Spielformen</li>
+              <li><strong>Progression:</strong> Kontinuierliche Steigerung der Anforderungen</li>
+              <li><strong>Individualisierung:</strong> Anpassung an unterschiedliche Leistungsniveaus</li>
+              <li><strong>Transfer:</strong> Übungen mit direktem Spielbezug</li>
+              <li><strong>Motivation:</strong> Positive Atmosphäre und Erfolgserlebnisse</li>
+            </ul>
+          </div>
+        </motion.div>
+        </div>
+      </div>
     </div>
   );
 }

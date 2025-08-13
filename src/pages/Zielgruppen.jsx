@@ -4,13 +4,14 @@ export default function Zielgruppen() {
   return (
     <div className="space-y-10">
       {/* Section 1 */}
-      <section className="bg-green-100/30 p-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-dark space-y-4"
-        >
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="bg-green-50 p-8 rounded-2xl shadow-lg">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-dark space-y-4"
+          >
           <h1 className="text-3xl font-bold text-primary">Zielgruppen & Rollenverständnis</h1>
 
           <p>
@@ -20,79 +21,112 @@ export default function Zielgruppen() {
           </p>
 
           <p>
-            Wir verstehen Ausbildung als gemeinsamen Prozess: <span className="bg-yellow-100 px-1 rounded">Niemand wird alleine stark</span> – Entwicklung entsteht durch
-            Beziehung, Vertrauen und Verantwortung.
+            Unser Ziel ist es, die unterschiedlichen Perspektiven zu verstehen und aufeinander abzustimmen.
+            Nur wenn alle Beteiligten wissen, was sie erwartet und wie sie beitragen können, entsteht echte
+            Entwicklung – für jeden einzelnen und für das ganze Team.
           </p>
 
-          <p className="text-sm text-gray-700 italic">
-            Wir schaffen dafür eine Lernumgebung, in der Spieler:innen mutig ausprobieren, Fehler als Teil des Lernwegs
-            begreifen und Fortschritte an der eigenen Entwicklung messen – nicht am Vergleich mit anderen.
-          </p>
+          <div className="bg-white/60 p-4 rounded-xl shadow">
+            <h2 className="font-bold mb-2 text-primary">Warum verschiedene Zielgruppen?</h2>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Trainer:innen brauchen klare Ausbildungskonzepte und methodische Hilfen</li>
+              <li>Spieler:innen wollen verstehen, was sie lernen und warum es wichtig ist</li>
+              <li>Eltern möchten wissen, wie sie ihre Kinder bestmöglich unterstützen können</li>
+              <li>Alle zusammen schaffen ein starkes Entwicklungsumfeld</li>
+            </ul>
+          </div>
 
           <p>
-            Entscheidend ist dabei eine Atmosphäre, die Sicherheit, Herausforderung und Selbstwirksamkeit vereint.
+            Die folgenden Abschnitte zeigen konkret, wie wir mit jeder Zielgruppe arbeiten, welche Erwartungen
+            wir haben und welche Unterstützung wir bieten. Denn nur gemeinsam können wir das Beste aus jedem
+            Spieler und jeder Spielerin herausholen.
           </p>
+
+          <div className="border-l-4 border-primary bg-white/50 p-4 italic rounded">
+            <strong>Unser Grundsatz:</strong> Handball-Entwicklung gelingt am besten, wenn alle Beteiligten an einem Strang ziehen.
+            Deshalb investieren wir bewusst in Kommunikation, Transparenz und gemeinsame Ziele.
+          </div>
         </motion.div>
-      </section>
+        </div>
+      </div>
 
       {/* Section 2 */}
-      <section className="bg-white/40 p-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto space-y-4"
-        >
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="bg-green-50 p-8 rounded-2xl shadow-lg">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
           <div className="bg-white/60 p-4 rounded-xl shadow">
-            <h2 className="font-bold mb-2 text-primary">Unsere Zielgruppen im Überblick:</h2>
-            <div className="space-y-4">
-              <div className="border-l-4 border-primary pl-4">
-                <h3 className="font-semibold text-primary">Trainer:innen</h3>
-                <p className="text-sm">Entwickeln Spiel- und Persönlichkeitskompetenz. Leiten, reflektieren, begleiten – systematisch und individuell.</p>
-              </div>
-              <div className="border-l-4 border-secondary pl-4">
-                <h3 className="font-semibold text-secondary">Spieler:innen</h3>
-                <p className="text-sm">Sind aktive Gestalter ihrer Entwicklung. Lernen Entscheidungen, Teamverhalten, Eigenverantwortung.</p>
-              </div>
-              <div className="border-l-4 border-primary pl-4">
-                <h3 className="font-semibold text-primary">Eltern</h3>
-                <p className="text-sm">Unterstützen den Weg. Vertrauen, motivieren, begleiten – nicht steuern. Entwicklungspartner, keine Außenstehenden.</p>
-              </div>
+            <h2 className="font-bold mb-4 text-primary text-xl">Für Trainer:innen</h2>
+            <div className="space-y-2">
+              <h3 className="font-semibold text-lg">Was erwarten wir?</h3>
+              <ul className="list-disc list-inside space-y-1 ml-4">
+                <li>Engagement für kontinuierliche Weiterbildung</li>
+                <li>Bereitschaft, mit dem Ausbildungskonzept zu arbeiten</li>
+                <li>Offene Kommunikation mit Spieler:innen und Eltern</li>
+                <li>Fokus auf langfristige Entwicklung statt kurzfristige Erfolge</li>
+              </ul>
+            </div>
+            <div className="space-y-2 mt-4">
+              <h3 className="font-semibold text-lg">Was bieten wir?</h3>
+              <ul className="list-disc list-inside space-y-1 ml-4">
+                <li>Strukturierte Ausbildungspläne für alle Altersgruppen</li>
+                <li>Regelmäßige Fortbildungen und Austausch</li>
+                <li>Methodische Hilfen und Übungssammlungen</li>
+                <li>Unterstützung bei schwierigen Situationen</li>
+              </ul>
             </div>
           </div>
 
-          <p>
-            Gleichzeitig setzen wir auf vielfältige Erfahrungen: Spieler:innen sollen mit unterschiedlichen Spielideen,
-            Trainerpersönlichkeiten und Teamkonstellationen in Berührung kommen. Diese Vielfalt fördert nicht nur technische
-            und taktische Entwicklung, sondern stärkt auch Flexibilität, soziale Intelligenz und ein tiefes Spielverständnis.
-          </p>
+          <div className="bg-white/60 p-4 rounded-xl shadow">
+            <h2 className="font-bold mb-4 text-primary text-xl">Für Spieler:innen</h2>
+            <div className="space-y-2">
+              <h3 className="font-semibold text-lg">Was erwarten wir?</h3>
+              <ul className="list-disc list-inside space-y-1 ml-4">
+                <li>Regelmäßige Teilnahme am Training</li>
+                <li>Bereitschaft, Neues zu lernen und auszuprobieren</li>
+                <li>Respektvoller Umgang mit Mitspielern und Trainern</li>
+                <li>Ehrliches Feedback und eigene Ziele formulieren</li>
+              </ul>
+            </div>
+            <div className="space-y-2 mt-4">
+              <h3 className="font-semibold text-lg">Was bieten wir?</h3>
+              <ul className="list-disc list-inside space-y-1 ml-4">
+                <li>Altersgerechte und systematische Ausbildung</li>
+                <li>Individuelle Förderung und Entwicklungsgespräche</li>
+                <li>Spaß am Sport und starke Teamgemeinschaft</li>
+                <li>Vorbereitung auf höhere Spielklassen</li>
+              </ul>
+            </div>
+          </div>
 
-          <p className="font-semibold">Diese Haltung braucht Klarheit und Kommunikation – aber auch Empathie.</p>
-          <p>Wir erwarten keine Perfektion, sondern gegenseitiges Verständnis und echtes Miteinander.</p>
+          <div className="bg-white/60 p-4 rounded-xl shadow">
+            <h2 className="font-bold mb-4 text-primary text-xl">Für Eltern</h2>
+            <div className="space-y-2">
+              <h3 className="font-semibold text-lg">Was erwarten wir?</h3>
+              <ul className="list-disc list-inside space-y-1 ml-4">
+                <li>Unterstützung der Vereinsphilosophie und -ziele</li>
+                <li>Konstruktive Kommunikation bei Fragen oder Problemen</li>
+                <li>Geduld bei der langfristigen Entwicklung</li>
+                <li>Respekt vor Trainer-Entscheidungen</li>
+              </ul>
+            </div>
+            <div className="space-y-2 mt-4">
+              <h3 className="font-semibold text-lg">Was bieten wir?</h3>
+              <ul className="list-disc list-inside space-y-1 ml-4">
+                <li>Transparente Kommunikation über Ziele und Fortschritte</li>
+                <li>Regelmäßige Elternabende und Informationsveranstaltungen</li>
+                <li>Offene Türen für Gespräche und Feedback</li>
+                <li>Einblick in die Trainingsphilosophie und -methoden</li>
+              </ul>
+            </div>
+          </div>
         </motion.div>
-      </section>
-
-      {/* Section 3 */}
-      <section className="bg-green-100/30 p-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto space-y-6"
-        >
-          <div className="border-l-4 border-primary bg-white/50 p-4 italic rounded">
-            <strong>Trainerimpuls:</strong> Begreife dich als Coach, nicht nur als Taktikgeber. Du formst Lernräume, nicht nur Spielzüge. Schaffe Struktur, aber gib Raum. Lass Spieler:innen wachsen – und auch mal stolpern. Dein Verhalten prägt, oft mehr als deine Worte. Du bist ein Vorbild.
-          </div>
-
-          <div className="border-l-4 border-primary bg-white/50 p-4 italic rounded">
-            <strong>Elternblick:</strong> Sie sind Teil unseres Teams – als Rückhalt, nicht als Ersatzcoach. Ihre Unterstützung zählt. Wir geben Einblick, laden zum Dialog ein und zeigen, wie Sie helfen können, ohne zu drängen.
-          </div>
-
-          <div className="border-l-4 border-primary bg-white/50 p-4 italic rounded">
-            <strong>Für Spieler:innen – kurz erklärt:</strong> Du bist kein Passagier – du sitzt selbst am Steuer deiner Entwicklung. Hier lernst du, Verantwortung zu übernehmen – für dein Spiel, dein Team, deinen Weg. Du wirst begleitet – aber du gehst selbst.
-          </div>
-        </motion.div>
-      </section>
+        </div>
+      </div>
     </div>
   );
 }

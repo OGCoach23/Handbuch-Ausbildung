@@ -4,93 +4,145 @@ export default function HandballLeben() {
   return (
     <div className="space-y-10">
       {/* Section 1 */}
-      <section className="bg-green-100/30 p-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-dark space-y-4"
-        >
-          <h1 className="text-3xl font-bold text-primary">
-            Handball als Schule fürs Leben
-          </h1>
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="bg-green-50 p-8 rounded-2xl shadow-lg">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-dark space-y-4"
+          >
+          <h1 className="text-3xl font-bold text-primary">Handball: Schule fürs Leben</h1>
 
           <p>
-            <span className="text-primary font-semibold">Wir entwickeln nicht nur Spieler:innen</span> – wir stärken Menschen.
-            Handball ist für uns kein Selbstzweck. Er ist ein Mittel, um Kinder und Jugendliche in ihrer Persönlichkeit zu stärken.
+            <span className="text-primary font-semibold">Handball ist mehr als Sport – er ist eine Schule fürs Leben.</span>
+            In keiner anderen Sportart lernen junge Menschen so vielfältige Kompetenzen wie im Handball.
+            Die komplexen Spielsituationen, die ständigen Entscheidungen unter Zeitdruck und die intensive
+            Teamarbeit machen Handball zu einem idealen Lernfeld für wichtige Lebensfähigkeiten.
           </p>
 
           <p>
-            Wer beim SV Laim trainiert, lernt nicht nur Wurftechniken oder Spielzüge – sondern <span className="bg-yellow-100 px-1 rounded">Mut, Haltung und Miteinander</span>.
+            Unser Ausbildungskonzept nutzt diese einmaligen Lernchancen bewusst. Wir sehen jede
+            Trainingseinheit, jedes Spiel als Gelegenheit, nicht nur handballerische Fertigkeiten
+            zu entwickeln, sondern auch Persönlichkeit zu formen und soziale Kompetenzen zu stärken.
           </p>
 
-          <p className="text-sm text-gray-700 italic">
-            Denn jede Trainingseinheit und jedes Spiel ist auch ein Lebenslernraum:
-          </p>
-
-          <ul className="list-disc list-inside ml-4 space-y-1">
-            <li>Im Spiel lernt man, mit Druck umzugehen.</li>
-            <li>In der Mannschaft lernt man, Verantwortung zu übernehmen.</li>
-            <li>In der Niederlage lernt man, sich neu aufzurichten.</li>
-            <li>Im Erfolg lernt man, Respekt zu behalten.</li>
-          </ul>
-
-          <p>Diese Erfahrungen machen stark – im Sport wie auch im Leben.</p>
-        </motion.div>
-      </section>
-
-      {/* Section 2 */}
-      <section className="bg-white/40 p-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto space-y-4"
-        >
           <div className="bg-white/60 p-4 rounded-xl shadow">
-            <h2 className="font-bold mb-2 text-primary">Was Spieler:innen bei uns lernen:</h2>
+            <h2 className="font-bold mb-2 text-primary">Was Handball vermittelt:</h2>
             <ul className="list-disc list-inside space-y-1">
-              <li><span className="font-semibold">Selbstvertrauen:</span> Mut, Entscheidungen zu treffen. Fehler als Teil des Lernens begreifen.</li>
-              <li><span className="font-semibold">Frustrationstoleranz:</span> Niederlagen einordnen, dranbleiben, neu versuchen.</li>
-              <li><span className="font-semibold">Empathie & Kommunikation:</span> Im Team zuhören, mitdenken, Andere stärken.</li>
-              <li><span className="font-semibold">Verantwortung:</span> Eigene Rolle annehmen, Aufgaben übernehmen, Feedback umsetzen.</li>
-              <li><span className="font-semibold">Selbstorganisation:</span> Pünktlich sein, sich vorbereiten, selbstständig trainieren.</li>
+              <li>Entscheidungsfähigkeit unter Zeitdruck</li>
+              <li>Teamarbeit und Kommunikation</li>
+              <li>Umgang mit Erfolg und Niederlage</li>
+              <li>Verantwortung für sich und andere</li>
+              <li>Durchhaltevermögen und Disziplin</li>
+              <li>Respekt und Fairness</li>
             </ul>
           </div>
 
-          <p>Diese Kompetenzen entstehen nicht nebenbei – sie sind Teil unserer Ausbildungslogik.</p>
-          <p className="font-semibold">Wir trainieren nicht nur Körper und Technik – wir trainieren Charakter.</p>
-
-          <ul className="list-disc list-inside space-y-1">
-            <li>Wir schaffen Erlebnisse, die in Erinnerung bleiben – nicht nur Ergebnisse.</li>
-            <li>Wir nehmen Spieler:innen ernst – auch wenn sie jung sind.</li>
-            <li>Wir geben Verantwortung ab – weil Vertrauen wächst, wenn man es schenkt.</li>
-            <li>Wir machen Spieler:innen zu Mitgestalter:innen – nicht zu Befehlsempfänger:innen.</li>
-          </ul>
-        </motion.div>
-      </section>
-
-      {/* Section 3 */}
-      <section className="bg-green-100/30 p-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto space-y-6"
-        >
-          <div className="border-l-4 border-primary bg-white/50 p-4 italic rounded">
-            <strong>Trainerimpuls:</strong> Frage dich regelmäßig: „Was nehmen meine Spieler:innen heute fürs Leben mit?" Nutze Spielsituationen, um über Teamgeist, Resilienz oder Kommunikation zu sprechen. Du bildest Persönlichkeiten – jeden Tag.
-          </div>
+          <p>
+            Diese Fähigkeiten sind nicht nur im Sport wertvoll. Sie helfen in der Schule, im Beruf,
+            in Beziehungen – ein Leben lang. Deshalb investieren wir bewusst Zeit in die Entwicklung
+            dieser "Soft Skills" und machen sie zu einem festen Bestandteil unserer Ausbildung.
+          </p>
 
           <div className="border-l-4 border-primary bg-white/50 p-4 italic rounded">
-            <strong>Elternblick:</strong> Handball bietet Ihrem Kind mehr als Bewegung: Er vermittelt Werte, Haltung und Selbstvertrauen. Diese Erfahrungen wirken weit über das Spielfeld hinaus – und begleiten Ihr Kind in Schule, Beruf und Alltag.
-          </div>
-
-          <div className="border-l-4 border-primary bg-white/50 p-4 italic rounded">
-            <strong>Für Spieler:innen – kurz erklärt:</strong> Hier lernst du nicht nur Handball – du lernst fürs Leben. Du wirst sicherer, stärker, mutiger. Im Spiel lernst du: Du kannst was – und du kannst wachsen. Und das bleibt, auch wenn der Ball mal ruht.
+            <strong>Unser Verständnis:</strong> Gute Handballer sind nicht automatisch starke Persönlichkeiten.
+            Aber starke Persönlichkeiten werden mit großer Wahrscheinlichkeit auch gute Handballer –
+            und erfolgreiche Menschen.
           </div>
         </motion.div>
-      </section>
+        </div>
+      </div>
+
+      {/* Section 2 */}
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="bg-green-50 p-8 rounded-2xl shadow-lg">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+          <h2 className="text-2xl font-bold text-primary">Konkrete Lebenslektionen</h2>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white/60 p-4 rounded-xl shadow">
+              <h3 className="font-bold mb-2 text-primary">Entscheidungskompetenz</h3>
+              <p className="text-sm mb-2">
+                <strong>Im Handball:</strong> Innerhalb von Sekunden entscheiden: Passen, werfen, täuschen?
+              </p>
+              <p className="text-sm">
+                <strong>Im Leben:</strong> Schnelle, aber durchdachte Entscheidungen treffen können.
+                Abwägen zwischen Risiko und Chance.
+              </p>
+            </div>
+
+            <div className="bg-white/60 p-4 rounded-xl shadow">
+              <h3 className="font-bold mb-2 text-primary">Teamfähigkeit</h3>
+              <p className="text-sm mb-2">
+                <strong>Im Handball:</strong> Nur gemeinsam sind wir stark. Eigene Ziele dem Teamerfolg unterordnen.
+              </p>
+              <p className="text-sm">
+                <strong>Im Leben:</strong> In Gruppen arbeiten, Kompromisse finden, gemeinsame Ziele verfolgen.
+              </p>
+            </div>
+
+            <div className="bg-white/60 p-4 rounded-xl shadow">
+              <h3 className="font-bold mb-2 text-primary">Stressresistenz</h3>
+              <p className="text-sm mb-2">
+                <strong>Im Handball:</strong> Bei 29:29 den entscheidenden 7-Meter verwandeln.
+              </p>
+              <p className="text-sm">
+                <strong>Im Leben:</strong> In Prüfungen, Bewerbungen oder schwierigen Situationen
+                einen kühlen Kopf bewahren.
+              </p>
+            </div>
+
+            <div className="bg-white/60 p-4 rounded-xl shadow">
+              <h3 className="font-bold mb-2 text-primary">Durchhaltevermögen</h3>
+              <p className="text-sm mb-2">
+                <strong>Im Handball:</strong> Auch bei 5-Tore-Rückstand weiterkämpfen und an die Wende glauben.
+              </p>
+              <p className="text-sm">
+                <strong>Im Leben:</strong> Bei Rückschlägen nicht aufgeben, langfristige Ziele verfolgen.
+              </p>
+            </div>
+
+            <div className="bg-white/60 p-4 rounded-xl shadow">
+              <h3 className="font-bold mb-2 text-primary">Kommunikation</h3>
+              <p className="text-sm mb-2">
+                <strong>Im Handball:</strong> Ständig kommunizieren: warnen, motivieren, dirigieren.
+              </p>
+              <p className="text-sm">
+                <strong>Im Leben:</strong> Klar und verständlich kommunizieren, zuhören können,
+                Feedback geben und annehmen.
+              </p>
+            </div>
+
+            <div className="bg-white/60 p-4 rounded-xl shadow">
+              <h3 className="font-bold mb-2 text-primary">Verantwortung</h3>
+              <p className="text-sm mb-2">
+                <strong>Im Handball:</strong> Für eigene Fehler gradestehen, Verantwortung für das Team übernehmen.
+              </p>
+              <p className="text-sm">
+                <strong>Im Leben:</strong> Zu eigenen Entscheidungen stehen, Verantwortung für andere übernehmen.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-primary/10 p-4 rounded-xl">
+            <h3 className="font-bold mb-2 text-primary">Warum Handball besonders geeignet ist:</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li><strong>Komplexität:</strong> Viele Variablen müssen gleichzeitig berücksichtigt werden</li>
+              <li><strong>Schnelligkeit:</strong> Wenig Zeit für Entscheidungen – wie im echten Leben</li>
+              <li><strong>Körperkontakt:</strong> Lernen, mit Widerstand und Konflikten umzugehen</li>
+              <li><strong>Emotionalität:</strong> Hohe emotionale Beteiligung schafft intensive Lernerfahrungen</li>
+              <li><strong>Vielseitigkeit:</strong> Verschiedene Rollen und Aufgaben im Team</li>
+            </ul>
+          </div>
+        </motion.div>
+        </div>
+      </div>
     </div>
   );
 }
