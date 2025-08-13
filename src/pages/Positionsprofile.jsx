@@ -137,7 +137,7 @@ export default function Positionsprofile() {
                       </p>
                       <div className="pt-4">
                         <span className="inline-flex items-center px-4 py-2 bg-white text-gray-700 rounded-lg font-medium group-hover:bg-gray-50 transition-colors duration-200">
-                          Zum Profil ->
+                          Zum Profil →
                         </span>
                       </div>
                     </div>

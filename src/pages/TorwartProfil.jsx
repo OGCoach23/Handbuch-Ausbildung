@@ -1,17 +1,17 @@
 import React from "react";
-import AccordionItem from "../components/AccordionItem";
+import CollapsibleBox from "../components/CollapsibleBox";
 
 export default function TorwartProfil() {
   return (
-    <div className="max-w-6xl mx-auto p-4 bg-white text-gray-800">
-      <h1 className="text-3xl font-bold mb-6">Positionsprofil: TORHÜTER:IN</h1>
+    <div className="max-w-5xl mx-auto space-y-6 p-6 bg-gray-50">
+      <h1 className="text-3xl font-bold text-green-700">Positionsprofil: Torhüter:in</h1>
 
-      <AccordionItem title="Abschnitt A – Kernrolle & Aufgabenbeschreibung">
+      <CollapsibleBox title="Abschnitt A – Kernrolle & Aufgabenbeschreibung">
         <p><strong>Rollenbezeichnung:</strong> Torhüter:in</p>
         <p><strong>Spielbereiche:</strong> Abwehr · Umschalten · Kommunikation</p>
         <p><strong>Typische Position:</strong> Torraum · Torlinie · Aktivraum 6–9 m</p>
         <p><strong>Spielfeldzonen:</strong> Torraumverteidigung · Rückzugsorganisation · Impulsgeber:in für Gegenstoß</p>
-        <ul className="list-disc ml-6">
+        <ul className="list-disc list-inside">
           <li>Tor verteidigen: Würfe erkennen, antizipieren und parieren</li>
           <li>Stellungsspiel variieren: je nach Wurfzone, Abstand und Bewegung</li>
           <li>Kommunikation organisieren: Abwehr coachen, Auslösehandlungen ansagen</li>
@@ -19,132 +19,124 @@ export default function TorwartProfil() {
           <li>Präsenz zeigen: Körpersprache, mentale Stabilität, Spiel mitgestalten</li>
           <li>Wurfmuster lesen: Trigger erkennen und Reaktionsmuster entwickeln</li>
         </ul>
-        <blockquote className="mt-2 italic text-gray-600">
+        <blockquote className="italic border-l-4 border-green-600 pl-4">
           „Torhüter:innen sind keine Endstation – sie sind Taktgeber. Sie sehen alles, beeinflussen alles – und machen oft den Unterschied zwischen Sieg und Niederlage."
         </blockquote>
-      </AccordionItem>
+      </CollapsibleBox>
 
-      <AccordionItem title="Abschnitt B – Anforderungsprofil mit differenzierter Jugendentwicklung">
-        <h3 className="font-semibold mt-4">Technik</h3>
-        <table className="table-auto w-full border mt-2 text-sm">
-          <thead>
-            <tr className="bg-gray-100">
-              <th className="border px-2 py-1">Altersstufe</th>
-              <th className="border px-2 py-1">Anforderungen</th>
-              <th className="border px-2 py-1">Lernziele</th>
-              <th className="border px-2 py-1">Typische Lernmethoden</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="border px-2 py-1">D-Jugend</td>
-              <td className="border px-2 py-1">Grundstellung, einfache Abwehrbewegungen</td>
-              <td className="border px-2 py-1">Hände oben, Knie leicht gebeugt, bereit für Reaktion</td>
-              <td className="border px-2 py-1">Übungen mit Zielwurf, Fang- und Abwehrspiele</td>
-            </tr>
-            <tr>
-              <td className="border px-2 py-1">C-Jugend</td>
-              <td className="border px-2 py-1">Erweiterte Abwehrtechniken, Stellungsspiel</td>
-              <td className="border px-2 py-1">Aktives Stellungsspiel, Antizipation</td>
-              <td className="border px-2 py-1">Situationsspiele, Reaktionsübungen</td>
-            </tr>
-            <tr>
-              <td className="border px-2 py-1">B-Jugend</td>
-              <td className="border px-2 py-1">Komplexe Abwehrsituationen, Kommunikation</td>
-              <td className="border px-2 py-1">Abwehrführung, taktische Entscheidungen</td>
-              <td className="border px-2 py-1">Spielanalysen, taktische Besprechungen</td>
-            </tr>
-            <tr>
-              <td className="border px-2 py-1">A-Jugend</td>
-              <td className="border px-2 py-1">Höchstleistung, mentale Stärke</td>
-              <td className="border px-2 py-1">Wettkampfstabilität, Führungsqualitäten</td>
-              <td className="border px-2 py-1">Wettkampfsimulation, mentales Training</td>
-            </tr>
-          </tbody>
-        </table>
-      </AccordionItem>
+      <CollapsibleBox title="Abschnitt B – Anforderungsprofil (Technik / Taktik / Athletik / Kognition / Mental)">
+        <div>
+          <h3 className="font-bold text-green-700 mb-2">Technik</h3>
+          <table className="w-full border-collapse border border-gray-300">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border p-2">Stufe</th>
+                <th className="border p-2">Zielentwicklung</th>
+                <th className="border p-2">Methodik / Fokus</th>
+                <th className="border p-2">Woran du's erkennst</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border p-2">E-Jugend</td>
+                <td className="border p-2">Grundstellung, Ballgefühl, einfache Würfe abwehren</td>
+                <td className="border p-2">Spielformen mit vielen Bällen, Mut entwickeln</td>
+                <td className="border p-2">Kind hat Spaß im Tor, bewegt sich zum Ball</td>
+              </tr>
+              <tr>
+                <td className="border p-2">D-Jugend</td>
+                <td className="border p-2">Stellungsspiel, Grundtechniken Parade</td>
+                <td className="border p-2">Stellungskorrektur, einfache Wurfspiele</td>
+                <td className="border p-2">Bewusste Stellungsnahme, erste Antizipation</td>
+              </tr>
+              <tr>
+                <td className="border p-2">C-Jugend</td>
+                <td className="border p-2">Wurfarten unterscheiden, Abpraller verwerten</td>
+                <td className="border p-2">Spezifisches Training, Videoanalyse</td>
+                <td className="border p-2">Reaktionen werden spezifischer und kontrollierter</td>
+              </tr>
+              <tr>
+                <td className="border p-2">B-Jugend</td>
+                <td className="border p-2">Komplexe Parade-Techniken, Tempogegenstoß einleiten</td>
+                <td className="border p-2">Wettkampfnahe Situationen, Drucktraining</td>
+                <td className="border p-2">Stabilität unter Druck, sichere Abwürfe</td>
+              </tr>
+              <tr>
+                <td className="border p-2">A-Jugend</td>
+                <td className="border p-2">Individueller Stil, Spielsteuerung</td>
+                <td className="border p-2">Selbstanalyse, Führungsqualitäten entwickeln</td>
+                <td className="border p-2">Eigenständige Entscheidungen, Team-Kommunikation</td>
+              </tr>
+            </tbody>
+          </table>
 
-      <AccordionItem title="Abschnitt C – Typische Herausforderungen (Spieler:in & Trainer:in)">
-        <table className="table-auto w-full border mt-2 text-sm">
-          <thead>
-            <tr className="bg-gray-100">
-              <th className="border px-2 py-1">Perspektive</th>
-              <th className="border px-2 py-1">Typische Herausforderung</th>
-              <th className="border px-2 py-1">Beschreibung</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="border px-2 py-1">Spieler:in</td>
-              <td className="border px-2 py-1">„Ich weiß nie, wo ich stehen soll."</td>
-              <td className="border px-2 py-1">Unsicheres Stellungsspiel – steht zu tief oder zentral</td>
-            </tr>
-            <tr>
-              <td className="border px-2 py-1">Spieler:in</td>
-              <td className="border px-2 py-1">„Ich kann die Würfe nicht lesen."</td>
-              <td className="border px-2 py-1">Fehlende Antizipation, zu späte Reaktionen</td>
-            </tr>
-            <tr>
-              <td className="border px-2 py-1">Trainer:in</td>
-              <td className="border px-2 py-1">„Wie fördere ich mentale Stärke?"</td>
-              <td className="border px-2 py-1">Aufbau von Selbstvertrauen und Wettkampfstabilität</td>
-            </tr>
-          </tbody>
-        </table>
-      </AccordionItem>
+          <h3 className="font-bold text-green-700 mb-2 mt-4">Taktik</h3>
+          <ul className="list-disc list-inside">
+            <li>Stellungsspiel situativ anpassen</li>
+            <li>Kommunikation mit Abwehr koordinieren</li>
+            <li>Gegenstoß-Timing optimieren</li>
+            <li>Wurfanalyse und Antizipation</li>
+          </ul>
 
-      <AccordionItem title="Abschnitt D – Trainingsimpulse & methodischer Aufbau">
-        <h4 className="font-semibold mt-4">Fokus: Stellungsspiel</h4>
-        <ul className="list-decimal ml-6">
-          <li>Zonen-Startübung: Torhüter:in positioniert sich je nach Wurfzone</li>
-          <li>Antizipationsübungen: Wurfmuster erkennen und vorausahnen</li>
-          <li>Kommunikationsspiele: Abwehr coachen und organisieren</li>
-          <li>Reaktionsübungen: Schnelle Entscheidungen unter Druck</li>
+          <h3 className="font-bold text-green-700 mb-2 mt-4">Athletik</h3>
+          <ul className="list-disc list-inside">
+            <li>Explosivkraft für schnelle Reaktionen</li>
+            <li>Flexibilität und Beweglichkeit</li>
+            <li>Koordination und Balance</li>
+            <li>Ausdauer für konstante Leistung</li>
+          </ul>
+        </div>
+      </CollapsibleBox>
+
+      <CollapsibleBox title="Abschnitt C – Typische Herausforderungen">
+        <ul className="list-disc list-inside">
+          <li>Druck in entscheidenden Situationen</li>
+          <li>Konstanz über 60 Minuten halten</li>
+          <li>Kommunikation mit wechselnder Abwehr</li>
+          <li>Schnelle Entscheidungen bei Gegenstößen</li>
+          <li>Mentale Stärke nach Gegentoren</li>
         </ul>
-      </AccordionItem>
+      </CollapsibleBox>
 
-      <AccordionItem title="Abschnitt E – Typische Spielfehler & Coachingimpulse">
-        <table className="table-auto w-full border mt-2 text-sm">
-          <thead>
-            <tr className="bg-gray-100">
-              <th className="border px-2 py-1">Fehlerbild / Muster</th>
-              <th className="border px-2 py-1">Coachingimpuls / Alternative Handlung</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="border px-2 py-1">Bleibt passiv auf der Linie stehen</td>
-              <td className="border px-2 py-1">- Stellungsspiel aktiv schulen</td>
-            </tr>
-            <tr>
-              <td className="border px-2 py-1">Reagiert zu spät auf Würfe</td>
-              <td className="border px-2 py-1">- Antizipation und Vorbereitung trainieren</td>
-            </tr>
-            <tr>
-              <td className="border px-2 py-1">Kommuniziert nicht mit der Abwehr</td>
-              <td className="border px-2 py-1">- Kommunikationsübungen einbauen</td>
-            </tr>
-          </tbody>
-        </table>
-      </AccordionItem>
-
-      <AccordionItem title="Abschnitt F – Bewegungsmuster & Spielverhalten">
-        <ul className="list-disc ml-6">
-          <li>Aktives Mitgehen bei Kreuzbewegungen</li>
-          <li>Stellungsspiel je nach Wurfzone anpassen</li>
-          <li>Kommunikation mit Abwehrspieler:innen</li>
-          <li>Umschalten nach Ballgewinn/-verlust</li>
+      <CollapsibleBox title="Abschnitt D – Trainingsziele">
+        <ul className="list-disc list-inside">
+          <li>Parade-Techniken perfektionieren</li>
+          <li>Stellungsspiel automatisieren</li>
+          <li>Kommunikationsfähigkeiten stärken</li>
+          <li>Gegenstoß-Timing verbessern</li>
+          <li>Mentale Widerstandsfähigkeit entwickeln</li>
         </ul>
-      </AccordionItem>
+      </CollapsibleBox>
 
-      <AccordionItem title="Abschnitt G – Beobachtungskriterien für Trainer:innen">
-        <ul className="list-disc ml-6">
-          <li>Variiert Stellungsspiel je nach Situation</li>
-          <li>Gibt klare Ansagen an Abwehr</li>
-          <li>Antizipiert Wurfmuster</li>
-          <li>Zeigt mentale Stabilität unter Druck</li>
+      <CollapsibleBox title="Abschnitt E – Typische Spielfehler & Coachingimpulse">
+        <ul className="list-disc list-inside">
+          <li>Zu früh aus dem Tor kommen - Besser: Geduld bewahren, Stellungsspiel nutzen</li>
+          <li>Fehlende Kommunikation - Besser: Kontinuierlich mit Abwehr sprechen</li>
+          <li>Hektische Abwürfe - Besser: Ruhe bewahren, bewusst den Gegenstoß starten</li>
+          <li>Nach Gegentor frustriert - Besser: Schnell refokussieren, nächste Situation</li>
         </ul>
-      </AccordionItem>
+      </CollapsibleBox>
+
+      <CollapsibleBox title="Abschnitt F – Bewegungsmuster & Spielverhalten">
+        <ul className="list-disc list-inside">
+          <li>Dynamisches Stellungsspiel je nach Angriffssituation</li>
+          <li>Schnelle Reaktionen auf Wurffinten</li>
+          <li>Koordinierte Bewegungen bei Kreuzbällen</li>
+          <li>Aktive Rolle bei Standard-Situationen</li>
+          <li>Führung der Abwehr durch Zurufe und Positionierung</li>
+        </ul>
+      </CollapsibleBox>
+
+      <CollapsibleBox title="Abschnitt G – Beobachtungskriterien">
+        <ul className="list-disc list-inside">
+          <li>Parade-Quote bei verschiedenen Wurfarten</li>
+          <li>Qualität der Kommunikation mit Abwehr</li>
+          <li>Erfolgsrate bei Gegenstoß-Einleitungen</li>
+          <li>Stellungsspiel-Disziplin über das Spiel</li>
+          <li>Mentale Stabilität in Drucksituationen</li>
+          <li>Führungsqualitäten und Teamintegration</li>
+        </ul>
+      </CollapsibleBox>
     </div>
   );
 }

@@ -1,133 +1,136 @@
 import React from "react";
-import AccordionItem from "../components/AccordionItem";
+import CollapsibleBox from "../components/CollapsibleBox";
 
 export default function RueckraumProfil() {
   return (
-    <div className="bg-white min-h-screen p-6 md:p-12 max-w-5xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">
-        Positionsprofil: RÜCKRAUM (Links/Rechts)
-      </h1>
+    <div className="max-w-5xl mx-auto space-y-6 p-6 bg-gray-50">
+      <h1 className="text-3xl font-bold text-green-700">Positionsprofil: Rückraumspieler:in (LR / RR)</h1>
 
-      <AccordionItem title="Abschnitt A – Kernrolle & Aufgabenbeschreibung">
-        <p><strong>Rollenbezeichnung:</strong> Rückraumspieler:in (Links / Rechts)</p>
+      <CollapsibleBox title="Abschnitt A – Kernrolle & Aufgabenbeschreibung">
+        <p><strong>Rollenbezeichnung:</strong> Rückraumspieler:in</p>
         <p><strong>Spielbereiche:</strong> Angriff · Abwehr · Umschalten</p>
-        <p><strong>Typische Positionen im System:</strong> RL · RR (ggf. auch als zweite Welle in der Mitte)</p>
-        <p><strong>Spielfeldzonen:</strong> Rückraum links / rechts – mit Raumzugriff zur Tiefe & Breite</p>
-        <p><strong>Kernaufgaben:</strong></p>
-        <ul className="list-disc pl-6">
-          <li>Tiefenläufe anstoßen: Räume attackieren, Durchbrüche erzeugen, Spiel in Bewegung halten</li>
-          <li>Entscheidungen treffen: 1:1, Pass, Stoßen, Rückstoßen, Rückraumschuss – je nach Situation</li>
-          <li>Taktische Auslösehandlungen mitgestalten: Timing, Laufwege, Kommunikation</li>
-          <li>Spielstruktur sichern: Spielgeschwindigkeit, Ballzirkulation, Umschaltverhalten</li>
-          <li>In der Abwehr: Gegenspieler kontrollieren, Ballzugriff organisieren, kompakt verschieben</li>
-          <li>Umschalten: Gegenstoß initiieren oder Rückzugsverhalten klug anpassen</li>
+        <p><strong>Typische Position:</strong> LR / RR (ggf. Rückzug in Abwehr)</p>
+        <p><strong>Spielfeldzonen:</strong> Rückraum, Fernwurfzone, Abwehr auf Halbposition</p>
+        <ul className="list-disc list-inside">
+          <li>Spielaufbau und Spielsteuerung aus dem Rückraum</li>
+          <li>Fernwürfe und Durchbrüche aus der zweiten Reihe</li>
+          <li>Zusammenspiel mit Kreis und Außen koordinieren</li>
+          <li>Tempowechsel und Rhythmuswechsel initiieren</li>
+          <li>Abwehrarbeit auf Halbposition</li>
+          <li>Rückzugsbewegungen und Umschaltspiel</li>
         </ul>
-        <p><em>Trainerkommentar:</em> „Rückraumspieler:innen sind Taktgeber. Sie müssen lernen, zu lesen statt nur zu laufen. Ihre größte Stärke ist nicht nur Technik – sondern Timing und Entscheidung."</p>
-      </AccordionItem>
+        <blockquote className="italic border-l-4 border-green-600 pl-4">
+          „Rückraumspieler:innen sind die Dirigenten des Teams – sie haben den Überblick, setzen Impulse und entscheiden, wann das Tempo anzieht."
+        </blockquote>
+      </CollapsibleBox>
 
-      <AccordionItem title="Abschnitt B – Anforderungsprofil RL/RR">
-        <h3 className="font-semibold mt-4">Technik</h3>
-        <table className="table-auto w-full border mt-2 text-sm">
-          <thead>
-            <tr className="bg-gray-100">
-              <th className="border px-2 py-1">Altersstufe</th>
-              <th className="border px-2 py-1">Anforderungen</th>
-              <th className="border px-2 py-1">Lernziele</th>
-              <th className="border px-2 py-1">Methodik</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="border px-2 py-1">D-Jugend</td>
-              <td className="border px-2 py-1">Grundtechniken, einfache Entscheidungen</td>
-              <td className="border px-2 py-1">Ballkontrolle, Passgenauigkeit</td>
-              <td className="border px-2 py-1">Technikübungen, einfache Spiele</td>
-            </tr>
-            <tr>
-              <td className="border px-2 py-1">C-Jugend</td>
-              <td className="border px-2 py-1">Erweiterte Techniken, Spielverständnis</td>
-              <td className="border px-2 py-1">Timing, Entscheidungsfindung</td>
-              <td className="border px-2 py-1">Situationsspiele, Taktikübungen</td>
-            </tr>
-            <tr>
-              <td className="border px-2 py-1">B-Jugend</td>
-              <td className="border px-2 py-1">Komplexe Techniken, Führung</td>
-              <td className="border px-2 py-1">Führungsqualitäten, Präzision</td>
-              <td className="border px-2 py-1">Wettkampfsimulation, Führungstraining</td>
-            </tr>
-            <tr>
-              <td className="border px-2 py-1">A-Jugend</td>
-              <td className="border px-2 py-1">Höchstleistung, Verantwortung</td>
-              <td className="border px-2 py-1">Wettkampfstabilität, Teamführung</td>
-              <td className="border px-2 py-1">Druckübungen, Mentaltraining</td>
-            </tr>
-          </tbody>
-        </table>
-      </AccordionItem>
+      <CollapsibleBox title="Abschnitt B – Anforderungsprofil (Technik / Taktik / Athletik / Kognition / Mental)">
+        <div>
+          <h3 className="font-bold text-green-700 mb-2">Technik</h3>
+          <table className="w-full border-collapse border border-gray-300">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border p-2">Stufe</th>
+                <th className="border p-2">Zielentwicklung</th>
+                <th className="border p-2">Methodik / Fokus</th>
+                <th className="border p-2">Woran du's erkennst</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border p-2">D-Jugend</td>
+                <td className="border p-2">Grundwurf aus Stand, sicheres Passing</td>
+                <td className="border p-2">Zielwurf-Spiele, Passgenauigkeit</td>
+                <td className="border p-2">Sichere Ballannahme, einfache Würfe treffen</td>
+              </tr>
+              <tr>
+                <td className="border p-2">C-Jugend</td>
+                <td className="border p-2">Sprungwurf, Durchbruch mit Ball</td>
+                <td className="border p-2">Wurfkraft entwickeln, 1:1-Situationen</td>
+                <td className="border p-2">Druckvolle Würfe, erste Durchbrüche</td>
+              </tr>
+              <tr>
+                <td className="border p-2">B-Jugend</td>
+                <td className="border p-2">Variabel werfen, Spielsteuerung</td>
+                <td className="border p-2">Taktisches Verständnis, Entscheidungstraining</td>
+                <td className="border p-2">Bewusste Spielzugentscheidungen</td>
+              </tr>
+              <tr>
+                <td className="border p-2">A-Jugend</td>
+                <td className="border p-2">Spielmacherqualitäten, Führung</td>
+                <td className="border p-2">Komplexe Spielzüge, Teamführung</td>
+                <td className="border p-2">Eigenständige Spielsteuerung, Führung des Teams</td>
+              </tr>
+            </tbody>
+          </table>
 
-      <AccordionItem title="Abschnitt C – Typische Herausforderungen">
-        <p><strong>Spieler:in:</strong> „Ich weiß nicht, wann ich stoßen soll." - Unsicherheit in der Entscheidungsfindung und im Timing.</p>
-        <p><strong>Trainer:in:</strong> „Wie fördere ich das Spielverständnis?" - Rückraumspieler:innen müssen lernen, das Spiel zu lesen und taktische Entscheidungen zu treffen.</p>
-      </AccordionItem>
+          <h3 className="font-bold text-green-700 mb-2 mt-4">Taktik</h3>
+          <ul className="list-disc list-inside">
+            <li>Spielaufbau variabel gestalten</li>
+            <li>Timing für Durchbrüche und Würfe</li>
+            <li>Kooperation mit allen Positionen</li>
+            <li>Tempowechsel bewusst einsetzen</li>
+          </ul>
 
-      <AccordionItem title="Abschnitt D – Trainingsziele">
-        <ul className="list-disc pl-6">
-          <li>Spielverständnis entwickeln</li>
-          <li>Entscheidungsfindung verbessern</li>
-          <li>Technische Präzision steigern</li>
-          <li>Führungsqualitäten fördern</li>
-          <li>Wettkampfstabilität aufbauen</li>
+          <h3 className="font-bold text-green-700 mb-2 mt-4">Athletik</h3>
+          <ul className="list-disc list-inside">
+            <li>Wurfkraft und Wurfgenauigkeit</li>
+            <li>Schnelligkeit für Durchbrüche</li>
+            <li>Ausdauer für konstante Leistung</li>
+            <li>Sprungkraft für erhöhte Wurfposition</li>
+          </ul>
+        </div>
+      </CollapsibleBox>
+
+      <CollapsibleBox title="Abschnitt C – Typische Herausforderungen">
+        <ul className="list-disc list-inside">
+          <li>Entscheidung zwischen Wurf und Pass</li>
+          <li>Konstante Wurfleistung über das Spiel</li>
+          <li>Übersicht in dynamischen Situationen</li>
+          <li>Balance zwischen Risiko und Sicherheit</li>
+          <li>Führung des Teams in schwierigen Phasen</li>
         </ul>
-      </AccordionItem>
+      </CollapsibleBox>
 
-      <AccordionItem title="Abschnitt E – Typische Spielfehler & Coachingimpulse">
-        <p><strong>Fehler:</strong> Spielt zu schnell oder zu langsam – findet nicht den richtigen Rhythmus.</p>
-        <p><strong>Coaching:</strong> „Lies das Spiel, bevor du handelst." - Spielverständnis und Timing fördern.</p>
-      </AccordionItem>
+      <CollapsibleBox title="Abschnitt D – Trainingsziele">
+        <ul className="list-disc list-inside">
+          <li>Wurfvariabilität und -präzision steigern</li>
+          <li>Spielübersicht und Entscheidungsfähigkeit</li>
+          <li>Zusammenspiel mit allen Positionen</li>
+          <li>Tempowechsel bewusst steuern</li>
+          <li>Führungsqualitäten entwickeln</li>
+        </ul>
+      </CollapsibleBox>
 
-      <AccordionItem title="Abschnitt F – Bewegungsmuster & Spielverhalten">
-        <h4 className="font-semibold mt-2">D-Jugend – Fokus: Grundlagen & Orientierung</h4>
-        <p>Grundposition im Rückraum, einfache Pässe, erste Stoßversuche</p>
-        
-        <h4 className="font-semibold mt-4">C-Jugend – Fokus: Spielverständnis & Timing</h4>
-        <p>Aktive Positionierung, Timing mit Mitspieler:innen, erweiterte Techniken</p>
-        
-        <h4 className="font-semibold mt-4">B-Jugend – Fokus: Führung & Präzision</h4>
-        <p>Führungsrolle, präzise Techniken, taktische Entscheidungen</p>
-        
-        <h4 className="font-semibold mt-4">A-Jugend – Fokus: Wettkampf & Verantwortung</h4>
-        <p>Wettkampfstabilität, Teamführung, Verantwortung für Spielgestaltung</p>
-      </AccordionItem>
+      <CollapsibleBox title="Abschnitt E – Typische Spielfehler & Coachingimpulse">
+        <ul className="list-disc list-inside">
+          <li>Zu viel alleine machen - Besser: Mitspieler einbeziehen, Teamplay stärken</li>
+          <li>Kopflose Fernwürfe - Besser: Bewusst Lücken suchen, Timing beachten</li>
+          <li>Fehlende Kommunikation - Besser: Spielzüge ansagen, Team dirigieren</li>
+          <li>Ungeduld bei Angriff - Besser: Geduldig Chancen erarbeiten</li>
+        </ul>
+      </CollapsibleBox>
 
-      <AccordionItem title="Abschnitt G – Beobachtungskriterien für Trainer:innen">
-        <h4 className="font-semibold mt-2">D-Jugend – Grundverhalten & Technik</h4>
-        <ul className="list-disc pl-6">
-          <li>Hält Grundposition im Rückraum</li>
-          <li>Führt einfache Pässe aus</li>
-          <li>Reagiert auf Spielsituationen</li>
+      <CollapsibleBox title="Abschnitt F – Bewegungsmuster & Spielverhalten">
+        <ul className="list-disc list-inside">
+          <li>Variable Positionierung im Rückraum</li>
+          <li>Timing bei Durchbrüchen und Kreuzungen</li>
+          <li>Unterstützung des Spielaufbaus</li>
+          <li>Rückzugsbewegungen in die Abwehr</li>
+          <li>Kombination mit Kreis- und Außenspielern</li>
         </ul>
-        
-        <h4 className="font-semibold mt-4">C-Jugend – Entwicklung & Verständnis</h4>
-        <ul className="list-disc pl-6">
-          <li>Positioniert sich aktiv</li>
-          <li>Zeigt Spielverständnis</li>
-          <li>Trifft erste taktische Entscheidungen</li>
+      </CollapsibleBox>
+
+      <CollapsibleBox title="Abschnitt G – Beobachtungskriterien">
+        <ul className="list-disc list-inside">
+          <li>Wurfquote aus verschiedenen Positionen</li>
+          <li>Qualität der Spielentscheidungen</li>
+          <li>Passgenauigkeit und -timing</li>
+          <li>Übersicht und Antizipation</li>
+          <li>Kommunikation und Teamführung</li>
+          <li>Bewegung ohne Ball</li>
         </ul>
-        
-        <h4 className="font-semibold mt-4">B-Jugend – Führung & Präzision</h4>
-        <ul className="list-disc pl-6">
-          <li>Übernimmt Führungsrolle</li>
-          <li>Zeigt technische Präzision</li>
-          <li>Trifft taktische Entscheidungen</li>
-        </ul>
-        
-        <h4 className="font-semibold mt-4">A-Jugend – Wettkampf & Verantwortung</h4>
-        <ul className="list-disc pl-6">
-          <li>Zeigt Wettkampfstabilität</li>
-          <li>Führt das Team</li>
-          <li>Übernimmt Verantwortung</li>
-        </ul>
-      </AccordionItem>
+      </CollapsibleBox>
     </div>
   );
 }
