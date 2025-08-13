@@ -3,12 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const footerLinks = [
-  { name: "Datenschutz", url: "/datenschutz" },
-  { name: "Nutzungsbedingungen", url: "/nutzungsbedingungen" },
-  { name: "Quellen", url: "/quellen" },
-];
-
 const cardsData = [
   {
     title: "Zielsetzung dieses Moduls",
@@ -83,20 +77,14 @@ export default function Modul1FJugend() {
   };
 
   const headerRef = useRef(null);
-  const footerRef = useRef(null);
   const mainContentRef = useRef(null);
 
   useEffect(() => {
     const updateSizes = () => {
       setIsMobile(window.innerWidth < 768);
       const vh = window.innerHeight;
-
-      const headerHeight = headerRef.current
-        ? headerRef.current.offsetHeight
-        : 0;
-      const assumedFooterHeight = 100;
-      const availableHeight = vh - headerHeight - assumedFooterHeight;
-
+      const headerHeight = headerRef.current ? headerRef.current.offsetHeight : 0;
+      const availableHeight = vh - headerHeight - 100;
       carouselConfig.availableHeight = availableHeight > 0 ? availableHeight : vh;
     };
 
@@ -151,13 +139,13 @@ export default function Modul1FJugend() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
       {/* Header */}
-      <header ref={headerRef} className="z-40">
+      <header ref={headerRef} className="z-40 bg-white/80 backdrop-blur-sm border-b border-gray-200">
         <div className="flex justify-center pt-8 pb-4">
           <Link
             to="/f-jugend"
-            className="rounded-full bg-white text-green-600 px-6 py-2 shadow-md hover:bg-blue-600 hover:text-white transition-colors duration-300"
+            className="rounded-full bg-gradient-to-r from-green-500 to-blue-600 text-white px-8 py-3 shadow-lg hover:from-blue-600 hover:to-green-500 transition-all duration-300 transform hover:scale-105 font-semibold"
           >
             ← Zurück zur F-Jugend Übersicht
           </Link>
@@ -167,7 +155,7 @@ export default function Modul1FJugend() {
       {/* Hauptbereich */}
       <div
         ref={mainContentRef}
-        className="flex-1 flex flex-col items-center justify-center p-4"
+        className="flex-1 flex flex-col items-center justify-center p-4 relative"
         style={{ minHeight: `${carouselConfig.availableHeight}px` }}
       >
         {/* Überschrift */}
@@ -175,14 +163,14 @@ export default function Modul1FJugend() {
           initial={{ opacity: 0, y: -50, rotateX: -15 }}
           animate={{ opacity: 1, y: 0, rotateX: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-8 w-full max-w-4xl"
+          className="mb-12 w-full max-w-5xl"
           style={{ perspective: "1000px" }}
         >
-          <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
-            <h1 className="text-4xl font-bold text-green-600 text-center mb-4">
+          <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-10 border border-gray-100">
+            <h1 className="text-5xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent text-center mb-6">
               Modul 1: Entwicklungsmerkmale & Methodik
             </h1>
-            <p className="text-center text-xl text-green-700 italic leading-relaxed">
+            <p className="text-center text-2xl text-gray-700 italic leading-relaxed max-w-4xl mx-auto">
               "Wie begleite ich Kinder zwischen 4 und 8 Jahren liebevoll,
               bewegungsreich und entwicklungsfördernd ins Handballspielen?"
             </p>
@@ -192,13 +180,15 @@ export default function Modul1FJugend() {
         {/* Karussell */}
         <div className="relative flex items-center justify-center w-full overflow-hidden">
           {/* Pfeil links */}
-          <button
+          <motion.button
             onClick={rotateLeft}
             disabled={isAnimating}
-            className="absolute left-2 md:left-[-60px] z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
+            className="absolute left-4 md:left-[-80px] z-30 bg-white/95 backdrop-blur-sm rounded-full p-4 shadow-2xl hover:bg-gradient-to-r hover:from-blue-500 hover:to-green-500 hover:text-white transition-all duration-300 disabled:opacity-50 transform hover:scale-110"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <ChevronLeft size={24} />
-          </button>
+            <ChevronLeft size={28} />
+          </motion.button>
 
           {/* Karten Container */}
           <div
@@ -223,16 +213,14 @@ export default function Modul1FJugend() {
               return (
                 <motion.div
                   key={index}
-                  className={`absolute rounded-xl shadow-2xl flex items-center justify-center text-center cursor-pointer ${
+                  className={`absolute rounded-2xl shadow-2xl flex items-center justify-center text-center cursor-pointer backdrop-blur-sm ${
                     card.highlight
-                      ? "border-4 border-yellow-400"
-                      : "border border-gray-200"
+                      ? "border-4 border-yellow-400 bg-gradient-to-br from-yellow-50 to-orange-50"
+                      : "border border-gray-200 bg-white/95"
                   }`}
                   style={{
                     width: carouselConfig.cardWidth,
                     height: carouselConfig.cardHeight,
-                    backgroundColor: "rgba(255,255,255,0.95)",
-                    color: "#166534",
                     left: "50%",
                     top: "50%",
                     transform: isMobile
@@ -258,8 +246,8 @@ export default function Modul1FJugend() {
                   }}
                   onClick={() => handleCardClick(index)}
                 >
-                  <div className="p-6">
-                    <h3 className="font-bold text-xl leading-tight">
+                  <div className="p-8">
+                    <h3 className="font-bold text-2xl leading-tight text-gray-800">
                       {card.title}
                     </h3>
                   </div>
@@ -269,55 +257,48 @@ export default function Modul1FJugend() {
           </div>
 
           {/* Pfeil rechts */}
-          <button
+          <motion.button
             onClick={rotateRight}
             disabled={isAnimating}
-            className="absolute right-2 md:right-[-60px] z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
+            className="absolute right-4 md:right-[-80px] z-30 bg-white/95 backdrop-blur-sm rounded-full p-4 shadow-2xl hover:bg-gradient-to-r hover:from-blue-500 hover:to-green-500 hover:text-white transition-all duration-300 disabled:opacity-50 transform hover:scale-110"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <ChevronRight size={24} />
-          </button>
+            <ChevronRight size={28} />
+          </motion.button>
         </div>
 
         {/* Indikatoren */}
-        <div className="mt-6 flex space-x-3">
+        <div className="mt-8 flex space-x-4">
           {cardsData.map((_, index) => (
-            <button
+            <motion.button
               key={index}
               onClick={() => goToCard(index)}
               disabled={isAnimating}
-              className={`w-4 h-4 rounded-full transition-all duration-300 ${
+              className={`w-5 h-5 rounded-full transition-all duration-300 ${
                 index === currentIndex
-                  ? "bg-blue-600 scale-125 shadow-lg"
+                  ? "bg-gradient-to-r from-blue-600 to-green-600 scale-125 shadow-lg"
                   : "bg-gray-300 hover:bg-gray-400"
               }`}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
             />
           ))}
         </div>
       </div>
 
-      {/* Footer */}
-      <footer ref={footerRef} className="bg-gray-50 text-gray-600 w-full z-10 p-4 mt-auto">
-        <div className="max-w-7xl mx-auto flex justify-center space-x-6 text-sm">
-          {footerLinks.map((link, index) => (
-            <Link key={index} to={link.url} className="hover:text-green-600 transition-colors">
-              {link.name}
-            </Link>
-          ))}
-        </div>
-      </footer>
-
       {/* Modal */}
       <AnimatePresence>
         {selectedCard && (
           <motion.div
-            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedCard(null)}
           >
             <motion.div
-              className="bg-white rounded-xl p-8 max-w-3xl w-full shadow-2xl overflow-y-auto max-h-[85vh]"
+              className="bg-white/95 backdrop-blur-sm rounded-3xl p-10 max-w-4xl w-full shadow-2xl overflow-y-auto max-h-[85vh] border border-gray-200"
               initial={{ scale: 0.8, opacity: 0, y: 50 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.8, opacity: 0, y: 50 }}
@@ -325,27 +306,31 @@ export default function Modul1FJugend() {
               onClick={(e) => e.stopPropagation()}
             >
               <h2
-                className={`text-3xl font-bold mb-6 ${
+                className={`text-4xl font-bold mb-8 text-center ${
                   selectedCard.highlight
-                    ? "text-yellow-600"
-                    : "text-green-600"
+                    ? "bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent"
+                    : "bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent"
                 }`}
               >
                 {selectedCard.title}
               </h2>
-              <ul className="list-disc pl-6 space-y-3 text-gray-700 text-lg">
+              <ul className="list-disc pl-8 space-y-4 text-gray-700 text-xl">
                 {selectedCard.content.map((item, i) => (
                   <li key={i} className="leading-relaxed">
                     {item}
                   </li>
                 ))}
               </ul>
-              <button
-                onClick={() => setSelectedCard(null)}
-                className="mt-8 px-8 py-4 bg-green-600 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300 font-medium text-lg"
-              >
-                Schließen
-              </button>
+              <div className="flex justify-center mt-10">
+                <motion.button
+                  onClick={() => setSelectedCard(null)}
+                  className="px-10 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-2xl hover:from-blue-600 hover:to-green-500 transition-all duration-300 font-semibold text-xl shadow-lg transform hover:scale-105"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Schließen
+                </motion.button>
+              </div>
             </motion.div>
           </motion.div>
         )}
