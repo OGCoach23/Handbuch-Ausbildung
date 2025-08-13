@@ -182,7 +182,7 @@ export default function Home() {
       </div>
 
       {/* EbenenSection - Übersicht aller Ebenen und Links */}
-      <div className="mt-32 bg-gray-50 py-16 border-t">
+      <div className="mt-32 py-16">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {Object.entries(sectionLinks).map(([title, links]) => (
             <div key={title}>

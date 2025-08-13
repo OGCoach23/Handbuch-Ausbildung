@@ -7,7 +7,7 @@ export default function Training() {
     <div className="bg-white">
 
       {/* Intro */}
-      <section className="bg-green-100/30 py-12">
+      <section className="py-12">
         <div className="max-w-6xl mx-auto px-4 space-y-6">
           <h1 className="text-4xl font-bold text-green-700">
             Trainingsaufbau & Jahresplanung
@@ -30,17 +30,15 @@ export default function Training() {
       <AccordionSections />
 
       {/* Fazit */}
-      <section className="bg-green-50 py-12">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="bg-white p-8 rounded-xl shadow-lg border border-green-200">
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <div className="bg-green-50 p-8 rounded-2xl shadow-lg">
             <h2 className="text-2xl font-bold text-green-700 mb-4">Fazit</h2>
             <p className="text-gray-700 leading-relaxed text-lg">
               Unser Ziel: Du sollst nicht nur Training „machen", sondern Entwicklung gestalten –
               planvoll, wirkungsvoll und mit Freude.
             </p>
-          </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 }

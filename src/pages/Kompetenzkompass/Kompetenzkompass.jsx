@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 
 export default function Kompetenzkompass() {
   return (
-    <div className="bg-green-100/30 p-8 rounded-2xl shadow-xl max-w-6xl mx-auto">
+    <div className="max-w-6xl mx-auto px-4 py-8">
+      <div className="bg-green-50 p-8 rounded-2xl shadow-xl">
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -99,6 +100,7 @@ export default function Kompetenzkompass() {
           <p className="mt-4">Ein Spieler kann z. B. in M3 auf Stufe 4 sein, aber in M4 auf Stufe 2 - individuelles Förderprofil!</p>
         </section>
       </div>
+    </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import CollapsibleBox from "../components/CollapsibleBox";
 
 export default function RueckraumMitte() {
   return (
-    <div className="max-w-5xl mx-auto space-y-6 p-6 bg-gray-50">
+    <div className="max-w-5xl mx-auto space-y-6 p-6">
       <h1 className="text-3xl font-bold text-green-700">Positionsprofil: Rückraum Mitte (RM)</h1>
 
       <CollapsibleBox title="Abschnitt A – Kernrolle & Aufgabenbeschreibung">

@@ -120,7 +120,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen bg-gradient-to-r from-white to-gray-100">
+      <div className="min-h-screen bg-white">
         <Navbar />
         <div className="pt-48"> {/* Globaler Abstand für alle Unterseiten */}
           <Routes>
