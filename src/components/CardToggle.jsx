@@ -13,7 +13,7 @@ export default function CardToggle() {
     { title: "Modulbasierte Ausbildungslogik", link: "/ebene2" },
     { title: "Quer- und Neueinsteiger", link: "/quereinsteiger" },
     { title: "Breitensport vs. Leistungssport", link: "/breitensport" },
-    { title: "Entwicklung der Spielsysteme", link: "/entwicklung-spielsysteme" },
+    { title: "Entwicklung der Abwehrsysteme", link: "/entwicklung-spielsysteme" },
   ];
 
   const leftCards = [

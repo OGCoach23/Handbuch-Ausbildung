@@ -71,14 +71,14 @@ export default function Navbar() {
       ]
     },
     {
-      title: "Training",
+      title: "Ausbildung",
       icon: <Target size={20} />,
       hasDropdown: true,
       dropdownItems: [
         { title: "Methodik", link: "/trainingsaufbau", description: "Trainingsaufbau & Prinzipien" },
         { title: "Trainingsaufbau", link: "/training", description: "Struktur & Jahresplanung" },
         { title: "Handball Leben", link: "/schule-leben", description: "Schule fürs Leben" },
-        { title: "Altersstufen", link: "/altersstufen", description: "Überblick aller Stufen" }
+        { title: "Kompetenzkompass", link: "/kompetenzkompass", description: "Systematische Kompetenzentwicklung" }
       ]
     },
     {
@@ -95,11 +95,11 @@ export default function Navbar() {
       ]
     },
     {
-      title: "Spielsysteme",
+      title: "Abwehrsysteme",
       icon: <Target size={20} />,
       hasDropdown: true,
       dropdownItems: [
-        { title: "Übersicht", link: "/entwicklung-spielsysteme", description: "Entwicklung der Spielsysteme" },
+        { title: "Übersicht", link: "/entwicklung-spielsysteme", description: "Entwicklung der Abwehrsysteme" },
         { title: "E-Jugend", link: "/spielsystem-e-jugend", description: "Manndeckung" },
         { title: "D-Jugend", link: "/spielsystem-d-jugend", description: "1:5-Deckung" },
         { title: "C-Jugend", link: "/spielsystem-c-jugend", description: "3:2:1-Deckung" },
@@ -107,18 +107,6 @@ export default function Navbar() {
         { title: "A-Jugend", link: "/spielsystem-a-jugend", description: "6:0-Deckung (offensiv)" },
         { title: "Alle Systeme", link: "/spielsysteme-uebersicht", description: "Komplette Übersicht" }
       ]
-    },
-    {
-      title: "Kompetenzkompass",
-      icon: <GraduationCap size={20} />,
-      link: "/kompetenzkompass",
-      description: "Systematische Kompetenzentwicklung"
-    },
-    {
-      title: "Evaluation & Feedback",
-      icon: <BarChart3 size={20} />,
-      link: "/evaluation-feedback-zielsystem",
-      description: "Entwicklung messen & Ziele setzen"
     }
   ];
 
