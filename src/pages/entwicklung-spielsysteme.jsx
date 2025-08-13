@@ -62,7 +62,7 @@ export default function EntwicklungSpielsysteme() {
         variants={fadeInVariants}
         className="text-4xl font-bold text-green-700 text-center mb-8"
       >
-        Entwicklung der Spielsysteme
+        Entwicklung der Abwehrsysteme
       </motion.h1>
 
       {/* Intro Text */}
@@ -71,9 +71,9 @@ export default function EntwicklungSpielsysteme() {
         transition={{ delay: 0.2 }}
         className="text-xl text-justify text-green-600 mb-12 leading-relaxed"
       >
-        Spielsysteme sind keine Schablonen – sie sind Lernfelder mit Struktur.
-        Wir legen für jede Altersstufe ein verbindliches Spielsystem fest. Warum? Weil Systematik Orientierung gibt – für Trainer:innen, Spieler:innen und Teams. Und weil Spielverständnis wachsen muss, bevor es kreativ wird.
-        Das Ziel ist nicht, starre Abläufe zu vermitteln, sondern kollektives Handeln, Räume verstehen und Spielidee erkennen. Wer versteht, wie das Team funktioniert, kann sich besser einbringen – und später variabel agieren.
+        Abwehrsysteme sind keine Schablonen – sie sind Lernfelder mit Struktur.
+        Wir legen für jede Altersstufe ein verbindliches Abwehrsystem fest. Warum? Weil Systematik Orientierung gibt – für Trainer:innen, Spieler:innen und Teams. Und weil Abwehrverständnis wachsen muss, bevor es kreativ wird.
+        Das Ziel ist nicht, starre Abläufe zu vermitteln, sondern kollektives Handeln, Räume verstehen und Abwehridee erkennen. Wer versteht, wie das Team funktioniert, kann sich besser einbringen – und später variabel agieren.
       </motion.p>
 
       {/* Content Boxes */}
@@ -85,10 +85,10 @@ export default function EntwicklungSpielsysteme() {
         >
           <h2 className="text-2xl font-bold text-green-700 mb-6">Ziele</h2>
           <ul className="space-y-3 text-green-600">
-            <li>• Spieler:innen lernen, sich innerhalb eines klaren Systems zurechtzufinden</li>
+            <li>• Spieler:innen lernen, sich innerhalb eines klaren Abwehrsystems zurechtzufinden</li>
             <li>• Teams gewinnen an Stabilität, Klarheit und Zusammenspiel</li>
             <li>• Trainer:innen erhalten eine altersstufengerechte Struktur, die individuelle Schwerpunkte sinnvoll einbettet</li>
-            <li>• Wir schaffen spielerische Entwicklungsvoraussetzungen, die aufeinander aufbauen</li>
+            <li>• Wir schaffen abwehrspezifische Entwicklungsvoraussetzungen, die aufeinander aufbauen</li>
           </ul>
         </motion.div>
 
@@ -99,9 +99,9 @@ export default function EntwicklungSpielsysteme() {
         >
           <h2 className="text-2xl font-bold text-green-700 mb-6">Grundprinzipien</h2>
           <ul className="space-y-3 text-green-600">
-            <li>• Ein System pro Altersstufe – reduziert Komplexität und fördert Wiedererkennung</li>
-            <li>• Vom Einfachen zum Komplexen: klare Entwicklungslinie vom Mini-Handball bis zum erweiterten Positionsspiel</li>
-            <li>• Spielsystem = Ausbildungssystem: Wir nutzen das Spiel, um technische, taktische und soziale Kompetenzen zu entwickeln</li>
+            <li>• Ein Abwehrsystem pro Altersstufe – reduziert Komplexität und fördert Wiedererkennung</li>
+            <li>• Vom Einfachen zum Komplexen: klare Entwicklungslinie vom Mini-Handball bis zum erweiterten Abwehrspiel</li>
+            <li>• Abwehrsystem = Ausbildungssystem: Wir nutzen die Abwehr, um technische, taktische und soziale Kompetenzen zu entwickeln</li>
             <li>• System bleibt gleich – Umsetzung wird tiefer: Die Qualität wächst mit dem Verständnis, nicht mit der Komplexität</li>
           </ul>
         </motion.div>
@@ -113,10 +113,10 @@ export default function EntwicklungSpielsysteme() {
         >
           <h2 className="text-2xl font-bold text-green-700 mb-6">Anwendung in der Praxis</h2>
           <ul className="space-y-3 text-green-600">
-            <li>• Jede Altersstufe hat ein vorgegebenes Spielsystem – z. B. Manndeckung in der E-Jugend, oder 6:0 in der A-Jugend etc.</li>
+            <li>• Jede Altersstufe hat ein vorgegebenes Abwehrsystem – z. B. Manndeckung in der E-Jugend, oder 6:0 in der A-Jugend etc.</li>
             <li>• Systeme werden spielerisch aufgebaut, schrittweise vertieft und reflektiert</li>
-            <li>• Trainer:innen erhalten Handlungsleitfäden und Trainingsschwerpunkte, die zum jeweiligen System passen</li>
-            <li>• Die Spielidee wird altersgerecht vermittelt – nicht als Taktik-Vorgabe, sondern als gemeinsame Spiellogik</li>
+            <li>• Trainer:innen erhalten Handlungsleitfäden und Trainingsschwerpunkte, die zum jeweiligen Abwehrsystem passen</li>
+            <li>• Die Abwehridee wird altersgerecht vermittelt – nicht als Taktik-Vorgabe, sondern als gemeinsame Abwehrlogik</li>
           </ul>
         </motion.div>
 
@@ -128,7 +128,7 @@ export default function EntwicklungSpielsysteme() {
           <h2 className="text-2xl font-bold text-green-700 mb-6">Vorteile</h2>
           <ul className="space-y-3 text-green-600">
             <li>• Spieler:innen erleben klare Rollen, wiederkehrende Abläufe und gemeinsame Orientierung</li>
-            <li>• Teams wachsen schneller zusammen – weil alle wissen, wie gespielt wird</li>
+            <li>• Teams wachsen schneller zusammen – weil alle wissen, wie verteidigt wird</li>
             <li>• Die Ausbildung wird durchgängig und anschlussfähig – jede Stufe bereitet auf die nächste vor</li>
             <li>• Trainer:innen können sich inhaltlich tiefer mit einzelnen Elementen beschäftigen – statt ständig neu zu strukturieren</li>
           </ul>

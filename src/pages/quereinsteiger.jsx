@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import CardNeueinsteiger from '../components/quereinsteiger/CardNeueinsteiger';
+import CardQuereinsteiger from '../components/quereinsteiger/CardQuereinsteiger';
+import CardDropOut from '../components/quereinsteiger/CardDropOut';
+import CardDoppelspielrecht from '../components/quereinsteiger/CardDoppelspielrecht';
 
 // Karten-Daten basierend auf der neuen HTML-Vorlage
 const cardData = [
@@ -70,35 +74,38 @@ export default function Quereinsteiger() {
         </motion.div>
 
         {/* Karten-Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
-          {cardData.map((card, index) => (
-            <motion.div
-              key={card.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 + 0.4 }}
-              className={`bg-white rounded-lg p-5 cursor-pointer transition-all duration-300 transform min-h-[200px] ${
-                activeCard === card.id
-                  ? 'bg-[#007BFF] text-white scale-105 shadow-xl'
-                  : 'shadow-lg hover:scale-105 hover:shadow-xl text-black'
-              }`}
-              style={{
-                boxShadow: activeCard === card.id 
-                  ? '0 8px 20px rgba(0, 123, 255, 0.7)' 
-                  : '0 5px 15px rgba(10, 108, 56, 0.5)'
-              }}
-              onClick={() => handleCardClick(card.id)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <h3 className="text-lg font-bold mb-3 leading-tight">
-                {card.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-justify">
-                {card.content}
-              </p>
-            </motion.div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <CardNeueinsteiger />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <CardQuereinsteiger />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <CardDropOut />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+          >
+            <CardDoppelspielrecht />
+          </motion.div>
         </div>
 
         {/* Fazit-Box */}
