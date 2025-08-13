@@ -238,76 +238,155 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center"
+            className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4"
             onClick={closeAllMenus}
           >
             <motion.div
-              initial={{ y: -200, opacity: 0, scale: 0.9 }}
+              initial={{ y: -50, opacity: 0, scale: 0.9 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
-              exit={{ y: -200, opacity: 0, scale: 0.9 }}
+              exit={{ y: -50, opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.4 }}
-              className="relative bg-white rounded-2xl shadow-2xl p-6 max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto"
+              className="relative bg-green-600 rounded-3xl shadow-2xl border-4 border-white p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+              style={{
+                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+              }}
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
               <button
                 onClick={closeAllMenus}
-                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 p-2 rounded-lg hover:bg-gray-100"
+                className="absolute top-4 right-4 text-white hover:text-gray-200 p-2 rounded-lg hover:bg-white/10 transition-colors"
               >
-                <X size={24} />
+                <X size={32} />
               </button>
 
-              {/* Mobile Menü */}
-              <div className="mt-8 space-y-4">
-                <Link
-                  to="/"
-                  onClick={closeAllMenus}
-                  className="flex items-center space-x-3 p-4 rounded-xl hover:bg-green-50 transition-colors duration-200"
-                >
-                  <Home size={24} className="text-green-600" />
-                  <div>
-                    <div className="font-bold text-lg text-[#004b87]">Home</div>
-                    <div className="text-sm text-gray-600">Zurück zur Startseite</div>
-                  </div>
-                </Link>
+              {/* Hauptnavigation */}
+              <div className="mt-8">
+                <h2 className="text-3xl font-bold text-white text-center mb-8">
+                  Laimer Handbuch Navigation
+                </h2>
+                
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {/* Home */}
+                  <Link
+                    to="/"
+                    onClick={closeAllMenus}
+                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    <Home size={24} className="mx-auto mb-2" />
+                    Home
+                  </Link>
 
-                {navigationItems.map((item) => (
-                  <div key={item.title}>
-                    {item.hasDropdown ? (
-                      <div className="space-y-2">
-                            <div className="flex items-center space-x-3 p-4 rounded-xl bg-gray-50">
-                              {item.icon}
-                              <div className="font-bold text-lg text-[#004b87]">{item.title}</div>
-                            </div>
-                            <div className="ml-8 space-y-1">
-                              {item.dropdownItems.map((dropdownItem) => (
-                                <Link
-                                  key={dropdownItem.title}
-                                  to={dropdownItem.link}
-                                  onClick={closeAllMenus}
-                                  className="block p-3 rounded-lg hover:bg-green-50 transition-colors duration-200"
-                                >
-                                  <div className="font-medium text-[#004b87]">{dropdownItem.title}</div>
-                                  <div className="text-sm text-gray-600">{dropdownItem.description}</div>
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                    ) : (
-                      <Link
-                        to={item.link}
-                        onClick={closeAllMenus}
-                        className="flex items-center space-x-3 p-4 rounded-xl hover:bg-green-50 transition-colors duration-200"
-                      >
-                        {item.icon}
-                        <div>
-                          <div className="font-bold text-lg text-[#004b87]">{item.title}</div>
-                          <div className="text-sm text-gray-600">{item.description}</div>
-                        </div>
-                      </Link>
-                    )}
-                  </div>
-                ))}
+                  {/* Ebene 1 */}
+                  <Link
+                    to="/leitbild"
+                    onClick={closeAllMenus}
+                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    <BookOpen size={24} className="mx-auto mb-2" />
+                    Ebene 1
+                  </Link>
+
+                  {/* Ebene 2 */}
+                  <Link
+                    to="/ebene2"
+                    onClick={closeAllMenus}
+                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    <Target size={24} className="mx-auto mb-2" />
+                    Ebene 2
+                  </Link>
+
+                  {/* Ebene 3 */}
+                  <Link
+                    to="/ebene3"
+                    onClick={closeAllMenus}
+                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    <Users size={24} className="mx-auto mb-2" />
+                    Ebene 3
+                  </Link>
+
+                  {/* Ebene 4 */}
+                  <Link
+                    to="/ebene4"
+                    onClick={closeAllMenus}
+                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    <GraduationCap size={24} className="mx-auto mb-2" />
+                    Ebene 4
+                  </Link>
+
+                  {/* Evaluation */}
+                  <Link
+                    to="/evaluation-feedback-zielsystem"
+                    onClick={closeAllMenus}
+                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    <BarChart3 size={24} className="mx-auto mb-2" />
+                    Evaluation
+                  </Link>
+
+                  {/* Laimkademie */}
+                  <Link
+                    to="/training"
+                    onClick={closeAllMenus}
+                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    <Heart size={24} className="mx-auto mb-2" />
+                    Laimkademie
+                  </Link>
+
+                  {/* Kompetenzkompass */}
+                  <Link
+                    to="/kompetenzkompass"
+                    onClick={closeAllMenus}
+                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    <Target size={24} className="mx-auto mb-2" />
+                    Kompetenzkompass
+                  </Link>
+
+                  {/* Quereinsteiger */}
+                  <Link
+                    to="/quereinsteiger"
+                    onClick={closeAllMenus}
+                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    <Users size={24} className="mx-auto mb-2" />
+                    Quereinsteiger
+                  </Link>
+
+                  {/* Neueinsteiger */}
+                  <Link
+                    to="/quereinsteiger"
+                    onClick={closeAllMenus}
+                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    <BookOpen size={24} className="mx-auto mb-2" />
+                    Neueinsteiger
+                  </Link>
+
+                  {/* Drop-Out-Prophylaxe */}
+                  <Link
+                    to="/quereinsteiger"
+                    onClick={closeAllMenus}
+                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    <Heart size={24} className="mx-auto mb-2" />
+                    Drop-Out-Prophylaxe
+                  </Link>
+
+                  {/* Breitensport vs. Leistungssport */}
+                  <Link
+                    to="/breitensport-vs-leistungssport"
+                    onClick={closeAllMenus}
+                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    <BarChart3 size={24} className="mx-auto mb-2" />
+                    Breitensport vs. Leistungssport
+                  </Link>
+                </div>
               </div>
             </motion.div>
           </motion.div>
