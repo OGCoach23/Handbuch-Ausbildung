@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation, Link, useNavigate } from "react-router-dom";
 import Navbar from "./layout/Navbar";
-import Footer from "./layout/Footer";
+import HoverFooter from "./layout/HoverFooter";
 import Leitbild from "./pages/Leitbild";
 import Home from "./pages/Home";
 import Zielgruppen from "./pages/Zielgruppen";
@@ -149,7 +149,7 @@ function App() {
             <Route path="*" element={<Home />} />
           </Routes>
         </div>
-        <Footer />
+        <HoverFooter />
       </div>
     </Router>
   );

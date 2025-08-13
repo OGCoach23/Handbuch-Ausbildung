@@ -3,6 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+const footerLinks = [
+  { name: "Datenschutz", url: "/datenschutz" },
+  { name: "Nutzungsbedingungen", url: "/nutzungsbedingungen" },
+  { name: "Quellen", url: "/quellen" },
+];
+
 const cardsData = [
   {
     title: "Zielsetzung dieses Moduls",
@@ -67,35 +73,32 @@ export default function Modul1FJugend() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedCard, setSelectedCard] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [carouselConfig, setCarouselConfig] = useState({
+  const [isMobile, setIsMobile] = useState(false);
+
+  const carouselConfig = {
     radius: 300,
     cardWidth: 320,
     cardHeight: 420,
     availableHeight: 700,
-  });
+  };
 
   const headerRef = useRef(null);
   const footerRef = useRef(null);
+  const mainContentRef = useRef(null);
 
   useEffect(() => {
     const updateSizes = () => {
-      const vw = window.innerWidth;
+      setIsMobile(window.innerWidth < 768);
       const vh = window.innerHeight;
-
-      const cardWidth = Math.min(320, vw * 0.25);
-      const cardHeight = cardWidth * 1.3;
-      const radius = Math.max(200, vw * 0.2);
 
       const headerHeight = headerRef.current
         ? headerRef.current.offsetHeight
         : 0;
-      const footerHeight = footerRef.current
-        ? footerRef.current.offsetHeight
-        : 0;
+      // Angenommene Footer-Höhe von 50px + 50px Puffer = 100px
+      const assumedFooterHeight = 100;
+      const availableHeight = vh - headerHeight - assumedFooterHeight;
 
-      const availableHeight = vh - headerHeight - footerHeight;
-
-      setCarouselConfig({ radius, cardWidth, cardHeight, availableHeight });
+      carouselConfig.availableHeight = availableHeight > 0 ? availableHeight : vh;
     };
 
     updateSizes();
@@ -133,13 +136,19 @@ export default function Modul1FJugend() {
     }
   };
 
-  const getCardPosition = (index) => {
+  const getCardPosition3D = (index) => {
     const { radius } = carouselConfig;
     const offset = (index - currentIndex + cardsData.length) % cardsData.length;
     const angle = (offset * 360) / cardsData.length;
     const x = Math.sin((angle * Math.PI) / 180) * radius;
     const z = Math.cos((angle * Math.PI) / 180) * radius;
     return { x, z, angle, offset };
+  };
+
+  const getCardPosition2D = (index) => {
+    const offset = index - currentIndex;
+    const x = offset * (carouselConfig.cardWidth + 20); // Abstand zwischen den Karten
+    return { x, offset };
   };
 
   return (
@@ -159,8 +168,9 @@ export default function Modul1FJugend() {
 
       {/* Hauptbereich */}
       <div
-        className="flex flex-col items-center justify-center"
-        style={{ height: carouselConfig.availableHeight }}
+        ref={mainContentRef}
+        className="flex-1 flex flex-col items-center justify-center p-4"
+        style={{ minHeight: `${carouselConfig.availableHeight}px` }}
       >
         {/* Überschrift */}
         <motion.div
@@ -181,31 +191,35 @@ export default function Modul1FJugend() {
           </div>
         </motion.div>
 
-        {/* Karussell - PERFEKTE ZENTRIERUNG */}
-        <div className="relative flex items-center justify-center overflow-visible">
+        {/* Karussell - PERFEKTE ZENTRIERUNG & RESPONSIV */}
+        <div className="relative flex items-center justify-center w-full overflow-hidden">
           {/* Pfeil links */}
           <button
             onClick={rotateLeft}
             disabled={isAnimating}
-            className="absolute left-[-60px] z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
+            className="absolute left-2 md:left-[-60px] z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
           >
             <ChevronLeft size={24} />
           </button>
 
-          {/* Karten Container - MATHEMATISCH KORREKTE 3D-ZENTRIERUNG */}
+          {/* Karten Container - MATHEMATISCH KORREKTE ZENTRIERUNG */}
           <div
             className="relative"
             style={{
-              width: carouselConfig.cardWidth * 2.5,
-              height: carouselConfig.cardHeight * 1.2,
-              perspective: "1200px",
+              width: isMobile ? carouselConfig.cardWidth : carouselConfig.cardWidth * 2.5,
+              height: isMobile ? carouselConfig.cardHeight : carouselConfig.cardHeight * 1.2,
+              perspective: isMobile ? "none" : "1200px",
               transformStyle: "preserve-3d",
             }}
           >
             {cardsData.map((card, index) => {
-              const { x, z, angle, offset } = getCardPosition(index);
-              const isFront = offset === 0;
-              const isVisible = offset <= 3 || offset >= cardsData.length - 3;
+              const { x, z, angle, offset } = isMobile
+                ? getCardPosition2D(index)
+                : getCardPosition3D(index);
+              const isFront = isMobile ? offset === 0 : offset === 0;
+              const isVisible = isMobile
+                ? Math.abs(offset) < 1
+                : offset <= 3 || offset >= cardsData.length - 3;
               if (!isVisible) return null;
 
               return (
@@ -221,19 +235,17 @@ export default function Modul1FJugend() {
                     height: carouselConfig.cardHeight,
                     backgroundColor: "rgba(255,255,255,0.95)",
                     color: "#166534",
-                    // PERFEKTE ZENTRIERUNG: Jede Karte wird vom Mittelpunkt des Containers aus positioniert
-                    left: `${carouselConfig.cardWidth * 1.25}px`,
-                    top: `${carouselConfig.cardHeight * 0.6}px`,
-                    transform: `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
+                    left: isMobile ? "50%" : `50%`,
+                    top: isMobile ? "50%" : `50%`,
+                    transform: isMobile
+                      ? `translate(-50%, -50%) translateX(${x}px)`
+                      : `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
                     zIndex: isFront ? 20 : 10 - Math.abs(offset),
                     filter: isFront
                       ? "none"
                       : `brightness(${1 - Math.abs(offset) * 0.1})`,
                   }}
                   animate={{
-                    x: x,
-                    z: z,
-                    rotateY: angle,
                     scale: isFront ? 1 : 0.9,
                     opacity: isFront ? 1 : 0.8,
                   }}
@@ -262,7 +274,7 @@ export default function Modul1FJugend() {
           <button
             onClick={rotateRight}
             disabled={isAnimating}
-            className="absolute right-[-60px] z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
+            className="absolute right-2 md:right-[-60px] z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
           >
             <ChevronRight size={24} />
           </button>
@@ -286,8 +298,14 @@ export default function Modul1FJugend() {
       </div>
 
       {/* Footer */}
-      <footer ref={footerRef}>
-        {/* Footer-Bereich für zukünftige Erweiterungen */}
+      <footer ref={footerRef} className="bg-gray-50 text-gray-600 w-full z-10 p-4 mt-auto">
+        <div className="max-w-7xl mx-auto flex justify-center space-x-6 text-sm">
+          {footerLinks.map((link, index) => (
+            <Link key={index} to={link.url} className="hover:text-green-600 transition-colors">
+              {link.name}
+            </Link>
+          ))}
+        </div>
       </footer>
 
       {/* Modal */}
