@@ -9,15 +9,14 @@ export default function HoverFooter() {
         bg-[#f2f2f2] border-t border-white/70 
         transition-all duration-500 ease-in-out
         z-50
-        md:bottom-[-80px] bottom-0
-        md:hover:bottom-0
-        h-[120px] md:h-[80px]
+        bottom-[-80px] hover:bottom-0
+        h-[80px]
       "
     >
 
 
       {/* Inhalt */}
-      <div className="container mx-auto px-4 h-full flex flex-col md:flex-row justify-between items-center text-gray-700 text-sm">
+      <div className="container mx-auto px-4 h-full flex flex-row justify-between items-center text-gray-700 text-sm">
         {/* Linke Seite */}
         <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
           <span className="font-semibold">SV München-Laim</span>
@@ -28,7 +27,7 @@ export default function HoverFooter() {
         </div>
 
         {/* Mittlere Sektion */}
-        <div className="flex items-center gap-4 mt-2 md:mt-0">
+        <div className="flex items-center gap-4">
           <a
             href="mailto:oliver.goetsch@sv-laim-handball.de"
             className="hover:underline text-gray-600"
@@ -46,7 +45,7 @@ export default function HoverFooter() {
         </div>
 
         {/* Rechte Seite */}
-        <div className="text-xs text-gray-500 mt-2 md:mt-0 text-center md:text-right">
+        <div className="text-xs text-gray-500 text-right">
           © {new Date().getFullYear()} SV München-Laim. Alle Rechte vorbehalten.{" "}
           <a href="/impressum" className="hover:underline">
             Impressum

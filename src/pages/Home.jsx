@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import ScrollDownArrow from "../components/ScrollDownArrow";
 
 export default function Home() {
   const [textColor, setTextColor] = useState("text-gray-600");
@@ -234,22 +235,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Scroll-Pfeil am unteren Rand */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="text-gray-600 hover:text-[#004b87] cursor-pointer"
-          onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
-        >
-          <ChevronDown size={32} />
-        </motion.div>
-      </motion.div>
+      {/* Scroll-Pfeil */}
+      <ScrollDownArrow />
     </motion.div>
   );
 }

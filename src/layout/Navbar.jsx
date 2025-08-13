@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, Home, BookOpen, Users, Target, GraduationCap, Heart, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.svg";
+import logo from "../assets/sv-laim-logo.svg";
 
 export default function Navbar() {
   const [showHeader, setShowHeader] = useState(true);
@@ -52,7 +52,7 @@ export default function Navbar() {
 
   const navigationItems = [
     {
-      title: "Grundlagen",
+      title: "Leitbild",
       icon: <BookOpen size={20} />,
       link: "/leitbild",
       description: "Leitbild und Ausbildungsprinzipien"
@@ -135,10 +135,7 @@ export default function Navbar() {
                 <img src={logo} alt="Vereinslogo" className="h-12 w-12" />
                 <div className="hidden md:block">
                   <span className="text-[#004b87] font-bold text-xl block">
-                    Laimer Handbuch
-                  </span>
-                  <span className="text-[#004b87] text-sm block">
-                    zum Training
+                    Laimer Handbuch zur Ausbildung
                   </span>
                 </div>
               </Link>

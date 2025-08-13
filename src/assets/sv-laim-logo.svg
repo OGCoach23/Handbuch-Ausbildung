@@ -1,0 +1,20 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Äußerer schwarzer Kreis -->
+  <circle cx="24" cy="24" r="23" fill="#000000" stroke="#000000" stroke-width="1"/>
+  
+  <!-- Weißer innerer Bereich -->
+  <circle cx="24" cy="24" r="21" fill="#ffffff"/>
+  
+  <!-- SV Text oben -->
+  <text x="24" y="16" text-anchor="middle" fill="#000000" font-family="Arial, sans-serif" font-size="14" font-weight="bold">SV</text>
+  
+  <!-- Grüner Streifen -->
+  <rect x="4" y="20" width="40" height="6" fill="#00AA3C"/>
+  
+  <!-- MÜNCHEN LAIM Text unten -->
+  <text x="24" y="32" text-anchor="middle" fill="#000000" font-family="Arial, sans-serif" font-size="8" font-weight="bold">MÜNCHEN</text>
+  <text x="24" y="42" text-anchor="middle" fill="#000000" font-family="Arial, sans-serif" font-size="8" font-weight="bold">LAIM e.V.</text>
+  
+  <!-- Blauer unterer Streifen -->
+  <rect x="4" y="34" width="40" height="6" fill="#0066CC"/>
+</svg>
