@@ -357,7 +357,7 @@ export default function Navbar() {
 
                   {/* Drop-Out-Prophylaxe */}
                   <Link
-                    to="/quereinsteiger"
+                    to="/drop-out-prophylaxe"
                     onClick={closeAllMenus}
                     className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
                   >

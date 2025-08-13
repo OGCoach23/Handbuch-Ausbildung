@@ -95,6 +95,8 @@ import RueckraumProfil from "./pages/RueckraumProfil";
 import RueckraumMitte from "./pages/RueckraumMitte";
 import PositionsprofilTemplate from "./pages/PositionsprofilTemplate";
 import Quereinsteiger from "./pages/quereinsteiger";
+import BreitensportVsLeistungssport from "./pages/breitensport-vs-leistungssport";
+import DropOutProphylaxe from "./pages/drop-out-prophylaxe";
 
 const KontaktPage = () => (
   <main className="min-h-screen bg-lightgray p-8">
@@ -226,6 +228,12 @@ function App() {
 
             {/* Quereinsteiger */}
             <Route path="/quereinsteiger" element={<Quereinsteiger />} />
+            
+            {/* Breitensport vs. Leistungssport */}
+            <Route path="/breitensport-vs-leistungssport" element={<BreitensportVsLeistungssport />} />
+            
+            {/* Drop-Out-Prophylaxe */}
+            <Route path="/drop-out-prophylaxe" element={<DropOutProphylaxe />} />
 
             {/* Alias-Routen */}
             <Route path="/kinderbereich" element={<AltersLeistungsstufen />} />
