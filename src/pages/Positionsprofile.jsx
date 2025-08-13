@@ -147,7 +147,7 @@ export default function Positionsprofile() {
             ))}
           </motion.div>
         </div>
-      </section>
+      </div>
 
       {/* Entwicklungsprinzipien */}
       <section className="py-16 bg-white">
@@ -205,7 +205,7 @@ export default function Positionsprofile() {
             </div>
           </motion.div>
         </div>
-      </div>
+      </section>
 
       {/* Call to Action */}
       <section className="py-16 bg-gradient-to-r from-green-600 to-green-400 text-white">

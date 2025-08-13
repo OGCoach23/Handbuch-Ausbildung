@@ -90,7 +90,8 @@ export default function Ebene3() {
       </div>
 
       {/* Themenkarten */}
-      <section className="bg-white/40 p-8">
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="bg-green-50 p-8 rounded-2xl shadow-lg">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
