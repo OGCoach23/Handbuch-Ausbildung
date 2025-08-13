@@ -7,58 +7,55 @@ const cardsData = [
   {
     title: "Zielsetzung dieses Moduls",
     content: [
-      "Förderung emotionaler Stabilität und Selbstverantwortung in einer leistungsorientierten Phase",
-      "Unterstützung im Umgang mit Druck, Frust, Kritik und Unsicherheit",
-      "Stärkung der Teamrollen und der sozialen Reife innerhalb der Mannschaft",
-      "Trainer:innen als Ansprechpartner:in, Spiegel und Impulsgeber – ohne zu psychologisieren"
+      "Spieler:innen erkennen eigene Stärken und Schwächen – und lernen, damit umzugehen.",
+      "Sie bauen Selbstvertrauen auf und entwickeln ein realistisches Selbstbild.",
+      "Teamfähigkeit, Empathie und Konfliktfähigkeit werden gezielt gefördert.",
+      "Mentale Stärke wird über Aufgaben, Reflexion und Verantwortung systematisch entwickelt."
     ]
   },
   {
-    title: "Themen & Schwerpunkte",
+    title: "Typische mentale & soziale Themen",
     content: [
-      "Selbstreflexion: „Wo stehe ich?" – Eigene Stärken, Schwächen, Ziele erkennen & bearbeiten",
-      "Umgang mit Druck: Tools gegen Nervosität, Leistungsdruck – Atemtechniken, mentale Routinen, Visualisierung",
-      "Kritikfähigkeit: Konstruktives Feedback geben & annehmen – Format: Sandwich, Spiegelung, Videorückmeldung",
-      "Teamverhalten: Rollen erkennen, annehmen, ausfüllen – auch bei Konflikten oder Spannungen",
-      "Eigenverantwortung: Ziele setzen, dokumentieren, Fortschritte analysieren, Mitverantwortung übernehmen"
+      "Selbstbild & Identität: schwankend, stark von Rückmeldung abhängig.",
+      "Leistungsdruck: Vergleich mit anderen, Frust bei Rückschlägen, Angst vor Versagen.",
+      "Teamverhalten: Rollenfindung, Gruppendruck, Cliquenbildung.",
+      "Emotionale Steuerung: Wut, Rückzug, Aufbrausen – häufig noch unreguliert."
     ]
   },
   {
-    title: "Methodik & Umsetzung",
+    title: "Entwicklungsfördernde Maßnahmen",
     content: [
-      "Mentale Prozesse sichtbar machen: Reflexionskarten, „Check-in"-Rituale, Wochenziele mit Review",
-      "Ziele als Werkzeug nutzen: Persönliche Zielvereinbarungen, Rückblick im Monatsgespräch",
-      "Teamkultur aktiv gestalten: Rollen bewusst besetzen, gemeinsame Werte benennen, Rituale pflegen",
-      "Offene Feedbackformate etablieren: 360°-Feedback, Spielergespräche, Videoanalysen mit Selbst- und Fremdeinschätzung",
-      "Trainer:in als Spiegel: Impulse setzen, nicht urteilen – Fragen statt Aussagen"
+      "Selbstvertrauen stärken: Erfolge sichtbar machen, Positivprotokolle, feiern.",
+      "Umgang mit Frust lernen: Reflexionsrunden, Frustskala, Auszeit-Übungen.",
+      "Teamverantwortung stärken: Rollen verteilen, Materialchef, Feedbackpartner.",
+      "Empathie & Kommunikation: Perspektivwechsel, Lobrituale, Kleingruppengespräche."
     ]
   },
   {
-    title: "Praxisformate & Impulse",
+    title: "Übungen & Methoden aus der Praxis",
     content: [
-      "Emotionale Standortkarte: Spieler:innen bewerten Stimmung, Belastung, Motivation wöchentlich",
-      "„Was brauche ich heute?": Trainingsstart mit Mini-Reflexion – Fokus, Motivation, Wünsche",
-      "Werte-Wahl: Spieler:innen wählen ihre Top-3-Teamwerte und gestalten Symbole dafür",
-      "Mentale Wettkampfvorbereitung: Atemfokus, Visualisierung, Entlastungsgespräch vor dem Spiel",
-      "Konfliktklärung durch Moderation: 2er-Gespräche mit Trainer:in als Moderator:in → Haltung & Gesprächsführung üben"
+      "\"Mut-Moment\": jede:r benennt etwas, das sie/er sich getraut hat.",
+      "\"Rolle rückwärts\": gegenseitiges Coaching mit Ich-Botschaften.",
+      "\"Team-Vertrag\": gemeinsam erarbeitet und sichtbar aufgehängt.",
+      "\"Was war dein Highlight?\" – fester Abschluss jeder Einheit.",
+      "\"Gefühlsbarometer\" als Start- oder Endimpuls."
     ]
   },
   {
-    title: "Typische Trainerfehler & Alternativen",
+    title: "Trainerkommunikation",
     content: [
-      "„Reiß dich zusammen." → Besser: „Was brauchst du gerade, um dich sicherer zu fühlen?"",
-      "Emotionen abwerten → Akzeptieren, spiegeln, in positive Handlung übersetzen",
-      "Kritik pauschal äußern → Konkret, zeitnah, konstruktiv – im Dialog",
-      "Teamrollen dem Zufall überlassen → Rollen definieren, rotieren lassen, Verantwortung sichtbar machen"
+      "Klarheit & Struktur: feste Rituale, klare Sprache, Regeln besprechen.",
+      "Zuhören & Spiegeln: aktives Zuhören, nonverbale Signale ernst nehmen.",
+      "Individuelle Ansprache: auch stille Spieler:innen aktiv einbeziehen.",
+      "Haltung statt Kontrolle: Spielräume geben, klare Reaktion bei Grenzüberschreitungen."
     ]
   },
   {
     title: "Ergebnis für den Trainer",
     highlight: true,
     content: [
-      "Du stärkst die mentale Resilienz, Kommunikationsfähigkeit und soziale Kompetenz deiner Spieler:innen.",
-      "Du unterstützt sie darin, mit Druck umzugehen, in Gruppen zu wachsen und sich selbst zu reflektieren – nicht als Extra, sondern als Teil der sportlichen Ausbildung.",
-      "Ziel: Spieler:innen, die mitdenken, mitfühlen, Verantwortung übernehmen – und mental wie sozial teamfähig sind."
+      "Du bist Entwicklungspartner:in, nicht nur Technik-Coach.",
+      "Du förderst mutige, respektvolle und resiliente Persönlichkeiten."
     ]
   }
 ];
@@ -168,10 +165,10 @@ export default function Modul4BJugend() {
         >
           <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-10 border border-gray-100">
             <h1 className="text-5xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent text-center mb-6">
-              Modul 4: Mentale & soziale Entwicklung
+              Modul 4: Mental & Sozial
             </h1>
             <p className="text-center text-2xl text-gray-700 italic leading-relaxed max-w-4xl mx-auto">
-              "Wie fördere ich mentale Resilienz und soziale Kompetenz als Teil der sportlichen Ausbildung?"
+              "Wie fördere ich mutige, respektvolle und resiliente Persönlichkeiten?"
             </p>
           </div>
         </motion.div>
@@ -200,43 +197,23 @@ export default function Modul4BJugend() {
             }}
           >
             {cardsData.map((card, index) => {
-              const { x, z, angle, offset } = isMobile
-                ? getCardPosition2D(index)
-                : getCardPosition3D(index);
-              const isFront = offset === 0;
-              const isVisible = isMobile
-                ? Math.abs(offset) <= 1
-                : offset <= 3 || offset >= cardsData.length - 3;
-              if (!isVisible) return null;
+              const isFront = index === currentIndex;
+              const position = isMobile ? getCardPosition2D(index) : getCardPosition3D(index);
 
               return (
                 <motion.div
                   key={index}
-                  className={`absolute rounded-2xl shadow-2xl flex items-center justify-center text-center cursor-pointer backdrop-blur-sm ${
-                    card.highlight
-                      ? "border-4 border-yellow-400 bg-gradient-to-br from-yellow-50 to-orange-50"
-                      : "border border-gray-200 bg-white/95"
+                  className={`absolute bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-200 cursor-pointer ${
+                    isMobile ? "w-80 h-96" : "w-80 h-96"
                   }`}
                   style={{
-                    width: carouselConfig.cardWidth,
-                    height: carouselConfig.cardHeight,
-                    left: "50%",
-                    top: "50%",
+                    left: isMobile ? "50%" : "50%",
+                    top: isMobile ? "50%" : "50%",
                     transform: isMobile
-                      ? `translate(-50%, -50%) translateX(${x}px)`
-                      : `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
-                    zIndex: isFront ? 20 : 10 - Math.abs(offset),
-                    filter: isFront
-                      ? "none"
-                      : `brightness(${1 - Math.abs(offset) * 0.1})`,
-                  }}
-                  animate={{
-                    scale: isFront ? 1 : 0.9,
-                    opacity: isFront ? 1 : 0.8,
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    ease: "easeInOut",
+                      ? `translate(-50%, -50%) translateX(${position.x}px)`
+                      : `translate(-50%, -50%) translate3d(${position.x}px, 0, ${position.z}px) rotateY(${position.angle}deg)`,
+                    zIndex: isFront ? 20 : 10 - Math.abs(position.offset),
+                    opacity: isMobile ? (Math.abs(position.offset) <= 1 ? 1 : 0.3) : 1,
                   }}
                   whileHover={{
                     scale: isFront ? 1.05 : 0.95,

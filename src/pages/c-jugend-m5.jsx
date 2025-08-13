@@ -7,60 +7,60 @@ const cardsData = [
   {
     title: "Zielsetzung dieses Moduls",
     content: [
-      "Spieler:innen erleben, was es heißt, Teil eines echten Teams zu sein – mit Verantwortung, Rückhalt und verbindlichen Regeln.",
-      "Sie lernen, Konflikte anzusprechen, Feedback zu geben und mit Emotionen umzugehen.",
-      "Trainer:innen gestalten eine Teamkultur, die Leistung ermöglicht, ohne Druck auszuüben.",
-      "Kommunikation wird als sportliche Fähigkeit begriffen – trainierbar wie Technik oder Taktik."
+      "Spieler:innen entwickeln ein erstes systematisches Spielverständnis – mit Blick auf Raum, Zeit, Mitspieler:innen und Aufgaben.",
+      "Grundlegende Prinzipien von Raumaufteilung, Zusammenspiel und Umschalten werden gelernt.",
+      "Die 3:2:1-Deckung wird als Standard-Abwehrsystem eingeführt – mit Fokus auf Ballgewinn und Kommunikation.",
+      "Positionsrollen werden verstanden, ausprobiert und reflektiert – nicht festgeschrieben."
     ]
   },
   {
-    title: "Besonderheiten in der B-Jugend",
+    title: "Grundprinzipien der Spielsysteme",
     content: [
-      "Gruppenzugehörigkeit extrem wichtig – oft wichtiger als die individuelle Rolle.",
-      "Konflikte & Cliquen entstehen häufiger, aber bearbeitbar.",
-      "Kommunikation schwankt zwischen Kinderniveau und Jugendjargon.",
-      "Rollenverteilung oft unausgesprochen, aber wirksam."
+      "Abwehr: 3:2:1-System mit aktivem Verteidigen und Balljagd.",
+      "Angriff: Tiefe, Breite, Passqualität, Laufwege vor Ball, Rückraumbasics.",
+      "Umschalten: schneller Rückzug / schnelles Aufrücken.",
+      "Spiellogik: Erkennen, was das Spiel braucht – und entsprechend handeln."
     ]
   },
   {
-    title: "Gestaltung der Teamkultur",
+    title: "Positionsverständnis & Rotation",
     content: [
-      "Wir-Gefühl: gemeinsame Symbole, Teamposter, Rituale.",
-      "Verantwortung: Rollen im Training (Regelwächter:in, Materialchef:in).",
-      "Zusammenhalt: Reflexionsrunden, Team-Events, Lobwand.",
-      "Kritik- & Feedbackkultur: Plus-Plus-Wunsch, Reflexionskarten."
+      "Torwart: aktiv im Spiel, Kommandos in Abwehr, klare Gegenstoß-Abläufe.",
+      "Außen: Breite halten, Einlaufen, Zielwurf aus spitzem Winkel.",
+      "Rückraum: Stoßen, Passen unter Druck, einfache Auslösehandlungen.",
+      "Kreis: Lücken anlaufen, Sperren stellen, Passwege antizipieren.",
+      "Rotation: Jede:r spielt mind. 2–3 Positionen pro Saison."
     ]
   },
   {
-    title: "Kommunikationsformate & Übungen",
+    title: "Positionsprofile & positionsspezifisches Training",
     content: [
-      "Teamritual vor dem Spiel: 3 Dinge, die wir heute zeigen wollen.",
-      "Abschlussrunde: Was nehme ich heute mit?",
-      "Partner-Coaching: Feedback zum Spielverhalten.",
-      "Stopp-Zeichen im Training definieren.",
-      "Rollen-Switch: Spieler:in übernimmt 10 Min. Coachrolle."
+      "Stärken erkennen und in unterschiedlichen Rollen testen.",
+      "Positionsprofile geben Orientierung zu Aufgaben & Entscheidungen.",
+      "Trainer:innen coachen mit Rollenfragen: \"Was braucht dein Team von dir auf dieser Position?\"",
+      "Positionswechsel fördern Entscheidungsfreude und taktisches Verständnis."
     ]
   },
   {
-    title: "Elternarbeit in der B-Jugend",
+    title: "Spielprinzipien & Auslösehandlungen",
     content: [
-      "Transparenz & Vertrauen: Elternabend mit Einblick in Ziele & Philosophie.",
-      "Verantwortungsklarheit: Trainer:innen = Entwicklung, Eltern = Begleitung.",
-      "Einbindung: Mitmachaktionen, Helferlisten, Elternbeiträge sichtbar machen.",
-      "Kommunikationswege: Newsletter, strukturierte WhatsApp-Gruppen."
+      "Breite & Tiefe schaffen: z. B. Zonenregel für Würfe.",
+      "1. Welle / Gegenstoß: 3-gegen-2 mit Entscheidungsaufgabe.",
+      "Trigger erkennen: Ball auf Außen = Einläufer.",
+      "Abwehr: 3:2:1 einführen mit Fokus auf Initiative und Ballorientierung."
     ]
   },
   {
     title: "Ergebnis für den Trainer",
     highlight: true,
     content: [
-      "Du entwickelst aus Mitspielern ein echtes Team – mit Beziehungen, Haltung und Verantwortung.",
-      "Spieler:innen übernehmen Verantwortung, leben Feedback und stehen füreinander ein."
+      "Du führst dein Team in die Systemwelt – ohne sie einzuengen.",
+      "Spieler:innen erkennen Räume, denken Positionen flexibel und spielen Systeme intelligent."
     ]
   }
 ];
 
-export default function Modul6BJugend() {
+export default function Modul5CJugend() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedCard, setSelectedCard] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -141,10 +141,10 @@ export default function Modul6BJugend() {
       <header ref={headerRef} className="z-40 bg-white/80 backdrop-blur-sm border-b border-gray-200">
         <div className="flex justify-center pt-8 pb-4">
           <Link
-            to="/b-jugend"
+            to="/c-jugend"
             className="rounded-full bg-gradient-to-r from-green-500 to-blue-600 text-white px-8 py-3 shadow-lg hover:from-blue-600 hover:to-green-500 transition-all duration-300 transform hover:scale-105 font-semibold"
           >
-            ← Zurück zur B-Jugend Übersicht
+            ← Zurück zur C-Jugend Übersicht
           </Link>
         </div>
       </header>
@@ -165,10 +165,10 @@ export default function Modul6BJugend() {
         >
           <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-10 border border-gray-100">
             <h1 className="text-5xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent text-center mb-6">
-              Modul 6: Team & Kommunikation
+              Modul 5: Spielsysteme & Positionen
             </h1>
             <p className="text-center text-2xl text-gray-700 italic leading-relaxed max-w-4xl mx-auto">
-              "Wie entwickle ich aus Mitspielern ein echtes Team?"
+              "Wie führe ich mein Team in die Systemwelt – ohne sie einzuengen?"
             </p>
           </div>
         </motion.div>

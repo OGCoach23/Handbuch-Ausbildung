@@ -7,58 +7,59 @@ const cardsData = [
   {
     title: "Zielsetzung dieses Moduls",
     content: [
-      "Technik wird unter Druck, in Tempo und taktischem Kontext angewendet – nicht isoliert trainiert",
-      "Taktische Prinzipien bestimmen die Technikwahl – nicht umgekehrt",
-      "Die Spieler:innen verstehen Technik als individuelles Werkzeug innerhalb kollektiver Spiellösungen",
-      "Fehler werden als Feedback genutzt – Variation und Entscheidungskompetenz stehen im Zentrum"
+      "Spieler:innen vertiefen ihre Grundtechniken und lernen, sie unter Zeit-, Raum- und Gegnerdruck stabil anzuwenden.",
+      "Technik wird funktional geschult – nicht als Schönbild, sondern als Werkzeug für bessere Entscheidungen.",
+      "Erste taktische Prinzipien und Handlungsregeln werden systematisch eingeführt und spielnah trainiert.",
+      "Spieler:innen übernehmen Verantwortung für die Anwendung ihrer Fähigkeiten im Teamkontext."
     ]
   },
   {
-    title: "Schwerpunkte & Inhalte",
+    title: "Must-have & Nice-to-have Inhalte",
     content: [
-      "Technikanwendung: Wurf unter Gegnerdruck, Pass unter Zeitdruck, variable Prelltechniken, beidseitiges Spiel",
-      "Taktikindividualisierung: Technikwahl nach Situation: Finte vs. Pass, Rückstoß vs. Wurf, Laufweg vs. Ballhalten",
-      "Kleingruppentaktik: 2:2 und 3:3 unter taktischen Triggern (z. B. Stoßen – Sperre – Pass – Entscheidung)",
-      "Abwehrtechnik & -verhalten: 1:1-Kontaktverhalten, Helfen vs. Halten, Auslöseverhalten erkennen und unterbrechen",
-      "Triggerverständnis: Spielzüge lesen, verteidigen, kontern – Aufbau kognitiver Reaktionsfähigkeit"
+      "Passen: Must-have: Passarten beidseitig, unter Gegnerdruck, nach Täuschung. Nice-to-have: Sprungpass, No-look, schwächere Hand.",
+      "Fangen: Must-have: frontal & seitlich, in Bewegung & unter Druck. Nice-to-have: Einhand-Fang, Fang nach Abpraller.",
+      "Werfen: Must-have: Standwurf, Wurf aus Lauf, Zielwurf in Zonen. Nice-to-have: Sprungwurf, Täuschung + Wurf, variabler Rhythmus.",
+      "Prellen: Must-have: Raumgewinn, unter Zeitdruck. Nice-to-have: Rhythmuswechsel, kreatives Prellen.",
+      "Täuschungen: Must-have: Körpertäuschung, Richtungswechsel. Nice-to-have: Wurftäuschung, Passfinte, Täuschung aus Rücklage.",
+      "Abwehr: Must-have: Stellungsspiel, Körperkontakt, Arme oben. Nice-to-have: Passweg schließen, 1:1-Sperrung, Abfangen."
+    ]
+  },
+  {
+    title: "Taktische Prinzipien & Schwerpunkte",
+    content: [
+      "Kleingruppe: Stoßen – Kreuzen – Einlaufen (einfach, klar).",
+      "Überzahlspiel: 2:1 und 3:2 mit Entscheidungsaufgabe.",
+      "Umschalten: Reaktionsschnelligkeit nach Ballverlust/-gewinn.",
+      "Räumliche Orientierung: Spiel in Zonen.",
+      "Trigger verstehen: z. B. 'Ball zum Außen = Einläufer'."
     ]
   },
   {
     title: "Methodik & Umsetzung",
     content: [
-      "Technik im Spielkontext: Kein Isolattraining – alle Technikübungen in Spielnähe oder Spielsituation",
-      "Variation vor Wiederholung: Technik in wechselnden Aufgaben, Gegnern, Positionen, Zonen",
-      "Kognitive Aktivierung: Vorwissen abfragen, Entscheidungen bewusst herbeiführen, Perspektivwechsel ermöglichen",
-      "Peer-Coaching einbauen: Spieler:innen geben Technikfeedback, analysieren Bewegungen gegenseitig",
-      "Video & Selbstanalyse nutzen: Technik aus Spielsituationen analysieren → Selbstbild vs. Fremdbild erkennen"
+      "Technik = Werkzeug: Jede Technik wird mit Spielsituation verknüpft.",
+      "Variationen statt Drill: situative Technikaufgaben.",
+      "Partner-Coaching: Feedback und 1:1-Coaching.",
+      "Verstehen statt Vormachen: Trainer:innen stellen Fragen.",
+      "Gegnerdruck steigern: mehr Gegenwehr in allen Technikformen."
     ]
   },
   {
-    title: "Trainingsformate & Spielformen",
+    title: "Spiel- und Übungsformen",
     content: [
-      "3:3 mit Regelbindung: z. B. „Tor nur nach Wurfvariante + vorherigem Positionswechsel"",
-      "Positionsspezifisches Kombitraining: Rückraum: Pass-Wurf-Finte / Kreis: Sperre-Lösen-Durchbruch",
-      "Entscheidungstraining mit Trigger: Reaktion auf z. B. Verteidigungsverhalten: Finte oder Pass?",
-      "Kleingruppen mit Coachingrolle: Spieler:innen coachen Teamkamerad:in mit Beobachtungsauftrag (z. B. „Wann war deine Technik effektiv?")"
-    ]
-  },
-  {
-    title: "Typische Fehler & wie du sie vermeidest",
-    content: [
-      "Techniktraining ohne Spielziel → Technik an taktische Prinzipien koppeln („Wofür brauchst du diese Bewegung?")",
-      "Drillartige Wiederholungen → Variationen einbauen, situativ steuern, Gegnerdruck steigern",
-      "Korrekturen im Dauermodus → Lieber: gezielte Einzelimpulse + Selbstreflexion durch Video/Frage",
-      "Nur „Lieblingsseite" nutzen → Immer beidseitig trainieren – auch wenn „es komisch aussieht""
+      "3:3 mit Technikregel.",
+      "Positionsrundlauf mit Zielaufgaben.",
+      "2:2 nach Einlaufen – Rückpass oder Abschluss?",
+      "Technikparcours mit Stationen.",
+      "Trigger-Training: Ball zu Außen = Einläufer."
     ]
   },
   {
     title: "Ergebnis für den Trainer",
     highlight: true,
     content: [
-      "Du führst Technik und Taktik zusammen.",
-      "Du entwickelst spielrelevante Handlungskompetenz, nicht isolierte Fähigkeiten.",
-      "Deine Spieler:innen werden entscheidungsfähiger, variabler und bewusster in ihrem Spiel – weil du Technik in Bewegung, Spiel und Kontext bringst.",
-      "Ziel: Spieler:innen, die mit Technik taktisch handeln – und taktisch durch Technik wirken."
+      "Du entwickelst keine Technikroboter – du entwickelst handlungsfähige Spieler:innen.",
+      "Technik als Werkzeug begreifen – gezielt im Spiel einsetzen."
     ]
   }
 ];
@@ -171,7 +172,7 @@ export default function Modul3BJugend() {
               Modul 3: Technik & Taktik
             </h1>
             <p className="text-center text-2xl text-gray-700 italic leading-relaxed max-w-4xl mx-auto">
-              "Wie verbinde ich Technik und Taktik zu spielrelevanter Handlungskompetenz?"
+              "Wie entwickle ich handlungsfähige Spieler:innen mit funktionaler Technik?"
             </p>
           </div>
         </motion.div>
@@ -200,43 +201,23 @@ export default function Modul3BJugend() {
             }}
           >
             {cardsData.map((card, index) => {
-              const { x, z, angle, offset } = isMobile
-                ? getCardPosition2D(index)
-                : getCardPosition3D(index);
-              const isFront = offset === 0;
-              const isVisible = isMobile
-                ? Math.abs(offset) <= 1
-                : offset <= 3 || offset >= cardsData.length - 3;
-              if (!isVisible) return null;
+              const isFront = index === currentIndex;
+              const position = isMobile ? getCardPosition2D(index) : getCardPosition3D(index);
 
               return (
                 <motion.div
                   key={index}
-                  className={`absolute rounded-2xl shadow-2xl flex items-center justify-center text-center cursor-pointer backdrop-blur-sm ${
-                    card.highlight
-                      ? "border-4 border-yellow-400 bg-gradient-to-br from-yellow-50 to-orange-50"
-                      : "border border-gray-200 bg-white/95"
+                  className={`absolute bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-200 cursor-pointer ${
+                    isMobile ? "w-80 h-96" : "w-80 h-96"
                   }`}
                   style={{
-                    width: carouselConfig.cardWidth,
-                    height: carouselConfig.cardHeight,
-                    left: "50%",
-                    top: "50%",
+                    left: isMobile ? "50%" : "50%",
+                    top: isMobile ? "50%" : "50%",
                     transform: isMobile
-                      ? `translate(-50%, -50%) translateX(${x}px)`
-                      : `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
-                    zIndex: isFront ? 20 : 10 - Math.abs(offset),
-                    filter: isFront
-                      ? "none"
-                      : `brightness(${1 - Math.abs(offset) * 0.1})`,
-                  }}
-                  animate={{
-                    scale: isFront ? 1 : 0.9,
-                    opacity: isFront ? 1 : 0.8,
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    ease: "easeInOut",
+                      ? `translate(-50%, -50%) translateX(${position.x}px)`
+                      : `translate(-50%, -50%) translate3d(${position.x}px, 0, ${position.z}px) rotateY(${position.angle}deg)`,
+                    zIndex: isFront ? 20 : 10 - Math.abs(position.offset),
+                    opacity: isMobile ? (Math.abs(position.offset) <= 1 ? 1 : 0.3) : 1,
                   }}
                   whileHover={{
                     scale: isFront ? 1.05 : 0.95,

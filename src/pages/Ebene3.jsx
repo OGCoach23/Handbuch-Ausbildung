@@ -97,7 +97,14 @@ export default function Ebene3() {
         >
           {themen.map(({ titel, beschreibung, highlight }, index) => (
             <Link
-              to={titel === "Kompetenzkompass" ? "/kompetenzkompass" : "#"}
+              to={
+                titel === "Kompetenzkompass" ? "/kompetenzkompass" :
+                titel === "Entwicklung Positionsprofile" ? "/torwart-profil" :
+                titel === "Entwicklung der Spielsysteme" ? "/entwicklung-spielsysteme" :
+                titel === "Quer- und Neueinsteiger, Drop-out-Prophylaxe" ? "/quereinsteiger" :
+                titel === "Breitensport vs. Leistungssport" ? "/breitensport-vs-leistungssport" :
+                "#"
+              }
               key={titel}
               className="block"
             >

@@ -12,6 +12,8 @@ import Ebene2 from "./pages/Ebene2";
 import Ebene3 from "./pages/Ebene3";
 import Ebene4 from "./pages/Ebene4";
 import Ausbildungsprinzipien from "./pages/Ausbildungsprinzipien";
+import EvaluationFeedbackZielsystem from "./pages/evaluation-feedback-zielsystem";
+import Training from "./pages/training";
 import FJugendPage from "./pages/f-jugend";
 import FJugendM1 from "./pages/f-jugend-m1";
 import FJugendM2 from "./pages/f-jugend-m2";
@@ -39,6 +41,20 @@ import Modul3EJugend from "./pages/e-jugend-m3";
 import Modul4EJugend from "./pages/e-jugend-m4";
 import Modul5EJugend from "./pages/e-jugend-m5";
 import Modul6EJugend from "./pages/e-jugend-m6";
+// C-Jugend Module
+import Modul1CJugend from "./pages/c-jugend-m1";
+import Modul2CJugend from "./pages/c-jugend-m2";
+import Modul3CJugend from "./pages/c-jugend-m3";
+import Modul4CJugend from "./pages/c-jugend-m4";
+import Modul5CJugend from "./pages/c-jugend-m5";
+import Modul6CJugend from "./pages/c-jugend-m6";
+// A-Jugend Module
+import Modul1AJugend from "./pages/a-jugend-m1";
+import Modul2AJugend from "./pages/a-jugend-m2";
+import Modul3AJugend from "./pages/a-jugend-m3";
+import Modul4AJugend from "./pages/a-jugend-m4";
+import Modul5AJugend from "./pages/a-jugend-m5";
+import Modul6AJugend from "./pages/a-jugend-m6";
 // Kompetenzkompass
 import KompetenzkompassIndex from "./pages/Kompetenzkompass";
 import KompetenzkompassModule from "./pages/Kompetenzkompass/Module";
@@ -50,6 +66,15 @@ import KompetenzModul5 from "./pages/Kompetenzkompass/Modul5";
 import KompetenzModul6 from "./pages/Kompetenzkompass/Modul6";
 import KompetenzkompassStart from "./pages/Kompetenzkompass/Kompetenzkompass";
 import PraktischeAnwendung from "./pages/Kompetenzkompass/PraktischeAnwendung";
+
+// Positionsprofile
+import Positionsprofile from "./pages/Positionsprofile";
+import TorwartProfil from "./pages/TorwartProfil";
+import PositionAussen from "./pages/PositionAussen";
+import KreislaeuferProfil from "./pages/KreislaeuferProfil";
+import RueckraumProfil from "./pages/RueckraumProfil";
+import RueckraumMitte from "./pages/RueckraumMitte";
+import PositionsprofilTemplate from "./pages/PositionsprofilTemplate";
 
 const KontaktPage = () => (
   <main className="min-h-screen bg-lightgray p-8">
@@ -91,6 +116,8 @@ function App() {
             <Route path="/ebene3" element={<Ebene3 />} />
             <Route path="/ebene4" element={<Ebene4 />} />
             <Route path="/ausbildungsprinzipien" element={<Ausbildungsprinzipien />} />
+            <Route path="/evaluation-feedback-zielsystem" element={<EvaluationFeedbackZielsystem />} />
+            <Route path="/training" element={<Training />} />
             <Route path="/kontakt" element={<KontaktPage />} />
 
             {/* F-Jugend */}
@@ -102,14 +129,17 @@ function App() {
             <Route path="/f-jugend-m5" element={<FJugendM5 />} />
             <Route path="/f-jugend-m6" element={<FJugendM6 />} />
 
-            {/* Neue 3D-Karten-Komponenten für alle Jugendstufen */}
+            {/* E-Jugend */}
             <Route path="/e-jugend" element={<EJugend />} />
-            <Route path="/d-jugend" element={<DJugend />} />
-            <Route path="/c-jugend" element={<CJugend />} />
-            <Route path="/b-jugend" element={<BJugend />} />
-            <Route path="/a-jugend" element={<AJugend />} />
+            <Route path="/e-jugend-m1" element={<Modul1EJugend />} />
+            <Route path="/e-jugend-m2" element={<Modul2EJugend />} />
+            <Route path="/e-jugend-m3" element={<Modul3EJugend />} />
+            <Route path="/e-jugend-m4" element={<Modul4EJugend />} />
+            <Route path="/e-jugend-m5" element={<Modul5EJugend />} />
+            <Route path="/e-jugend-m6" element={<Modul6EJugend />} />
 
-            {/* D-Jugend Module */}
+            {/* D-Jugend */}
+            <Route path="/d-jugend" element={<DJugend />} />
             <Route path="/d-jugend-m1" element={<Modul1DJugend />} />
             <Route path="/d-jugend-m2" element={<Modul2DJugend />} />
             <Route path="/d-jugend-m3" element={<Modul3DJugend />} />
@@ -117,13 +147,32 @@ function App() {
             <Route path="/d-jugend-m5" element={<Modul5DJugend />} />
             <Route path="/d-jugend-m6" element={<Modul6DJugend />} />
 
-            {/* E-Jugend Module */}
-            <Route path="/e-jugend-m1" element={<Modul1EJugend />} />
-            <Route path="/e-jugend-m2" element={<Modul2EJugend />} />
-            <Route path="/e-jugend-m3" element={<Modul3EJugend />} />
-            <Route path="/e-jugend-m4" element={<Modul4EJugend />} />
-            <Route path="/e-jugend-m5" element={<Modul5EJugend />} />
-            <Route path="/e-jugend-m6" element={<Modul6EJugend />} />
+            {/* C-Jugend */}
+            <Route path="/c-jugend" element={<CJugend />} />
+            <Route path="/c-jugend-m1" element={<Modul1CJugend />} />
+            <Route path="/c-jugend-m2" element={<Modul2CJugend />} />
+            <Route path="/c-jugend-m3" element={<Modul3CJugend />} />
+            <Route path="/c-jugend-m4" element={<Modul4CJugend />} />
+            <Route path="/c-jugend-m5" element={<Modul5CJugend />} />
+            <Route path="/c-jugend-m6" element={<Modul6CJugend />} />
+
+            {/* B-Jugend */}
+            <Route path="/b-jugend" element={<BJugend />} />
+            <Route path="/b-jugend-m1" element={<Modul1BJugend />} />
+            <Route path="/b-jugend-m2" element={<Modul2BJugend />} />
+            <Route path="/b-jugend-m3" element={<Modul3BJugend />} />
+            <Route path="/b-jugend-m4" element={<Modul4BJugend />} />
+            <Route path="/b-jugend-m5" element={<Modul5BJugend />} />
+            <Route path="/b-jugend-m6" element={<Modul6BJugend />} />
+
+            {/* A-Jugend */}
+            <Route path="/a-jugend" element={<AJugend />} />
+            <Route path="/a-jugend-m1" element={<Modul1AJugend />} />
+            <Route path="/a-jugend-m2" element={<Modul2AJugend />} />
+            <Route path="/a-jugend-m3" element={<Modul3AJugend />} />
+            <Route path="/a-jugend-m4" element={<Modul4AJugend />} />
+            <Route path="/a-jugend-m5" element={<Modul5AJugend />} />
+            <Route path="/a-jugend-m6" element={<Modul6AJugend />} />
 
             {/* Kompetenzkompass */}
             <Route path="/kompetenzkompass" element={<KompetenzkompassIndex />} />
@@ -136,6 +185,15 @@ function App() {
             <Route path="/kompetenzkompass/modul4" element={<KompetenzModul4 />} />
             <Route path="/kompetenzkompass/modul5" element={<KompetenzModul5 />} />
             <Route path="/kompetenzkompass/modul6" element={<KompetenzModul6 />} />
+
+            {/* Positionsprofile */}
+            <Route path="/positionsprofile" element={<Positionsprofile />} />
+            <Route path="/torwart-profil" element={<TorwartProfil />} />
+            <Route path="/aussen-profil" element={<PositionAussen />} />
+            <Route path="/kreis-profil" element={<KreislaeuferProfil />} />
+            <Route path="/rueckraum-profil" element={<RueckraumProfil />} />
+            <Route path="/rueckraum-mitte-profil" element={<RueckraumMitte />} />
+            <Route path="/positionsprofil-template" element={<PositionsprofilTemplate />} />
 
             {/* Alias-Routen */}
             <Route path="/kinderbereich" element={<AltersLeistungsstufen />} />

@@ -1,0 +1,372 @@
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const cardsData = [
+  {
+    title: "Ziele",
+    content: [
+      "Spieler:innen ein Rollenverständnis vermitteln, das zum Spiel und zur eigenen Entwicklung passt",
+      "Trainer:innen eine Orientierung geben, welche Schwerpunkte positionsbezogen sinnvoll sind",
+      "Entwicklung strukturieren, ohne zu standardisieren – jeder Weg bleibt individuell",
+      "Spielintelligenz und Verantwortung fördern, indem Rollen bewusster verstanden und gestaltet werden"
+    ],
+  },
+  {
+    title: "Grundprinzipien",
+    content: [
+      "Altersgerecht statt abschließend: Rollenbilder verändern sich – unsere Profile wachsen mit",
+      "Orientierung statt Selektion: Positionen zeigen Entwicklungsmöglichkeiten, keine Fixierung",
+      "Rollenvielfalt fördern: Spieler:innen sollen verschiedene Positionen erleben und verstehen",
+      "Spielnah denken: Anforderungen ergeben sich aus Spielsituationen, nicht aus Schema-F"
+    ],
+  },
+  {
+    title: "Anwendung in der Praxis",
+    content: [
+      "In jeder Altersstufe definieren wir pro Position Schlüsselkompetenzen: technisch, taktisch, mental, kommunikativ",
+      "Wir zeigen, welche Fähigkeiten im Zentrum stehen – z. B. Antizipation im Innenblock, Entscheidungsverhalten im Rückraum",
+      "Trainer:innen nutzen die Profile zur individuellen Förderung und Reflexion – nicht als Bewertungsraster",
+      "Im Teamtraining helfen sie bei der Rollenverteilung, Trainingsplanung und Zieldefinition"
+    ],
+  },
+  {
+    title: "Vorteile",
+    content: [
+      "Spieler:innen entwickeln ein tieferes Verständnis für ihre Aufgabe im Team",
+      "Trainer:innen erkennen Stärken, Entwicklungsfelder und Positionspotenziale schneller",
+      "Eltern und Spieler:innen bekommen ein transparentes Bild, was die Position mit sich bringt",
+      "Die Ausbildung gewinnt an Klarheit, Vergleichbarkeit und Entwicklungstiefe"
+    ],
+  },
+  {
+    title: "TORHÜTER:IN",
+    content: [
+      "Rollenbezeichnung: Torhüter:in",
+      "Spielbereiche: Abwehr · Umschalten · Kommunikation",
+      "Typische Position: Torraum · Torlinie · Aktivraum 6–9 m",
+      "Spielfeldzonen: Torraumverteidigung · Rückzugsorganisation · Impulsgeber:in für Gegenstoß",
+      "Schlüsselkompetenzen: Reaktionsschnelligkeit, Kommunikation, Spielübersicht, Mut"
+    ],
+  },
+  {
+    title: "AUSSEN",
+    content: [
+      "Rollenbezeichnung: Außenspieler:in",
+      "Spielbereiche: Angriff · Abwehr · Umschalten",
+      "Typische Position: LA / RA (ggf. erste Welle im Gegenstoß)",
+      "Spielfeldzonen: Seitenlinie, Nahwurfzone, 1. Welle, Abwehr auf Außen oder Halb",
+      "Schlüsselkompetenzen: Schnelligkeit, Wurftechnik, Antizipation, Raumgewinn"
+    ],
+  },
+  {
+    title: "KREIS",
+    content: [
+      "Rollenbezeichnung: Kreisläufer:in",
+      "Spielbereiche: Angriff · Abwehr · Umschalten",
+      "Typische Position: Kreis (am Sechsmeter), Sperre/Absetzen, Innenblock",
+      "Spielfeldzonen: Nahwurfzone im Angriff · zentrale Abwehrzone (meist Blockmitte)",
+      "Schlüsselkompetenzen: Körperstärke, Antizipation, Timing, Abwehrverhalten"
+    ],
+  },
+  {
+    title: "RÜCKRAUM (Links/Rechts)",
+    content: [
+      "Rollenbezeichnung: Rückraumspieler:in (Links / Rechts)",
+      "Spielbereiche: Angriff · Abwehr · Umschalten",
+      "Typische Positionen im System: RL · RR (ggf. auch als zweite Welle in der Mitte)",
+      "Spielfeldzonen: Rückraum links / rechts – mit Raumzugriff zur Tiefe & Breite",
+      "Schlüsselkompetenzen: Wurftechnik, Spielübersicht, Entscheidungsverhalten, Abwehrarbeit"
+    ],
+  },
+  {
+    title: "RÜCKRAUM – MITTE",
+    content: [
+      "Rollenbezeichnung: Rückraumspieler:in Mitte (RM)",
+      "Spielbereiche: Angriff · Abwehr · Umschalten",
+      "Typische Position im System: RM",
+      "Spielfeldzonen: zentraler Rückraum – mit Zugriff auf Tiefenräume, Breitenverlagerung und Spielgestaltung",
+      "Schlüsselkompetenzen: Spielgestaltung, Übersicht, Führungsqualitäten, taktisches Verständnis"
+    ],
+  },
+  {
+    title: "Entwicklungsansatz",
+    highlight: true,
+    content: [
+      "Positionen sind mehr als Orte auf dem Spielfeld – sie sind Lernräume",
+      "Unsere Spieler:innen sollen nicht früh festgelegt, aber gut orientiert sein",
+      "Positionsprofile helfen uns, die spezifischen Anforderungen jeder Position in altersgerechte Entwicklungsziele zu übersetzen",
+      "Ohne Spieler:innen in ein Raster zu pressen – jeder Weg bleibt individuell",
+      "Ziel: Rollenverständnis entwickeln, das zum Spiel und zur eigenen Entwicklung passt"
+    ],
+  },
+];
+
+export default function EntwicklungPositionen() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedCard, setSelectedCard] = useState(null);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  const carouselConfig = {
+    radius: 300,
+    cardWidth: 320,
+    cardHeight: 420,
+    availableHeight: 700,
+  };
+  
+  const headerRef = useRef(null);
+  const footerRef = useRef(null);
+  const mainContentRef = useRef(null);
+
+  useEffect(() => {
+    const updateSizes = () => {
+      setIsMobile(window.innerWidth < 768);
+      const vh = window.innerHeight;
+      const headerHeight = headerRef.current ? headerRef.current.offsetHeight : 0;
+      const assumedFooterHeight = 100;
+      const availableHeight = vh - headerHeight - assumedFooterHeight;
+      carouselConfig.availableHeight = availableHeight > 0 ? availableHeight : vh;
+    };
+    
+    updateSizes();
+    window.addEventListener("resize", updateSizes);
+    return () => window.removeEventListener("resize", updateSizes);
+  }, []);
+
+  const rotateLeft = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentIndex((prev) => (prev - 1 + cardsData.length) % cardsData.length);
+    setTimeout(() => setIsAnimating(false), 600);
+  };
+
+  const rotateRight = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentIndex((prev) => (prev + 1) % cardsData.length);
+    setTimeout(() => setIsAnimating(false), 600);
+  };
+
+  const goToCard = (index) => {
+    if (isAnimating || index === currentIndex) return;
+    setIsAnimating(true);
+    setCurrentIndex(index);
+    setTimeout(() => setIsAnimating(false), 600);
+  };
+
+  const handleCardClick = (index) => {
+    if (isAnimating) return;
+    if (index === currentIndex) {
+      setSelectedCard(cardsData[index]);
+    } else {
+      goToCard(index);
+    }
+  };
+
+  const getCardPosition3D = (index) => {
+    const { radius } = carouselConfig;
+    const offset = (index - currentIndex + cardsData.length) % cardsData.length;
+    const angle = (offset * 360) / cardsData.length;
+    const x = Math.sin((angle * Math.PI) / 180) * radius;
+    const z = Math.cos((angle * Math.PI) / 180) * radius;
+    return { x, z, angle, offset };
+  };
+
+  const getCardPosition2D = (index) => {
+    const offset = index - currentIndex;
+    const x = offset * (carouselConfig.cardWidth + 20);
+    return { x, offset };
+  };
+
+  return (
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+      {/* Header */}
+      <header ref={headerRef} className="z-40 bg-white/80 backdrop-blur-sm border-b border-gray-200">
+        <div className="flex justify-center pt-8 pb-4">
+          <Link 
+            to="/" 
+            className="rounded-full bg-gradient-to-r from-green-500 to-blue-600 text-white px-8 py-3 shadow-lg hover:from-blue-600 hover:to-green-500 transition-all duration-300 transform hover:scale-105 font-semibold"
+          >
+            ← Zurück zur Übersicht
+          </Link>
+        </div>
+      </header>
+
+      {/* Hauptbereich */}
+      <div 
+        ref={mainContentRef} 
+        className="flex-1 flex flex-col items-center justify-center p-4"
+        style={{ minHeight: `${carouselConfig.availableHeight}px` }}
+      >
+        {/* Überschrift */}
+        <motion.div
+          initial={{ opacity: 0, y: -50, rotateX: -15 }}
+          animate={{ opacity: 1, y: 0, rotateX: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-8 w-full max-w-4xl"
+          style={{ perspective: "1000px" }}
+        >
+          <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+            <h1 className="text-4xl font-bold text-green-600 text-center mb-4">
+              Entwicklung der Positionen und deren Profile
+            </h1>
+            <p className="text-center text-xl text-green-700 italic leading-relaxed">
+              "Positionen sind mehr als Orte auf dem Spielfeld – sie sind Lernräume"
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Karussell - PERFEKTE ZENTRIERUNG & RESPONSIV */}
+        <div className="relative flex items-center justify-center w-full overflow-hidden">
+          {/* Pfeil links */}
+          <motion.button
+            onClick={rotateLeft}
+            disabled={isAnimating}
+            whileHover={{ scale: 1.1, backgroundColor: "#3b82f6" }}
+            whileTap={{ scale: 0.95 }}
+            className="absolute left-2 md:left-[-60px] z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
+          >
+            <ChevronLeft size={24} />
+          </motion.button>
+
+          {/* Karten Container - MATHEMATISCH KORREKTE ZENTRIERUNG */}
+          <div 
+            className="relative"
+            style={{
+              width: isMobile ? carouselConfig.cardWidth * 3 : carouselConfig.cardWidth * 2.5,
+              height: isMobile ? carouselConfig.cardHeight : carouselConfig.cardHeight * 1.2,
+              perspective: isMobile ? "none" : "1200px",
+              transformStyle: "preserve-3d",
+            }}
+          >
+            {cardsData.map((card, index) => {
+              const { x, z, angle, offset } = isMobile 
+                ? getCardPosition2D(index) 
+                : getCardPosition3D(index);
+              
+              const isFront = isMobile ? offset === 0 : offset === 0;
+              const isVisible = isMobile 
+                ? Math.abs(offset) <= 1 
+                : offset <= 3 || offset >= cardsData.length - 3;
+
+              if (!isVisible) return null;
+
+              return (
+                <motion.div
+                  key={index}
+                  className={`absolute rounded-xl shadow-2xl flex items-center justify-center text-center cursor-pointer ${
+                    card.highlight ? "border-4 border-yellow-400" : "border border-gray-200"
+                  }`}
+                  style={{
+                    width: carouselConfig.cardWidth,
+                    height: carouselConfig.cardHeight,
+                    backgroundColor: "rgba(255,255,255,0.95)",
+                    color: "#166534",
+                    left: "50%",
+                    top: "50%",
+                    transform: isMobile 
+                      ? `translate(-50%, -50%) translateX(${x}px)`
+                      : `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
+                    zIndex: isFront ? 20 : 10 - Math.abs(offset),
+                    filter: isFront ? "none" : `brightness(${1 - Math.abs(offset) * 0.1})`,
+                  }}
+                  animate={{
+                    scale: isFront ? 1 : 0.9,
+                    opacity: isFront ? 1 : 0.8,
+                  }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  whileHover={{
+                    scale: isFront ? 1.05 : 0.95,
+                    zIndex: 25,
+                    transition: { duration: 0.2 },
+                  }}
+                  onClick={() => handleCardClick(index)}
+                >
+                  <div className="p-6">
+                    <h3 className="font-bold text-xl leading-tight">
+                      {card.title}
+                    </h3>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Pfeil rechts */}
+          <motion.button
+            onClick={rotateRight}
+            disabled={isAnimating}
+            whileHover={{ scale: 1.1, backgroundColor: "#3b82f6" }}
+            whileTap={{ scale: 0.95 }}
+            className="absolute right-2 md:right-[-60px] z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
+          >
+            <ChevronRight size={24} />
+          </motion.button>
+        </div>
+
+        {/* Indikatoren */}
+        <div className="mt-6 flex space-x-3">
+          {cardsData.map((_, index) => (
+            <motion.button
+              key={index}
+              onClick={() => goToCard(index)}
+              disabled={isAnimating}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+              className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                index === currentIndex 
+                  ? "bg-blue-600 scale-125 shadow-lg" 
+                  : "bg-gray-300 hover:bg-gray-400"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Modal */}
+      <AnimatePresence>
+        {selectedCard && (
+          <motion.div
+            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedCard(null)}
+          >
+            <motion.div
+              className="bg-white rounded-xl p-8 max-w-3xl w-full shadow-2xl overflow-y-auto max-h-[85vh]"
+              initial={{ scale: 0.8, opacity: 0, y: 50 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 50 }}
+              transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h2 className={`text-3xl font-bold mb-6 ${
+                selectedCard.highlight ? "text-yellow-600" : "text-green-600"
+              }`}>
+                {selectedCard.title}
+              </h2>
+              <ul className="list-disc pl-6 space-y-3 text-gray-700 text-lg">
+                {selectedCard.content.map((item, i) => (
+                  <li key={i} className="leading-relaxed">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <motion.button
+                onClick={() => setSelectedCard(null)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="mt-8 px-8 py-4 bg-green-600 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300 font-medium text-lg"
+              >
+                Schließen
+              </motion.button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}

@@ -7,56 +7,55 @@ const cardsData = [
   {
     title: "Zielsetzung dieses Moduls",
     content: [
-      "Spieler:innen verstehen Spielsysteme nicht als starre Muster, sondern als Prinzipien zur Orientierung und Entscheidungsfindung",
-      "Positionsprofile werden geschärft, aber nicht zementiert – Rollenwechsel und -verständnis bleiben Teil der Ausbildung",
-      "Kollektives Verhalten in Abwehr, Angriff und Umschalten wird trainiert – mit Fokus auf Wahrnehmung, Kommunikation und Spiellogik"
+      "Spieler:innen entwickeln ein erstes systematisches Spielverständnis – mit Blick auf Raum, Zeit, Mitspieler:innen und Aufgaben.",
+      "Grundlegende Prinzipien von Raumaufteilung, Zusammenspiel und Umschalten werden gelernt.",
+      "Die 3:2:1-Deckung wird als Standard-Abwehrsystem eingeführt – mit Fokus auf Ballgewinn und Kommunikation.",
+      "Positionsrollen werden verstanden, ausprobiert und reflektiert – nicht festgeschrieben."
     ]
   },
   {
-    title: "Spielprinzipien & taktische Bausteine",
+    title: "Grundprinzipien der Spielsysteme",
     content: [
-      "Angriffssystem: Fortführung / Weiterentwicklung 3:2:1, 3:3, variable Auslösehandlungen, Stoßen-Rollen-Prinzipien",
-      "Abwehrsystem: Deckungsvarianten (3:2:1 / 5:1 / 6:0), kollektives Schieben, Helfen, Zugriffsituationen",
-      "Umschalten: 1. und 2. Welle strukturieren, Umschalten als Verantwortung verstehen – nicht als „Reaktion"",
-      "Positionsprofile: Rolle, Aufgabe, Erwartungsklarheit pro Position – inkl. Wechseloptionen und Vergleichsdimensionen",
-      "Spielanalyse: Spieler:innen interpretieren Spielsituationen (z. B. mit Video, Skizzen, Nachstellen im Training)"
+      "Abwehr: 3:2:1-System mit aktivem Verteidigen und Balljagd.",
+      "Angriff: Tiefe, Breite, Passqualität, Laufwege vor Ball, Rückraumbasics.",
+      "Umschalten: schneller Rückzug / schnelles Aufrücken.",
+      "Spiellogik: Erkennen, was das Spiel braucht – und entsprechend handeln."
     ]
   },
   {
-    title: "Methodik & Umsetzung",
+    title: "Positionsverständnis & Rotation",
     content: [
-      "Prinzipien statt Abläufe: z. B. „Tiefenlauf nach Stoßen" statt „Spielzug 1a links außen"",
-      "Wechsel ermöglichen: Rückraumspieler:innen auch auf Außen oder in die Mitte → Perspektivwechsel fördern",
-      "Positionscoaching durch Team: Spieler:innen erklären (ohne Wertung) Position gegenseitig, übernehmen Coachingfunktionen",
-      "Videoanalyse als Verständnishilfe: Abwehr- & Angriffsverhalten reflektieren, Trigger visualisieren, Alternativen entwickeln",
-      "Trainer:in als Impulsgeber: „Was wäre hier noch möglich gewesen?" statt „Das war falsch""
+      "Torwart: aktiv im Spiel, Kommandos in Abwehr, klare Gegenstoß-Abläufe.",
+      "Außen: Breite halten, Einlaufen, Zielwurf aus spitzem Winkel.",
+      "Rückraum: Stoßen, Passen unter Druck, einfache Auslösehandlungen.",
+      "Kreis: Lücken anlaufen, Sperren stellen, Passwege antizipieren.",
+      "Rotation: Jede:r spielt mind. 2–3 Positionen pro Saison."
     ]
   },
   {
-    title: "Trainingsformate & Spielformen",
+    title: "Positionsprofile & positionsspezifisches Training",
     content: [
-      "„Rollenwechsel 3:3": Jede Aktion wird mit Positionswechsel verbunden – Spielverständnis & Flexibilität",
-      "System-Feedback-Rotation: Nach jeder Spielform: Coaching durch Mitspielende zur Rollenerfüllung",
-      "Positionsparcours: Aufgabe pro Station: z. B. Passfolge für Rückraum / Kreisfreilauf / Entscheidung auf Außen",
-      "Abwehrblock mit Trigger: z. B. Reaktion auf Kreuzung, Einläufer, Rückpass – kollektiv lösen"
+      "Stärken erkennen und in unterschiedlichen Rollen testen.",
+      "Positionsprofile geben Orientierung zu Aufgaben & Entscheidungen.",
+      "Trainer:innen coachen mit Rollenfragen: \"Was braucht dein Team von dir auf dieser Position?\"",
+      "Positionswechsel fördern Entscheidungsfreude und taktisches Verständnis."
     ]
   },
   {
-    title: "Typische Fehler & wie du sie vermeidest",
+    title: "Spielprinzipien & Auslösehandlungen",
     content: [
-      "Starre Positionszuteilung → Rollen dynamisch halten, regelmäßig tauschen – besonders bei Entwicklungsspieler:innen",
-      "Spielzüge ohne Verständnis → Prinzipien erklären, Alternativen durchspielen – nicht nur „Muster lernen"",
-      "Abwehrverhalten zu individuell → Kommunikation stärken, Helfen üben, klare Ansagen fördern",
-      "Positionsspiel nur im Training → Auch im Spiel bewusst thematisieren: „Was war deine Rolle in dieser Aktion?""
+      "Breite & Tiefe schaffen: z. B. Zonenregel für Würfe.",
+      "1. Welle / Gegenstoß: 3-gegen-2 mit Entscheidungsaufgabe.",
+      "Trigger erkennen: Ball auf Außen = Einläufer.",
+      "Abwehr: 3:2:1 einführen mit Fokus auf Initiative und Ballorientierung."
     ]
   },
   {
     title: "Ergebnis für den Trainer",
     highlight: true,
     content: [
-      "Du führst deine Spieler:innen in kollektive Spiellogik ein, ohne sie zu systemhörigen Ausführenden zu machen.",
-      "Du entwickelst Verständnis für Räume, Rollen, Prinzipien – und stärkst gleichzeitig ihre individuelle Entscheidungsfähigkeit im Spiel.",
-      "Ziel: Spieler:innen, die das Spiel lesen, Positionen verstehen – und Spielsysteme als Handlungsrahmen nutzen."
+      "Du führst dein Team in die Systemwelt – ohne sie einzuengen.",
+      "Spieler:innen erkennen Räume, denken Positionen flexibel und spielen Systeme intelligent."
     ]
   }
 ];
@@ -169,7 +168,7 @@ export default function Modul5BJugend() {
               Modul 5: Spielsysteme & Positionen
             </h1>
             <p className="text-center text-2xl text-gray-700 italic leading-relaxed max-w-4xl mx-auto">
-              "Wie entwickle ich kollektive Spiellogik ohne die individuelle Entscheidungsfähigkeit einzuengen?"
+              "Wie führe ich mein Team in die Systemwelt – ohne sie einzuengen?"
             </p>
           </div>
         </motion.div>
@@ -198,43 +197,23 @@ export default function Modul5BJugend() {
             }}
           >
             {cardsData.map((card, index) => {
-              const { x, z, angle, offset } = isMobile
-                ? getCardPosition2D(index)
-                : getCardPosition3D(index);
-              const isFront = offset === 0;
-              const isVisible = isMobile
-                ? Math.abs(offset) <= 1
-                : offset <= 3 || offset >= cardsData.length - 3;
-              if (!isVisible) return null;
+              const isFront = index === currentIndex;
+              const position = isMobile ? getCardPosition2D(index) : getCardPosition3D(index);
 
               return (
                 <motion.div
                   key={index}
-                  className={`absolute rounded-2xl shadow-2xl flex items-center justify-center text-center cursor-pointer backdrop-blur-sm ${
-                    card.highlight
-                      ? "border-4 border-yellow-400 bg-gradient-to-br from-yellow-50 to-orange-50"
-                      : "border border-gray-200 bg-white/95"
+                  className={`absolute bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-200 cursor-pointer ${
+                    isMobile ? "w-80 h-96" : "w-80 h-96"
                   }`}
                   style={{
-                    width: carouselConfig.cardWidth,
-                    height: carouselConfig.cardHeight,
-                    left: "50%",
-                    top: "50%",
+                    left: isMobile ? "50%" : "50%",
+                    top: isMobile ? "50%" : "50%",
                     transform: isMobile
-                      ? `translate(-50%, -50%) translateX(${x}px)`
-                      : `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
-                    zIndex: isFront ? 20 : 10 - Math.abs(offset),
-                    filter: isFront
-                      ? "none"
-                      : `brightness(${1 - Math.abs(offset) * 0.1})`,
-                  }}
-                  animate={{
-                    scale: isFront ? 1 : 0.9,
-                    opacity: isFront ? 1 : 0.8,
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    ease: "easeInOut",
+                      ? `translate(-50%, -50%) translateX(${position.x}px)`
+                      : `translate(-50%, -50%) translate3d(${position.x}px, 0, ${position.z}px) rotateY(${position.angle}deg)`,
+                    zIndex: isFront ? 20 : 10 - Math.abs(position.offset),
+                    opacity: isMobile ? (Math.abs(position.offset) <= 1 ? 1 : 0.3) : 1,
                   }}
                   whileHover={{
                     scale: isFront ? 1.05 : 0.95,

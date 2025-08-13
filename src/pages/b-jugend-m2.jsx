@@ -7,57 +7,61 @@ const cardsData = [
   {
     title: "Zielsetzung dieses Moduls",
     content: [
-      "Entwicklung individueller athletischer Leistungsfähigkeit auf positions- und potenzialgerechtem Niveau",
-      "Integration von Prävention, Bewegungsqualität und funktioneller Belastung",
-      "Förderung von Eigenverantwortung in der Trainingssteuerung",
-      "Kein „Standardprogramm", sondern dynamisches, vielseitiges und nachhaltiges Athletiktraining"
+      "Spieler:innen entwickeln eine funktionale, vielseitige und handballspezifische Athletik.",
+      "Der Fokus liegt auf Bewegungskompetenz statt Maximalleistung – Qualität vor Quantität.",
+      "Belastbarkeit, Körperspannung und Koordination werden in spielnahen Kontexten geschult.",
+      "Prävention, Körpergefühl und Trainingsfreude stehen gleichrangig neben Leistungsentwicklung."
     ]
   },
   {
     title: "Schwerpunkte & Inhalte",
     content: [
-      "Kraft (Körpergewicht & Zusatz): Rumpf, Beinachsen, Sprungstabilität, kontrollierte Zusatzlasten (Langhantel einführend, Geräte), Eigenprogramme",
-      "Schnelligkeit: Maximale Antritte, Richtungswechsel, Reaktionssprints mit Entscheidung, akzelerative Starts",
-      "Koordination & Bewegungsqualität: Techniksauberkeit, multilokale Ansteuerung, Stabitraining mit Anforderungen an Rhythmus & Kontrolle",
-      "Ausdauer: Intervallorientiert, handballspezifisch, individuell steuerbar – Belastung in Spielformen & Modellen",
-      "Regeneration & Mobilität: Myofasziale Selbstarbeit, Mobility-Routinen, aktive Regeneration mit Pulssteuerung"
+      "Schnelligkeit: Reaktionsduelle, Farb- oder akustikgesteuerte Starts, Antritte mit Richtungswechsel.",
+      "Koordination: Komplexe Sprungformen, Prell-Parcours, Reaktionsleiter, Rhythmuswechsel mit Ball.",
+      "Stabilität: Partnerstütz, Rumpf-Übungen, statisch-dynamische Kraftformen.",
+      "Beweglichkeit: Mobilisation mit Ball, Tierbewegungen, Dehn-Zirkel.",
+      "Kraft (eigenes Körpergewicht): Medizinballrollen, Stütz-Balancierformen, Zug-/Druckübungen mit Partner.",
+      "Ausdauer (intervallnah): Spiele mit 3–5 Minuten Belastung, Fangreihen, Wechselspiele in Zonen."
     ]
   },
   {
-    title: "Methodik & Umsetzung",
+    title: "No-Gos im Athletiktraining",
     content: [
-      "Individualisierung: Zielprofile, Belastungstagebuch, Feedback-Schleifen",
-      "Verständnis fördern: Warum machen wir was? – Aufklärung vor, während, nach der Übung",
-      "Bewegung vor Belastung: Technik zuerst, Belastung steigern nach Qualität, nicht nach Zeitplan",
-      "Verlässliche Steuerung: RPE, HF-Messung, Beobachtungsprotokolle, Eigenreflexion als fester Bestandteil",
-      "Handballnähe durch Integration: Sprint- oder Kraftinhalte mit Spielformen verbinden, z. B. Triggerlauf → 2:1-Situation"
+      "Zirkeltraining ohne Spielformat – motivationsarm, keine Spielnähe.",
+      "Pauschale Kraftübungen mit Zusatzgewicht – Risiko und fehlende Individualisierung.",
+      "Einseitige Ausdauerbelastung (z. B. Dauerläufe) – keine Relevanz zum Spiel.",
+      "Technikferne Stabilitätsprogramme – oft langweilig und ohne Spielbezug.",
+      "Konditionsvergleiche in der Gruppe – Leistungsdruck und Schamgefahr."
     ]
   },
   {
-    title: "Beispielhafte Trainingsformate",
+    title: "Trainingsmethodik",
     content: [
-      "Athletik-Modul vor Technikblock: z. B. Sprintvariation → Zielpass → 1:1 → Rückzugsverhalten",
-      "Athletik-Zirkel mit Kompetenzlevel: 3 Schwierigkeitsstufen → Spieler:innen wählen abhängig von Tagesform und Zielsetzung",
-      "Positionsbezogene Stabikombis: Rückraum: Rotationsstabilität + Rumpf – Außen: Unterschenkel + Fußgewölbe-Stabilität",
-      "„Your Body, Your Unit": Eigenentwicklung eines Mini-Programms + Präsentation an das Team"
+      "Vielseitigkeit: Jede Einheit kombiniert mehrere Fähigkeiten.",
+      "Zielorientierung: Aufgaben mit klaren Motorikzielen.",
+      "Variationsprinzip: gleiche Übung in neuen Kombinationen.",
+      "Belastungssteuerung: Wechsel von Anspannung & Erholung.",
+      "Spiel vor Drill: Anwendung im Spielformat.",
+      "Individualisierung: Levelgruppen und Selbstwahl-Stationen."
     ]
   },
   {
-    title: "Typische Fehler & wie du sie vermeidest",
+    title: "Spielformen & Praxisideen",
     content: [
-      "Standardzirkel für alle → Differenzierung nach Position, Ziel und Status → kein Schema-F",
-      "Stumpfes Belastungstraining → Fokus auf Bewegungsqualität, dann Belastung → Feedbacksystem nutzen",
-      "Athletik isoliert vom Spiel → Integration in Technik/Taktik-Blöcke oder Spielanforderungen",
-      "Fehlende Erklärung „Warum das?" → Transparenz und Mitverantwortung erhöhen Motivation & Qualität"
+      "Reaktions-Memory: Farben + Sprint.",
+      "Körperkreis: Partneraufgaben in definierter Reihenfolge.",
+      "Wackelparcours: Balancieren + Zielwurf.",
+      "Athletik-Bingo: Bewegungs-Challenges per Karte.",
+      "Fang den Ball nach Drehung: Reaktion + visuelle Kontrolle."
     ]
   },
   {
     title: "Ergebnis für den Trainer",
     highlight: true,
     content: [
-      "Du machst aus allgemeinem Athletiktraining einen individuell steuerbaren, leistungsfördernden und motivierenden Baustein der Ausbildung.",
-      "Du förderst Körperkompetenz, Belastbarkeit und Selbststeuerung – und legst das Fundament für spätere Spezialisierung.",
-      "Ziel: Spieler:innen, die wissen, wofür sie trainieren – und wie sie ihren Körper bewusst, stabil und leistungsfähig einsetzen."
+      "Du entwickelst keine Bodybuilder – sondern belastbare, bewegungsintelligente Athlet:innen.",
+      "Grundstein für Schnellkraft, Körperspannung und Handlungstempo.",
+      "Ziel: Spieler:innen, die schnell reagieren, stabil stehen und clever mit Belastung umgehen."
     ]
   }
 ];
@@ -167,10 +171,10 @@ export default function Modul2BJugend() {
         >
           <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-10 border border-gray-100">
             <h1 className="text-5xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent text-center mb-6">
-              Modul 2: Athletik & Leistungsaufbau
+              Modul 2: Athletik & Belastungssteuerung
             </h1>
             <p className="text-center text-2xl text-gray-700 italic leading-relaxed max-w-4xl mx-auto">
-              "Wie entwickle ich individuelle athletische Leistungsfähigkeit mit Eigenverantwortung und Handballnähe?"
+              "Wie entwickle ich belastbare, bewegungsintelligente Athlet:innen?"
             </p>
           </div>
         </motion.div>
@@ -199,43 +203,23 @@ export default function Modul2BJugend() {
             }}
           >
             {cardsData.map((card, index) => {
-              const { x, z, angle, offset } = isMobile
-                ? getCardPosition2D(index)
-                : getCardPosition3D(index);
-              const isFront = offset === 0;
-              const isVisible = isMobile
-                ? Math.abs(offset) <= 1
-                : offset <= 3 || offset >= cardsData.length - 3;
-              if (!isVisible) return null;
+              const isFront = index === currentIndex;
+              const position = isMobile ? getCardPosition2D(index) : getCardPosition3D(index);
 
               return (
                 <motion.div
                   key={index}
-                  className={`absolute rounded-2xl shadow-2xl flex items-center justify-center text-center cursor-pointer backdrop-blur-sm ${
-                    card.highlight
-                      ? "border-4 border-yellow-400 bg-gradient-to-br from-yellow-50 to-orange-50"
-                      : "border border-gray-200 bg-white/95"
+                  className={`absolute bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-200 cursor-pointer ${
+                    isMobile ? "w-80 h-96" : "w-80 h-96"
                   }`}
                   style={{
-                    width: carouselConfig.cardWidth,
-                    height: carouselConfig.cardHeight,
-                    left: "50%",
-                    top: "50%",
+                    left: isMobile ? "50%" : "50%",
+                    top: isMobile ? "50%" : "50%",
                     transform: isMobile
-                      ? `translate(-50%, -50%) translateX(${x}px)`
-                      : `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
-                    zIndex: isFront ? 20 : 10 - Math.abs(offset),
-                    filter: isFront
-                      ? "none"
-                      : `brightness(${1 - Math.abs(offset) * 0.1})`,
-                  }}
-                  animate={{
-                    scale: isFront ? 1 : 0.9,
-                    opacity: isFront ? 1 : 0.8,
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    ease: "easeInOut",
+                      ? `translate(-50%, -50%) translateX(${position.x}px)`
+                      : `translate(-50%, -50%) translate3d(${position.x}px, 0, ${position.z}px) rotateY(${position.angle}deg)`,
+                    zIndex: isFront ? 20 : 10 - Math.abs(position.offset),
+                    opacity: isMobile ? (Math.abs(position.offset) <= 1 ? 1 : 0.3) : 1,
                   }}
                   whileHover={{
                     scale: isFront ? 1.05 : 0.95,
