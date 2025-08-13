@@ -98,6 +98,12 @@ import Quereinsteiger from "./pages/quereinsteiger";
 import BreitensportVsLeistungssport from "./pages/breitensport-vs-leistungssport";
 import DropOutProphylaxe from "./pages/drop-out-prophylaxe";
 
+// Quereinsteiger Detail-Seiten
+import NeueinsteigerDetails from "./pages/quereinsteiger/NeueinsteigerDetails";
+import QuereinsteigerDetails from "./pages/quereinsteiger/QuereinsteigerDetails";
+import DropOutDetails from "./pages/quereinsteiger/DropOutDetails";
+import DoppelspielrechtDetails from "./pages/quereinsteiger/DoppelspielrechtDetails";
+
 const KontaktPage = () => (
   <main className="min-h-screen bg-lightgray p-8">
     <div className="max-w-4xl mx-auto">
@@ -228,6 +234,10 @@ function App() {
 
             {/* Quereinsteiger */}
             <Route path="/quereinsteiger" element={<Quereinsteiger />} />
+            <Route path="/quereinsteiger/neueinsteiger" element={<NeueinsteigerDetails />} />
+            <Route path="/quereinsteiger/quereinsteiger" element={<QuereinsteigerDetails />} />
+            <Route path="/quereinsteiger/dropout" element={<DropOutDetails />} />
+            <Route path="/quereinsteiger/doppelspielrecht" element={<DoppelspielrechtDetails />} />
             
             {/* Breitensport vs. Leistungssport */}
             <Route path="/breitensport-vs-leistungssport" element={<BreitensportVsLeistungssport />} />
