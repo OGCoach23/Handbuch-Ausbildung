@@ -1,12 +1,10 @@
 import PrinciplesSection from "../components/training/PrinciplesSection";
 import TimelineSection from "../components/training/TimelineSection";
 import AccordionSections from "../components/training/AccordionSections";
-import SideOutBoxes from "../components/training/SideOutBoxes";
 
 export default function Training() {
   return (
     <div className="bg-white">
-      <SideOutBoxes />
 
       {/* Intro */}
       <section className="bg-green-100/30 py-12">
