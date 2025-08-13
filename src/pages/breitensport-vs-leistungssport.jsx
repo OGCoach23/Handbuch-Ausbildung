@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Users, Target, ExternalLink } from "lucide-react";
+import { Users, Target, ExternalLink, X } from "lucide-react";
 
 const altersstufenData = [
   {
@@ -75,6 +75,8 @@ const elternData = [
 export default function BreitensportVsLeistungssport() {
   const [showTrainerPanel, setShowTrainerPanel] = useState(false);
   const [showElternPanel, setShowElternPanel] = useState(false);
+  const [showTrainerModal, setShowTrainerModal] = useState(false);
+  const [showElternModal, setShowElternModal] = useState(false);
 
   return (
     <div className="min-h-screen bg-white">
@@ -84,10 +86,63 @@ export default function BreitensportVsLeistungssport() {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="relative"
         >
             <h1 className="text-4xl font-bold text-green-600 text-center mb-4">
               Breitensport vs. Leistungssport
             </h1>
+            
+            {/* Trainer Panel - Positioniert auf Höhe der Überschrift */}
+            <motion.div
+              className={`fixed top-8 left-0 w-96 h-20 bg-green-600 text-white p-4 z-40 rounded-r-lg shadow-2xl transition-transform duration-300 ${
+                showTrainerPanel ? 'translate-x-0' : '-translate-x-80'
+              }`}
+              onMouseEnter={() => setShowTrainerPanel(true)}
+              onMouseLeave={() => setShowTrainerPanel(false)}
+            >
+              <div className="absolute -right-16 top-1/2 -translate-y-1/2 bg-green-500 p-4 rounded-lg cursor-pointer hover:bg-green-400 transition-colors">
+                <div className="writing-mode-vertical-rl text-orientation-mixed font-bold text-sm text-center">
+                  <Users size={24} className="mx-auto mb-2" />
+                  Für<br />Trainer:innen
+                </div>
+              </div>
+              
+              <div className="flex items-center justify-between h-full">
+                <h3 className="text-lg font-bold">Trainer:innen</h3>
+                <button 
+                  onClick={() => setShowTrainerModal(true)}
+                  className="bg-green-500 hover:bg-green-400 px-3 py-1 rounded text-sm transition-colors"
+                >
+                  Öffnen
+                </button>
+              </div>
+            </motion.div>
+
+            {/* Eltern Panel - Positioniert auf Höhe der Überschrift */}
+            <motion.div
+              className={`fixed top-8 right-0 w-96 h-20 bg-green-600 text-white p-4 z-40 rounded-l-lg shadow-2xl transition-transform duration-300 ${
+                showElternPanel ? 'translate-x-0' : 'translate-x-80'
+              }`}
+              onMouseEnter={() => setShowElternPanel(true)}
+              onMouseLeave={() => setShowElternPanel(false)}
+            >
+              <div className="absolute -left-16 top-1/2 -translate-y-1/2 bg-green-500 p-4 rounded-lg cursor-pointer hover:bg-green-400 transition-colors">
+                <div className="writing-mode-vertical-rl text-orientation-mixed font-bold text-sm text-center">
+                  <Target size={24} className="mx-auto mb-2" />
+                  Für<br />Eltern
+                </div>
+              </div>
+              
+              <div className="flex items-center justify-between h-full">
+                <h3 className="text-lg font-bold">Eltern</h3>
+                <button 
+                  onClick={() => setShowElternModal(true)}
+                  className="bg-green-500 hover:bg-green-400 px-3 py-1 rounded text-sm transition-colors"
+                >
+                  Öffnen
+                </button>
+              </div>
+            </motion.div>
         </motion.div>
 
         {/* Zielsetzung */}
@@ -232,82 +287,107 @@ export default function BreitensportVsLeistungssport() {
         </div>
       </div>
 
-      {/* Slide-out Panels */}
-      {/* Trainer Panel */}
+      {/* Modal für Trainer:innen */}
+      <AnimatePresence>
+        {showTrainerModal && (
           <motion.div
-        className={`fixed top-0 left-0 w-80 h-screen bg-green-600 text-white p-6 z-50 rounded-r-lg shadow-2xl transition-transform duration-300 ${
-          showTrainerPanel ? 'translate-x-0' : '-translate-x-80'
-        }`}
-        onMouseEnter={() => setShowTrainerPanel(true)}
-        onMouseLeave={() => setShowTrainerPanel(false)}
-      >
-        <div className="absolute -right-12 top-1/2 -translate-y-1/2 bg-green-500 p-3 rounded-lg cursor-pointer">
-          <div className="writing-mode-vertical-rl text-orientation-mixed font-bold text-sm text-center">
-            <Users size={20} className="mx-auto mb-2" />
-            Für<br />Trainer:innen
-          </div>
-        </div>
-        
-        <h3 className="text-xl font-bold mb-6 text-center">Trainer:innen</h3>
-        <div className="overflow-y-auto h-full pr-2">
-          <table className="w-full text-sm">
-            <thead>
-              <tr>
-                <th className="border border-gray-300 p-2 text-left bg-green-500 text-white">Frage</th>
-                <th className="border border-gray-300 p-2 text-left bg-green-500 text-white">Breitensport</th>
-                <th className="border border-gray-300 p-2 text-left bg-green-500 text-white">Leistungssport</th>
-              </tr>
-            </thead>
-            <tbody>
-              {trainerData.map((row, index) => (
-                <tr key={index}>
-                  <td className="border border-gray-300 p-2 font-semibold text-xs">{row.frage}</td>
-                  <td className="border border-gray-300 p-2 text-xs">{row.breitensport}</td>
-                  <td className="border border-gray-300 p-2 text-xs">{row.leistungssport}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </motion.div>
-
-      {/* Eltern Panel */}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+            onClick={() => setShowTrainerModal(false)}
+          >
             <motion.div
-        className={`fixed top-0 right-0 w-80 h-screen bg-green-600 text-white p-6 z-50 rounded-l-lg shadow-2xl transition-transform duration-300 ${
-          showElternPanel ? 'translate-x-0' : 'translate-x-80'
-        }`}
-        onMouseEnter={() => setShowElternPanel(true)}
-        onMouseLeave={() => setShowElternPanel(false)}
-      >
-        <div className="absolute -left-12 top-1/2 -translate-y-1/2 bg-green-500 p-3 rounded-lg cursor-pointer">
-          <div className="writing-mode-vertical-rl text-orientation-mixed font-bold text-sm text-center">
-            <Target size={20} className="mx-auto mb-2" />
-            Für<br />Eltern
-          </div>
-        </div>
-        
-        <h3 className="text-xl font-bold mb-6 text-center">Eltern</h3>
-        <div className="overflow-y-auto h-full pr-2">
-          <table className="w-full text-sm">
-            <thead>
-              <tr>
-                <th className="border border-gray-300 p-2 text-left bg-green-500 text-white">Frage</th>
-                <th className="border border-gray-300 p-2 text-left bg-green-500 text-white">Breitensport</th>
-                <th className="border border-gray-300 p-2 text-left bg-green-500 text-white">Leistungssport</th>
-              </tr>
-            </thead>
-            <tbody>
-              {elternData.map((row, index) => (
-                <tr key={index}>
-                  <td className="border border-gray-300 p-2 text-xs font-semibold">{row.frage}</td>
-                  <td className="border border-gray-300 p-2 text-xs">{row.breitensport}</td>
-                  <td className="border border-gray-300 p-2 text-xs">{row.leistungssport}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="bg-green-600 text-white p-6 flex justify-between items-center">
+                <h2 className="text-2xl font-bold">Trainer:innen</h2>
+                <button
+                  onClick={() => setShowTrainerModal(false)}
+                  className="text-white hover:text-gray-200 transition-colors"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+              <div className="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
+                <table className="w-full text-base">
+                  <thead>
+                    <tr>
+                      <th className="border border-gray-300 p-3 text-left bg-green-500 text-white">Frage</th>
+                      <th className="border border-gray-300 p-3 text-left bg-green-500 text-white">Breitensport</th>
+                      <th className="border border-gray-300 p-3 text-left bg-green-500 text-white">Leistungssport</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {trainerData.map((row, index) => (
+                      <tr key={index}>
+                        <td className="border border-gray-300 p-3 font-semibold">{row.frage}</td>
+                        <td className="border border-gray-300 p-3">{row.breitensport}</td>
+                        <td className="border border-gray-300 p-3">{row.leistungssport}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </motion.div>
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Modal für Eltern */}
+      <AnimatePresence>
+        {showElternModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+            onClick={() => setShowElternModal(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="bg-green-600 text-white p-6 flex justify-between items-center">
+                <h2 className="text-2xl font-bold">Eltern</h2>
+                <button
+                  onClick={() => setShowElternModal(false)}
+                  className="text-white hover:text-gray-200 transition-colors"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+              <div className="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
+                <table className="w-full text-base">
+                  <thead>
+                    <tr>
+                      <th className="border border-gray-300 p-3 text-left bg-green-500 text-white">Frage</th>
+                      <th className="border border-gray-300 p-3 text-left bg-green-500 text-white">Breitensport</th>
+                      <th className="border border-gray-300 p-3 text-left bg-green-500 text-white">Leistungssport</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {elternData.map((row, index) => (
+                      <tr key={index}>
+                        <td className="border border-gray-300 p-3 font-semibold">{row.frage}</td>
+                        <td className="border border-gray-300 p-3">{row.breitensport}</td>
+                        <td className="border border-gray-300 p-3">{row.leistungssport}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
