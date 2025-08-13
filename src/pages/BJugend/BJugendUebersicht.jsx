@@ -23,7 +23,7 @@ export default function BJugendUebersicht() {
           <motion.div
             key={mod.id}
             whileHover={{ scale: 1.03 }}
-            className="bg-green-100/30 rounded-2xl shadow-lg p-6 flex flex-col justify-between"
+            className="bg-green-50 rounded-2xl shadow-lg p-6 flex flex-col justify-between border border-green-200"
           >
             <h3 className="text-xl font-bold text-primary mb-4">{mod.title}</h3>
             <Link

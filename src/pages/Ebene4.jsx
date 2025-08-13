@@ -17,7 +17,7 @@ export default function Ebene4() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-green-100/30 p-4 rounded"
+          className="bg-green-50 p-4 rounded-xl shadow-lg"
         >
           Ein Konzept wirkt nur, wenn es gelebt wird. In dieser Ebene geht es um das Entscheidende: Wie bringen wir unsere Ideen in den Alltag – nachhaltig, flexibel und motivierend? Denn Theorie allein bewegt nichts. Was zählt, ist die Umsetzung auf dem Feld – und das System dahinter, das sie möglich macht.
           <br /><br />
@@ -58,14 +58,16 @@ export default function Ebene4() {
       </section>
 
       {/* Fazit */}
-      <section className="max-w-5xl mx-auto space-y-4 bg-green-100/30 p-6 rounded">
+      <div className="max-w-5xl mx-auto px-4 py-6">
+        <div className="bg-green-50 p-8 rounded-2xl shadow-lg space-y-4">
         <h2 className="text-xl font-bold text-primary">Fazit: Umsetzung, die lebt – Entwicklung, die wirkt</h2>
         <p>Ebene 4 ist das Herzstück der Realität: Hier zeigen wir, dass unser Konzept nicht nur auf dem Papier stark ist, sondern auf dem Feld, in der Halle, im Vereinsleben. Es geht nicht ums Abarbeiten – es geht ums Verstehen, Gestalten und Erleben.</p>
         <p>Wir geben unseren Trainer:innen die Werkzeuge in die Hand, ihre Verantwortung mit Haltung und Struktur zu leben. Wir holen Eltern ins Boot – nicht als Zaungäste, sondern als Entwicklungspartner. Und wir bauen ein lernendes System, das sich selbst weiterentwickelt – mit Feedback, Reflexion und klaren Zielen.</p>
         <p>Denn Ausbildung ist kein Zustand – sie ist ein Prozess.</p>
         <p>Mit der Trainerakademie, den Elternformaten und einem klar strukturierten Jahresrhythmus schaffen wir den Rahmen, in dem nachhaltige Entwicklung möglich wird. Nicht perfekt, aber wirksam. Nicht starr, aber stabil. Nicht allein, sondern gemeinsam.</p>
         <p className="font-semibold italic">👉 Jetzt beginnt der echte Weg: in der Halle, auf der Bank, im Dialog. Aus Konzept wird Haltung. Aus Haltung wird Handlung. Aus Handlung wird Entwicklung.</p>
-      </section>
+        </div>
+      </div>
     </div>
   );
 }

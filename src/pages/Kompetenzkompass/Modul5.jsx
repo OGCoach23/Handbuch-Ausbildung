@@ -43,7 +43,8 @@ export default function Modul5Spielsysteme() {
   const [activeTab, setActiveTab] = useState("position");
 
   return (
-    <div className="bg-green-100/30 p-8 rounded-2xl shadow-xl max-w-6xl mx-auto">
+    <div className="max-w-6xl mx-auto px-4 py-8">
+      <div className="bg-green-50 p-8 rounded-2xl shadow-xl">
       <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-3xl font-bold text-green-800 mb-6">
         Modul 5: Spielsysteme & Positionsspiel
       </motion.h1>
@@ -77,6 +78,7 @@ export default function Modul5Spielsysteme() {
             </div>
           </motion.div>
         ))}
+      </div>
       </div>
     </div>
   );

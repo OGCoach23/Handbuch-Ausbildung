@@ -34,7 +34,8 @@ export default function Ebene3() {
   return (
     <div className="space-y-10">
       {/* Einführung */}
-      <section className="bg-green-100/30 p-8">
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="bg-green-50 p-8 rounded-2xl shadow-lg">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +86,8 @@ export default function Ebene3() {
             </li>
           </ul>
         </motion.div>
-      </section>
+        </div>
+      </div>
 
       {/* Themenkarten */}
       <section className="bg-white/40 p-8">
@@ -124,10 +126,12 @@ export default function Ebene3() {
             </Link>
           ))}
         </motion.div>
-      </section>
+        </div>
+      </div>
 
       {/* Fazit */}
-      <section className="bg-green-100/30 p-8">
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="bg-green-50 p-8 rounded-2xl shadow-lg">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -180,7 +184,8 @@ export default function Ebene3() {
             </Link>
           </p>
         </motion.div>
-      </section>
+        </div>
+      </div>
     </div>
   );
 }

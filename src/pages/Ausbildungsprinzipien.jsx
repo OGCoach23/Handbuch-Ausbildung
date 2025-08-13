@@ -28,7 +28,7 @@ export default function Ausbildungsprinzipien() {
             gefordert und begleitet werden.
           </p>
 
-          <div className="bg-green-100/30 p-4 rounded-xl shadow">
+          <div className="bg-green-50 p-4 rounded-xl shadow-lg border border-green-200">
             <h3 className="font-bold mb-2 text-primary">Unsere Leitprinzipien:</h3>
             <table className="w-full text-sm">
               <tbody>
