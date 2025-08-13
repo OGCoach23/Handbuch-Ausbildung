@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ChevronRight, Target, Clock, CheckCircle } from "lucide-react";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 import CollapsibleBox from "../../components/CollapsibleBox";
 
 export default function SpielsystemAJugend() {
@@ -22,7 +22,7 @@ export default function SpielsystemAJugend() {
         className="flex items-center text-green-600 mb-8"
       >
         <Link to="/spielsysteme-uebersicht" className="hover:text-green-700 transition-colors">
-          Spielsysteme
+          Abwehrsysteme
         </Link>
         <ChevronRight className="w-5 h-5 mx-2" />
         <span className="text-gray-600">A-Jugend</span>
@@ -34,285 +34,304 @@ export default function SpielsystemAJugend() {
         className="text-center mb-12"
       >
         <h1 className="text-4xl font-bold text-green-700 mb-4">
-          A-Jugend: 6:0-Deckung (offensiv)
+          A-Jugend – 6:0-Deckung (offensiv)
         </h1>
-        <p className="text-xl text-green-600">
-          Erwachsenennahe Taktik und maximale Variabilität
-        </p>
       </motion.div>
 
-      {/* Key Info Cards */}
-      <motion.div
-        variants={fadeInVariants}
-        transition={{ delay: 0.2 }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
-      >
-        <div className="bg-red-50 p-6 rounded-xl text-center">
-          <Target className="w-8 h-8 text-red-600 mx-auto mb-3" />
-          <h3 className="font-semibold text-red-700">System</h3>
-          <p className="text-red-600">6:0-Deckung (offensiv gespielt)</p>
-        </div>
-        <div className="bg-blue-50 p-6 rounded-xl text-center">
-          <Clock className="w-8 h-8 text-blue-600 mx-auto mb-3" />
-          <h3 className="font-semibold text-blue-700">Dauer</h3>
-          <p className="text-blue-600">2 Jahre verbindlich</p>
-        </div>
-        <div className="bg-green-50 p-6 rounded-xl text-center">
-          <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-3" />
-          <h3 className="font-semibold text-green-700">Fokus</h3>
-          <p className="text-green-600">Erwachsenen-Taktik & Variabilität</p>
-        </div>
-      </motion.div>
-
-      {/* System Diagram */}
-      <motion.div
-        variants={fadeInVariants}
-        transition={{ delay: 0.3 }}
-        className="bg-white p-8 rounded-2xl shadow-lg mb-8"
-      >
-        <h2 className="text-2xl font-bold text-green-700 mb-6 text-center">Systemdiagramm</h2>
-        <div className="bg-red-100 h-64 rounded-lg flex items-center justify-center">
-          <p className="text-red-600 text-lg font-medium">
-            6:0-Deckung (offensiv) Formationsdiagramm
-          </p>
-        </div>
-      </motion.div>
-
-      {/* Collapsible Content */}
+      {/* Collapsible Content Sections */}
       <motion.div
         variants={fadeInVariants}
         transition={{ delay: 0.4 }}
         className="space-y-6"
       >
-        <CollapsibleBox title="Grundprinzipien der offensiven 6:0-Deckung">
+        <CollapsibleBox title="Abschnitt A: Systemübersicht & Ausbildungsrahmen">
           <div className="space-y-4">
-            <p className="text-green-600">
-              Die offensive 6:0-Deckung ist das komplexeste System und bereitet optimal auf den Erwachsenenbereich vor. 
-              Sechs Spieler bilden eine geschlossene Formation, die aktiv und variabel agiert.
-            </p>
-            
-            <h4 className="font-semibold text-green-700">Kernelemente:</h4>
-            <ul className="space-y-2 text-green-600">
-              <li className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                Geschlossene 6er-Formation vor der 6m-Linie
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                Offensives Heraustreten und Raumkontrolle
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                Komplexe Verschiebungen und Täuschungen
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                Basis für alle Erwachsenenformationen
-              </li>
+            <ul className="space-y-2 text-gray-700">
+              <li>● Systemname: 6:0-Deckung (offensiv gespielt)</li>
+              <li>● Einsatzdauer: A-Jugend (2 Jahre verbindlich)</li>
             </ul>
-          </div>
-        </CollapsibleBox>
-
-        <CollapsibleBox title="Rollen und Spezialisierung">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div>
-              <h4 className="font-semibold text-green-700 mb-3">Außenspieler (1 & 6)</h4>
-              <ul className="space-y-2 text-green-600">
-                <li>• Seitliche Raumkontrolle</li>
-                <li>• Schnelle Beinarbeit</li>
-                <li>• Übergänge koordinieren</li>
-                <li>• Tempowechsel initiieren</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-green-700 mb-3">Halbspieler (2 & 5)</h4>
-              <ul className="space-y-2 text-green-600">
-                <li>• Flexible Positionierung</li>
-                <li>• Heraustreten und Sichern</li>
-                <li>• Kommunikation nach außen</li>
-                <li>• Antizipation von Durchbrüchen</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-green-700 mb-3">Innenspieler (3 & 4)</h4>
-              <ul className="space-y-2 text-green-600">
-                <li>• Zentrale Stabilität</li>
-                <li>• Torwart-Coaching</li>
-                <li>• Spielübersicht</li>
-                <li>• Koordination der Formation</li>
-              </ul>
-            </div>
-          </div>
-        </CollapsibleBox>
-
-        <CollapsibleBox title="Offensive Spielweise">
-          <div className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h5 className="font-medium text-green-700 mb-2">Aktives Heraustreten</h5>
-                <p className="text-green-600 text-sm mb-2">
-                  Spieler treten gezielt aus der Formation heraus, um Druck aufzubauen.
-                </p>
-                <ul className="text-green-600 text-sm space-y-1">
-                  <li>• Timing ist entscheidend</li>
-                  <li>• Absicherung muss gewährleistet sein</li>
-                  <li>• Kommunikation ist essential</li>
-                </ul>
-              </div>
-              
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h5 className="font-medium text-green-700 mb-2">Raumkontrolle</h5>
-                <p className="text-green-600 text-sm mb-2">
-                  Kontrolliertes Verschieben zur Raumverengung.
-                </p>
-                <ul className="text-green-600 text-sm space-y-1">
-                  <li>• Kollektive Bewegungen</li>
-                  <li>• Räume bewusst öffnen/schließen</li>
-                  <li>• Gegner in bestimmte Bereiche lenken</li>
-                </ul>
-              </div>
-              
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h5 className="font-medium text-green-700 mb-2">Täuschungsverhalten</h5>
-                <p className="text-green-600 text-sm mb-2">
-                  Bewusste Fehlstellungen zur Gegnerirritation.
-                </p>
-                <ul className="text-green-600 text-sm space-y-1">
-                  <li>• Scheinlücken provozieren</li>
-                  <li>• Falshe Signale senden</li>
-                  <li>• Überraschungsmomente schaffen</li>
-                </ul>
-              </div>
-              
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h5 className="font-medium text-green-700 mb-2">Variabilität</h5>
-                <p className="text-green-600 text-sm mb-2">
-                  Ständiger Wechsel zwischen verschiedenen Spielweisen.
-                </p>
-                <ul className="text-green-600 text-sm space-y-1">
-                  <li>• Passive und aggressive Phasen</li>
-                  <li>• Unterschiedliche Formationen</li>
-                  <li>• Situative Anpassungen</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </CollapsibleBox>
-
-        <CollapsibleBox title="Trainingsformen und Meisterschaft">
-          <div className="space-y-4">
-            <p className="text-green-600">
-              Das Training der offensiven 6:0 erfordert hohe Komplexität und Präzision. 
-              Die Spieler müssen auf Erwachsenenniveau agieren können.
-            </p>
             
-            <div className="space-y-4">
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h5 className="font-medium text-green-700">Grundlagenphase (1-12 Wochen)</h5>
-                <ul className="mt-2 space-y-1 text-green-600">
-                  <li>• Perfekte Grundaufstellung</li>
-                  <li>• Koordinierte Grundverschiebungen</li>
-                  <li>• Erste offensive Elemente</li>
-                </ul>
-              </div>
-              
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h5 className="font-medium text-green-700">Vertiefungsphase (13-24 Wochen)</h5>
-                <ul className="mt-2 space-y-1 text-green-600">
-                  <li>• Komplexe Heraustreten-Muster</li>
-                  <li>• Situative Anpassungen</li>
-                  <li>• Täuschung und Variabilität</li>
-                </ul>
-              </div>
-              
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h5 className="font-medium text-green-700">Meisterschaftsphase (Ab Woche 25)</h5>
-                <ul className="mt-2 space-y-1 text-green-600">
-                  <li>• Eigenständige Systemanpassungen</li>
-                  <li>• Gegneranalyse und -adaptation</li>
-                  <li>• Übergang zu Erwachsenensystemen</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </CollapsibleBox>
-
-        <CollapsibleBox title="Erfolgskriterien und Übergang">
-          <div className="space-y-4">
-            <p className="text-green-600">
-              Die A-Jugend-Spieler:innen sind bereit für den Erwachsenenbereich, wenn sie folgende Kriterien erfüllen:
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-semibold text-green-700 mb-3">Technische Perfektion</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                    <span className="text-green-600">Perfekte Grundstellungen</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                    <span className="text-green-600">Präzise Verschiebungen</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                    <span className="text-green-600">Kontrolliertes Heraustreten</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div>
-                <h4 className="font-semibold text-green-700 mb-3">Taktische Reife</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                    <span className="text-green-600">Eigenständige Entscheidungen</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                    <span className="text-green-600">Situative Systemanpassungen</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                    <span className="text-green-600">Führungsverantwortung im Team</span>
-                  </li>
-                </ul>
-              </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">Ziel des Systems:</h4>
+              <p className="text-gray-700">
+                Spielintelligenz, Effizienz und taktische Variabilität – die 6:0 bildet die Basis für nahezu alle Erwachsenenformationen. Die offensive Variante schult aktives Heraustreten, Raumkontrolle, Verschieben und Täuschungsverhalten.
+              </p>
             </div>
             
-            <div className="bg-green-50 p-6 rounded-lg mt-6">
-              <h4 className="font-semibold text-green-700 mb-3">Übergang zum Erwachsenenbereich</h4>
-              <p className="text-green-600">
-                Die offensive 6:0-Deckung bildet die perfekte Grundlage für alle Erwachsenensysteme. 
-                Spieler:innen können nahtlos zu 6:0, 5:1, 4:2 oder anderen Formationen wechseln, 
-                da sie die Grundprinzipien verinnerlicht haben.
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">Spielnahe Bedeutung:</h4>
+              <p className="text-gray-700">
+                Die 6:0 ist das Fundament im Seniorenbereich. Wer sie aktiv interpretieren kann, bringt defensive Stabilität mit offensivem Zugriff zusammen.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">Verbindung zur Zukunft (Aktivenbereich):</h4>
+              <p className="text-gray-700">
+                Die offensive 6:0 ist adaptierbar auf jede Spielsituation – Grundlage für spätere Hybridformationen (z. B. 5+1, 3:2:1-Elemente, antizipative Sperre-Verteidigung).
+              </p>
+            </div>
+          </div>
+        </CollapsibleBox>
+
+        <CollapsibleBox title="Abschnitt B: Taktische Prinzipien & Ausbildungsschwerpunkte">
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">Grundprinzipien:</h4>
+              <ol className="list-decimal list-inside space-y-1 text-gray-700 ml-4">
+                <li>Verschieben in der Linie – ballnah Druck erzeugen</li>
+                <li>Heraustreten, wenn es die Situation erfordert – nicht dauerhaft</li>
+                <li>Sperreverhalten lesen – nicht „reagieren", sondern agieren</li>
+                <li>Kommunikation & Antizipation entscheiden über Qualität</li>
+              </ol>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">Altersangepasste Schwerpunkte:</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>– Verantwortung für „meinen Raum" übernehmen</li>
+                <li>– situatives Heraustreten mit Rückendeckung</li>
+                <li>– Handlungsketten im Team (z. B. Stoß → Hilfe → Übergabe)</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">Taktische Lernziele:</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>– Isolation & Lenkung von Rückraumspieler:innen</li>
+                <li>– Verteidigung gegen komplexe Kombinationen</li>
+                <li>– Koordination mit Torhüter:in und Kommunikation im Innenblock</li>
+                <li>– Abwehrumstellung während des Spiels</li>
+              </ul>
+            </div>
+          </div>
+        </CollapsibleBox>
+
+        <CollapsibleBox title="Abschnitt C: Positionsprofil (altersgerecht)">
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">Außenverteidiger:innen:</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>– kontrollieren Einläufer:innen + Passwege zur Außenbahn</li>
+                <li>– treten bei breiten Rückraumbelastungen heraus</li>
+                <li>– arbeiten in enger Abstimmung mit Halbpositionen</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">Halbverteidiger:innen:</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>– ballnah aktiv: Stoßbewegungen stören, Druck erzeugen</li>
+                <li>– ballfern sichernd: Rückzugsbereitschaft, Raumkontrolle</li>
+                <li>– reagieren auf Übergänge, Sperren und Kreuzungen</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">Innenblock (Mitte):</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>– Kreisspieler:in kontrollieren, Sperren antizipieren</li>
+                <li>– helfen bei Durchbrüchen, ohne Raum zu öffnen</li>
+                <li>– klare Kommunikation mit Torhüter:in und Halbpositionen</li>
+              </ul>
+            </div>
+          </div>
+        </CollapsibleBox>
+
+        <CollapsibleBox title="Abschnitt D: Methodik & Trainingseinführung">
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">Didaktische Einführung:</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>– „Von der Linie in den Raum" – Bewegung statt Stillstand</li>
+                <li>– Entscheidungsübungen: Wann bleibe ich tief, wann trete ich raus?</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">Methodische Reihen:</h4>
+              <ol className="list-decimal list-inside space-y-1 text-gray-700 ml-4">
+                <li>2:2 & 3:3 auf einer Seite (Stoß + Sperre)</li>
+                <li>4:4 mit Einlauf und Kreuzungsdruck</li>
+                <li>6:6 mit Stoß-Rückstoß-Simulation & Reaktionscoaching</li>
+                <li>Freies Spiel mit „Abwehr-Call" (z. B. „Press", „Halten")</li>
+              </ol>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">Beispielhafte Spielformen:</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>– „Stören & Sichern" mit Punktewertung</li>
+                <li>– „6:0-Challenge" (Wie oft Druck erzeugen + Raum sichern?)</li>
+                <li>– Videocoaching mit Triggeranalyse</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">Rotationsprinzipien:</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>– Innen- & Außenpositionen je nach Spieltyp verteilen</li>
+                <li>– Spielstärke entscheidet zunehmend über Position, nicht mehr Rotation</li>
+              </ul>
+            </div>
+          </div>
+        </CollapsibleBox>
+
+        <CollapsibleBox title="Abschnitt E: Typische Fehlerbilder & Coaching-Ansätze">
+          <div className="space-y-4">
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse border border-gray-300">
+                <thead>
+                  <tr className="bg-green-500 text-white">
+                    <th className="border border-gray-300 p-3 text-left">Fehlerbild</th>
+                    <th className="border border-gray-300 p-3 text-left">Coaching-Impuls</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-gray-300 p-3">Ballnah bleibt zu passiv – Gegner läuft frei</td>
+                    <td className="border border-gray-300 p-3">„Zeig Präsenz – der Raum gehört dir, nicht ihm!"</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 p-3">Ballfern rücken alle zurück – Lücken entstehen</td>
+                    <td className="border border-gray-300 p-3">„Halt die Linie – du bist noch Teil der Aktion!"</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-3">Kommunikation fehlt bei Übergaben</td>
+                    <td className="border border-gray-300 p-3">„Wer nichts sagt, übergibt keine Verantwortung."</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 p-3">Innenblock überhilft – Sperre wird zu leicht</td>
+                    <td className="border border-gray-300 p-3">„Stehen ist nicht gleich helfen – Position vor Aktion!"</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-3">Außen verliert Einläufer:innen bei Seitenwechsel</td>
+                    <td className="border border-gray-300 p-3">„Dein Raum – deine Regel: keiner läuft da durch!"</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </CollapsibleBox>
+
+        <CollapsibleBox title="Abschnitt F: Entwicklung & Anschlussfähigkeit">
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">Was soll am Ende „sitzen"?</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>– Alle Spieler:innen verstehen das System und ihre Positionen</li>
+                <li>– Kommunikation & Antizipation sind Standard</li>
+                <li>– Umstellung auf alternative Systeme jederzeit möglich</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">Was wird vorbereitet?</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>– Seniorentaugliche Abwehrintelligenz</li>
+                <li>– Entscheidungsspieler:innen, keine Lückenfüller</li>
+                <li>– Systemkompetenz auf hohem Niveau</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">Übertragbarkeit in den Erwachsenenbereich:</h4>
+              <p className="text-gray-700">
+                Wer in der A-Jugend eine offensive 6:0 spielen kann, ist bereit für Liga-Abwehrsysteme – mit klaren Zonen, aktiven Störaktionen und taktischen Varianten.
+              </p>
+            </div>
+          </div>
+        </CollapsibleBox>
+
+        <CollapsibleBox title="Abschnitt G: Lösungen gegen Sondersituationen (A-Jugend – 6:0 offensiv)">
+          <div className="space-y-6">
+            <div>
+              <h4 className="font-semibold text-green-700 mb-3">Einläufer von Außen</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>• Außen rückt mit – Halb sichert innen mit</li>
+                <li>• Kommunikation: „Einläufer links – bleib tief!"</li>
+                <li>• Torhüter:in wird eingebunden („Kurzer Pfosten übernehmen")</li>
+              </ul>
+              <p className="text-gray-700 mt-2">
+                👉 <strong>Trainingsform:</strong> Einlauf + Rückstoß + Lücken-Coaching
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-green-700 mb-3">Übergang von RL/RR</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>• Halb tritt früh raus – kontrollierter Kontakt</li>
+                <li>• Mitte übernimmt nur bei klarer Bedrohung</li>
+                <li>• Passfenster blockieren – nicht Gegenspieler folgen</li>
+              </ul>
+              <p className="text-gray-700 mt-2">
+                👉 <strong>Trainingsform:</strong> Übergang-Simulation mit Entscheidungsoptionen
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-green-700 mb-3">Übergang von RM</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>• Halb / Mitte arbeitet gemeinsam mit Spitze (falls hybrid gespielt)</li>
+                <li>• Stoß lenken, Sperre verhindern</li>
+                <li>• Kein unnötiges Heraustreten → Absprache entscheidet</li>
+              </ul>
+              <p className="text-gray-700 mt-2">
+                👉 <strong>Trainingsform:</strong> RM-Übergang mit Sperre + Rückpass auf Außen
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-green-700 mb-3">Kreuzen</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>• Kein unreflektiertes Übernehmen – Position & Raum zählen</li>
+                <li>• Abwehrreihe bleibt kompakt</li>
+                <li>• Kommunikation: „Komm du", „Ich bleib!"</li>
+              </ul>
+              <p className="text-gray-700 mt-2">
+                👉 <strong>Trainingsform:</strong> Kreuz-Auswertung im Live-Coaching
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-green-700 mb-3">Sperre vom Kreis</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>• Innenblock hält Abstand + agiert aktiv gegen Sperre</li>
+                <li>• Antizipation wichtiger als Reaktion</li>
+                <li>• Absprache mit Halb: „Sperre rechts – ich helfe kurz!"</li>
+              </ul>
+              <p className="text-gray-700 mt-2">
+                👉 <strong>Trainingsform:</strong> Sperre-Wahrnehmung + Sperre-Versatzübungen
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-green-700 mb-3">Kombinationen</h4>
+              <ul className="space-y-1 text-gray-700">
+                <li>• keine Panik – Position halten vor Aktion</li>
+                <li>• Fokus auf Mitte + Rückpassoption</li>
+                <li>• Störaktionen bei Rückstoß gezielt einbauen</li>
+              </ul>
+              <p className="text-gray-700 mt-2">
+                👉 <strong>Trainingsform:</strong> 6:6 mit Kombinationsverbot → Analyse in Kleingruppe
               </p>
             </div>
           </div>
         </CollapsibleBox>
       </motion.div>
 
-      {/* Navigation */}
+      {/* Navigation to next system */}
       <motion.div
         variants={fadeInVariants}
         transition={{ delay: 0.8 }}
-        className="flex justify-between mt-12"
+        className="mt-12 text-center space-x-4"
       >
         <Link
           to="/spielsystem-b-jugend"
           className="inline-flex items-center bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors"
         >
-          <ChevronRight className="w-5 h-5 mr-2 transform rotate-180" />
+          <ChevronLeft className="w-5 h-5 mr-2" />
           Vorheriges: B-Jugend
-        </Link>
-        
-        <Link
-          to="/entwicklung-spielsysteme"
-          className="inline-flex items-center bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors"
-        >
-          Zurück zur Übersicht
-          <ChevronRight className="w-5 h-5 ml-2" />
         </Link>
       </motion.div>
     </motion.div>
