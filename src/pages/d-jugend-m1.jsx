@@ -38,7 +38,7 @@ const cardsData = [
   {
     title: "Methodik & Organisation",
     content: [
-      "Trainingsdauer & Aufbau: 75–90 Minuten, Struktur: Warm-up → Technik/Spiel → Intensivspiel → Reflexion",
+      "Trainingsdauer & Aufbau: 75–90 Minuten, Struktur: Warm-up - Technik/Spiel - Intensivspiel - Reflexion",
       "Gruppengestaltung: Heterogene Gruppen, wechselnde Aufgaben & Rollen, Rücksicht auf Reifegrade",
       "Kommunikationsstil: 'Du kannst das.' / 'Was war dein bester Moment heute?' / Rückfragen erwünscht",
       "Spielorientierung bleibt: Technik wird immer im Spielkontext vermittelt – keine reinen Technikblöcke",
@@ -48,11 +48,11 @@ const cardsData = [
   {
     title: "Typische Trainerfehler (und wie du sie vermeidest)",
     content: [
-      "'Du bist der Spielmacher' → Jede:r darf jede Rolle erleben – Positionsverständnis statt Festlegung",
-      "'Ihr müsst euch jetzt konzentrieren!' → 'Was hilft euch gerade, besser bei der Sache zu bleiben?'",
-      "Lange Monologe → Max. 60 Sek. Reden – dann ausprobieren lassen",
-      "Technikdrill ohne Spielbezug → Technik direkt ins Spiel integrieren, auch im 2:2 oder 3:3",
-      "Gruppenvergleiche → Fokus auf individuelle Entwicklung im Teamkontext",
+      "'Du bist der Spielmacher' - Jede:r darf jede Rolle erleben – Positionsverständnis statt Festlegung",
+      "'Ihr müsst euch jetzt konzentrieren!' - 'Was hilft euch gerade, besser bei der Sache zu bleiben?'",
+      "Lange Monologe - Max. 60 Sek. Reden – dann ausprobieren lassen",
+      "Technikdrill ohne Spielbezug - Technik direkt ins Spiel integrieren, auch im 2:2 oder 3:3",
+      "Gruppenvergleiche - Fokus auf individuelle Entwicklung im Teamkontext",
     ],
   },
   {

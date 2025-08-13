@@ -40,16 +40,16 @@ export default function RueckraumMitte() {
 
       <AccordionItem title="Abschnitt C – Typische Herausforderungen">
         <ul className="list-disc ml-6">
-          <li>„Ich weiß nicht, wann ich das Spiel schnell machen soll – und wann nicht." → Unsicherheit im Rhythmusgefühl...</li>
-          <li>„Ich verliere den Überblick, wenn alle in Bewegung sind." → Kognitive Überforderung...</li>
-          <li>„Ich stoße, aber danach passiert nichts." → Anschlussaktionen fehlen...</li>
-          <li>„Ich hab Angst, das Spiel zu verlangsamen." → Gefühl, nur schnell = gut...</li>
-          <li>„Ich will niemanden anschreien – aber ich müsste eigentlich." → Kommunikationshemmung...</li>
-          <li>„Ich weiß, was ich will – aber die anderen machen es nicht." → Frust, Isolation...</li>
-          <li>„Ich erkenne oft, was möglich wäre – aber der Ball kommt nicht zu mir." → Rolle wird nicht anerkannt...</li>
-          <li>„Ich kann das System auswendig – aber im Spiel funktioniert es nicht." → Starrheit unter Druck...</li>
-          <li>„Ich übernehme die Führung – aber ich mache zu viel." → Übersteuerung...</li>
-          <li>„Ich bin nach einem Fehler wie blockiert." → Mentale Blockade...</li>
+          <li>„Ich weiß nicht, wann ich das Spiel schnell machen soll – und wann nicht." - Unsicherheit im Rhythmusgefühl...</li>
+          <li>„Ich verliere den Überblick, wenn alle in Bewegung sind." - Kognitive Überforderung...</li>
+          <li>„Ich stoße, aber danach passiert nichts." - Anschlussaktionen fehlen...</li>
+          <li>„Ich hab Angst, das Spiel zu verlangsamen." - Gefühl, nur schnell = gut...</li>
+          <li>„Ich will niemanden anschreien – aber ich müsste eigentlich." - Kommunikationshemmung...</li>
+          <li>„Ich weiß, was ich will – aber die anderen machen es nicht." - Frust, Isolation...</li>
+          <li>„Ich erkenne oft, was möglich wäre – aber der Ball kommt nicht zu mir." - Rolle wird nicht anerkannt...</li>
+          <li>„Ich kann das System auswendig – aber im Spiel funktioniert es nicht." - Starrheit unter Druck...</li>
+          <li>„Ich übernehme die Führung – aber ich mache zu viel." - Übersteuerung...</li>
+          <li>„Ich bin nach einem Fehler wie blockiert." - Mentale Blockade...</li>
         </ul>
       </AccordionItem>
 
@@ -96,7 +96,7 @@ export default function RueckraumMitte() {
         <h4 className="font-semibold mt-2">B-Jugend</h4>
         <p>Stoß mit Finte – Rückstoß mit Anschlussaktion... Doppelpass mit Kreis...</p>
         <h4 className="font-semibold mt-2">A-Jugend</h4>
-        <p>Verzögerter Anlauf → provozierte Reaktion... Rhythmuswechsel innerhalb einer Aktion...</p>
+        <p>Verzögerter Anlauf - provozierte Reaktion... Rhythmuswechsel innerhalb einer Aktion...</p>
       </AccordionItem>
 
       <AccordionItem title="Abschnitt G – Beobachtungskriterien für Trainer:innen">

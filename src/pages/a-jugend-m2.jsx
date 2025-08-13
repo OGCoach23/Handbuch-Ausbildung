@@ -30,14 +30,14 @@ const cardsData = [
       "Verständnis fördern: Warum machen wir was? – Aufklärung vor, während, nach der Übung",
       "Bewegung vor Belastung: Technik zuerst, Belastung steigern nach Qualität, nicht nach Zeitplan",
       "Verlässliche Steuerung: RPE, HF-Messung, Beobachtungsprotokolle, Eigenreflexion als fester Bestandteil",
-      "Handballnähe durch Integration: Sprint- oder Kraftinhalte mit Spielformen verbinden, z. B. Triggerlauf → 2:1-Situation"
+      "Handballnähe durch Integration: Sprint- oder Kraftinhalte mit Spielformen verbinden, z. B. Triggerlauf - 2:1-Situation"
     ]
   },
   {
     title: "Beispielhafte Trainingsformate",
     content: [
-      "Athletik-Modul vor Technikblock: z. B. Sprintvariation → Zielpass → 1:1 → Rückzugsverhalten",
-      "Athletik-Zirkel mit Kompetenzlevel: 3 Schwierigkeitsstufen → Spieler:innen wählen abhängig von Tagesform und Zielsetzung",
+      "Athletik-Modul vor Technikblock: z. B. Sprintvariation - Zielpass - 1:1 - Rückzugsverhalten",
+      "Athletik-Zirkel mit Kompetenzlevel: 3 Schwierigkeitsstufen - Spieler:innen wählen abhängig von Tagesform und Zielsetzung",
       "Positionsbezogene Stabikombis: Rückraum: Rotationsstabilität + Rumpf – Außen: Unterschenkel + Fußgewölbe-Stabilität",
               "'Your Body, Your Unit': Eigenentwicklung eines Mini-Programms + Präsentation an das Team"
     ]
@@ -45,10 +45,10 @@ const cardsData = [
   {
     title: "Typische Fehler & wie du sie vermeidest",
     content: [
-      "Standardzirkel für alle → Differenzierung nach Position, Ziel und Status → kein Schema-F",
-      "Stumpfes Belastungstraining → Fokus auf Bewegungsqualität, dann Belastung → Feedbacksystem nutzen",
-      "Athletik isoliert vom Spiel → Integration in Technik/Taktik-Blöcke oder Spielanforderungen",
-              "Fehlende Erklärung 'Warum das?' → Transparenz und Mitverantwortung erhöhen Motivation & Qualität"
+            "Standardzirkel für alle - Differenzierung nach Position, Ziel und Status - kein Schema-F",
+      "Stumpfes Belastungstraining - Fokus auf Bewegungsqualität, dann Belastung - Feedbacksystem nutzen",
+      "Athletik isoliert vom Spiel - Integration in Technik/Taktik-Blöcke oder Spielanforderungen",
+      "Fehlende Erklärung 'Warum das?' - Transparenz und Mitverantwortung erhöhen Motivation & Qualität"
     ]
   },
   {

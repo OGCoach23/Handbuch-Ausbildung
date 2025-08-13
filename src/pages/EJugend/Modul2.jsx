@@ -61,9 +61,9 @@ export default function EJugendModul2() {
 
         <h2>Typische Trainerfehler</h2>
         <ul>
-          <li>Monotone Übungen → Abwechslung schaffen</li>
-          <li>Wettbewerbe mit Verlierern → kooperative Ziele</li>
-          <li>Gleiche Übung für alle → Varianten anbieten</li>
+          <li>Monotone Übungen - Abwechslung schaffen</li>
+          <li>Wettbewerbe mit Verlierern - kooperative Ziele</li>
+          <li>Gleiche Übung für alle - Varianten anbieten</li>
         </ul>
 
         <h2>Ergebnis für den Trainer</h2>

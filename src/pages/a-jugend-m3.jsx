@@ -30,7 +30,7 @@ const cardsData = [
       "Variation vor Wiederholung: Technik in wechselnden Aufgaben, Gegnern, Positionen, Zonen",
       "Kognitive Aktivierung: Vorwissen abfragen, Entscheidungen bewusst herbeiführen, Perspektivwechsel ermöglichen",
       "Peer-Coaching einbauen: Spieler:innen geben Technikfeedback, analysieren Bewegungen gegenseitig",
-      "Video & Selbstanalyse nutzen: Technik aus Spielsituationen analysieren → Selbstbild vs. Fremdbild erkennen"
+      "Video & Selbstanalyse nutzen: Technik aus Spielsituationen analysieren - Selbstbild vs. Fremdbild erkennen"
     ]
   },
   {
@@ -45,10 +45,10 @@ const cardsData = [
   {
     title: "Typische Fehler & wie du sie vermeidest",
     content: [
-      "Techniktraining ohne Spielziel → Technik an taktische Prinzipien koppeln ('Wofür brauchst du diese Bewegung?')",
-      "Drillartige Wiederholungen → Variationen einbauen, situativ steuern, Gegnerdruck steigern",
-      "Korrekturen im Dauermodus → Lieber: gezielte Einzelimpulse + Selbstreflexion durch Video/Frage",
-      "Nur 'Lieblingsseite' nutzen → Immer beidseitig trainieren – auch wenn 'es komisch aussieht'"
+      "Techniktraining ohne Spielziel - Technik an taktische Prinzipien koppeln ('Wofür brauchst du diese Bewegung?')",
+      "Drillartige Wiederholungen - Variationen einbauen, situativ steuern, Gegnerdruck steigern",
+      "Korrekturen im Dauermodus - Lieber: gezielte Einzelimpulse + Selbstreflexion durch Video/Frage",
+      "Nur 'Lieblingsseite' nutzen - Immer beidseitig trainieren – auch wenn 'es komisch aussieht'"
     ]
   },
   {

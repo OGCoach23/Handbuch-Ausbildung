@@ -80,8 +80,8 @@ export default function PraktischeAnwendung() {
             <p>Spieler: Max Mustermann (12 Jahre)</p>
             <p>Aktueller Stand: M1: 🟠 | M2: 🟡 | M3: 🟠 | M4: 🔴 | M5: 🔴 | M6: 🟠</p>
             <ul className="list-disc list-inside">
-              <li>M4 (Mentale Entwicklung): Von 🔴 auf 🟠 → Ziel: Konstruktiver Umgang mit Fehlern</li>
-              <li>M3 (Technik): Von 🟠 auf 🟡 → Ziel: Sprungwurf beidbeinig sicher beherrschen</li>
+              <li>M4 (Mentale Entwicklung): Von 🔴 auf 🟠 - Ziel: Konstruktiver Umgang mit Fehlern</li>
+              <li>M3 (Technik): Von 🟠 auf 🟡 - Ziel: Sprungwurf beidbeinig sicher beherrschen</li>
             </ul>
           </CardContent>
         </Card>

@@ -96,7 +96,7 @@ export default function Kompetenzkompass() {
               </tr>
             </tbody>
           </table>
-          <p className="mt-4">Ein Spieler kann z. B. in M3 auf Stufe 4 sein, aber in M4 auf Stufe 2 → individuelles Förderprofil!</p>
+          <p className="mt-4">Ein Spieler kann z. B. in M3 auf Stufe 4 sein, aber in M4 auf Stufe 2 - individuelles Förderprofil!</p>
         </section>
       </div>
     </div>

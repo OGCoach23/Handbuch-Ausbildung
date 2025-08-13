@@ -46,10 +46,10 @@ const cardsData = [
   {
     title: "Typische Herausforderungen & Lösungsansätze",
     content: [
-      "Systemkomplexität → schrittweise aufbauen, Grundprinzipien verstehen, dann erweitern",
-      "Positionsfixierung → Flexibilität fördern, verschiedene Rollen ausprobieren, Anpassungsfähigkeit entwickeln",
-      "Taktische Rigidität → Kreativität fördern, Spielsituationen lesen, flexible Lösungen entwickeln",
-      "Kommunikationsprobleme → klare Strukturen, Verantwortlichkeiten definieren, Feedback-Kultur"
+      "Systemkomplexität - schrittweise aufbauen, Grundprinzipien verstehen, dann erweitern",
+      "Positionsfixierung - Flexibilität fördern, verschiedene Rollen ausprobieren, Anpassungsfähigkeit entwickeln",
+      "Taktische Rigidität - Kreativität fördern, Spielsituationen lesen, flexible Lösungen entwickeln",
+      "Kommunikationsprobleme - klare Strukturen, Verantwortlichkeiten definieren, Feedback-Kultur"
     ]
   },
   {

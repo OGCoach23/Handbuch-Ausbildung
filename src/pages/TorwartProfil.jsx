@@ -114,15 +114,15 @@ export default function TorwartProfil() {
           <tbody>
             <tr>
               <td className="border px-2 py-1">Bleibt passiv auf der Linie stehen</td>
-              <td className="border px-2 py-1">→ Stellungsspiel aktiv schulen</td>
+              <td className="border px-2 py-1">- Stellungsspiel aktiv schulen</td>
             </tr>
             <tr>
               <td className="border px-2 py-1">Reagiert zu spät auf Würfe</td>
-              <td className="border px-2 py-1">→ Antizipation und Vorbereitung trainieren</td>
+              <td className="border px-2 py-1">- Antizipation und Vorbereitung trainieren</td>
             </tr>
             <tr>
               <td className="border px-2 py-1">Kommuniziert nicht mit der Abwehr</td>
-              <td className="border px-2 py-1">→ Kommunikationsübungen einbauen</td>
+              <td className="border px-2 py-1">- Kommunikationsübungen einbauen</td>
             </tr>
           </tbody>
         </table>

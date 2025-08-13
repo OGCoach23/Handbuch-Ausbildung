@@ -42,10 +42,10 @@ export default function EJugendModul6() {
 
         <h2>Typische Trainerfehler</h2>
         <ul>
-          <li>Fehlende Rituale → feste Strukturen schaffen</li>
-          <li>Konflikte aussitzen → frühzeitig moderieren</li>
-          <li>Eltern nur informieren → aktiv einbeziehen</li>
-          <li>Pauschales Lob → konkret und individuell loben</li>
+          <li>Fehlende Rituale - feste Strukturen schaffen</li>
+          <li>Konflikte aussitzen - frühzeitig moderieren</li>
+          <li>Eltern nur informieren - aktiv einbeziehen</li>
+          <li>Pauschales Lob - konkret und individuell loben</li>
         </ul>
 
         <h2>Ergebnis für den Trainer</h2>

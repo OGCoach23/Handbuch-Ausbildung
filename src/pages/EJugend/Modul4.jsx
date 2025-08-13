@@ -51,10 +51,10 @@ export default function EJugendModul4() {
 
         <h2>Typische Trainerfehler</h2>
         <ul>
-          <li>Nur auf Leistung achten → Sozialverhalten sichtbar machen</li>
-          <li>Konflikte ignorieren → moderieren</li>
-          <li>Verbote statt Lösungen → gute Alternativen erfragen</li>
-          <li>Fehlverhalten sanktionieren → positives Verhalten verstärken</li>
+          <li>Nur auf Leistung achten - Sozialverhalten sichtbar machen</li>
+          <li>Konflikte ignorieren - moderieren</li>
+          <li>Verbote statt Lösungen - gute Alternativen erfragen</li>
+          <li>Fehlverhalten sanktionieren - positives Verhalten verstärken</li>
         </ul>
 
         <h2>Ergebnis für den Trainer</h2>

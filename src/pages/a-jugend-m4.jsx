@@ -46,10 +46,10 @@ const cardsData = [
   {
     title: "Typische Herausforderungen & Lösungsansätze",
     content: [
-      "Leistungsdruck → Druck als Herausforderung begreifen, Bewältigungsstrategien entwickeln",
-      "Konflikte im Team → Konflikte als Wachstumschancen nutzen, konstruktive Lösungen finden",
-      "Motivationsschwankungen → intrinsische Motivation fördern, persönliche Ziele entwickeln",
-      "Kommunikationsprobleme → klare Kommunikationsregeln, aktives Zuhören, Feedback-Kultur"
+      "Leistungsdruck - Druck als Herausforderung begreifen, Bewältigungsstrategien entwickeln",
+      "Konflikte im Team - Konflikte als Wachstumschancen nutzen, konstruktive Lösungen finden",
+      "Motivationsschwankungen - intrinsische Motivation fördern, persönliche Ziele entwickeln",
+      "Kommunikationsprobleme - klare Kommunikationsregeln, aktives Zuhören, Feedback-Kultur"
     ]
   },
   {

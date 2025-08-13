@@ -61,10 +61,10 @@ export default function EJugendModul3() {
 
         <h2>Typische Trainerfehler</h2>
         <ul>
-          <li>Reihenübungen ohne Ziel → Spielbezug schaffen</li>
-          <li>Einseitiger Wurfarmfokus → beidseitig trainieren</li>
-          <li>Technik nur vormachen → lieber beschreiben und entdecken lassen</li>
-          <li>Korrekturen zu früh → erst beobachten</li>
+          <li>Reihenübungen ohne Ziel - Spielbezug schaffen</li>
+          <li>Einseitiger Wurfarmfokus - beidseitig trainieren</li>
+          <li>Technik nur vormachen - lieber beschreiben und entdecken lassen</li>
+          <li>Korrekturen zu früh - erst beobachten</li>
         </ul>
 
         <h2>Ergebnis für den Trainer</h2>

@@ -66,8 +66,8 @@ export default function RueckraumProfil() {
       </AccordionItem>
 
       <AccordionItem title="Abschnitt C – Typische Herausforderungen">
-        <p><strong>Spieler:in:</strong> „Ich weiß nicht, wann ich stoßen soll." → Unsicherheit in der Entscheidungsfindung und im Timing.</p>
-        <p><strong>Trainer:in:</strong> „Wie fördere ich das Spielverständnis?" → Rückraumspieler:innen müssen lernen, das Spiel zu lesen und taktische Entscheidungen zu treffen.</p>
+        <p><strong>Spieler:in:</strong> „Ich weiß nicht, wann ich stoßen soll." - Unsicherheit in der Entscheidungsfindung und im Timing.</p>
+        <p><strong>Trainer:in:</strong> „Wie fördere ich das Spielverständnis?" - Rückraumspieler:innen müssen lernen, das Spiel zu lesen und taktische Entscheidungen zu treffen.</p>
       </AccordionItem>
 
       <AccordionItem title="Abschnitt D – Trainingsziele">
@@ -82,7 +82,7 @@ export default function RueckraumProfil() {
 
       <AccordionItem title="Abschnitt E – Typische Spielfehler & Coachingimpulse">
         <p><strong>Fehler:</strong> Spielt zu schnell oder zu langsam – findet nicht den richtigen Rhythmus.</p>
-        <p><strong>Coaching:</strong> „Lies das Spiel, bevor du handelst." → Spielverständnis und Timing fördern.</p>
+        <p><strong>Coaching:</strong> „Lies das Spiel, bevor du handelst." - Spielverständnis und Timing fördern.</p>
       </AccordionItem>
 
       <AccordionItem title="Abschnitt F – Bewegungsmuster & Spielverhalten">

@@ -148,7 +148,7 @@ export default function Home() {
         </p>
       </motion.div>
 
-      {/* Grauer → Blauer Textabschnitt - mit größerem Abstand und größerer Schrift */}
+      {/* Grauer - Blauer Textabschnitt - mit größerem Abstand und größerer Schrift */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -48,6 +48,13 @@ import Modul3CJugend from "./pages/c-jugend-m3";
 import Modul4CJugend from "./pages/c-jugend-m4";
 import Modul5CJugend from "./pages/c-jugend-m5";
 import Modul6CJugend from "./pages/c-jugend-m6";
+// B-Jugend Module
+import Modul1BJugend from "./pages/b-jugend-m1";
+import Modul2BJugend from "./pages/b-jugend-m2";
+import Modul3BJugend from "./pages/b-jugend-m3";
+import Modul4BJugend from "./pages/b-jugend-m4";
+import Modul5BJugend from "./pages/b-jugend-m5";
+import Modul6BJugend from "./pages/b-jugend-m6";
 // A-Jugend Module
 import Modul1AJugend from "./pages/a-jugend-m1";
 import Modul2AJugend from "./pages/a-jugend-m2";

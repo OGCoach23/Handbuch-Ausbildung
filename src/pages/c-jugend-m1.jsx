@@ -25,7 +25,7 @@ const cardsData = [
   {
     title: "Methodik & Organisation",
     content: [
-      "Trainingslogik: Einheiten 90–105 Minuten, mit Struktur: Aktivierung → Technik → Anwendung → Reflexion",
+      "Trainingslogik: Einheiten 90–105 Minuten, mit Struktur: Aktivierung - Technik - Anwendung - Reflexion",
       "Aufgabenorientierung: Spieler:innen treffen Entscheidungen, bekommen offene Fragen statt Lösungen.",
       "Selbststeuerung fördern: Mini-Aufgaben, eigene Zielkarten, Spieler:innen übernehmen Teile der Organisation.",
       "Fehler zulassen & nutzen: Aus Fehlern wird Handlungskompetenz.",
@@ -46,11 +46,11 @@ const cardsData = [
   {
     title: "Typische Trainerfehler (und Alternativen)",
     content: [
-      "'Jetzt konzentriert euch endlich!' → 'Was braucht ihr gerade, um euch besser fokussieren zu können?'",
-      "Starre Leistungsgruppen → Levelgruppen, gemischt, wechselnd.",
-      "Dauer-Coaching beim Üben → Spieler:innen erklären sich gegenseitig.",
-      "Fokus auf Einzelne → Teamrollen rotieren.",
-      "Lange Redepassagen → Kürzen auf max. 60 Sek. + Zwischenfragen."
+      "'Jetzt konzentriert euch endlich!' - 'Was braucht ihr gerade, um euch besser fokussieren zu können?'",
+      "Starre Leistungsgruppen - Levelgruppen, gemischt, wechselnd.",
+      "Dauer-Coaching beim Üben - Spieler:innen erklären sich gegenseitig.",
+      "Fokus auf Einzelne - Teamrollen rotieren.",
+      "Lange Redepassagen - Kürzen auf max. 60 Sek. + Zwischenfragen."
     ]
   },
   {

@@ -66,8 +66,8 @@ export default function KreislaeuferProfil() {
       </AccordionItem>
 
       <AccordionItem title="Abschnitt C – Typische Herausforderungen">
-        <p><strong>Spieler:in:</strong> „Ich bekomme nie den Ball." → Häufiges Gefühl bei Kreisspieler:innen, die sich nicht aktiv genug positionieren oder nicht mit dem Rückraum koordinieren.</p>
-        <p><strong>Trainer:in:</strong> „Wie fördere ich die Aktivität?" → Kreisspieler:innen müssen lernen, sich aktiv zu positionieren und mit dem Spiel zu denken.</p>
+        <p><strong>Spieler:in:</strong> „Ich bekomme nie den Ball." - Häufiges Gefühl bei Kreisspieler:innen, die sich nicht aktiv genug positionieren oder nicht mit dem Rückraum koordinieren.</p>
+        <p><strong>Trainer:in:</strong> „Wie fördere ich die Aktivität?" - Kreisspieler:innen müssen lernen, sich aktiv zu positionieren und mit dem Spiel zu denken.</p>
       </AccordionItem>
 
       <AccordionItem title="Abschnitt D – Trainingsziele">
@@ -82,7 +82,7 @@ export default function KreislaeuferProfil() {
 
       <AccordionItem title="Abschnitt E – Typische Spielfehler & Coachingimpulse">
         <p><strong>Fehler:</strong> Steht zu statisch – bewegt sich nicht mit dem Spiel.</p>
-        <p><strong>Coaching:</strong> „Der Kreis ist kein Pfosten." → Aktive Positionierung und Bewegung fördern.</p>
+        <p><strong>Coaching:</strong> „Der Kreis ist kein Pfosten." - Aktive Positionierung und Bewegung fördern.</p>
       </AccordionItem>
 
       <AccordionItem title="Abschnitt F – Bewegungsmuster & Spielverhalten">

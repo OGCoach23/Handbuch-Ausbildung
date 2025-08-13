@@ -45,10 +45,10 @@ const cardsData = [
   {
     title: "Typische Fallstricke & Trainerfehler",
     content: [
-              "'Alle trainieren gleich.' → Besser: Ziel- und potenzialorientiert differenzieren",
-              "'Jetzt ist Schluss mit lustig.' → Leistung braucht Freude – fordern und fördern mit Haltung statt Härte",
-              "'Wenn du X willst, musst du mehr…' → Klare Zielabsprache, Entwicklung begleiten, statt nur zu fordern",
-              "'Ich hab das erklärt – mach's!' → Jugendliche wollen verstehen, nicht nur gehorchen → Dialog und Geduld"
+                    "'Alle trainieren gleich.' - Besser: Ziel- und potenzialorientiert differenzieren",
+      "'Jetzt ist Schluss mit lustig.' - Leistung braucht Freude – fordern und fördern mit Haltung statt Härte",
+      "'Wenn du X willst, musst du mehr…' - Klare Zielabsprache, Entwicklung begleiten, statt nur zu fordern",
+      "'Ich hab das erklärt – mach's!' - Jugendliche wollen verstehen, nicht nur gehorchen - Dialog und Geduld"
     ]
   },
   {

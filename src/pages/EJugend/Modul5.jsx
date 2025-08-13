@@ -51,10 +51,10 @@ export default function EJugendModul5() {
 
         <h2>Typische Trainerfehler</h2>
         <ul>
-          <li>Feste Positionen → lieber Rollenvielfalt ermöglichen</li>
-          <li>Passive Abwehr → auf Ballgewinn, Helfen, Umschalten fokussieren</li>
-          <li>Nur auf Tore spielen → auch clevere Aktionen belohnen</li>
-          <li>Frühe Positionsfestlegung → regelmäßige Rotation einplanen</li>
+          <li>Feste Positionen - lieber Rollenvielfalt ermöglichen</li>
+          <li>Passive Abwehr - auf Ballgewinn, Helfen, Umschalten fokussieren</li>
+          <li>Nur auf Tore spielen - auch clevere Aktionen belohnen</li>
+          <li>Frühe Positionsfestlegung - regelmäßige Rotation einplanen</li>
         </ul>
 
         <h2>Ergebnis für den Trainer</h2>

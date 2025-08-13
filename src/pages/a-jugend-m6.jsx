@@ -46,10 +46,10 @@ const cardsData = [
   {
     title: "Typische Herausforderungen & Lösungsansätze",
     content: [
-      "Konflikte im Team → Konflikte als Wachstumschancen nutzen, konstruktive Lösungen finden",
-      "Kommunikationsprobleme → klare Strukturen, offenen Dialog fördern, Feedback-Kultur aufbauen",
-      "Fehlende Teamidentität → gemeinsame Werte definieren, Rituale entwickeln, Stolz auf das Team fördern",
-      "Führungsprobleme → verschiedene Führungsstile fördern, Verantwortung übertragen, Vorbilder schaffen"
+      "Konflikte im Team - Konflikte als Wachstumschancen nutzen, konstruktive Lösungen finden",
+      "Kommunikationsprobleme - klare Strukturen, offenen Dialog fördern, Feedback-Kultur aufbauen",
+      "Fehlende Teamidentität - gemeinsame Werte definieren, Rituale entwickeln, Stolz auf das Team fördern",
+      "Führungsprobleme - verschiedene Führungsstile fördern, Verantwortung übertragen, Vorbilder schaffen"
     ]
   },
   {
