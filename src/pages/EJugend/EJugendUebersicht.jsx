@@ -27,7 +27,7 @@ export default function EJugendUebersicht() {
           >
             <h3 className="text-xl font-bold text-primary mb-4">{mod.title}</h3>
             <Link
-              to={`/e-jugend/modul${mod.id}`}
+              to={`/e-jugend-m${mod.id}`}
               className="mt-auto inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/80 transition"
             >
               Zum Modul

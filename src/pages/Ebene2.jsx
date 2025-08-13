@@ -125,7 +125,7 @@ export default function Ebene2() {
           <p>Jetzt wissen wir, was wir wann trainieren – und wie wir es altersgerecht vermitteln.</p>
           <p>Der nächste Schritt: Wir machen Entwicklung sichtbar und vergleichbar.</p>
           <div className="mt-6 flex justify-center">
-            <Link to="/ebene-3">
+            <Link to="/ebene3">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 className="bg-blue-500 text-white px-8 py-6 rounded-xl shadow-lg cursor-pointer"

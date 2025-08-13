@@ -73,6 +73,7 @@ import Modul3AJugend from "./pages/a-jugend-m3";
 import Modul4AJugend from "./pages/a-jugend-m4";
 import Modul5AJugend from "./pages/a-jugend-m5";
 import Modul6AJugend from "./pages/a-jugend-m6";
+import AJugendUebersicht from "./pages/AJugend/AJugendUebersicht";
 // Kompetenzkompass
 import KompetenzkompassIndex from "./pages/Kompetenzkompass";
 import KompetenzkompassModule from "./pages/Kompetenzkompass/Module";
@@ -93,6 +94,7 @@ import KreislaeuferProfil from "./pages/KreislaeuferProfil";
 import RueckraumProfil from "./pages/RueckraumProfil";
 import RueckraumMitte from "./pages/RueckraumMitte";
 import PositionsprofilTemplate from "./pages/PositionsprofilTemplate";
+import Quereinsteiger from "./pages/quereinsteiger";
 
 const KontaktPage = () => (
   <main className="min-h-screen bg-lightgray p-8">
@@ -222,11 +224,12 @@ function App() {
             <Route path="/spielsystem-b-jugend" element={<SpielsystemBJugend />} />
             <Route path="/spielsystem-a-jugend" element={<SpielsystemAJugend />} />
 
+            {/* Quereinsteiger */}
+            <Route path="/quereinsteiger" element={<Quereinsteiger />} />
+
             {/* Alias-Routen */}
             <Route path="/kinderbereich" element={<AltersLeistungsstufen />} />
             <Route path="/jugendbereich" element={<Ebene2 />} />
-            <Route path="/positionsprofile" element={<Ebene3 />} />
-            <Route path="/spielsysteme" element={<Ebene3 />} />
             <Route path="/zielgruppen" element={<Zielgruppen />} />
             <Route path="/schule-fuers-leben" element={<HandballLeben />} />
             <Route path="/trainingsmethodik" element={<Trainingsmethodik />} />

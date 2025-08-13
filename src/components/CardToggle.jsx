@@ -7,18 +7,18 @@ export default function CardToggle() {
   const [showCards, setShowCards] = useState(false);
 
   const rightCards = [
-    { title: "Ausbildungsprinzipien & Werte", link: "/prinzipien" },
+    { title: "Ausbildungsprinzipien & Werte", link: "/ausbildungsprinzipien" },
     { title: "Handball: Schule fürs Leben", link: "/schule-leben" },
     { title: "Alters- und Leistungsstufen", link: "/altersstufen" },
     { title: "Modulbasierte Ausbildungslogik", link: "/ebene2" },
     { title: "Quer- und Neueinsteiger", link: "/quereinsteiger" },
-    { title: "Breitensport vs. Leistungssport", link: "/breitensport" },
+    { title: "Breitensport vs. Leistungssport", link: "/breitensport-vs-leistungssport" },
     { title: "Entwicklung der Abwehrsysteme", link: "/entwicklung-spielsysteme" },
   ];
 
   const leftCards = [
     { title: "Kompetenzkompass", link: "/kompetenzkompass" },
-    { title: "Laimkademie", link: "/laimkademie" },
+    { title: "Laimkademie", link: "/training" },
     { title: "F – Jugend", link: "/f-jugend" },
     { title: "E – Jugend", link: "/e-jugend" },
     { title: "D – Jugend", link: "/d-jugend" },

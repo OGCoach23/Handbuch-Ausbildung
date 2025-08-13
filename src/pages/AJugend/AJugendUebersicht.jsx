@@ -29,7 +29,7 @@ export default function AJugendUebersicht() {
               {mod.title}
             </h3>
             <Link
-              to={`/a-jugend/modul${mod.id}`}
+              to={`/a-jugend-m${mod.id}`}
               className="mt-auto inline-block bg-green-600 text-white px-5 py-2.5 rounded-lg hover:bg-green-700 active:scale-95 transition-transform duration-200"
             >
               Zum Modul

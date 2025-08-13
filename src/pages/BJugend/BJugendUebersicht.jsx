@@ -27,7 +27,7 @@ export default function BJugendUebersicht() {
           >
             <h3 className="text-xl font-bold text-primary mb-4">{mod.title}</h3>
             <Link
-              to={`/b-jugend/modul${mod.id}`}
+              to={`/b-jugend-m${mod.id}`}
               className="mt-auto inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/80 transition"
             >
               Zum Modul
