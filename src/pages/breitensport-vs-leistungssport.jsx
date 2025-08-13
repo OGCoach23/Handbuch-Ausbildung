@@ -85,9 +85,9 @@ export default function BreitensportVsLeistungssport() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl font-bold text-green-600 text-center mb-4">
-            Breitensport vs. Leistungssport
-          </h1>
+            <h1 className="text-4xl font-bold text-green-600 text-center mb-4">
+              Breitensport vs. Leistungssport
+            </h1>
         </motion.div>
 
         {/* Zielsetzung */}
@@ -186,8 +186,8 @@ export default function BreitensportVsLeistungssport() {
                 ))}
               </tbody>
             </table>
+                  </div>
           </div>
-        </div>
 
         {/* Anschlussmöglichkeiten */}
         <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
@@ -234,7 +234,7 @@ export default function BreitensportVsLeistungssport() {
 
       {/* Slide-out Panels */}
       {/* Trainer Panel */}
-      <motion.div
+          <motion.div
         className={`fixed top-0 left-0 w-80 h-screen bg-green-600 text-white p-6 z-50 rounded-r-lg shadow-2xl transition-transform duration-300 ${
           showTrainerPanel ? 'translate-x-0' : '-translate-x-80'
         }`}
@@ -272,7 +272,7 @@ export default function BreitensportVsLeistungssport() {
       </motion.div>
 
       {/* Eltern Panel */}
-      <motion.div
+            <motion.div
         className={`fixed top-0 right-0 w-80 h-screen bg-green-600 text-white p-6 z-50 rounded-l-lg shadow-2xl transition-transform duration-300 ${
           showElternPanel ? 'translate-x-0' : 'translate-x-80'
         }`}
@@ -307,7 +307,7 @@ export default function BreitensportVsLeistungssport() {
             </tbody>
           </table>
         </div>
-      </motion.div>
+          </motion.div>
     </div>
   );
 }

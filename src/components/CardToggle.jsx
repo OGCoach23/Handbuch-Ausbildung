@@ -11,7 +11,8 @@ export default function CardToggle() {
     { title: "Handball: Schule fürs Leben", link: "/schule-leben" },
     { title: "Alters- und Leistungsstufen", link: "/altersstufen" },
     { title: "Modulbasierte Ausbildungslogik", link: "/ebene2" },
-    { title: "Quer- und Neueinsteiger", link: "/quereinsteiger" },
+    { title: "Quereinsteiger", link: "/quereinsteiger" },
+    { title: "Neueinsteiger", link: "/quereinsteiger" },
     { title: "Breitensport vs. Leistungssport", link: "/breitensport-vs-leistungssport" },
     { title: "Entwicklung der Abwehrsysteme", link: "/entwicklung-spielsysteme" },
   ];

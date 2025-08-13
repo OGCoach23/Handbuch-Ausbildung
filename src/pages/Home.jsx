@@ -60,10 +60,10 @@ export default function Home() {
       { name: "B – Jugend", path: "/b-jugend" },
       { name: "A – Jugend", path: "/a-jugend" },
     ],
-    "Ebene 3: Kompetenzraster, Durchgängigkeit & Positionen, Spielsysteme": [
+    "Ebene 3: Kompetenzraster, Durchgängigkeit & Positionen, Abwehrsysteme": [
       { name: "Kompetenzkompass", path: "/kompetenzkompass" },
       { name: "Entwicklung der Positionen", path: "/positionen" },
-      { name: "Entwicklung der Spielsysteme", path: "/spielsysteme" },
+      { name: "Entwicklung der Abwehrsysteme", path: "/entwicklung-spielsysteme" },
       { name: "Quer- und Neueinsteiger, Drop-Out-Prophylaxe", path: "/quereinsteiger" },
       { name: "Breitensport vs. Leistungssport", path: "/breitensport-vs-leistungssport" },
     ],
