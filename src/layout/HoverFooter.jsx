@@ -3,16 +3,19 @@ import { FaInstagram } from "react-icons/fa";
 
 export default function HoverFooter() {
   return (
-    <footer
-      className="
-        fixed left-0 w-full
-        bg-[#f2f2f2] border-t border-white/70 
-        transition-all duration-500 ease-in-out
-        z-50
-        bottom-[-80px] hover:bottom-0
-        h-[80px]
-      "
-    >
+    <>
+      {/* Unsichtbarer Hover-Bereich am unteren Rand */}
+      <div className="fixed bottom-0 left-0 w-full h-4 z-40 group">
+        <footer
+          className="
+            absolute left-0 w-full
+            bg-[#f2f2f2] border-t border-white/70 
+            transition-all duration-500 ease-in-out
+            z-50
+            bottom-[-80px] group-hover:bottom-0
+            h-[80px]
+          "
+        >
 
 
       {/* Inhalt */}
@@ -55,7 +58,8 @@ export default function HoverFooter() {
             Datenschutz
           </a>
         </div>
+        </footer>
       </div>
-    </footer>
+    </>
   );
 }
