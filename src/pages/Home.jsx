@@ -7,14 +7,13 @@ export default function Home() {
   const [textColor, setTextColor] = useState("text-gray-600");
   const [showCards, setShowCards] = useState(false);
 
-  // Einfacher Test - ohne useEffect
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setTextColor(window.scrollY > 100 ? "text-[#004b87]" : "text-gray-600");
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      setTextColor(window.scrollY > 100 ? "text-[#004b87]" : "text-gray-600");
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const sectionLinks = {
     "Ebene 1: Grundlagen & Philosophie": [
