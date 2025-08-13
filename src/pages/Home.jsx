@@ -65,7 +65,7 @@ export default function Home() {
       { name: "Entwicklung der Positionen", path: "/positionen" },
       { name: "Entwicklung der Spielsysteme", path: "/spielsysteme" },
       { name: "Quer- und Neueinsteiger, Drop-Out-Prophylaxe", path: "/quereinsteiger" },
-      { name: "Breitensport vs. Leistungssport", path: "/breitensport" },
+      { name: "Breitensport vs. Leistungssport", path: "/breitensport-vs-leistungssport" },
     ],
     "Ebene 4: Umsetzung & Weiterentwicklung": [
       { name: "Trainingsprinzipien & Jahresplanung", path: "/trainingsprinzipien" },

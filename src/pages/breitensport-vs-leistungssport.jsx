@@ -85,14 +85,14 @@ export default function BreitensportVsLeistungssport() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl font-bold text-[#004d25] text-center mb-4">
+          <h1 className="text-4xl font-bold text-green-600 text-center mb-4">
             Breitensport vs. Leistungssport
           </h1>
         </motion.div>
 
         {/* Zielsetzung */}
         <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
-          <h2 className="text-2xl font-bold text-[#004d25] mb-4">Zielsetzung des Moduls</h2>
+          <h2 className="text-2xl font-bold text-green-600 mb-4">Zielsetzung des Moduls</h2>
           <p className="text-justify leading-relaxed mb-4">
             Nicht jede:r will Nationalspieler:in werden. Und das ist gut so.<br />
             Nicht jede:r bleibt im Breitensport, nur weil es „entspannter" ist. Auch das ist gut so.<br />
@@ -116,14 +116,14 @@ export default function BreitensportVsLeistungssport() {
         {/* Breitensport vs Leistungssport */}
         <div className="grid md:grid-cols-2 gap-6 mb-8">
           <div className="bg-white shadow-lg rounded-lg p-6">
-            <h2 className="text-2xl font-bold text-[#004d25] mb-4">Breitensport bedeutet:</h2>
+            <h2 className="text-2xl font-bold text-green-600 mb-4">Breitensport bedeutet:</h2>
             <ul className="list-disc pl-6 space-y-2 mb-4">
               <li>Handball als Erlebnisraum – mit Freude, Freundschaft und Bewegung</li>
               <li>Förderung ohne Druck, Beteiligung statt Selektion</li>
               <li>Flexible Trainingsstrukturen, abwechslungsreiche Rollen, weniger Verpflichtung</li>
               <li>Ein sicherer Ort, um sich selbst auszuprobieren</li>
             </ul>
-            <h3 className="font-bold text-[#004d25] mb-2">Haltung:</h3>
+            <h3 className="font-bold text-green-600 mb-2">Haltung:</h3>
             <ul className="list-none space-y-1 mb-4">
               <li>→ Jeder darf mitmachen.</li>
               <li>→ Ziel ist das „Dranbleiben" – nicht das „Herausstechen".</li>
@@ -135,14 +135,14 @@ export default function BreitensportVsLeistungssport() {
           </div>
 
           <div className="bg-white shadow-lg rounded-lg p-6">
-            <h2 className="text-2xl font-bold text-[#004d25] mb-4">Leistungssport bedeutet:</h2>
+            <h2 className="text-2xl font-bold text-green-600 mb-4">Leistungssport bedeutet:</h2>
             <ul className="list-disc pl-6 space-y-2 mb-4">
               <li>Handball als Entwicklungsraum – mit klaren Zielen, Herausforderungen und Struktur</li>
               <li>Mehr Trainingsumfang, systematische Förderung, höhere Eigenverantwortung</li>
               <li>Spielzeit, Rollen, Förderung basieren auf Leistung und Haltung</li>
               <li>Ziel: besser werden – nicht perfekt sein, aber dranbleiben</li>
             </ul>
-            <h3 className="font-bold text-[#004d25] mb-2">Haltung:</h3>
+            <h3 className="font-bold text-green-600 mb-2">Haltung:</h3>
             <ul className="list-none space-y-1 mb-4">
               <li>→ Niemand muss – aber wer will, bekommt eine klare Perspektive.</li>
               <li>→ Leistungssport beginnt nicht bei der Auswahl – sondern bei der inneren Entscheidung.</li>
@@ -156,7 +156,7 @@ export default function BreitensportVsLeistungssport() {
 
         {/* Altersstufentabelle */}
         <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
-          <h2 className="text-2xl font-bold text-[#004d25] mb-4">
+          <h2 className="text-2xl font-bold text-green-600 mb-4">
             Wie sieht das altersstufenspezifisch aus? (D–A-Jugend)
           </h2>
           <div className="overflow-x-auto">
@@ -191,7 +191,7 @@ export default function BreitensportVsLeistungssport() {
 
         {/* Anschlussmöglichkeiten */}
         <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
-          <h2 className="text-2xl font-bold text-[#004d25] mb-4">
+          <h2 className="text-2xl font-bold text-green-600 mb-4">
             Anschlussmöglichkeiten an höhere Förderstrukturen – BHV & DHB
           </h2>
           <p className="text-justify leading-relaxed mb-4">
@@ -223,7 +223,7 @@ export default function BreitensportVsLeistungssport() {
 
         {/* Abschlusspunkt */}
         <div className="bg-[#e6f2ec] shadow-lg rounded-lg p-6">
-          <h2 className="text-2xl font-bold text-[#004d25] mb-4">Abschlusspunkt</h2>
+          <h2 className="text-2xl font-bold text-green-600 mb-4">Abschlusspunkt</h2>
           <p className="text-justify leading-relaxed">
             Leistungssport ist kein „Upgrade" – und Breitensport kein „Plan B".<br />
             Es sind zwei Wege in ein erfülltes Handballeben.<br />
@@ -235,35 +235,35 @@ export default function BreitensportVsLeistungssport() {
       {/* Slide-out Panels */}
       {/* Trainer Panel */}
       <motion.div
-        className={`fixed top-1/2 -translate-y-1/2 left-0 w-64 bg-[#004d25] text-white p-5 z-50 rounded-r-lg shadow-2xl transition-transform duration-300 ${
-          showTrainerPanel ? 'translate-x-0' : '-translate-x-56'
+        className={`fixed top-0 left-0 w-80 h-screen bg-green-600 text-white p-6 z-50 rounded-r-lg shadow-2xl transition-transform duration-300 ${
+          showTrainerPanel ? 'translate-x-0' : '-translate-x-80'
         }`}
         onMouseEnter={() => setShowTrainerPanel(true)}
         onMouseLeave={() => setShowTrainerPanel(false)}
       >
-        <div className="absolute -right-10 top-1/2 -translate-y-1/2 bg-[#007a3d] p-2 rounded-lg cursor-pointer">
-          <div className="writing-mode-vertical-rl text-orientation-mixed font-bold text-sm">
-            <Users size={16} className="mx-auto mb-1" />
-            Für Trainer:innen
+        <div className="absolute -right-12 top-1/2 -translate-y-1/2 bg-green-500 p-3 rounded-lg cursor-pointer">
+          <div className="writing-mode-vertical-rl text-orientation-mixed font-bold text-sm text-center">
+            <Users size={20} className="mx-auto mb-2" />
+            Für<br />Trainer:innen
           </div>
         </div>
         
-        <h3 className="text-lg font-bold mb-4">Trainer:innen</h3>
-        <div className="overflow-x-auto">
-          <table className="w-full text-xs">
+        <h3 className="text-xl font-bold mb-6 text-center">Trainer:innen</h3>
+        <div className="overflow-y-auto h-full pr-2">
+          <table className="w-full text-sm">
             <thead>
               <tr>
-                <th className="border border-gray-400 p-1 text-left bg-[#007a3d]">Frage</th>
-                <th className="border border-gray-400 p-1 text-left bg-[#007a3d]">Breitensport</th>
-                <th className="border border-gray-400 p-1 text-left bg-[#007a3d]">Leistungssport</th>
+                <th className="border border-gray-300 p-2 text-left bg-green-500 text-white">Frage</th>
+                <th className="border border-gray-300 p-2 text-left bg-green-500 text-white">Breitensport</th>
+                <th className="border border-gray-300 p-2 text-left bg-green-500 text-white">Leistungssport</th>
               </tr>
             </thead>
             <tbody>
               {trainerData.map((row, index) => (
                 <tr key={index}>
-                  <td className="border border-gray-400 p-1 font-semibold text-xs">{row.frage}</td>
-                  <td className="border border-gray-400 p-1 text-xs">{row.breitensport}</td>
-                  <td className="border border-gray-400 p-1 text-xs">{row.leistungssport}</td>
+                  <td className="border border-gray-300 p-2 font-semibold text-xs">{row.frage}</td>
+                  <td className="border border-gray-300 p-2 text-xs">{row.breitensport}</td>
+                  <td className="border border-gray-300 p-2 text-xs">{row.leistungssport}</td>
                 </tr>
               ))}
             </tbody>
@@ -273,35 +273,35 @@ export default function BreitensportVsLeistungssport() {
 
       {/* Eltern Panel */}
       <motion.div
-        className={`fixed top-1/2 -translate-y-1/2 right-0 w-64 bg-[#004d25] text-white p-5 z-50 rounded-l-lg shadow-2xl transition-transform duration-300 ${
-          showElternPanel ? 'translate-x-0' : 'translate-x-56'
+        className={`fixed top-0 right-0 w-80 h-screen bg-green-600 text-white p-6 z-50 rounded-l-lg shadow-2xl transition-transform duration-300 ${
+          showElternPanel ? 'translate-x-0' : 'translate-x-80'
         }`}
         onMouseEnter={() => setShowElternPanel(true)}
         onMouseLeave={() => setShowElternPanel(false)}
       >
-        <div className="absolute -left-10 top-1/2 -translate-y-1/2 bg-[#007a3d] p-2 rounded-lg cursor-pointer">
-          <div className="writing-mode-vertical-rl text-orientation-mixed font-bold text-sm">
-            <Target size={16} className="mx-auto mb-1" />
-            Für Eltern
+        <div className="absolute -left-12 top-1/2 -translate-y-1/2 bg-green-500 p-3 rounded-lg cursor-pointer">
+          <div className="writing-mode-vertical-rl text-orientation-mixed font-bold text-sm text-center">
+            <Target size={20} className="mx-auto mb-2" />
+            Für<br />Eltern
           </div>
         </div>
         
-        <h3 className="text-lg font-bold mb-4">Eltern</h3>
-        <div className="overflow-x-auto">
-          <table className="w-full text-xs">
+        <h3 className="text-xl font-bold mb-6 text-center">Eltern</h3>
+        <div className="overflow-y-auto h-full pr-2">
+          <table className="w-full text-sm">
             <thead>
               <tr>
-                <th className="border border-gray-400 p-1 text-left bg-[#007a3d]">Frage</th>
-                <th className="border border-gray-400 p-1 text-left bg-[#007a3d]">Breitensport</th>
-                <th className="border border-gray-400 p-1 text-left bg-[#007a3d]">Leistungssport</th>
+                <th className="border border-gray-300 p-2 text-left bg-green-500 text-white">Frage</th>
+                <th className="border border-gray-300 p-2 text-left bg-green-500 text-white">Breitensport</th>
+                <th className="border border-gray-300 p-2 text-left bg-green-500 text-white">Leistungssport</th>
               </tr>
             </thead>
             <tbody>
               {elternData.map((row, index) => (
                 <tr key={index}>
-                  <td className="border border-gray-400 p-1 font-semibold text-xs">{row.frage}</td>
-                  <td className="border border-gray-400 p-1 text-xs">{row.breitensport}</td>
-                  <td className="border border-gray-400 p-1 text-xs">{row.leistungssport}</td>
+                  <td className="border border-gray-300 p-2 text-xs font-semibold">{row.frage}</td>
+                  <td className="border border-gray-300 p-2 text-xs">{row.breitensport}</td>
+                  <td className="border border-gray-300 p-2 text-xs">{row.leistungssport}</td>
                 </tr>
               ))}
             </tbody>
