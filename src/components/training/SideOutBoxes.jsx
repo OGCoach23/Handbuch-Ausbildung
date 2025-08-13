@@ -37,8 +37,13 @@ const sideBoxes = [
 export default function SideOutBoxes() {
   const [hoverIndex, setHoverIndex] = useState(null);
 
+  // Nur auf der Trainingsseite anzeigen
+  if (typeof window !== 'undefined' && !window.location.pathname.includes('/training')) {
+    return null;
+  }
+
   return (
-    <div className="fixed right-0 top-1/3 flex flex-col gap-4 z-50">
+    <div className="fixed right-0 top-1/3 flex flex-col gap-4 z-40">
       {sideBoxes.map((box, index) => (
         <motion.a
           key={index}
