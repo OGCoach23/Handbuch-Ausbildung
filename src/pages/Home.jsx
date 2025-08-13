@@ -21,11 +21,11 @@ export default function Home() {
         const maxDistance = window.innerHeight / 3; // Bereich für blaue Farbe
         
         if (distanceFromCenter < maxDistance) {
-          // Je näher zur Mitte, desto blauer
-          const blueIntensity = 1 - (distanceFromCenter / maxDistance);
-          newColors[index] = blueIntensity > 0.3 ? "text-[#004b87]" : "text-gray-600";
+          // Je näher zur Mitte, desto grüner
+          const greenIntensity = 1 - (distanceFromCenter / maxDistance);
+          newColors[index] = greenIntensity > 0.3 ? "text-green-600" : "text-gray-300";
         } else {
-          newColors[index] = "text-gray-600";
+          newColors[index] = "text-gray-300";
         }
       });
 
@@ -92,11 +92,7 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="space-y-8"
         >
-          <p className={`scroll-text text-2xl text-justify transition-colors duration-500 ${textColors[0] || "text-gray-600"}`}>
-            Wir sind der SV Laim, ein Traditionsverein (seit 1910) mit erfolgreichen Wurzeln im Handball, wir sind zentral in München eingebettet und engagieren uns weit über den Sport hinaus.
-          </p>
-          
-          <p className={`scroll-text text-xl text-justify transition-colors duration-500 ${textColors[1] || "text-gray-600"}`}>
+          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 tracking-wide leading-relaxed ${textColors[0] || "text-gray-300"}`}>
             Bei uns geht's nicht nur um Handball. Es geht um viel mehr: um Gemeinschaft, um Herzblut, um Kinder, die mit leuchtenden Augen in die Halle rennen. Um Trainer, die Woche für Woche alles geben. Um Eltern, die anfeuern, trösten, fahren, helfen. Und um einen Verein, der all das möglich macht.
           </p>
         </motion.div>
@@ -107,37 +103,37 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.6 }}
-          className="space-y-8 mt-32"
+          className="space-y-16 mt-48"
         >
-          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 ${textColors[2] || "text-gray-600"}`}>
+          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 tracking-wide leading-relaxed ${textColors[1] || "text-gray-300"}`}>
             Das vorliegende Konzept ist unsere Einladung an euch alle: Trainer, Eltern, Spielerinnen und Spieler. Es ist unser gemeinsamer Wegweiser, unser Kompass, unser Versprechen. Denn wir wollen nicht einfach nur "irgendwie" ausbilden – wir wollen es richtig machen. Mit Plan. Mit Leidenschaft. Mit einem roten Faden von den Kleinsten bis zur A-Jugend.
           </p>
           
-          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 ${textColors[3] || "text-gray-600"}`}>
+          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 tracking-wide leading-relaxed ${textColors[2] || "text-gray-300"}`}>
             Wir glauben an den langfristigen Weg. An Entwicklung statt Schnellschuss. An Spielfreude UND Struktur. Und ja – wir glauben an unseren Verein. Weil wir wissen, was wir gemeinsam schaffen können.
           </p>
           
-          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 ${textColors[4] || "text-gray-600"}`}>
+          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 tracking-wide leading-relaxed ${textColors[3] || "text-gray-300"}`}>
             Dieses Handbuch ist keine trockene Theorie. Es ist voll mit Leben, Ideen, Praxis. Es wurde geschrieben aus vielen Gesprächen, aus Erfahrungen in der Halle, aus Erfolgen und Fehlern. Es zeigt dir, was wirklich zählt: Wann du was trainieren solltest. Wie du individuell förderst. Wie du Kinder stark machst – nicht nur im Spiel, sondern fürs Leben.
           </p>
           
-          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 ${textColors[5] || "text-gray-600"}`}>
+          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 tracking-wide leading-relaxed ${textColors[4] || "text-gray-300"}`}>
             Vielleicht wirst du beim Lesen schmunzeln, nicken, kritisch hinterfragen. Vielleicht bekommst du an manchen Stellen Gänsehaut – weil du spürst: "Ja, genau so wollen wir Handball machen."
           </p>
           
-          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 ${textColors[6] || "text-gray-600"}`}>
+          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 tracking-wide leading-relaxed ${textColors[5] || "text-gray-300"}`}>
             Dieses Konzept ist nicht perfekt. Aber es ist ehrlich. Und es wächst mit jedem, der es lebt.
           </p>
           
-          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 ${textColors[7] || "text-gray-600"}`}>
+          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 tracking-wide leading-relaxed ${textColors[6] || "text-gray-300"}`}>
             Also: Lass dich inspirieren. Mach mit. Gib dem, was wir gemeinsam aufgebaut haben, ein noch stärkeres Fundament. Für unseren Verein. Für unsere Kinder. Für echten Handball.
           </p>
           
-          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 ${textColors[8] || "text-gray-600"}`}>
+          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 tracking-wide leading-relaxed ${textColors[7] || "text-gray-300"}`}>
             Auf den ersten Blick mag das Konzept erschlagend wirken. Es ist umfangreich, das stimmt. Es steckt auch sehr viel Herzblut und Zeit drin. Es öffnet den Blick für die unterschiedlichen Rollen und Beteiligten. Es ist transparent und schafft Verständnis für die Sichtweise der jeweils anderen.
           </p>
           
-          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 ${textColors[9] || "text-gray-600"}`}>
+          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 tracking-wide leading-relaxed ${textColors[8] || "text-gray-300"}`}>
             Nimm dir Zeit, die für dich relevanten Inhalte herauszufiltern, denn dann ist es plötzlich gar nicht mehr so viel Text. Es wird dir gefallen und dich inspirieren. Lass es zu.
           </p>
         </motion.div>
@@ -148,29 +144,29 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="space-y-8 mt-32"
+          className="space-y-16 mt-48"
         >
-          <h2 className={`scroll-text text-4xl font-bold transition-colors duration-500 ${textColors[10] || "text-gray-600"}`}>
+          <h2 className={`scroll-text text-3xl font-bold transition-colors duration-500 tracking-wide leading-relaxed ${textColors[9] || "text-gray-300"}`}>
             Gesamtfazit
           </h2>
           
-          <p className={`scroll-text text-2xl text-justify transition-colors duration-500 ${textColors[11] || "text-gray-600"}`}>
+          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 tracking-wide leading-relaxed ${textColors[10] || "text-gray-300"}`}>
             Dieses Konzept ist ehrlich. Es wächst mit jedem, der es lebt.
           </p>
           
-          <p className={`scroll-text text-xl text-justify transition-colors duration-500 ${textColors[12] || "text-gray-600"}`}>
+          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 tracking-wide leading-relaxed ${textColors[11] || "text-gray-300"}`}>
             Dieses Ausbildungskonzept ist mehr als eine Sammlung von Trainingsplänen und Ideen. Es ist ein Ausdruck dessen, was uns als SV Laim ausmacht: Wir bilden nicht nur Spieler:innen aus – wir begleiten Menschen auf ihrem Weg. Wir schaffen ein Umfeld, in dem Kinder wachsen, Jugendliche über sich hinauswachsen und Erwachsene Verantwortung übernehmen.
           </p>
           
-          <p className={`scroll-text text-xl text-justify transition-colors duration-500 ${textColors[13] || "text-gray-600"}`}>
+          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 tracking-wide leading-relaxed ${textColors[12] || "text-gray-300"}`}>
             Wir haben einen Weg beschrieben, der fordert, aber nicht überfordert. Der motiviert, ohne Druck zu machen. Der klare Strukturen bietet – und dennoch Raum lässt für Kreativität, Persönlichkeit und Bauchgefühl. Ein Konzept, das sich nicht an kurzfristigen Ergebnissen orientiert, sondern an nachhaltiger Entwicklung. Für jede Altersstufe, für jede Leistungsebene, für jeden einzelnen Menschen in unserem Verein.
           </p>
           
-          <p className={`scroll-text text-xl text-justify transition-colors duration-500 ${textColors[14] || "text-gray-600"}`}>
+          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 tracking-wide leading-relaxed ${textColors[13] || "text-gray-300"}`}>
             Unser Ziel ist es, dass alle, die mit uns Handball erleben – auf dem Feld oder daneben – das Gefühl haben: "Hier bin ich richtig." Weil sie spüren: Hier geht es um mehr. Um Werte. Um Team. Um echte Entwicklung.
           </p>
           
-          <div className={`scroll-text text-xl transition-colors duration-500 ${textColors[15] || "text-gray-600"}`}>
+          <div className={`scroll-text text-3xl transition-colors duration-500 tracking-wide leading-relaxed ${textColors[14] || "text-gray-300"}`}>
             <p className="mb-4">Dies gelingt:</p>
             <ul className="list-disc list-inside space-y-2 ml-6">
               <li>durch Trainer:innen, die mutig, neugierig und verantwortungsvoll vorangehen.</li>
@@ -179,7 +175,7 @@ export default function Home() {
             </ul>
           </div>
           
-          <p className={`scroll-text text-xl text-justify transition-colors duration-500 ${textColors[16] || "text-gray-600"}`}>
+          <p className={`scroll-text text-3xl text-justify transition-colors duration-500 tracking-wide leading-relaxed ${textColors[15] || "text-gray-300"}`}>
             Wir stehen am Anfang eines Weges, der nie ganz fertig sein wird. Aber jeder Schritt, den wir gemeinsam gehen, macht unseren Verein stärker. Lasst uns diesen Weg entschlossen, mit Freude und einem klaren Ziel vor Augen gehen: bessere Spieler, bessere Menschen, ein starker Verein.
           </p>
         </motion.div>

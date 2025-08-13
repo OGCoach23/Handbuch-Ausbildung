@@ -205,10 +205,10 @@ export default function Navbar() {
                 ))}
               </nav>
 
-              {/* Mobile Menu Button */}
+              {/* Menu Button */}
               <button
                 onClick={() => setMenuOpen(true)}
-                className="lg:hidden text-[#004b87] hover:bg-green-50 hover:text-green-700 p-2 rounded-lg transition-all duration-300"
+                className="text-[#004b87] hover:bg-green-50 hover:text-green-700 p-2 rounded-lg transition-all duration-300"
               >
                 <Menu size={28} />
               </button>
@@ -217,14 +217,14 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* MOBILE OVERLAY-MENÜ */}
+      {/* OVERLAY-MENÜ */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center lg:hidden"
+            className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center"
             onClick={closeAllMenus}
           >
             <motion.div
