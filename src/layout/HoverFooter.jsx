@@ -1,5 +1,5 @@
 import React from "react";
-import { FaInstagram, FaChevronUp } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 export default function HoverFooter() {
   return (
@@ -14,17 +14,7 @@ export default function HoverFooter() {
         h-[120px] md:h-[80px]
       "
     >
-      {/* Sichtbarer Streifen auf Desktop */}
-      <div
-        className="
-          hidden md:flex absolute -top-[25px] left-1/2 -translate-x-1/2
-          bg-[#f2f2f2] border border-white/70 rounded-t-lg px-4 py-1
-          shadow-md text-gray-600 text-xs items-center gap-2
-        "
-      >
-        <FaChevronUp size={12} />
-        Footer anzeigen
-      </div>
+
 
       {/* Inhalt */}
       <div className="container mx-auto px-4 h-full flex flex-col md:flex-row justify-between items-center text-gray-700 text-sm">

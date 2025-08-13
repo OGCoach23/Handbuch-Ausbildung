@@ -206,7 +206,7 @@ export default function Modul1FJugend() {
           <div
             className="relative"
             style={{
-              width: isMobile ? carouselConfig.cardWidth : carouselConfig.cardWidth * 2.5,
+              width: isMobile ? carouselConfig.cardWidth * 3 : carouselConfig.cardWidth * 2.5,
               height: isMobile ? carouselConfig.cardHeight : carouselConfig.cardHeight * 1.2,
               perspective: isMobile ? "none" : "1200px",
               transformStyle: "preserve-3d",
@@ -216,9 +216,9 @@ export default function Modul1FJugend() {
               const { x, z, angle, offset } = isMobile
                 ? getCardPosition2D(index)
                 : getCardPosition3D(index);
-              const isFront = isMobile ? offset === 0 : offset === 0;
+              const isFront = offset === 0;
               const isVisible = isMobile
-                ? Math.abs(offset) < 1
+                ? Math.abs(offset) <= 1
                 : offset <= 3 || offset >= cardsData.length - 3;
               if (!isVisible) return null;
 
@@ -235,8 +235,8 @@ export default function Modul1FJugend() {
                     height: carouselConfig.cardHeight,
                     backgroundColor: "rgba(255,255,255,0.95)",
                     color: "#166534",
-                    left: isMobile ? "50%" : `50%`,
-                    top: isMobile ? "50%" : `50%`,
+                    left: isMobile ? "50%" : "50%",
+                    top: isMobile ? "50%" : "50%",
                     transform: isMobile
                       ? `translate(-50%, -50%) translateX(${x}px)`
                       : `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
