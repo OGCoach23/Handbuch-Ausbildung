@@ -22,6 +22,9 @@ import Training from "./pages/training.jsx";
 import SpielsystemeUebersicht from "./pages/Spielsysteme/SpielsystemeUebersicht";
 import SpielsystemEJugend from "./pages/Spielsysteme/SpielsystemEJugend";
 import SpielsystemDJugend from "./pages/Spielsysteme/SpielsystemDJugend";
+import SpielsystemCJugend from "./pages/Spielsysteme/SpielsystemCJugend";
+import SpielsystemBJugend from "./pages/Spielsysteme/SpielsystemBJugend";
+import SpielsystemAJugend from "./pages/Spielsysteme/SpielsystemAJugend";
 import FJugendPage from "./pages/f-jugend";
 import FJugendM1 from "./pages/f-jugend-m1";
 import FJugendM2 from "./pages/f-jugend-m2";
@@ -215,6 +218,9 @@ function App() {
             <Route path="/spielsysteme-uebersicht" element={<SpielsystemeUebersicht />} />
             <Route path="/spielsystem-e-jugend" element={<SpielsystemEJugend />} />
             <Route path="/spielsystem-d-jugend" element={<SpielsystemDJugend />} />
+            <Route path="/spielsystem-c-jugend" element={<SpielsystemCJugend />} />
+            <Route path="/spielsystem-b-jugend" element={<SpielsystemBJugend />} />
+            <Route path="/spielsystem-a-jugend" element={<SpielsystemAJugend />} />
 
             {/* Alias-Routen */}
             <Route path="/kinderbereich" element={<AltersLeistungsstufen />} />

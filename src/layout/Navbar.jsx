@@ -102,6 +102,9 @@ export default function Navbar() {
         { title: "Übersicht", link: "/entwicklung-spielsysteme", description: "Entwicklung der Spielsysteme" },
         { title: "E-Jugend", link: "/spielsystem-e-jugend", description: "Manndeckung" },
         { title: "D-Jugend", link: "/spielsystem-d-jugend", description: "1:5-Deckung" },
+        { title: "C-Jugend", link: "/spielsystem-c-jugend", description: "3:2:1-Deckung" },
+        { title: "B-Jugend", link: "/spielsystem-b-jugend", description: "5:1-Deckung" },
+        { title: "A-Jugend", link: "/spielsystem-a-jugend", description: "6:0-Deckung (offensiv)" },
         { title: "Alle Systeme", link: "/spielsysteme-uebersicht", description: "Komplette Übersicht" }
       ]
     },
