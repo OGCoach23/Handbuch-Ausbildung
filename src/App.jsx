@@ -15,7 +15,13 @@ import Ebene3 from "./pages/Ebene3";
 import Ebene4 from "./pages/Ebene4";
 import Ausbildungsprinzipien from "./pages/Ausbildungsprinzipien";
 import EvaluationFeedbackZielsystem from "./pages/evaluation-feedback-zielsystem";
+import EntwicklungSpielsysteme from "./pages/entwicklung-spielsysteme";
 import Training from "./pages/training.jsx";
+
+// Spielsysteme
+import SpielsystemeUebersicht from "./pages/Spielsysteme/SpielsystemeUebersicht";
+import SpielsystemEJugend from "./pages/Spielsysteme/SpielsystemEJugend";
+import SpielsystemDJugend from "./pages/Spielsysteme/SpielsystemDJugend";
 import FJugendPage from "./pages/f-jugend";
 import FJugendM1 from "./pages/f-jugend-m1";
 import FJugendM2 from "./pages/f-jugend-m2";
@@ -203,6 +209,12 @@ function App() {
             <Route path="/rueckraum-profil" element={<RueckraumProfil />} />
             <Route path="/rueckraum-mitte-profil" element={<RueckraumMitte />} />
             <Route path="/positionsprofil-template" element={<PositionsprofilTemplate />} />
+
+            {/* Spielsysteme */}
+            <Route path="/entwicklung-spielsysteme" element={<EntwicklungSpielsysteme />} />
+            <Route path="/spielsysteme-uebersicht" element={<SpielsystemeUebersicht />} />
+            <Route path="/spielsystem-e-jugend" element={<SpielsystemEJugend />} />
+            <Route path="/spielsystem-d-jugend" element={<SpielsystemDJugend />} />
 
             {/* Alias-Routen */}
             <Route path="/kinderbereich" element={<AltersLeistungsstufen />} />

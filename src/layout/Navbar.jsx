@@ -95,6 +95,17 @@ export default function Navbar() {
       ]
     },
     {
+      title: "Spielsysteme",
+      icon: <Target size={20} />,
+      hasDropdown: true,
+      dropdownItems: [
+        { title: "Übersicht", link: "/entwicklung-spielsysteme", description: "Entwicklung der Spielsysteme" },
+        { title: "E-Jugend", link: "/spielsystem-e-jugend", description: "Manndeckung" },
+        { title: "D-Jugend", link: "/spielsystem-d-jugend", description: "1:5-Deckung" },
+        { title: "Alle Systeme", link: "/spielsysteme-uebersicht", description: "Komplette Übersicht" }
+      ]
+    },
+    {
       title: "Kompetenzkompass",
       icon: <GraduationCap size={20} />,
       link: "/kompetenzkompass",
