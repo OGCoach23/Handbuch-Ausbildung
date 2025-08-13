@@ -94,7 +94,6 @@ export default function Modul1FJugend() {
       const headerHeight = headerRef.current
         ? headerRef.current.offsetHeight
         : 0;
-      // Angenommene Footer-Höhe von 50px + 50px Puffer = 100px
       const assumedFooterHeight = 100;
       const availableHeight = vh - headerHeight - assumedFooterHeight;
 
@@ -147,15 +146,14 @@ export default function Modul1FJugend() {
 
   const getCardPosition2D = (index) => {
     const offset = index - currentIndex;
-    const x = offset * (carouselConfig.cardWidth + 20); // Abstand zwischen den Karten
+    const x = offset * (carouselConfig.cardWidth + 20);
     return { x, offset };
   };
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       {/* Header */}
-      <header ref={headerRef}>
-        {/* Zurück Button */}
+      <header ref={headerRef} className="z-40">
         <div className="flex justify-center pt-8 pb-4">
           <Link
             to="/f-jugend"
@@ -177,7 +175,7 @@ export default function Modul1FJugend() {
           initial={{ opacity: 0, y: -50, rotateX: -15 }}
           animate={{ opacity: 1, y: 0, rotateX: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-6 w-full max-w-4xl"
+          className="mb-8 w-full max-w-4xl"
           style={{ perspective: "1000px" }}
         >
           <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
@@ -191,7 +189,7 @@ export default function Modul1FJugend() {
           </div>
         </motion.div>
 
-        {/* Karussell - PERFEKTE ZENTRIERUNG & RESPONSIV */}
+        {/* Karussell */}
         <div className="relative flex items-center justify-center w-full overflow-hidden">
           {/* Pfeil links */}
           <button
@@ -202,7 +200,7 @@ export default function Modul1FJugend() {
             <ChevronLeft size={24} />
           </button>
 
-          {/* Karten Container - MATHEMATISCH KORREKTE ZENTRIERUNG */}
+          {/* Karten Container */}
           <div
             className="relative"
             style={{
@@ -235,8 +233,8 @@ export default function Modul1FJugend() {
                     height: carouselConfig.cardHeight,
                     backgroundColor: "rgba(255,255,255,0.95)",
                     color: "#166534",
-                    left: isMobile ? "50%" : "50%",
-                    top: isMobile ? "50%" : "50%",
+                    left: "50%",
+                    top: "50%",
                     transform: isMobile
                       ? `translate(-50%, -50%) translateX(${x}px)`
                       : `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
@@ -352,6 +350,6 @@ export default function Modul1FJugend() {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }
