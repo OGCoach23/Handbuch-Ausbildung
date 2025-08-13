@@ -1,353 +1,313 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Users, Target, ExternalLink } from "lucide-react";
 
-const cardsData = [
+const altersstufenData = [
   {
-    title: "Zielsetzung des Moduls",
-    content: [
-      "Nicht jede:r will Nationalspieler:in werden. Und das ist gut so.",
-      "Nicht jede:r bleibt im Breitensport, nur weil es „entspannter" ist. Auch das ist gut so.",
-      "Dieses Modul schafft Klarheit – ohne zu bewerten. Es zeigt, was beide Wege ausmacht, welche Haltung sie brauchen und wie wir Spieler:innen altersgerecht begleiten können.",
-      "Wir orientieren uns an den Prinzipien: Entwicklung vor Selektion, Begeisterung als Antrieb, Vielfalt als Stärke.",
-      "Hilft bei Verständnis, Haltung, Orientierung, Entscheidungshilfe und Altersgerechtigkeit."
-    ],
+    altersstufe: "D-Jugend (11–12)",
+    breitensport: "2x Training/Woche\nalle dürfen alles\nFokus: Spiel erleben & Rollenvielfalt",
+    leistungssport: "evtl. 3. Einheit als Perspektive\nfrühe Sonderförderung (z. B. Technikgruppen)\nFokus: erste Verantwortung"
   },
   {
-    title: "Breitensport bedeutet",
-    content: [
-      "Handball als Erlebnisraum – mit Freude, Freundschaft und Bewegung",
-      "Förderung ohne Druck, Beteiligung statt Selektion",
-      "Flexible Trainingsstrukturen, abwechslungsreiche Rollen, weniger Verpflichtung",
-      "Ein sicherer Ort, um sich selbst auszuprobieren",
-      "Haltung: Jeder darf mitmachen. Ziel ist das „Dranbleiben" – nicht das „Herausstechen". Training ist kein Casting – sondern Beziehung, Vertrauen, Bewegung."
-    ],
+    altersstufe: "C-Jugend (13–14)",
+    breitensport: "Training bleibt flexibel\nPositionen rotieren\nFokus: Teambindung & Spielverständnis",
+    leistungssport: "3–4x Training/Woche\nindividuelle Förderpläne\nerste Sichtungen & Leistungsbeurteilungen"
   },
   {
-    title: "Leistungssport bedeutet",
-    content: [
-      "Handball als Entwicklungsraum – mit klaren Zielen, Herausforderungen und Struktur",
-      "Mehr Trainingsumfang, systematische Förderung, höhere Eigenverantwortung",
-      "Spielzeit, Rollen, Förderung basieren auf Leistung und Haltung",
-      "Ziel: besser werden – nicht perfekt sein, aber dranbleiben",
-      "Haltung: Niemand muss – aber wer will, bekommt eine klare Perspektive. Leistungssport beginnt nicht bei der Auswahl – sondern bei der inneren Entscheidung."
-    ],
+    altersstufe: "B-Jugend (15–16)",
+    breitensport: "Beteiligung als Ziel\nFreundschaften, Turniere, Vereinsbindung\nRolle als \"aktiver Mitmacher\"",
+    leistungssport: "Ziel: Kader, Stützpunkt, höhere Liga\nintensives Technik-/Athletiktraining\nklare Spielrollen & Verbindlichkeit"
   },
   {
-    title: "Altersstufenspezifische Ausrichtung (D–A-Jugend)",
-    content: [
-      "D-Jugend (11–12): Breitensport: 2x Training/Woche, alle dürfen alles. Leistungssport: evtl. 3. Einheit, frühe Sonderförderung",
-      "C-Jugend (13–14): Breitensport: Training bleibt flexibel, Positionen rotieren. Leistungssport: 3–4x Training/Woche, individuelle Förderpläne",
-      "B-Jugend (15–16): Breitensport: Beteiligung als Ziel, Freundschaften, Turniere. Leistungssport: Ziel: Kader, Stützpunkt, höhere Liga",
-      "A-Jugend (17–18): Breitensport: freiwilliger Übergang in Senioren. Leistungssport: Integration in Erwachsenenbereich, Karriereorientierung"
-    ],
+    altersstufe: "A-Jugend (17–18)",
+    breitensport: "freiwilliger Übergang in Senioren\nAusbildung/Beruf im Fokus\nVerein als Ausgleich",
+    leistungssport: "Integration in Erwachsenenbereich\nKarriereorien tierung (3. Liga etc.)\nTrainingsumfang + Zielsystem hoch"
+  }
+];
+
+const trainerData = [
+  {
+    frage: "Wie plane ich Training?",
+    breitensport: "Erlebnisbasiert, offen, mit Variation",
+    leistungssport: "Zielgerichtet, strukturiert, mit Wiederholung"
   },
   {
-    title: "Anschlussmöglichkeiten an höhere Förderstrukturen",
-    content: [
-      "BHV-Talentförderung: Zentrale Sichtungen, Stützpunkttrainings, Bayerische Meisterschaft der Bezirke",
-      "DHB-Leistungssportsichtung: Nominierung für DHB-Sichtungslehrgänge, orientiert am DHB-Sichtungsmanual",
-      "SV Laim trägt durch kontinuierliche, geplante und zielgerichtete Ausbildung dazu bei",
-      "Fokus auf individueller Spielkompetenz, qualitativ bewertet durch gemeinsame Grundübungen, Grundspiele und Zielspiele",
-      "BHV-Youtube-Playlist zur Vertiefung der DHB-Sichtungsmanual-Inhalte empfohlen"
-    ],
+    frage: "Wie bewerte ich Fortschritt?",
+    breitensport: "Beteiligung, Mut, soziale Entwicklung",
+    leistungssport: "Technik, Taktik, Entscheidungsqualität"
   },
   {
-    title: "Für Trainer:innen",
-    content: [
-      "Training planen: Breitensport: Erlebnisbasiert, offen, mit Variation. Leistungssport: Zielgerichtet, strukturiert, mit Wiederholung",
-      "Fortschritt bewerten: Breitensport: Beteiligung, Mut, soziale Entwicklung. Leistungssport: Technik, Taktik, Entscheidungsqualität",
-      "Gespräche führen: Breitensport: Persönlich, empathisch, motivierend. Leistungssport: Klar, ehrlich, mit Zielen & nächsten Schritten",
-      "Besonders achten: Breitensport: Bindung, Gruppengefühl, Sicherheit. Leistungssport: Eigenmotivation, Belastbarkeit, Lernwille"
-    ],
+    frage: "Wie führe ich Gespräche?",
+    breitensport: "Persönlich, empathisch, motivierend",
+    leistungssport: "Klar, ehrlich, mit Zielen & nächsten Schritten"
   },
   {
-    title: "Für Eltern",
-    content: [
-      "Kind begleiten: Breitensport: Interesse zeigen, Sicherheit geben. Leistungssport: Struktur schaffen, Erfolge feiern, Rückhalt geben",
-      "Besonders achten: Breitensport: Spaß erhalten, Gruppenzugehörigkeit. Leistungssport: Überforderung erkennen, gemeinsam reflektieren",
-      "Rolle im Verein: Breitensport: Unterstützer:in, Helfer:in, Partner:in. Leistungssport: Kommunikationspartner:in, Rückhalt, Ermöglicher:in",
-      "Wichtig zu verstehen: Breitensport: Handball ist ein Raum für Entwicklung. Leistungssport: Leistung braucht Haltung, nicht nur Talent"
-    ],
+    frage: "Worauf achte ich besonders?",
+    breitensport: "Bindung, Gruppengefühl, Sicherheit",
+    leistungssport: "Eigenmotivation, Belastbarkeit, Lernwille"
+  }
+];
+
+const elternData = [
+  {
+    frage: "Wie begleite ich mein Kind?",
+    breitensport: "Interesse zeigen, Sicherheit geben",
+    leistungssport: "Struktur schaffen, Erfolge feiern, Rückhalt geben"
   },
   {
-    title: "Abschlusspunkt",
-    highlight: true,
-    content: [
-      "Leistungssport ist kein „Upgrade" – und Breitensport kein „Plan B".",
-      "Es sind zwei Wege in ein erfülltes Handballeben.",
-      "Was zählt: Der Weg passt zum Menschen. Und der Verein begleitet ihn.",
-      "Entwicklung vor Selektion – Begeisterung als Antrieb – Vielfalt als Stärke",
-      "Ziel: Klarheit schaffen, ohne zu bewerten, und beide Wege als gleich wertvoll zu begreifen."
-    ],
+    frage: "Worauf sollte ich achten?",
+    breitensport: "Spaß erhalten, Gruppenzugehörigkeit",
+    leistungssport: "Überforderung erkennen, gemeinsam reflektieren"
   },
+  {
+    frage: "Was ist meine Rolle im Verein?",
+    breitensport: "Unterstützer:in, Helfer:in, Partner:in",
+    leistungssport: "Kommunikationspartner:in, Rückhalt, Ermöglicher:in"
+  },
+  {
+    frage: "Was ist wichtig zu verstehen?",
+    breitensport: "Handball ist ein Raum für Entwicklung",
+    leistungssport: "Leistung braucht Haltung, nicht nur Talent"
+  }
 ];
 
 export default function BreitensportVsLeistungssport() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedCard, setSelectedCard] = useState(null);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  
-  const carouselConfig = {
-    radius: 300,
-    cardWidth: 320,
-    cardHeight: 420,
-    availableHeight: 700,
-  };
-  
-  const headerRef = useRef(null);
-  const footerRef = useRef(null);
-  const mainContentRef = useRef(null);
-
-  useEffect(() => {
-    const updateSizes = () => {
-      setIsMobile(window.innerWidth < 768);
-      const vh = window.innerHeight;
-      const headerHeight = headerRef.current ? headerRef.current.offsetHeight : 0;
-      const assumedFooterHeight = 100;
-      const availableHeight = vh - headerHeight - assumedFooterHeight;
-      carouselConfig.availableHeight = availableHeight > 0 ? availableHeight : vh;
-    };
-    
-    updateSizes();
-    window.addEventListener("resize", updateSizes);
-    return () => window.removeEventListener("resize", updateSizes);
-  }, []);
-
-  const rotateLeft = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex((prev) => (prev - 1 + cardsData.length) % cardsData.length);
-    setTimeout(() => setIsAnimating(false), 600);
-  };
-
-  const rotateRight = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex((prev) => (prev + 1) % cardsData.length);
-    setTimeout(() => setIsAnimating(false), 600);
-  };
-
-  const goToCard = (index) => {
-    if (isAnimating || index === currentIndex) return;
-    setIsAnimating(true);
-    setCurrentIndex(index);
-    setTimeout(() => setIsAnimating(false), 600);
-  };
-
-  const handleCardClick = (index) => {
-    if (isAnimating) return;
-    if (index === currentIndex) {
-      setSelectedCard(cardsData[index]);
-    } else {
-      goToCard(index);
-    }
-  };
-
-  const getCardPosition3D = (index) => {
-    const { radius } = carouselConfig;
-    const offset = (index - currentIndex + cardsData.length) % cardsData.length;
-    const angle = (offset * 360) / cardsData.length;
-    const x = Math.sin((angle * Math.PI) / 180) * radius;
-    const z = Math.cos((angle * Math.PI) / 180) * radius;
-    return { x, z, angle, offset };
-  };
-
-  const getCardPosition2D = (index) => {
-    const offset = index - currentIndex;
-    const x = offset * (carouselConfig.cardWidth + 20);
-    return { x, offset };
-  };
+  const [showTrainerPanel, setShowTrainerPanel] = useState(false);
+  const [showElternPanel, setShowElternPanel] = useState(false);
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header ref={headerRef} className="z-40 bg-white/80 backdrop-blur-sm border-b border-gray-200">
-        <div className="flex justify-center pt-8 pb-4">
-          <Link 
-            to="/" 
-            className="rounded-full bg-gradient-to-r from-green-500 to-blue-600 text-white px-8 py-3 shadow-lg hover:from-blue-600 hover:to-green-500 transition-all duration-300 transform hover:scale-105 font-semibold"
-          >
-            ← Zurück zur Übersicht
-          </Link>
-        </div>
-      </header>
-
-      {/* Hauptbereich */}
-      <div 
-        ref={mainContentRef} 
-        className="flex-1 flex flex-col items-center justify-center p-4"
-        style={{ minHeight: `${carouselConfig.availableHeight}px` }}
-      >
-        {/* Überschrift */}
+      <div className="max-w-6xl mx-auto px-4 py-8">
         <motion.div
-          initial={{ opacity: 0, y: -50, rotateX: -15 }}
-          animate={{ opacity: 1, y: 0, rotateX: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-8 w-full max-w-4xl"
-          style={{ perspective: "1000px" }}
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
         >
-          <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
-            <h1 className="text-4xl font-bold text-green-600 text-center mb-4">
-              Breitensport vs. Leistungssport
-            </h1>
-            <p className="text-center text-xl text-green-700 italic leading-relaxed">
-              "Zwei Wege in ein erfülltes Handballeben - beide gleich wertvoll"
-            </p>
-          </div>
+          <h1 className="text-4xl font-bold text-[#004d25] text-center mb-4">
+            Breitensport vs. Leistungssport
+          </h1>
         </motion.div>
 
-        {/* Karussell - PERFEKTE ZENTRIERUNG & RESPONSIV */}
-        <div className="relative flex items-center justify-center w-full overflow-hidden">
-          {/* Pfeil links */}
-          <motion.button
-            onClick={rotateLeft}
-            disabled={isAnimating}
-            whileHover={{ scale: 1.1, backgroundColor: "#3b82f6" }}
-            whileTap={{ scale: 0.95 }}
-            className="absolute left-2 md:left-[-60px] z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
-          >
-            <ChevronLeft size={24} />
-          </motion.button>
-
-          {/* Karten Container - MATHEMATISCH KORREKTE ZENTRIERUNG */}
-          <div 
-            className="relative"
-            style={{
-              width: isMobile ? carouselConfig.cardWidth * 3 : carouselConfig.cardWidth * 2.5,
-              height: isMobile ? carouselConfig.cardHeight : carouselConfig.cardHeight * 1.2,
-              perspective: isMobile ? "none" : "1200px",
-              transformStyle: "preserve-3d",
-            }}
-          >
-            {cardsData.map((card, index) => {
-              const { x, z, angle, offset } = isMobile 
-                ? getCardPosition2D(index) 
-                : getCardPosition3D(index);
-              
-              const isFront = isMobile ? offset === 0 : offset === 0;
-              const isVisible = isMobile 
-                ? Math.abs(offset) <= 1 
-                : offset <= 3 || offset >= cardsData.length - 3;
-
-              if (!isVisible) return null;
-
-              return (
-                <motion.div
-                  key={index}
-                  className={`absolute rounded-xl shadow-2xl flex items-center justify-center text-center cursor-pointer ${
-                    card.highlight ? "border-4 border-yellow-400" : "border border-gray-200"
-                  }`}
-                  style={{
-                    width: carouselConfig.cardWidth,
-                    height: carouselConfig.cardHeight,
-                    backgroundColor: "rgba(255,255,255,0.95)",
-                    color: "#166534",
-                    left: "50%",
-                    top: "50%",
-                    transform: isMobile 
-                      ? `translate(-50%, -50%) translateX(${x}px)`
-                      : `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
-                    zIndex: isFront ? 20 : 10 - Math.abs(offset),
-                    filter: isFront ? "none" : `brightness(${1 - Math.abs(offset) * 0.1})`,
-                  }}
-                  animate={{
-                    scale: isFront ? 1 : 0.9,
-                    opacity: isFront ? 1 : 0.8,
-                  }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                  whileHover={{
-                    scale: isFront ? 1.05 : 0.95,
-                    zIndex: 25,
-                    transition: { duration: 0.2 },
-                  }}
-                  onClick={() => handleCardClick(index)}
-                >
-                  <div className="p-6">
-                    <h3 className="font-bold text-xl leading-tight">
-                      {card.title}
-                    </h3>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* Pfeil rechts */}
-          <motion.button
-            onClick={rotateRight}
-            disabled={isAnimating}
-            whileHover={{ scale: 1.1, backgroundColor: "#3b82f6" }}
-            whileTap={{ scale: 0.95 }}
-            className="absolute right-2 md:right-[-60px] z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
-          >
-            <ChevronRight size={24} />
-          </motion.button>
+        {/* Zielsetzung */}
+        <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
+          <h2 className="text-2xl font-bold text-[#004d25] mb-4">Zielsetzung des Moduls</h2>
+          <p className="text-justify leading-relaxed mb-4">
+            Nicht jede:r will Nationalspieler:in werden. Und das ist gut so.<br />
+            Nicht jede:r bleibt im Breitensport, nur weil es „entspannter" ist. Auch das ist gut so.<br />
+            Dieses Modul schafft Klarheit – ohne zu bewerten. Es zeigt, was beide Wege ausmacht, welche Haltung sie brauchen und wie wir Spieler:innen altersgerecht begleiten können. Wir orientieren uns an den Prinzipien:
+          </p>
+          <ul className="list-none space-y-2 mb-4">
+            <li>→ Entwicklung vor Selektion</li>
+            <li>→ Begeisterung als Antrieb</li>
+            <li>→ Vielfalt als Stärke</li>
+          </ul>
+          <p className="text-justify leading-relaxed mb-2">Dieses Modul hilft dir dabei:</p>
+          <ul className="list-disc pl-6 space-y-1">
+            <li>Verständnis: Was ist eigentlich „Breitensport"? Was ist „Leistungssport"?</li>
+            <li>Haltung: Beide Wege sind gleich wertvoll – aber verschieden zu begleiten.</li>
+            <li>Orientierung: Wie erkenne ich als Spieler:in/Trainer:in/Elternteil, wo ich gerade stehe?</li>
+            <li>Entscheidungshilfe: Was braucht es, um den Leistungssportweg zu gehen – und will ich das überhaupt?</li>
+            <li>Altersgerechtigkeit: Wir bauen diese Themen ab der D-Jugend behutsam auf – nie zu früh, aber immer rechtzeitig.</li>
+          </ul>
         </div>
 
-        {/* Indikatoren */}
-        <div className="mt-6 flex space-x-3">
-          {cardsData.map((_, index) => (
-            <motion.button
-              key={index}
-              onClick={() => goToCard(index)}
-              disabled={isAnimating}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}
-              className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                index === currentIndex 
-                  ? "bg-blue-600 scale-125 shadow-lg" 
-                  : "bg-gray-300 hover:bg-gray-400"
-              }`}
-            />
-          ))}
+        {/* Breitensport vs Leistungssport */}
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <div className="bg-white shadow-lg rounded-lg p-6">
+            <h2 className="text-2xl font-bold text-[#004d25] mb-4">Breitensport bedeutet:</h2>
+            <ul className="list-disc pl-6 space-y-2 mb-4">
+              <li>Handball als Erlebnisraum – mit Freude, Freundschaft und Bewegung</li>
+              <li>Förderung ohne Druck, Beteiligung statt Selektion</li>
+              <li>Flexible Trainingsstrukturen, abwechslungsreiche Rollen, weniger Verpflichtung</li>
+              <li>Ein sicherer Ort, um sich selbst auszuprobieren</li>
+            </ul>
+            <h3 className="font-bold text-[#004d25] mb-2">Haltung:</h3>
+            <ul className="list-none space-y-1 mb-4">
+              <li>→ Jeder darf mitmachen.</li>
+              <li>→ Ziel ist das „Dranbleiben" – nicht das „Herausstechen".</li>
+              <li>→ Training ist kein Casting – sondern Beziehung, Vertrauen, Bewegung.</li>
+            </ul>
+            <p className="italic text-sm">
+              „Die tägliche Talentarbeit ist auch Persönlichkeitsarbeit – und die findet in allen Teams statt, nicht nur im Kader."
+            </p>
+          </div>
+
+          <div className="bg-white shadow-lg rounded-lg p-6">
+            <h2 className="text-2xl font-bold text-[#004d25] mb-4">Leistungssport bedeutet:</h2>
+            <ul className="list-disc pl-6 space-y-2 mb-4">
+              <li>Handball als Entwicklungsraum – mit klaren Zielen, Herausforderungen und Struktur</li>
+              <li>Mehr Trainingsumfang, systematische Förderung, höhere Eigenverantwortung</li>
+              <li>Spielzeit, Rollen, Förderung basieren auf Leistung und Haltung</li>
+              <li>Ziel: besser werden – nicht perfekt sein, aber dranbleiben</li>
+            </ul>
+            <h3 className="font-bold text-[#004d25] mb-2">Haltung:</h3>
+            <ul className="list-none space-y-1 mb-4">
+              <li>→ Niemand muss – aber wer will, bekommt eine klare Perspektive.</li>
+              <li>→ Leistungssport beginnt nicht bei der Auswahl – sondern bei der inneren Entscheidung.</li>
+              <li>→ Wir begleiten den Weg – nicht das Ergebnis.</li>
+            </ul>
+            <p className="italic text-sm">
+              „Meisterschaft entsteht, wenn Herausforderung und Unterstützung im Gleichgewicht sind."
+            </p>
+          </div>
+        </div>
+
+        {/* Altersstufentabelle */}
+        <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
+          <h2 className="text-2xl font-bold text-[#004d25] mb-4">
+            Wie sieht das altersstufenspezifisch aus? (D–A-Jugend)
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse border border-gray-300">
+              <thead>
+                <tr>
+                  <th className="border border-gray-300 p-3 bg-[#e6f2ec] text-left">Altersstufe</th>
+                  <th className="border border-gray-300 p-3 bg-[#e6f2ec] text-left">Breitensport</th>
+                  <th className="border border-gray-300 p-3 bg-[#e6f2ec] text-left">Leistungssport</th>
+                </tr>
+              </thead>
+              <tbody>
+                {altersstufenData.map((row, index) => (
+                  <tr key={index}>
+                    <td className="border border-gray-300 p-3 font-semibold">{row.altersstufe}</td>
+                    <td className="border border-gray-300 p-3">
+                      {row.breitensport.split('\n').map((line, i) => (
+                        <div key={i}>{line}</div>
+                      ))}
+                    </td>
+                    <td className="border border-gray-300 p-3">
+                      {row.leistungssport.split('\n').map((line, i) => (
+                        <div key={i}>{line}</div>
+                      ))}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Anschlussmöglichkeiten */}
+        <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
+          <h2 className="text-2xl font-bold text-[#004d25] mb-4">
+            Anschlussmöglichkeiten an höhere Förderstrukturen – BHV & DHB
+          </h2>
+          <p className="text-justify leading-relaxed mb-4">
+            Unser Konzept bereitet Spieler:innen nicht nur auf den Erwachsenenbereich im Verein vor, sondern zeigt auch klare Anschlussmöglichkeiten an die BHV-Talentförderung und die DHB-Leistungssportsichtung auf. Die Organisation des BHV-Leistungssports umfasst:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 mb-4">
+            <li>Zentrale Sichtungen: Dazu gehören die zentralen Stützpunktsichtungen und die Bayerische Meisterschaft der Bezirke.</li>
+            <li>Stützpunkttrainings: Die ausgewählten Talente nehmen an regelmäßigen Stützpunkttrainings teil</li>
+          </ul>
+          <p className="text-justify leading-relaxed mb-4">
+            Das übergeordnete Ziel ist die Nominierung für DHB-Sichtungslehrgänge, deren Inhalte sich am DHB-Sichtungsmanual orientieren.
+          </p>
+          <p className="text-justify leading-relaxed mb-4">
+            Der SV Laim trägt durch eine kontinuierliche, geplante und zielgerichtete Ausbildung dazu bei, dass unsere Nachwuchsspieler:innen die notwendigen Kompetenzen entwickeln, um sich bei solchen Sichtungen zu präsentieren. Dabei liegt der Fokus auf der individuellen Spielkompetenz, die durch gemeinsame Grundübungen, Grundspiele und Zielspiele qualitativ bewertet wird.
+          </p>
+          <p className="text-justify leading-relaxed mb-2">
+            Zur Vertiefung der Inhalte des DHB-Sichtungsmanuals und zur visuellen Unterstützung bei der Umsetzung von Übungen empfehlen wir die BHV-Youtube-Playlist:
+          </p>
+          <a 
+            href="https://www.youtube.com/playlist?list=PLkilEymkOsMJcaXUUmAPN1xKylEC5HHvN" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 underline"
+          >
+            <ExternalLink size={16} />
+            Zur BHV-Youtube-Playlist
+          </a>
+        </div>
+
+        {/* Abschlusspunkt */}
+        <div className="bg-[#e6f2ec] shadow-lg rounded-lg p-6">
+          <h2 className="text-2xl font-bold text-[#004d25] mb-4">Abschlusspunkt</h2>
+          <p className="text-justify leading-relaxed">
+            Leistungssport ist kein „Upgrade" – und Breitensport kein „Plan B".<br />
+            Es sind zwei Wege in ein erfülltes Handballeben.<br />
+            Was zählt: Der Weg passt zum Menschen. Und der Verein begleitet ihn.
+          </p>
         </div>
       </div>
 
-      {/* Modal */}
-      <AnimatePresence>
-        {selectedCard && (
-          <motion.div
-            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedCard(null)}
-          >
-            <motion.div
-              className="bg-white rounded-xl p-8 max-w-3xl w-full shadow-2xl overflow-y-auto max-h-[85vh]"
-              initial={{ scale: 0.8, opacity: 0, y: 50 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.8, opacity: 0, y: 50 }}
-              transition={{ duration: 0.3 }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <h2 className={`text-3xl font-bold mb-6 ${
-                selectedCard.highlight ? "text-yellow-600" : "text-green-600"
-              }`}>
-                {selectedCard.title}
-              </h2>
-              <ul className="list-disc pl-6 space-y-3 text-gray-700 text-lg">
-                {selectedCard.content.map((item, i) => (
-                  <li key={i} className="leading-relaxed">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <motion.button
-                onClick={() => setSelectedCard(null)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-8 px-8 py-4 bg-green-600 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300 font-medium text-lg"
-              >
-                Schließen
-              </motion.button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Slide-out Panels */}
+      {/* Trainer Panel */}
+      <motion.div
+        className={`fixed top-1/2 -translate-y-1/2 left-0 w-64 bg-[#004d25] text-white p-5 z-50 rounded-r-lg shadow-2xl transition-transform duration-300 ${
+          showTrainerPanel ? 'translate-x-0' : '-translate-x-56'
+        }`}
+        onMouseEnter={() => setShowTrainerPanel(true)}
+        onMouseLeave={() => setShowTrainerPanel(false)}
+      >
+        <div className="absolute -right-10 top-1/2 -translate-y-1/2 bg-[#007a3d] p-2 rounded-lg cursor-pointer">
+          <div className="writing-mode-vertical-rl text-orientation-mixed font-bold text-sm">
+            <Users size={16} className="mx-auto mb-1" />
+            Für Trainer:innen
+          </div>
+        </div>
+        
+        <h3 className="text-lg font-bold mb-4">Trainer:innen</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-xs">
+            <thead>
+              <tr>
+                <th className="border border-gray-400 p-1 text-left bg-[#007a3d]">Frage</th>
+                <th className="border border-gray-400 p-1 text-left bg-[#007a3d]">Breitensport</th>
+                <th className="border border-gray-400 p-1 text-left bg-[#007a3d]">Leistungssport</th>
+              </tr>
+            </thead>
+            <tbody>
+              {trainerData.map((row, index) => (
+                <tr key={index}>
+                  <td className="border border-gray-400 p-1 font-semibold text-xs">{row.frage}</td>
+                  <td className="border border-gray-400 p-1 text-xs">{row.breitensport}</td>
+                  <td className="border border-gray-400 p-1 text-xs">{row.leistungssport}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </motion.div>
+
+      {/* Eltern Panel */}
+      <motion.div
+        className={`fixed top-1/2 -translate-y-1/2 right-0 w-64 bg-[#004d25] text-white p-5 z-50 rounded-l-lg shadow-2xl transition-transform duration-300 ${
+          showElternPanel ? 'translate-x-0' : 'translate-x-56'
+        }`}
+        onMouseEnter={() => setShowElternPanel(true)}
+        onMouseLeave={() => setShowElternPanel(false)}
+      >
+        <div className="absolute -left-10 top-1/2 -translate-y-1/2 bg-[#007a3d] p-2 rounded-lg cursor-pointer">
+          <div className="writing-mode-vertical-rl text-orientation-mixed font-bold text-sm">
+            <Target size={16} className="mx-auto mb-1" />
+            Für Eltern
+          </div>
+        </div>
+        
+        <h3 className="text-lg font-bold mb-4">Eltern</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-xs">
+            <thead>
+              <tr>
+                <th className="border border-gray-400 p-1 text-left bg-[#007a3d]">Frage</th>
+                <th className="border border-gray-400 p-1 text-left bg-[#007a3d]">Breitensport</th>
+                <th className="border border-gray-400 p-1 text-left bg-[#007a3d]">Leistungssport</th>
+              </tr>
+            </thead>
+            <tbody>
+              {elternData.map((row, index) => (
+                <tr key={index}>
+                  <td className="border border-gray-400 p-1 font-semibold text-xs">{row.frage}</td>
+                  <td className="border border-gray-400 p-1 text-xs">{row.breitensport}</td>
+                  <td className="border border-gray-400 p-1 text-xs">{row.leistungssport}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </motion.div>
     </div>
   );
 }
