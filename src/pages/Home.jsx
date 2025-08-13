@@ -91,17 +91,12 @@ export default function Home() {
   );
 
   return (
-    <div className="min-h-screen relative p-6 overflow-hidden bg-white">
-      <h1 className="text-4xl font-bold text-black mb-4">SV Laim Handball</h1>
-      <p className="text-lg text-black">Willkommen auf unserer Startseite!</p>
-      
-      {/* Einfacher Test-Button */}
-      <button 
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
-        onClick={() => alert('Button funktioniert!')}
-      >
-        Test-Button
-      </button>
+    <motion.div
+      className="min-h-screen relative p-6 overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+    >
       {/* Overlay bei offenen Karten */}
       <AnimatePresence>
         {showCards && (
@@ -255,6 +250,6 @@ export default function Home() {
           <ChevronDown size={32} />
         </motion.div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }
