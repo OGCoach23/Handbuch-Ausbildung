@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function HandballLeben() {
   return (
@@ -192,6 +193,22 @@ export default function HandballLeben() {
             dieser "Soft Skills" und machen sie zu einem festen Bestandteil unserer Ausbildung.
           </p>
         </motion.div>
+      </div>
+
+      {/* Navigation */}
+      <div className="flex justify-between items-center mt-16">
+        <Link 
+          to="/ausbildungsprinzipien"
+          className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-300"
+        >
+          ← Ausbildungsprinzipien
+        </Link>
+        <Link 
+          to="/trainingsmethodik"
+          className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-300"
+        >
+          Trainingsmethodik →
+        </Link>
       </div>
     </div>
   );

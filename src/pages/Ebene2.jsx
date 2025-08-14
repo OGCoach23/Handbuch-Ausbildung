@@ -54,6 +54,11 @@ const jugendenCards = [
 ];
 
 export default function Ebene2() {
+  const fadeInVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-5xl mx-auto px-4 py-8">
@@ -104,33 +109,92 @@ export default function Ebene2() {
         <Carousel cards={jugendenCards} />
       </motion.div>
 
-        {/* Fazit */}
-        <motion.div
+        {/* Fazit Box */}
+        <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-16"
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="bg-white border-2 border-green-200 rounded-xl shadow-lg p-8 mt-16"
         >
-          <h2 className="text-3xl font-bold text-green-700 mb-8">
-            Fazit: Struktur schafft Orientierung
+          <h2 className="text-2xl font-bold text-green-600 mb-6">
+            Fazit Ebene 2: Ausbildung mit System
           </h2>
           
-          <p className="text-xl text-justify text-green-600 mb-8 leading-relaxed">
-            Wir haben die Haltung mit Inhalt gefüllt. In dieser Ebene ist sichtbar geworden, wie unser Ausbildungssystem funktioniert – modular, zielgerichtet und entwicklungsfördernd. Jedes Modul hat gezeigt: Entwicklung lässt sich planen, ohne starr zu werden.
-          </p>
-
-          <div className="bg-green-50 p-8 rounded-2xl shadow-lg mb-8">
-            <p className="text-green-700 leading-relaxed">
-              <strong>Unsere Module geben Trainer:innen Struktur – und Spieler:innen Orientierung:</strong><br />
-              → Entwicklung folgt keiner Einbahnstraße – sie braucht Raum für Umwege und Sprünge<br />
-              → Inhalte wirken stärker, wenn sie zur Entwicklungsphase passen – nicht zu früh, nicht zu spät<br />
-              → Gute Ausbildung entsteht dort, wo Systematik und Menschenkenntnis zusammenkommen
+          <div className="space-y-4 text-green-600 leading-relaxed">
+            <p>
+              Wir haben die Haltung mit Inhalt gefüllt.
             </p>
+            
+            <p>
+              In dieser Ebene ist sichtbar geworden, wie unser Ausbildungssystem funktioniert – modular, zielgerichtet und altersgerecht. Jedes Modul hat gezeigt: Entwicklung lässt sich planen, ohne starr zu werden. Und sie gewinnt an Tiefe, wenn sie auf mehreren Ebenen gleichzeitig wirkt – körperlich, technisch, taktisch, mental und sozial.
+            </p>
+            
+            <p>
+              Unsere Module geben Trainer:innen Struktur – und Spieler:innen Orientierung.
+            </p>
+            
+            <p>
+              Wir haben gesehen:
+            </p>
+            
+            <ul className="list-disc list-inside ml-4 space-y-2">
+              <li>Entwicklung folgt keiner Einbahnstraße – sie braucht Raum für Umwege und Sprünge.</li>
+              <li>Inhalte wirken stärker, wenn sie miteinander gedacht werden – nicht nebeneinander.</li>
+              <li>Gute Ausbildung entsteht dort, wo Systematik und Menschenkenntnis zusammenkommen.</li>
+            </ul>
+            
+            <p>
+              Jetzt wissen wir, was wir wann trainieren – und wie wir es methodisch vermitteln.
+            </p>
+            
+            <p>
+              Der nächste Schritt: Wir machen Entwicklung sichtbar und vergleichbar.
+            </p>
+            
+            <div className="mt-8 p-4 bg-green-50 rounded-lg border border-green-200">
+              <h3 className="text-lg font-bold text-green-700 mb-3">
+                Ausblick auf Ebene 3: Entwicklung messen – ohne zu bewerten
+              </h3>
+              
+              <p className="mb-4">
+                In Ebene 3 schärfen wir unser Verständnis von Kompetenz:
+                Was bedeutet Fortschritt konkret – auf Technik-, Spiel- oder Haltungsebene?
+              </p>
+              
+              <p className="mb-4">
+                Wir zeigen:
+              </p>
+              
+              <ul className="list-disc list-inside ml-4 space-y-2 mb-4">
+                <li>wie unser Kompetenzkompass (inkl. 5-Stufen-Modell) Orientierung bietet</li>
+                <li>wie sich Positionsprofile und Spielsysteme über die Jahrgänge hinweg entwickeln</li>
+                <li>wie wir mit Quer- und Neueinsteigern umgehen – ohne sie zu verlieren</li>
+                <li>wie wir Breitensport und Leistungssport parallel und durchlässig gestalten</li>
+                <li>und wie unser System über alle Jahrgänge hinweg wiedererkennbar bleibt – durch klare Raster, aber flexible Wege</li>
+              </ul>
+              
+              <p className="mb-4">
+                Es geht um Durchgängigkeit mit Leben, nicht um Gleichmacherei.
+              </p>
+              
+              <p className="mb-4">
+                Wir schaffen ein gemeinsames Verständnis von Qualität – ohne den Menschen aus dem Blick zu verlieren.
+              </p>
+              
+              <p>
+                Jetzt geht es darum, den roten Faden sichtbar zu machen – von der F-Jugend bis zur A-Jugend, vom Einstieg bis zum Übergang in den Erwachsenenbereich.
+              </p>
+              
+              <div className="mt-6">
+                <Link 
+                  to="/ebene3"
+                  className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-300"
+                >
+                  Zur Ebene 3 →
+                </Link>
+              </div>
+            </div>
           </div>
-
-          <p className="text-xl text-justify text-green-600 leading-relaxed">
-            Jetzt wissen wir, was wir wann trainieren – und wie wir es altersgerecht vermitteln. Der nächste Schritt: Wir machen Entwicklung sichtbar und vergleichbar. In Ebene 3 schärfen wir unser Verständnis von Kompetenz: Was bedeutet Fortschritt konkret – auf Technik-, Spiel- oder Haltungsebene?
-          </p>
         </motion.div>
       </div>
     </div>

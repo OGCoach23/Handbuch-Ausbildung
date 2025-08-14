@@ -101,37 +101,94 @@ export default function Ebene3() {
             </motion.div>
           ))}
         </div>
-
-        {/* Fazit */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16"
-        >
-          <h2 className="text-3xl font-bold text-green-700 mb-8">
-            Fazit: Orientierung schaffen – Entwicklung sichtbar machen
-          </h2>
-          
-          <p className="text-xl text-justify text-green-600 mb-8 leading-relaxed">
-            In dieser Ebene haben wir unser Ausbildungssystem tiefer verankert. Wir haben nicht nur Inhalte vermittelt, sondern auch gezeigt, wie man Entwicklung erkennt, beschreibt und begleitet – über alle Jahrgänge hinweg.
-          </p>
-
-          <div className="bg-green-50 p-8 rounded-2xl shadow-lg mb-8">
-            <p className="text-green-700 leading-relaxed">
-              <strong>Diese Ebene ist das Bindeglied zwischen Konzept und Alltag:</strong><br />
-              → Wie Positionsprofile dabei helfen, Rollen zu verstehen und gezielt zu fördern<br />
-              → Wie Spielsysteme pro Altersstufe Lernräume statt Vorgaben schaffen<br />
-              → Wie unser 5-Stufen-Kompass Verläufe sichtbar und vergleichbar macht – ohne zu bewerten<br />
-              → Und wie Durchgängigkeit entsteht, wenn Inhalte, Haltung und Strukturen ineinandergreifen
-            </p>
-          </div>
-
-          <p className="text-xl text-justify text-green-600 leading-relaxed">
-            Sie bringt Ordnung ins System – und macht Entwicklung planbar, kommunizierbar und reflektierbar. Jetzt geht es in die Umsetzung. In Ebene 4 zeigen wir, wie wir unser Konzept in den Trainingsalltag bringen – mit Struktur, Plan und Raum für Entwicklung.
-          </p>
-        </motion.div>
       </div>
+
+      {/* Fazit Box */}
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+        className="bg-white border-2 border-green-200 rounded-xl shadow-lg p-8 mt-16"
+      >
+        <h2 className="text-2xl font-bold text-green-600 mb-6">
+          Fazit Ebene 3: Orientierung schaffen – Entwicklung sichtbar machen
+        </h2>
+        
+        <div className="space-y-4 text-green-600 leading-relaxed">
+          <p>
+            In dieser Ebene haben wir unser Ausbildungssystem tiefer verankert.
+          </p>
+          
+          <p>
+            Wir haben nicht nur Inhalte vermittelt, sondern auch gezeigt, wie man Entwicklung erkennt, beschreibt und begleitet – über alle Jahrgänge hinweg.
+          </p>
+          
+          <p>
+            Mit dem Kompetenzkompass, den Positionsprofilen und der Systemlogik haben wir ein Instrumentarium geschaffen, das Trainer:innen Orientierung gibt – ohne Einengung. Denn: Wer Entwicklung steuern will, muss sie verstehen und beobachten können.
+          </p>
+          
+          <p>
+            Wir haben gesehen:
+          </p>
+          
+          <ul className="list-disc list-inside ml-4 space-y-2">
+            <li>Wie Positionsprofile dabei helfen, Rollen zu verstehen und gezielt zu fördern</li>
+            <li>Wie Spielsysteme pro Altersstufe Lernräume statt Vorgaben schaffen</li>
+            <li>Wie unser 5-Stufen-Kompass Verläufe sichtbar und vergleichbar macht – ohne zu bewerten</li>
+            <li>Und wie Durchgängigkeit entsteht, wenn Inhalte, Haltung und Strukturen ineinandergreifen</li>
+          </ul>
+          
+          <p>
+            Diese Ebene ist das Bindeglied zwischen Konzept und Alltag.
+          </p>
+          
+          <p>
+            Sie bringt Ordnung ins System – und macht Entwicklung planbar, kommunizierbar und reflektierbar.
+          </p>
+          
+          <div className="mt-8 p-4 bg-green-50 rounded-lg border border-green-200">
+            <h3 className="text-lg font-bold text-green-700 mb-3">
+              Ausblick auf Ebene 4: Vom Konzept zur Praxis – und wieder zurück
+            </h3>
+            
+            <p className="mb-4">
+              Jetzt geht es in die Umsetzung. Und zwar so, dass sie lebt.
+            </p>
+            
+            <p className="mb-4">
+              In Ebene 4 zeigen wir, wie wir unser Konzept in den Trainingsalltag bringen – mit Struktur, Plan und Raum für Entwicklung:
+            </p>
+            
+            <ul className="list-disc list-inside ml-4 space-y-2 mb-4">
+              <li><strong>Trainingsaufbau & Jahresplanung:</strong> Von der Makro- bis zur Mikroperspektive – wie wir Trainingsreihen und Schwerpunkte über das Jahr hinweg denken</li>
+              <li><strong>Trainerentwicklung:</strong> Wie wir unsere Trainer:innen begleiten, stärken und weiterbilden – z. B. mit dem Coach-Programm oder der Mini-Akademie</li>
+              <li><strong>Eltern als Entwicklungspartner:</strong> Wie wir sie einbinden, informieren und mitnehmen – nicht nur bei Spielen, sondern im ganzen Prozess</li>
+              <li><strong>Evaluation & Feedback:</strong> Wie wir Fortschritt messen, Qualität sichern und aus Rückmeldungen lernen</li>
+            </ul>
+            
+            <p className="mb-4">
+              Denn ein gutes Konzept ist nichts wert, wenn es nicht wirkt.
+            </p>
+            
+            <p className="mb-4">
+              Jetzt schauen wir hin: Wie wird aus Idee Wirkung?
+            </p>
+            
+            <p>
+              Und: Wie entwickeln wir uns als System kontinuierlich weiter?
+            </p>
+            
+            <div className="mt-6">
+              <Link 
+                to="/ebene4"
+                className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-300"
+              >
+                Zur Ebene 4 →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </motion.div>
     </div>
   );
 }

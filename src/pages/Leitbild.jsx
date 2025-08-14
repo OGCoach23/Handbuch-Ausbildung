@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Leitbild() {
   return (
@@ -35,7 +36,7 @@ export default function Leitbild() {
           </p>
         </motion.div>
 
-              {/* Haltung */}
+        {/* Haltung */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -112,6 +113,22 @@ export default function Leitbild() {
             <strong>Für Spieler:innen – kurz erklärt:</strong> Hier geht's nicht nur ums Gewinnen. Es geht darum, dass du deinen Weg findest. Du lernst, was du kannst, wie du denkst – und dass du mehr schaffen kannst, als du glaubst. Dass du ein Team hast, dass du Ansprechpartner kennen lernst, die dir helfen können. Dass du den Verein als deine Heimat wahrnimmst. Dafür geben wir dir Raum, Rückenwind – und echte Aufgaben.
           </div>
         </motion.div>
+      </div>
+
+      {/* Navigation */}
+      <div className="flex justify-between items-center mt-16">
+        <Link 
+          to="/ebene1"
+          className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-300"
+        >
+          ← Ebene 1
+        </Link>
+        <Link 
+          to="/zielgruppen"
+          className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-300"
+        >
+          Zielgruppen →
+        </Link>
       </div>
     </div>
   );

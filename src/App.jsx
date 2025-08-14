@@ -141,10 +141,10 @@ function App() {
             <Route path="/schule-leben" element={<HandballLeben />} />
             <Route path="/trainingsaufbau" element={<Trainingsmethodik />} />
             <Route path="/altersstufen" element={<AltersLeistungsstufen />} />
-                    <Route path="/ebene1" element={<Ebene1 />} />
-        <Route path="/ebene2" element={<Ebene2 />} />
-        <Route path="/ebene3" element={<Ebene3 />} />
-        <Route path="/ebene4" element={<Ebene4 />} />
+            <Route path="/ebene1" element={<Ebene1 />} />
+            <Route path="/ebene2" element={<Ebene2 />} />
+            <Route path="/ebene3" element={<Ebene3 />} />
+            <Route path="/ebene4" element={<Ebene4 />} />
             <Route path="/ausbildungsprinzipien" element={<Ausbildungsprinzipien />} />
             <Route path="/evaluation-feedback-zielsystem" element={<EvaluationFeedbackZielsystem />} />
             <Route path="/training" element={<Training />} />

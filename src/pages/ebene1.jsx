@@ -24,7 +24,7 @@ const karten = [
   {
     title: "Handball als Schule fürs Leben",
     description: "Wir entwickeln nicht nur Spieler:innen – wir stärken Menschen.",
-    link: "/handball-leben",
+    link: "/schule-leben",
     color: "bg-orange-500"
   },
   {
@@ -36,7 +36,7 @@ const karten = [
   {
     title: "Alters- und Leistungsstufen",
     description: "Entwicklung braucht Struktur – und Spielraum",
-    link: "/alters-leistungsstufen",
+    link: "/altersstufen",
     color: "bg-indigo-500"
   }
 ];
