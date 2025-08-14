@@ -1,273 +1,70 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const cardsData = [
-  {
-    title: "Zielsetzung dieses Moduls",
-    content: [
-      "Spieler:innen verstehen einfache taktische Prinzipien und ihre Rolle im Team.",
-      "Das Spielsystem wird als Orientierung vermittelt – nicht als starre Vorgabe.",
-      "Alle Positionen werden erlebt – kein Kind wird frühzeitig festgelegt.",
-      "Trainer:innen legen die Basis für Spiellogik, Umschalten und Abwehrverhalten."
-    ]
-  },
-  {
-    title: "Spielprinzipien & Raumverhalten",
-    content: [
-      "Breite & Tiefe – Feld in Zonen unterteilen, Ziel: Breite halten und Tiefe anstoßen.",
-      "Zusammenspiel Kleingruppe – 2:2 / 3:3 mit Einläufer, Rückpass, Wechselspiel.",
-      "Abwehrverhalten – 1:1-Training mit Hilfeprinzip, Grundhaltung.",
-      "Umschaltspiel – 3:2 nach Ballgewinn: Entscheidung sofort oder sichern?",
-      "Raum lesen & reagieren – Aufgaben wie 'nur in Zone 3 darf geworfen werden'."
-    ]
-  },
-  {
-    title: "Positionen verstehen – ohne festzulegen",
-    content: [
-      "Alle Positionen rotieren – niemand wird früh festgelegt.",
-      "LA/RA – Laufwege nach außen, Einlaufen, Angriff aus Breite.",
-      "Rückraum – Stoßen mit Tiefe, Passen, einfache Auslösehandlung.",
-      "Kreis – Lücke erkennen, anspielbar werden.",
-      "Mitte – Überblick entwickeln, Pass weiterdenken."
-    ]
-  },
-  {
-    title: "Methodische Umsetzung",
-    content: [
-      "Systemspiel = Prinzipien – keine starren Laufwege.",
-      "Rollentausch fördern – nach 5 Min./1 Tor/3 Kontakten Position wechseln.",
-      "Abwehr aktiv gestalten – Fokus 1:1, Beinarbeit, Kommunikation.",
-      "Positionsverständnis schulen – Frageformate im Training.",
-      "Spielzüge selbst erfinden – Spielzug-Baukasten nutzen."
-    ]
-  },
-  {
-    title: "Spielformen & Organisationsideen",
-    content: [
-      "4-Zonen-Spiel.",
-      "Spielzug-Werkstatt – Kinder erfinden eigenen Spielzug.",
-      "Wechsel-Spiel – wer passt, muss Position tauschen.",
-      "Abwehr-Angriff-Rotation.",
-      "Überzahlspiel + Coaching (2:1 oder 3:2)."
-    ]
-  },
-  {
-    title: "Ergebnis für den Trainer",
-    highlight: true,
-    content: [
-      "Du führst die Kinder in ein erstes taktisches Verständnis – über Prinzipien, nicht Vorschriften.",
-      "Du machst sie neugierig auf Räume, Rollen und Zusammenhänge.",
-      "Du legst die Basis für flexibles, mutiges Bewegen im System.",
-      "Ziel: Spieler:innen, die verstehen, warum sie etwas tun – und flexibel reagieren."
-    ]
-  }
-];
+import React from "react";
+import CollapsibleBox from "../components/CollapsibleBox";
 
 export default function Modul5DJugend() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedCard, setSelectedCard] = useState(null);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  const rotateLeft = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex((prev) => (prev - 1 + cardsData.length) % cardsData.length);
-    setTimeout(() => setIsAnimating(false), 600);
-  };
-
-  const rotateRight = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex((prev) => (prev + 1) % cardsData.length);
-    setTimeout(() => setIsAnimating(false), 600);
-  };
-
-  const goToCard = (index) => {
-    if (isAnimating || index === currentIndex) return;
-    setIsAnimating(true);
-    setCurrentIndex(index);
-    setTimeout(() => setIsAnimating(false), 600);
-  };
-
-  const handleCardClick = (index) => {
-    if (isAnimating) return;
-    if (index === currentIndex) {
-      setSelectedCard(cardsData[index]);
-    } else {
-      goToCard(index);
-    }
-  };
-
-  const getCardPosition = (index) => {
-    const offset = (index - currentIndex + cardsData.length) % cardsData.length;
-    const angle = (offset * 360) / cardsData.length;
-    const radius = 300;
-    const x = Math.sin((angle * Math.PI) / 180) * radius;
-    const z = Math.cos((angle * Math.PI) / 180) * radius;
-    return { x, z, angle, offset };
-  };
-
   return (
-    <div className="bg-white min-h-screen p-8 flex flex-col items-center">
-      <Link 
-        to="/d-jugend" 
-        className="mb-8 rounded-full bg-white text-green-600 px-6 py-2 shadow-md hover:bg-blue-600 hover:text-white transition-colors duration-300"
-      >
-        ← Zurück zur D-Jugend Übersicht
-      </Link>
+    <div className="max-w-5xl mx-auto space-y-6 p-6">
+      <h1 className="text-3xl font-bold text-green-700">D-Jugend - Modul 5: Spielsysteme & Positionsspiel</h1>
+      
+      <CollapsibleBox title="Zielsetzung dieses Moduls" defaultOpen={true}>
+        <ul className="list-disc list-inside space-y-2">
+          <li>Spieler:innen verstehen einfache taktische Prinzipien und ihre Rolle im Team.</li>
+          <li>Das Spielsystem wird als Orientierung vermittelt – nicht als starre Vorgabe.</li>
+          <li>Alle Positionen werden erlebt – kein Kind wird frühzeitig festgelegt.</li>
+          <li>Trainer:innen legen die Basis für Spiellogik, Umschalten und Abwehrverhalten.</li>
+        </ul>
+      </CollapsibleBox>
 
-      {/* Überschrift und Leitfrage */}
-      <motion.div
-        initial={{ opacity: 0, y: -50, rotateX: -15 }}
-        animate={{ opacity: 1, y: 0, rotateX: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="mb-16 w-full max-w-4xl"
-        style={{ perspective: "1000px" }}
-      >
-        <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100 transform-gpu hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] hover:-rotate-y-1">
-          <h1 className="text-4xl font-bold text-green-600 text-center mb-6">
-            Modul 5: Spielsysteme & Positionsspiel
-          </h1>
-          <div className="text-center">
-            <p className="text-xl text-green-700 italic leading-relaxed">
-              "Wie lernen die Kinder Räume zu erkennen, Positionen zu verstehen – und gemeinsam Spiellogik zu entwickeln?"
-            </p>
-          </div>
+      <CollapsibleBox title="Spielprinzipien & Raumverhalten">
+        <ul className="list-disc list-inside space-y-2">
+          <li>Breite & Tiefe – Feld in Zonen unterteilen, Ziel: Breite halten und Tiefe anstoßen.</li>
+          <li>Zusammenspiel Kleingruppe – 2:2 / 3:3 mit Einläufer, Rückpass, Wechselspiel.</li>
+          <li>Abwehrverhalten – 1:1-Training mit Hilfeprinzip, Grundhaltung.</li>
+          <li>Umschaltspiel – 3:2 nach Ballgewinn: Entscheidung sofort oder sichern?</li>
+          <li>Raum lesen & reagieren – Aufgaben wie 'nur in Zone 3 darf geworfen werden'.</li>
+        </ul>
+      </CollapsibleBox>
+
+      <CollapsibleBox title="Positionen verstehen – ohne festzulegen">
+        <ul className="list-disc list-inside space-y-2">
+          <li>Alle Positionen rotieren – niemand wird früh festgelegt.</li>
+          <li>LA/RA – Laufwege nach außen, Einlaufen, Angriff aus Breite.</li>
+          <li>Rückraum – Stoßen mit Tiefe, Passen, einfache Auslösehandlung.</li>
+          <li>Kreis – Lücke erkennen, anspielbar werden.</li>
+          <li>Mitte – Überblick entwickeln, Pass weiterdenken.</li>
+        </ul>
+      </CollapsibleBox>
+
+      <CollapsibleBox title="Methodische Umsetzung">
+        <ul className="list-disc list-inside space-y-2">
+          <li>Systemspiel = Prinzipien – keine starren Laufwege.</li>
+          <li>Rollentausch fördern – nach 5 Min./1 Tor/3 Kontakten Position wechseln.</li>
+          <li>Abwehr aktiv gestalten – Fokus 1:1, Beinarbeit, Kommunikation.</li>
+          <li>Positionsverständnis schulen – Frageformate im Training.</li>
+          <li>Spielzüge selbst erfinden – Spielzug-Baukasten nutzen.</li>
+        </ul>
+      </CollapsibleBox>
+
+      <CollapsibleBox title="Spielformen & Organisationsideen">
+        <ul className="list-disc list-inside space-y-2">
+          <li>4-Zonen-Spiel.</li>
+          <li>Spielzug-Werkstatt – Kinder erfinden eigenen Spielzug.</li>
+          <li>Wechsel-Spiel – wer passt, muss Position tauschen.</li>
+          <li>Abwehr-Angriff-Rotation.</li>
+          <li>Überzahlspiel + Coaching (2:1 oder 3:2).</li>
+        </ul>
+      </CollapsibleBox>
+
+      <CollapsibleBox title="Ergebnis für den Trainer" defaultOpen={false}>
+        <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-600">
+          <ul className="list-disc list-inside space-y-2">
+            <li>Du führst die Kinder in ein erstes taktisches Verständnis – über Prinzipien, nicht Vorschriften.</li>
+            <li>Du machst sie neugierig auf Räume, Rollen und Zusammenhänge.</li>
+            <li>Du legst die Basis für flexibles, mutiges Bewegen im System.</li>
+            <li>Ziel: Spieler:innen, die verstehen, warum sie etwas tun – und flexibel reagieren.</li>
+          </ul>
         </div>
-      </motion.div>
-
-      {/* 3D Karussell */}
-      <div className="relative w-full max-w-8xl h-[900px] flex items-center justify-center overflow-hidden">
-        {/* Linker Pfeil */}
-        <button
-          onClick={rotateLeft}
-          disabled={isAnimating}
-          className="absolute left-8 z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
-        >
-          <ChevronLeft size={24} />
-        </button>
-
-        {/* Karussell Container */}
-        <div className="relative w-full h-full flex items-center justify-center">
-          <div 
-            className="relative w-[800px] h-[700px]"
-            style={{ perspective: "1200px", transformStyle: "preserve-3d" }}
-          >
-            {cardsData.map((card, index) => {
-              const { x, z, angle, offset } = getCardPosition(index);
-              const isFront = offset === 0;
-              const isVisible = offset <= 3 || offset >= cardsData.length - 3;
-
-              if (!isVisible) return null;
-
-              return (
-                <motion.div
-                  key={index}
-                  className={`absolute top-1/2 left-1/2 w-[320px] h-[420px] rounded-xl shadow-2xl flex items-center justify-center text-center cursor-pointer ${
-                    card.highlight ? "border-4 border-yellow-400" : "border border-gray-200"
-                  }`}
-                  style={{
-                    backgroundColor: "rgba(255,255,255,0.95)",
-                    color: "#166534",
-                    transform: `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
-                    zIndex: isFront ? 20 : 10 - Math.abs(offset),
-                    filter: isFront ? "none" : `brightness(${1 - Math.abs(offset) * 0.1})`,
-                  }}
-                  animate={{
-                    x,
-                    z,
-                    rotateY: angle,
-                    scale: isFront ? 1 : 0.9,
-                    opacity: isFront ? 1 : 0.8
-                  }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                  whileHover={{
-                    scale: isFront ? 1.05 : 0.95,
-                    zIndex: 25,
-                    transition: { duration: 0.2 }
-                  }}
-                  onClick={() => handleCardClick(index)}
-                >
-                  <div className="p-6">
-                    <h3 className="font-bold text-xl leading-tight">{card.title}</h3>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Rechter Pfeil */}
-        <button
-          onClick={rotateRight}
-          disabled={isAnimating}
-          className="absolute right-8 z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
-        >
-          <ChevronRight size={24} />
-        </button>
-
-        {/* Indikator-Punkte */}
-        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
-          {cardsData.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToCard(index)}
-              disabled={isAnimating}
-              className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                index === currentIndex 
-                  ? "bg-blue-600 scale-125 shadow-lg" 
-                  : "bg-gray-300 hover:bg-gray-400"
-              }`}
-            />
-          ))}
-        </div>
-
-        {/* Position Anzeige */}
-        <div className="absolute top-12 left-1/2 transform -translate-x-1/2 text-gray-600 font-medium z-30">
-          {currentIndex + 1} von {cardsData.length}
-        </div>
-      </div>
-
-      {/* Modal für Karteninhalt */}
-      <AnimatePresence>
-        {selectedCard && (
-          <motion.div
-            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedCard(null)}
-          >
-            <motion.div
-              className="bg-white rounded-xl p-8 max-w-3xl w-full shadow-2xl overflow-y-auto max-h-[85vh]"
-              initial={{ scale: 0.8, opacity: 0, y: 50 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.8, opacity: 0, y: 50 }}
-              transition={{ duration: 0.3 }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <h2 className={`text-3xl font-bold mb-6 ${
-                selectedCard.highlight ? "text-yellow-600" : "text-green-600"
-              }`}>
-                {selectedCard.title}
-              </h2>
-              <ul className="list-disc pl-6 space-y-3 text-gray-700 text-lg">
-                {selectedCard.content.map((item, i) => (
-                  <li key={i} className="leading-relaxed">{item}</li>
-                ))}
-              </ul>
-              <button
-                onClick={() => setSelectedCard(null)}
-                className="mt-8 px-8 py-4 bg-green-600 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300 font-medium text-lg"
-              >
-                Schließen
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      </CollapsibleBox>
     </div>
   );
 }

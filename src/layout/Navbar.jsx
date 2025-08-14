@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, Home, BookOpen, Users, Target, GraduationCap, Heart, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "../assets/sv-laim-logo.svg";
+// Logo wird direkt aus dem public Ordner geladen
 
 export default function Navbar() {
   const [showHeader, setShowHeader] = useState(true);
@@ -134,7 +134,7 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
               {/* Logo + Titel */}
               <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-                <img src={logo} alt="Vereinslogo" className="h-12 w-12" />
+                <img src="/images/svlaim_logo.png" alt="SV Laim Logo" className="h-12 w-12" />
                 <div className="hidden md:block">
                   <span className="text-green-600 font-bold text-xl block">
                     Laimer Handbuch zur Ausbildung
@@ -152,7 +152,6 @@ export default function Navbar() {
                           onClick={() => handleDropdownToggle(item.title)}
                           className="flex items-center space-x-2 px-4 py-2 text-green-600 hover:bg-green-50 hover:text-green-700 rounded-lg transition-all duration-300 font-medium"
                         >
-                          {item.icon}
                           <span>{item.title}</span>
                           <ChevronDown 
                             size={16} 
@@ -173,8 +172,7 @@ export default function Navbar() {
                             >
                               <div className="p-4">
                                 <h3 className="font-bold text-lg text-green-600 mb-3 flex items-center">
-                                  {item.icon}
-                                  <span className="ml-2">{item.title}</span>
+                                  <span>{item.title}</span>
                                 </h3>
                                 <div className="space-y-2">
                                   {item.dropdownItems.map((dropdownItem) => (
@@ -199,7 +197,6 @@ export default function Navbar() {
                         to={item.link}
                         className="flex items-center space-x-2 px-4 py-2 text-green-600 hover:bg-green-50 hover:text-green-700 rounded-lg transition-all duration-300 font-medium"
                       >
-                        {item.icon}
                         <span>{item.title}</span>
                       </Link>
                     )}
@@ -267,7 +264,7 @@ export default function Navbar() {
 
                   {/* Ebene 1 */}
                   <Link
-                    to="/leitbild"
+                    to="/ebene1"
                     onClick={closeAllMenus}
                     className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
                   >

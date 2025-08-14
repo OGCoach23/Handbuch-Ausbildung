@@ -1,272 +1,69 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const cardsData = [
-  {
-    title: "Zielsetzung dieses Moduls",
-    content: [
-      "Spieler:innen beherrschen die technischen Grundformen unter wachsendem Druck und in Kombination.",
-      "Sie verstehen: Technik ist kein Selbstzweck, sondern ein Werkzeug für taktische Lösungen.",
-      "Taktische Grundprinzipien wie Freilaufen, Raumöffnung und Entscheidungsverhalten werden aufgebaut.",
-      "Trainer:innen fördern Spielintelligenz, Variation und Kreativität – statt Drill oder Standardabläufe."
-    ]
-  },
-  {
-    title: "Technikstufen im Training (Kompetenzmodell)",
-    content: [
-      "1: Erkennen – Technik wird bewusst wahrgenommen, benannt und ohne Druck ausgeführt",
-      "2: Anwenden – Technik wird bewusst unter einfachen Bedingungen eingesetzt",
-      "3: Variieren – Technik wird an Raum, Gegner oder Spielsituation angepasst",
-      "4: Kombinieren – Technik wird mit anderen Techniken oder Bewegungen verknüpft",
-      "5: Gestalten – Technik wird kreativ, bewusst und situationsabhängig eingesetzt"
-    ]
-  },
-  {
-    title: "Must-have & Nice-to-have Inhalte",
-    content: [
-      "Passen: Must-have – Prellpass, Pass in Bewegung, Schlagwurfpässe / Nice-to-have – Sprungpass, No-Look, Gegenlaufpass",
-      "Fangen: Must-have – beidhändig in Bewegung, nach Richtungswechsel / Nice-to-have – einhändig, mit Gegnerdruck",
-      "Werfen: Must-have – Standwurf, Sprungwurf, Zielwurf / Nice-to-have – Wurf unter Bedrängnis, kreative Varianten",
-      "Prellen: Must-have – Raumgewinn + Gegnerdruck / Nice-to-have – Täuschung, Wechselhand, Rhythmuswechsel",
-      "Täuschung: Must-have – Körpertäuschung, Passtäuschung / Nice-to-have – Abdrehtäuschung, Doppelhaken"
-    ]
-  },
-  {
-    title: "Taktische Prinzipien & Schwerpunkte",
-    content: [
-      "Spiel ohne Ball – Freilaufen frontal, seitlich, Lösen zum/vom Ball",
-      "Spiel mit Ball – situatives Prellen, Körperschutz, Entscheidung nach Gegnerreaktion",
-      "Kleingruppe – 2:2 oder 3:3 mit Einläufer, Parallelstoß, Richtungswechsel",
-      "Abwehr – 1:1 mit Kontaktkontrolle, Antizipation, gemeinsames Halten von Räumen"
-    ]
-  },
-  {
-    title: "Methodik & Umsetzung",
-    content: [
-      "Technikübungen mit Gegnerdruck, Ziel, Zeit oder Entscheidung verbinden",
-      "Beidseitigkeit fördern – links wie rechts trainieren",
-      "Differenzierung je nach Level",
-      "Fehler als Lernchance nutzen",
-      "Technik immer mit Spielhandlung verknüpfen"
-    ]
-  },
-  {
-    title: "Ergebnis für den Trainer",
-    highlight: true,
-    content: [
-      "Du förderst nicht nur Bewegung – du entwickelst Handlung.",
-      "Du machst Technik verständlich, anwendbar und wirkungsvoll.",
-      "Du schaffst ein Umfeld, in dem Fehler Teil des Spiels sind – und Fortschritt Spaß macht.",
-      "Ziel: Spieler:innen, die Technik als Werkzeug begreifen – und mutig, bewusst und erfolgreich im Spiel einsetzen."
-    ]
-  }
-];
+import React from "react";
+import CollapsibleBox from "../components/CollapsibleBox";
 
 export default function Modul3DJugend() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedCard, setSelectedCard] = useState(null);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  const rotateLeft = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex((prev) => (prev - 1 + cardsData.length) % cardsData.length);
-    setTimeout(() => setIsAnimating(false), 600);
-  };
-
-  const rotateRight = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex((prev) => (prev + 1) % cardsData.length);
-    setTimeout(() => setIsAnimating(false), 600);
-  };
-
-  const goToCard = (index) => {
-    if (isAnimating || index === currentIndex) return;
-    setIsAnimating(true);
-    setCurrentIndex(index);
-    setTimeout(() => setIsAnimating(false), 600);
-  };
-
-  const handleCardClick = (index) => {
-    if (isAnimating) return;
-    if (index === currentIndex) {
-      setSelectedCard(cardsData[index]);
-    } else {
-      goToCard(index);
-    }
-  };
-
-  const getCardPosition = (index) => {
-    const offset = (index - currentIndex + cardsData.length) % cardsData.length;
-    const angle = (offset * 360) / cardsData.length;
-    const radius = 300;
-    const x = Math.sin((angle * Math.PI) / 180) * radius;
-    const z = Math.cos((angle * Math.PI) / 180) * radius;
-    return { x, z, angle, offset };
-  };
-
   return (
-    <div className="bg-white min-h-screen p-8 flex flex-col items-center">
-      <Link 
-        to="/d-jugend" 
-        className="mb-8 rounded-full bg-white text-green-600 px-6 py-2 shadow-md hover:bg-blue-600 hover:text-white transition-colors duration-300"
-      >
-        ← Zurück zur D-Jugend Übersicht
-      </Link>
+    <div className="max-w-5xl mx-auto space-y-6 p-6">
+      <h1 className="text-3xl font-bold text-green-700">D-Jugend - Modul 3: Technik & Taktik</h1>
+      
+      <CollapsibleBox title="Zielsetzung dieses Moduls" defaultOpen={true}>
+        <ul className="list-disc list-inside space-y-2">
+          <li>Spieler:innen beherrschen die technischen Grundformen unter wachsendem Druck und in Kombination.</li>
+          <li>Sie verstehen: Technik ist kein Selbstzweck, sondern ein Werkzeug für taktische Lösungen.</li>
+          <li>Taktische Grundprinzipien wie Freilaufen, Raumöffnung und Entscheidungsverhalten werden aufgebaut.</li>
+          <li>Trainer:innen fördern Spielintelligenz, Variation und Kreativität – statt Drill oder Standardabläufe.</li>
+        </ul>
+      </CollapsibleBox>
 
-      {/* Überschrift und Leitfrage */}
-      <motion.div
-        initial={{ opacity: 0, y: -50, rotateX: -15 }}
-        animate={{ opacity: 1, y: 0, rotateX: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="mb-16 w-full max-w-4xl"
-        style={{ perspective: "1000px" }}
-      >
-        <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100 transform-gpu hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] hover:-rotate-y-1">
-          <h1 className="text-4xl font-bold text-green-600 text-center mb-6">
-            Modul 3: Technik & Taktik
-          </h1>
-          <div className="text-center">
-            <p className="text-xl text-green-700 italic leading-relaxed">
-              "Wie bringe ich Technik sinnvoll ins Spiel – und wie lernen meine Spieler:innen, unter Druck die richtige Entscheidung zu treffen?"
-            </p>
-          </div>
+      <CollapsibleBox title="Technikstufen im Training (Kompetenzmodell)">
+        <ul className="list-disc list-inside space-y-2">
+          <li>1: Erkennen – Technik wird bewusst wahrgenommen, benannt und ohne Druck ausgeführt</li>
+          <li>2: Anwenden – Technik wird bewusst unter einfachen Bedingungen eingesetzt</li>
+          <li>3: Variieren – Technik wird an Raum, Gegner oder Spielsituation angepasst</li>
+          <li>4: Kombinieren – Technik wird mit anderen Techniken oder Bewegungen verknüpft</li>
+          <li>5: Gestalten – Technik wird kreativ, bewusst und situationsabhängig eingesetzt</li>
+        </ul>
+      </CollapsibleBox>
+
+      <CollapsibleBox title="Must-have & Nice-to-have Inhalte">
+        <ul className="list-disc list-inside space-y-2">
+          <li>Passen: Must-have – Prellpass, Pass in Bewegung, Schlagwurfpässe / Nice-to-have – Sprungpass, No-Look, Gegenlaufpass</li>
+          <li>Fangen: Must-have – beidhändig in Bewegung, nach Richtungswechsel / Nice-to-have – einhändig, mit Gegnerdruck</li>
+          <li>Werfen: Must-have – Standwurf, Sprungwurf, Zielwurf / Nice-to-have – Wurf unter Bedrängnis, kreative Varianten</li>
+          <li>Prellen: Must-have – Raumgewinn + Gegnerdruck / Nice-to-have – Täuschung, Wechselhand, Rhythmuswechsel</li>
+          <li>Täuschung: Must-have – Körpertäuschung, Passtäuschung / Nice-to-have – Abdrehtäuschung, Doppelhaken</li>
+        </ul>
+      </CollapsibleBox>
+
+      <CollapsibleBox title="Taktische Prinzipien & Schwerpunkte">
+        <ul className="list-disc list-inside space-y-2">
+          <li>Spiel ohne Ball – Freilaufen frontal, seitlich, Lösen zum/vom Ball</li>
+          <li>Spiel mit Ball – situatives Prellen, Körperschutz, Entscheidung nach Gegnerreaktion</li>
+          <li>Kleingruppe – 2:2 oder 3:3 mit Einläufer, Parallelstoß, Richtungswechsel</li>
+          <li>Abwehr – 1:1 mit Kontaktkontrolle, Antizipation, gemeinsames Halten von Räumen</li>
+        </ul>
+      </CollapsibleBox>
+
+      <CollapsibleBox title="Methodik & Umsetzung">
+        <ul className="list-disc list-inside space-y-2">
+          <li>Technikübungen mit Gegnerdruck, Ziel, Zeit oder Entscheidung verbinden</li>
+          <li>Beidseitigkeit fördern – links wie rechts trainieren</li>
+          <li>Differenzierung je nach Level</li>
+          <li>Fehler als Lernchance nutzen</li>
+          <li>Technik immer mit Spielhandlung verknüpfen</li>
+        </ul>
+      </CollapsibleBox>
+
+      <CollapsibleBox title="Ergebnis für den Trainer" defaultOpen={false}>
+        <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-600">
+          <ul className="list-disc list-inside space-y-2">
+            <li>Du förderst nicht nur Bewegung – du entwickelst Handlung.</li>
+            <li>Du machst Technik verständlich, anwendbar und wirkungsvoll.</li>
+            <li>Du schaffst ein Umfeld, in dem Fehler Teil des Spiels sind – und Fortschritt Spaß macht.</li>
+            <li>Ziel: Spieler:innen, die Technik als Werkzeug begreifen – und mutig, bewusst und erfolgreich im Spiel einsetzen.</li>
+          </ul>
         </div>
-      </motion.div>
-
-      {/* 3D Karussell */}
-      <div className="relative w-full max-w-8xl h-[900px] flex items-center justify-center overflow-hidden">
-        {/* Linker Pfeil */}
-        <button
-          onClick={rotateLeft}
-          disabled={isAnimating}
-          className="absolute left-8 z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
-        >
-          <ChevronLeft size={24} />
-        </button>
-
-        {/* Karussell Container */}
-        <div className="relative w-full h-full flex items-center justify-center">
-          <div 
-            className="relative w-[800px] h-[700px]"
-            style={{ perspective: "1200px", transformStyle: "preserve-3d" }}
-          >
-            {cardsData.map((card, index) => {
-              const { x, z, angle, offset } = getCardPosition(index);
-              const isFront = offset === 0;
-              const isVisible = offset <= 3 || offset >= cardsData.length - 3;
-
-              if (!isVisible) return null;
-
-              return (
-                <motion.div
-                  key={index}
-                  className={`absolute top-1/2 left-1/2 w-[320px] h-[420px] rounded-xl shadow-2xl flex items-center justify-center text-center cursor-pointer ${
-                    card.highlight ? "border-4 border-yellow-400" : "border border-gray-200"
-                  }`}
-                  style={{
-                    backgroundColor: "rgba(255,255,255,0.95)",
-                    color: "#166534",
-                    transform: `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`,
-                    zIndex: isFront ? 20 : 10 - Math.abs(offset),
-                    filter: isFront ? "none" : `brightness(${1 - Math.abs(offset) * 0.1})`,
-                  }}
-                  animate={{
-                    x,
-                    z,
-                    rotateY: angle,
-                    scale: isFront ? 1 : 0.9,
-                    opacity: isFront ? 1 : 0.8
-                  }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                  whileHover={{
-                    scale: isFront ? 1.05 : 0.95,
-                    zIndex: 25,
-                    transition: { duration: 0.2 }
-                  }}
-                  onClick={() => handleCardClick(index)}
-                >
-                  <div className="p-6">
-                    <h3 className="font-bold text-xl leading-tight">{card.title}</h3>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Rechter Pfeil */}
-        <button
-          onClick={rotateRight}
-          disabled={isAnimating}
-          className="absolute right-8 z-30 bg-white/95 rounded-full p-3 shadow-xl hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50"
-        >
-          <ChevronRight size={24} />
-        </button>
-
-        {/* Indikator-Punkte */}
-        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
-          {cardsData.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToCard(index)}
-              disabled={isAnimating}
-              className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                index === currentIndex 
-                  ? "bg-blue-600 scale-125 shadow-lg" 
-                  : "bg-gray-300 hover:bg-gray-400"
-              }`}
-            />
-          ))}
-        </div>
-
-        {/* Position Anzeige */}
-        <div className="absolute top-12 left-1/2 transform -translate-x-1/2 text-gray-600 font-medium z-30">
-          {currentIndex + 1} von {cardsData.length}
-        </div>
-      </div>
-
-      {/* Modal für Karteninhalt */}
-      <AnimatePresence>
-        {selectedCard && (
-          <motion.div
-            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedCard(null)}
-          >
-            <motion.div
-              className="bg-white rounded-xl p-8 max-w-3xl w-full shadow-2xl overflow-y-auto max-h-[85vh]"
-              initial={{ scale: 0.8, opacity: 0, y: 50 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.8, opacity: 0, y: 50 }}
-              transition={{ duration: 0.3 }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <h2 className={`text-3xl font-bold mb-6 ${
-                selectedCard.highlight ? "text-yellow-600" : "text-green-600"
-              }`}>
-                {selectedCard.title}
-              </h2>
-              <ul className="list-disc pl-6 space-y-3 text-gray-700 text-lg">
-                {selectedCard.content.map((item, i) => (
-                  <li key={i} className="leading-relaxed">{item}</li>
-                ))}
-              </ul>
-              <button
-                onClick={() => setSelectedCard(null)}
-                className="mt-8 px-8 py-4 bg-green-600 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300 font-medium text-lg"
-              >
-                Schließen
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      </CollapsibleBox>
     </div>
   );
 }
