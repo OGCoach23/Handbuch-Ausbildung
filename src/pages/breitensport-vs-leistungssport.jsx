@@ -92,11 +92,11 @@ export default function BreitensportVsLeistungssport() {
               Breitensport vs. Leistungssport
             </h1>
             
-            {/* Trainer Panel - Positioniert auf Höhe der Überschrift */}
+            {/* Trainer Panel - Positioniert unter der Überschrift */}
             <motion.div
-              className={`fixed top-8 left-0 w-96 h-20 bg-green-600 text-white p-4 z-40 rounded-r-lg shadow-2xl transition-transform duration-300 ${
-                showTrainerPanel ? 'translate-x-0' : '-translate-x-80'
-              }`}
+                      className={`fixed top-32 left-0 w-96 h-20 bg-green-600 text-white p-4 z-40 rounded-r-lg shadow-2xl transition-all duration-700 ease-in-out ${
+          showTrainerPanel ? 'translate-x-0' : '-translate-x-80'
+        }`}
               onMouseEnter={() => setShowTrainerPanel(true)}
               onMouseLeave={() => setShowTrainerPanel(false)}
             >
@@ -118,11 +118,11 @@ export default function BreitensportVsLeistungssport() {
               </div>
             </motion.div>
 
-            {/* Eltern Panel - Positioniert auf Höhe der Überschrift */}
+            {/* Eltern Panel - Positioniert unter der Überschrift */}
             <motion.div
-              className={`fixed top-8 right-0 w-96 h-20 bg-green-600 text-white p-4 z-40 rounded-l-lg shadow-2xl transition-transform duration-300 ${
-                showElternPanel ? 'translate-x-0' : 'translate-x-80'
-              }`}
+                      className={`fixed top-32 right-0 w-96 h-20 bg-green-600 text-white p-4 z-40 rounded-l-lg shadow-2xl transition-all duration-700 ease-in-out ${
+          showElternPanel ? 'translate-x-0' : 'translate-x-80'
+        }`}
               onMouseEnter={() => setShowElternPanel(true)}
               onMouseLeave={() => setShowElternPanel(false)}
             >
