@@ -134,15 +134,18 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
               {/* Logo + Titel */}
               <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-                <img src="/images/svlaim_logo.png" alt="SV Laim Logo" className="h-12 w-12" />
-                <div className="hidden md:block">
-                  <span className="text-green-600 font-bold text-xl block">
-                    Laimer Handbuch zur Ausbildung
+                <img src="/images/svlaim_logo.png" alt="SV Laim Logo" className="h-10 w-10 md:h-12 md:w-12" />
+                <div className="hidden sm:block">
+                  <span className="text-green-600 font-bold text-lg md:text-xl block">
+                    Laimer Handbuch
+                  </span>
+                  <span className="text-green-600 text-sm block">
+                    zur Ausbildung
                   </span>
                 </div>
               </Link>
 
-              {/* Desktop Navigation */}
+              {/* Desktop Navigation - versteckt auf Mobile */}
               <nav className="hidden lg:flex items-center space-x-1">
                 {navigationItems.map((item) => (
                   <div key={item.title} className="relative" ref={dropdownRef}>
@@ -150,7 +153,7 @@ export default function Navbar() {
                       <div className="relative">
                         <button
                           onClick={() => handleDropdownToggle(item.title)}
-                          className="flex items-center space-x-2 px-4 py-2 text-green-600 hover:bg-green-50 hover:text-green-700 rounded-lg transition-all duration-300 font-medium"
+                          className="flex items-center space-x-2 px-4 py-2 text-green-600 hover:bg-green-50 hover:text-green-700 rounded-lg transition-all duration-300 font-medium min-h-[44px]"
                         >
                           <span>{item.title}</span>
                           <ChevronDown 
@@ -180,7 +183,7 @@ export default function Navbar() {
                                       key={dropdownItem.title}
                                       to={dropdownItem.link}
                                       onClick={closeAllMenus}
-                                      className="block p-3 rounded-lg hover:bg-green-50 transition-colors duration-200"
+                                      className="block p-3 rounded-lg hover:bg-green-50 transition-colors duration-200 min-h-[44px] flex flex-col justify-center"
                                     >
                                       <div className="font-medium text-green-600">{dropdownItem.title}</div>
                                       <div className="text-sm text-gray-600">{dropdownItem.description}</div>
@@ -195,7 +198,7 @@ export default function Navbar() {
                     ) : (
                       <Link
                         to={item.link}
-                        className="flex items-center space-x-2 px-4 py-2 text-green-600 hover:bg-green-50 hover:text-green-700 rounded-lg transition-all duration-300 font-medium"
+                        className="flex items-center space-x-2 px-4 py-2 text-green-600 hover:bg-green-50 hover:text-green-700 rounded-lg transition-all duration-300 font-medium min-h-[44px]"
                       >
                         <span>{item.title}</span>
                       </Link>
@@ -204,26 +207,26 @@ export default function Navbar() {
                 ))}
               </nav>
 
-              {/* Menu Button */}
+              {/* Menu Button - größer für bessere Touch-Targets */}
               <button
                 onClick={() => setMenuOpen(true)}
-                className="text-[#004b87] hover:bg-green-50 hover:text-green-700 p-2 rounded-lg transition-all duration-300"
+                className="text-[#004b87] hover:bg-green-50 hover:text-green-700 p-3 rounded-lg transition-all duration-300 min-h-[44px] min-w-[44px] flex items-center justify-center"
               >
-                <Menu size={28} />
+                <Menu size={24} />
               </button>
             </div>
           </motion.header>
         )}
       </AnimatePresence>
 
-      {/* OVERLAY-MENÜ */}
+      {/* OVERLAY-MENÜ - Mobile-optimiert */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-2 sm:p-4"
             onClick={closeAllMenus}
           >
             <motion.div
@@ -231,145 +234,146 @@ export default function Navbar() {
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: -50, opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.4 }}
-              className="relative bg-green-600 rounded-3xl shadow-2xl border-4 border-white p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+              className="relative bg-green-600 rounded-2xl sm:rounded-3xl shadow-2xl border-2 sm:border-4 border-white p-4 sm:p-8 max-w-4xl w-full max-h-[95vh] overflow-y-auto"
               style={{
                 boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
               }}
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Close Button */}
+              {/* Close Button - größer für Mobile */}
               <button
                 onClick={closeAllMenus}
-                className="absolute top-4 right-4 text-white hover:text-gray-200 p-2 rounded-lg hover:bg-white/10 transition-colors"
+                className="absolute top-2 right-2 sm:top-4 sm:right-4 text-white hover:text-gray-200 p-2 rounded-lg hover:bg-white/10 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
               >
-                <X size={32} />
+                <X size={28} />
               </button>
 
               {/* Hauptnavigation */}
-              <div className="mt-8">
-                <h2 className="text-3xl font-bold text-white text-center mb-8">
-                  Laimer Handbuch Navigation
+              <div className="mt-6 sm:mt-8">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-6 sm:mb-8">
+                  Navigation
                 </h2>
                 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {/* Mobile-optimiertes Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
                   {/* Home */}
                   <Link
                     to="/"
                     onClick={closeAllMenus}
-                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className="bg-white text-[#004b87] p-3 sm:p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg min-h-[80px] flex flex-col items-center justify-center"
                   >
-                    <Home size={24} className="mx-auto mb-2" />
-                    Home
+                    <Home size={20} className="mx-auto mb-2" />
+                    <span className="text-sm sm:text-base">Home</span>
                   </Link>
 
                   {/* Ebene 1 */}
                   <Link
                     to="/ebene1"
                     onClick={closeAllMenus}
-                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className="bg-white text-[#004b87] p-3 sm:p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg min-h-[80px] flex flex-col items-center justify-center"
                   >
-                    <BookOpen size={24} className="mx-auto mb-2" />
-                    Ebene 1
+                    <BookOpen size={20} className="mx-auto mb-2" />
+                    <span className="text-sm sm:text-base">Ebene 1</span>
                   </Link>
 
                   {/* Ebene 2 */}
                   <Link
                     to="/ebene2"
                     onClick={closeAllMenus}
-                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className="bg-white text-[#004b87] p-3 sm:p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg min-h-[80px] flex flex-col items-center justify-center"
                   >
-                    <Target size={24} className="mx-auto mb-2" />
-                    Ebene 2
+                    <Target size={20} className="mx-auto mb-2" />
+                    <span className="text-sm sm:text-base">Ebene 2</span>
                   </Link>
 
                   {/* Ebene 3 */}
                   <Link
                     to="/ebene3"
                     onClick={closeAllMenus}
-                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className="bg-white text-[#004b87] p-3 sm:p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg min-h-[80px] flex flex-col items-center justify-center"
                   >
-                    <Users size={24} className="mx-auto mb-2" />
-                    Ebene 3
+                    <Users size={20} className="mx-auto mb-2" />
+                    <span className="text-sm sm:text-base">Ebene 3</span>
                   </Link>
 
                   {/* Ebene 4 */}
                   <Link
                     to="/ebene4"
                     onClick={closeAllMenus}
-                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className="bg-white text-[#004b87] p-3 sm:p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg min-h-[80px] flex flex-col items-center justify-center"
                   >
-                    <GraduationCap size={24} className="mx-auto mb-2" />
-                    Ebene 4
+                    <GraduationCap size={20} className="mx-auto mb-2" />
+                    <span className="text-sm sm:text-base">Ebene 4</span>
                   </Link>
 
                   {/* Evaluation */}
                   <Link
                     to="/evaluation-feedback-zielsystem"
                     onClick={closeAllMenus}
-                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className="bg-white text-[#004b87] p-3 sm:p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg min-h-[80px] flex flex-col items-center justify-center"
                   >
-                    <BarChart3 size={24} className="mx-auto mb-2" />
-                    Evaluation
+                    <BarChart3 size={20} className="mx-auto mb-2" />
+                    <span className="text-sm sm:text-base">Evaluation</span>
                   </Link>
 
                   {/* Laimkademie */}
                   <Link
                     to="/training"
                     onClick={closeAllMenus}
-                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className="bg-white text-[#004b87] p-3 sm:p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg min-h-[80px] flex flex-col items-center justify-center"
                   >
-                    <Heart size={24} className="mx-auto mb-2" />
-                    Laimkademie
+                    <Heart size={20} className="mx-auto mb-2" />
+                    <span className="text-sm sm:text-base">Laimkademie</span>
                   </Link>
 
                   {/* Kompetenzkompass */}
                   <Link
                     to="/kompetenzkompass"
                     onClick={closeAllMenus}
-                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className="bg-white text-[#004b87] p-3 sm:p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg min-h-[80px] flex flex-col items-center justify-center"
                   >
-                    <Target size={24} className="mx-auto mb-2" />
-                    Kompetenzkompass
+                    <Target size={20} className="mx-auto mb-2" />
+                    <span className="text-sm sm:text-base">Kompetenzkompass</span>
                   </Link>
 
                   {/* Quereinsteiger */}
                   <Link
-                    to="/quereinsteiger"
+                    to="/quereinsteiger/quereinsteiger"
                     onClick={closeAllMenus}
-                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className="bg-white text-[#004b87] p-3 sm:p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg min-h-[80px] flex flex-col items-center justify-center"
                   >
-                    <Users size={24} className="mx-auto mb-2" />
-                    Quereinsteiger
+                    <Users size={20} className="mx-auto mb-2" />
+                    <span className="text-sm sm:text-base">Quereinsteiger</span>
                   </Link>
 
                   {/* Neueinsteiger */}
                   <Link
-                    to="/quereinsteiger"
+                    to="/quereinsteiger/neueinsteiger"
                     onClick={closeAllMenus}
-                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className="bg-white text-[#004b87] p-3 sm:p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg min-h-[80px] flex flex-col items-center justify-center"
                   >
-                    <BookOpen size={24} className="mx-auto mb-2" />
-                    Neueinsteiger
+                    <BookOpen size={20} className="mx-auto mb-2" />
+                    <span className="text-sm sm:text-base">Neueinsteiger</span>
                   </Link>
 
                   {/* Drop-Out-Prophylaxe */}
                   <Link
                     to="/drop-out-prophylaxe"
                     onClick={closeAllMenus}
-                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className="bg-white text-[#004b87] p-3 sm:p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg min-h-[80px] flex flex-col items-center justify-center"
                   >
-                    <Heart size={24} className="mx-auto mb-2" />
-                    Drop-Out-Prophylaxe
+                    <Heart size={20} className="mx-auto mb-2" />
+                    <span className="text-sm sm:text-base">Drop-Out-Prophylaxe</span>
                   </Link>
 
                   {/* Breitensport vs. Leistungssport */}
                   <Link
                     to="/breitensport-vs-leistungssport"
                     onClick={closeAllMenus}
-                    className="bg-white text-[#004b87] p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className="bg-white text-[#004b87] p-3 sm:p-4 rounded-xl font-semibold text-center hover:bg-[#004b87] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg min-h-[80px] flex flex-col items-center justify-center"
                   >
-                    <BarChart3 size={24} className="mx-auto mb-2" />
-                    Breitensport vs. Leistungssport
+                    <BarChart3 size={20} className="mx-auto mb-2" />
+                    <span className="text-sm sm:text-base">Breitensport vs. Leistungssport</span>
                   </Link>
                 </div>
               </div>

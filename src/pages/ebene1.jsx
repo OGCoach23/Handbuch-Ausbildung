@@ -52,12 +52,12 @@ export default function Ebene1() {
       initial="hidden"
       animate="visible"
       transition={{ duration: 0.8 }}
-      className="max-w-6xl mx-auto px-6 py-12"
+      className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12"
     >
       {/* Header */}
       <motion.h1 
         variants={fadeInVariants}
-        className="text-4xl font-bold text-green-700 text-center mb-8"
+        className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-700 text-center mb-6 sm:mb-8"
       >
         Ebene 1: Grundlagen & Philosophie
       </motion.h1>
@@ -66,7 +66,7 @@ export default function Ebene1() {
       <motion.p 
         variants={fadeInVariants}
         transition={{ delay: 0.2 }}
-        className="text-xl text-justify text-green-600 mb-12 leading-relaxed"
+        className="text-base sm:text-lg md:text-xl text-justify text-green-600 mb-8 sm:mb-12 leading-relaxed"
       >
         In der ersten Ebene legen wir die Grundlagen für unsere gesamte Ausbildung. 
         Hier definieren wir, was wir wollen, warum wir es tun und wie wir unsere 
@@ -77,9 +77,9 @@ export default function Ebene1() {
       <motion.div 
         variants={fadeInVariants}
         transition={{ delay: 0.3 }}
-        className="mb-16"
+        className="mb-12 sm:mb-16"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {karten.map((karte, index) => (
             <motion.div
               key={karte.title}
@@ -89,20 +89,20 @@ export default function Ebene1() {
               className="group"
             >
               <Link to={karte.link}>
-                <div className="bg-white border-2 border-green-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full cursor-pointer group hover:border-green-400">
-                  <div className="text-center space-y-4">
+                <div className="bg-white border-2 border-green-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6 h-full cursor-pointer group hover:border-green-400 min-h-[200px] sm:min-h-[220px] flex flex-col justify-center">
+                  <div className="text-center space-y-3 sm:space-y-4">
                     <div className="flex justify-center">
-                      <div className={`p-4 rounded-full ${karte.color} text-white shadow-lg`}>
-                        <div className="w-8 h-8 bg-white rounded-full opacity-20"></div>
+                      <div className={`p-3 sm:p-4 rounded-full ${karte.color} text-white shadow-lg`}>
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white rounded-full opacity-20"></div>
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold text-green-600 mb-4 group-hover:text-green-700 transition-colors">
+                    <h3 className="text-lg sm:text-xl font-bold text-green-600 mb-3 sm:mb-4 group-hover:text-green-700 transition-colors">
                       {karte.title}
                     </h3>
-                    <p className="text-green-600 leading-relaxed">
+                    <p className="text-sm sm:text-base text-green-600 leading-relaxed flex-grow">
                       {karte.description}
                     </p>
-                    <div className="pt-4 text-green-500 font-semibold group-hover:text-green-600 transition-colors">
+                    <div className="pt-2 sm:pt-4 text-green-500 font-semibold group-hover:text-green-600 transition-colors text-sm sm:text-base">
                       Zum Detailbereich →
                     </div>
                   </div>

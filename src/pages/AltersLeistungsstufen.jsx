@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 export default function AltersLeistungsstufen() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-5xl mx-auto px-4 py-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Überschrift */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-8"
+          className="text-center mb-6 sm:mb-8"
         >
-          <h1 className="text-4xl font-bold text-green-600 mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4 sm:mb-6">
             Alters- & Leistungsstufen
           </h1>
         </motion.div>
@@ -22,7 +22,7 @@ export default function AltersLeistungsstufen() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-justify text-lg leading-relaxed mb-10 text-green-600"
+          className="text-justify text-base sm:text-lg leading-relaxed mb-8 sm:mb-10 text-green-600"
         >
           <p className="mb-4">
             <strong>Säulen auf: altersgerechte Entwicklungsstufen und zielgerichtete Leistungswege.</strong><br />
@@ -39,7 +39,7 @@ export default function AltersLeistungsstufen() {
         </motion.div>
 
         {/* Karten-Container - Altersklassen */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-10">
           {/* F-Jugend Karte */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -47,16 +47,11 @@ export default function AltersLeistungsstufen() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <Link to="/f-jugend">
-              <div className="bg-white border-2 border-green-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full cursor-pointer group hover:border-green-400 hover:bg-green-50">
-                <h3 className="text-xl font-bold text-green-600 mb-4 group-hover:text-green-700 transition-colors">
-                  F-Jugend
+              <div className="bg-white border-2 border-green-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6 h-full cursor-pointer group hover:border-green-400 hover:bg-green-50">
+                <h3 className="text-lg sm:text-xl font-bold text-green-600 mb-3 sm:mb-4 group-hover:text-green-700 transition-colors">
+                  F-Jugend (6-7 Jahre)
                 </h3>
-                <ul className="list-disc list-inside space-y-2 text-green-600">
-                  <li>Bambinis (unter 6 Jahren)</li>
-                  <li>MiniMinis (6–7 Jahre)</li>
-                  <li>Minis (7–8 Jahre)</li>
-                </ul>
-                <div className="mt-4 text-green-500 font-semibold group-hover:text-green-600 transition-colors">
+                <div className="mt-3 sm:mt-4 text-green-500 font-semibold group-hover:text-green-600 transition-colors text-sm sm:text-base">
                   Zur F-Jugend →
                 </div>
               </div>
@@ -70,14 +65,11 @@ export default function AltersLeistungsstufen() {
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             <Link to="/e-jugend">
-              <div className="bg-white border-2 border-green-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full cursor-pointer group hover:border-green-400 hover:bg-green-50">
-                <h3 className="text-xl font-bold text-green-600 mb-4 group-hover:text-green-700 transition-colors">
-                  E-Jugend (9–10 Jahre)
+              <div className="bg-white border-2 border-green-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6 h-full cursor-pointer group hover:border-green-400 hover:bg-green-50">
+                <h3 className="text-lg sm:text-xl font-bold text-green-600 mb-3 sm:mb-4 group-hover:text-green-700 transition-colors">
+                  E-Jugend (9-10 Jahre)
                 </h3>
-                <p className="text-green-600 leading-relaxed">
-                  Grundlegende Entwicklung der Handball-Fertigkeiten und spielerische Heranführung an den Sport.
-                </p>
-                <div className="mt-4 text-green-500 font-semibold group-hover:text-green-600 transition-colors">
+                <div className="mt-3 sm:mt-4 text-green-500 font-semibold group-hover:text-green-600 transition-colors text-sm sm:text-base">
                   Zur E-Jugend →
                 </div>
               </div>
@@ -91,14 +83,11 @@ export default function AltersLeistungsstufen() {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <Link to="/d-jugend">
-              <div className="bg-white border-2 border-green-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full cursor-pointer group hover:border-green-400 hover:bg-green-50">
-                <h3 className="text-xl font-bold text-green-600 mb-4 group-hover:text-green-700 transition-colors">
-                  D-Jugend (11–12 Jahre)
+              <div className="bg-white border-2 border-green-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6 h-full cursor-pointer group hover:border-green-400 hover:bg-green-50">
+                <h3 className="text-lg sm:text-xl font-bold text-green-600 mb-3 sm:mb-4 group-hover:text-green-700 transition-colors">
+                  D-Jugend (10-11 Jahre)
                 </h3>
-                <p className="text-green-600 leading-relaxed">
-                  Technik und Taktik werden vertieft, erste taktische Grundlagen werden vermittelt.
-                </p>
-                <div className="mt-4 text-green-500 font-semibold group-hover:text-green-600 transition-colors">
+                <div className="mt-3 sm:mt-4 text-green-500 font-semibold group-hover:text-green-600 transition-colors text-sm sm:text-base">
                   Zur D-Jugend →
                 </div>
               </div>
@@ -112,14 +101,11 @@ export default function AltersLeistungsstufen() {
             transition={{ duration: 0.6, delay: 0.7 }}
           >
             <Link to="/c-jugend">
-              <div className="bg-white border-2 border-green-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full cursor-pointer group hover:border-green-400 hover:bg-green-50">
-                <h3 className="text-xl font-bold text-green-600 mb-4 group-hover:text-green-700 transition-colors">
-                  C-Jugend (13–14 Jahre)
+              <div className="bg-white border-2 border-green-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6 h-full cursor-pointer group hover:border-green-400 hover:bg-green-50">
+                <h3 className="text-lg sm:text-xl font-bold text-green-600 mb-3 sm:mb-4 group-hover:text-green-700 transition-colors">
+                  C-Jugend (12-13 Jahre)
                 </h3>
-                <p className="text-green-600 leading-relaxed">
-                  Systeme und Positionen werden eingeführt, leistungsorientiertes Training beginnt.
-                </p>
-                <div className="mt-4 text-green-500 font-semibold group-hover:text-green-600 transition-colors">
+                <div className="mt-3 sm:mt-4 text-green-500 font-semibold group-hover:text-green-600 transition-colors text-sm sm:text-base">
                   Zur C-Jugend →
                 </div>
               </div>
@@ -133,14 +119,11 @@ export default function AltersLeistungsstufen() {
             transition={{ duration: 0.6, delay: 0.8 }}
           >
             <Link to="/b-jugend">
-              <div className="bg-white border-2 border-green-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full cursor-pointer group hover:border-green-400 hover:bg-green-50">
-                <h3 className="text-xl font-bold text-green-600 mb-4 group-hover:text-green-700 transition-colors">
-                  B-Jugend (15–16 Jahre)
+              <div className="bg-white border-2 border-green-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6 h-full cursor-pointer group hover:border-green-400 hover:bg-green-50">
+                <h3 className="text-lg sm:text-xl font-bold text-green-600 mb-3 sm:mb-4 group-hover:text-green-700 transition-colors">
+                  B-Jugend (14-15 Jahre)
                 </h3>
-                <p className="text-green-600 leading-relaxed">
-                  Leistungsorientierung wird verstärkt, individuelle Förderung steht im Vordergrund.
-                </p>
-                <div className="mt-4 text-green-500 font-semibold group-hover:text-green-600 transition-colors">
+                <div className="mt-3 sm:mt-4 text-green-500 font-semibold group-hover:text-green-600 transition-colors text-sm sm:text-base">
                   Zur B-Jugend →
                 </div>
               </div>
@@ -154,14 +137,11 @@ export default function AltersLeistungsstufen() {
             transition={{ duration: 0.6, delay: 0.9 }}
           >
             <Link to="/a-jugend">
-              <div className="bg-white border-2 border-green-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full cursor-pointer group hover:border-green-400 hover:bg-green-50">
-                <h3 className="text-xl font-bold text-green-600 mb-4 group-hover:text-green-700 transition-colors">
-                  A-Jugend (17–18 Jahre)
+              <div className="bg-white border-2 border-green-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6 h-full cursor-pointer group hover:border-green-400 hover:bg-green-50">
+                <h3 className="text-lg sm:text-xl font-bold text-green-600 mb-3 sm:mb-4 group-hover:text-green-700 transition-colors">
+                  A-Jugend (16-17 Jahre)
                 </h3>
-                <p className="text-green-600 leading-relaxed">
-                  Übergang ins Aktivenleben, letzte Jugendphase mit erwachsenen Anforderungen.
-                </p>
-                <div className="mt-4 text-green-500 font-semibold group-hover:text-green-600 transition-colors">
+                <div className="mt-3 sm:mt-4 text-green-500 font-semibold group-hover:text-green-600 transition-colors text-sm sm:text-base">
                   Zur A-Jugend →
                 </div>
               </div>

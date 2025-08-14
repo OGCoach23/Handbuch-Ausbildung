@@ -62,38 +62,58 @@ export default function FJugend() {
           </p>
         </motion.div>
 
-        {/* Karten-Stack */}
+        {/* Karten-Stack - Mobile-optimiert */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex justify-center mb-16"
+          className="mb-12 sm:mb-16"
         >
-          <div className="flex space-x-[-120px] relative" style={{ perspective: "1000px" }}>
+          {/* Mobile: Vertikaler Stack */}
+          <div className="block sm:hidden space-y-4">
             {moduleFJugend.map((mod, index) => (
               <Link to={mod.path} key={index}>
                 <motion.div
-                  whileHover={{
-                    scale: 1.05,
-                    backgroundColor: "#005baa",
-                    color: "#ffffff",
-                    zIndex: 10,
-                  }}
-                  initial={{ backgroundColor: "rgba(255,255,255,0.8)", color: "#000" }}
-                  transition={{ duration: 0.3 }}
-                  className="w-[300px] h-[400px] border rounded-2xl shadow-xl p-6 flex flex-col justify-center items-center cursor-pointer transform transition-all duration-300"
-                  style={{
-                    transform: `translateX(${index * 120}px) rotateY(${index * 0.5}deg)`,
-                    zIndex: moduleFJugend.length - index,
-                  }}
+                  whileHover={{ scale: 1.02 }}
+                  className="w-full bg-white border-2 border-green-200 rounded-xl shadow-lg p-4 cursor-pointer transition-all duration-300"
                 >
-                  <h2 className="text-lg font-bold text-center mb-3">
+                  <h2 className="text-lg font-bold text-green-600 mb-3">
                     {mod.titel}
                   </h2>
-                  <p className="text-center text-sm">{mod.frage}</p>
+                  <p className="text-green-600 text-sm leading-relaxed">{mod.frage}</p>
                 </motion.div>
               </Link>
             ))}
+          </div>
+
+          {/* Desktop: 3D Karten-Stack */}
+          <div className="hidden sm:flex justify-center">
+            <div className="flex space-x-[-120px] relative" style={{ perspective: "1000px" }}>
+              {moduleFJugend.map((mod, index) => (
+                <Link to={mod.path} key={index}>
+                  <motion.div
+                    whileHover={{
+                      scale: 1.05,
+                      backgroundColor: "#005baa",
+                      color: "#ffffff",
+                      zIndex: 10,
+                    }}
+                    initial={{ backgroundColor: "rgba(255,255,255,0.8)", color: "#000" }}
+                    transition={{ duration: 0.3 }}
+                    className="w-[300px] h-[400px] border rounded-2xl shadow-xl p-6 flex flex-col justify-center items-center cursor-pointer transform transition-all duration-300"
+                    style={{
+                      transform: `translateX(${index * 120}px) rotateY(${index * 0.5}deg)`,
+                      zIndex: moduleFJugend.length - index,
+                    }}
+                  >
+                    <h2 className="text-lg font-bold text-center mb-3">
+                      {mod.titel}
+                    </h2>
+                    <p className="text-center text-sm">{mod.frage}</p>
+                  </motion.div>
+                </Link>
+              ))}
+            </div>
           </div>
         </motion.div>
 
