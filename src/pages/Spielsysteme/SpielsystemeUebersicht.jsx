@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Target, Users, Trophy, TrendingUp, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 export default function SpielsystemeUebersicht() {
   const altersstufen = [
@@ -8,7 +8,6 @@ export default function SpielsystemeUebersicht() {
       title: "E-Jugend",
       subtitle: "Manndeckung",
       description: "Eigenverantwortung und Raumorientierung",
-      icon: <Users className="w-8 h-8" />,
       link: "/spielsystem-e-jugend",
       color: "bg-blue-500",
       details: "Jeder Spieler übernimmt Verantwortung für einen Gegenspieler"
@@ -17,7 +16,6 @@ export default function SpielsystemeUebersicht() {
       title: "D-Jugend", 
       subtitle: "1:5-Deckung",
       description: "Aktiver Ballbezug und Gruppentaktik",
-      icon: <Target className="w-8 h-8" />,
       link: "/spielsystem-d-jugend",
       color: "bg-green-500",
       details: "Ein Spieler sichert, fünf agieren ballbezogen"
@@ -26,7 +24,6 @@ export default function SpielsystemeUebersicht() {
       title: "C-Jugend",
       subtitle: "3:2:1-Deckung", 
       description: "Spielverständnis und Entscheidungsfindung",
-      icon: <Trophy className="w-8 h-8" />,
       link: "/spielsystem-c-jugend",
       color: "bg-yellow-500",
       details: "Dreigliedrige Formation mit flexiblen Rollen"
@@ -35,7 +32,6 @@ export default function SpielsystemeUebersicht() {
       title: "B-Jugend",
       subtitle: "5:1-Deckung",
       description: "Taktische Flexibilität und Spielintelligenz", 
-      icon: <TrendingUp className="w-8 h-8" />,
       link: "/spielsystem-b-jugend",
       color: "bg-purple-500",
       details: "Linienformation mit aktiver Spitze"
@@ -44,7 +40,6 @@ export default function SpielsystemeUebersicht() {
       title: "A-Jugend",
       subtitle: "6:0-Deckung (offensiv)",
       description: "Erwachsenennahe Taktik und Variabilität",
-      icon: <Target className="w-8 h-8" />,
       link: "/spielsystem-a-jugend", 
       color: "bg-red-500",
       details: "Geschlossene Formation mit offenem Spiel"
@@ -103,14 +98,11 @@ export default function SpielsystemeUebersicht() {
               to={stufe.link}
               className="block bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden"
             >
-              {/* Header mit Icon */}
+              {/* Header ohne Icon */}
               <div className={`${stufe.color} p-6 text-white`}>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-2xl font-bold">{stufe.title}</h3>
-                    <p className="text-lg opacity-90">{stufe.subtitle}</p>
-                  </div>
-                  {stufe.icon}
+                <div>
+                  <h3 className="text-2xl font-bold">{stufe.title}</h3>
+                  <p className="text-lg opacity-90">{stufe.subtitle}</p>
                 </div>
               </div>
 

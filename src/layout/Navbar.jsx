@@ -136,7 +136,7 @@ export default function Navbar() {
               <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
                 <img src={logo} alt="Vereinslogo" className="h-12 w-12" />
                 <div className="hidden md:block">
-                  <span className="text-[#004b87] font-bold text-xl block">
+                  <span className="text-green-600 font-bold text-xl block">
                     Laimer Handbuch zur Ausbildung
                   </span>
                 </div>
@@ -150,7 +150,7 @@ export default function Navbar() {
                       <div className="relative">
                         <button
                           onClick={() => handleDropdownToggle(item.title)}
-                          className="flex items-center space-x-2 px-4 py-2 text-[#004b87] hover:bg-green-50 hover:text-green-700 rounded-lg transition-all duration-300 font-medium"
+                          className="flex items-center space-x-2 px-4 py-2 text-green-600 hover:bg-green-50 hover:text-green-700 rounded-lg transition-all duration-300 font-medium"
                         >
                           {item.icon}
                           <span>{item.title}</span>
@@ -172,7 +172,7 @@ export default function Navbar() {
                               className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden"
                             >
                               <div className="p-4">
-                                <h3 className="font-bold text-lg text-[#004b87] mb-3 flex items-center">
+                                <h3 className="font-bold text-lg text-green-600 mb-3 flex items-center">
                                   {item.icon}
                                   <span className="ml-2">{item.title}</span>
                                 </h3>
@@ -184,7 +184,7 @@ export default function Navbar() {
                                       onClick={closeAllMenus}
                                       className="block p-3 rounded-lg hover:bg-green-50 transition-colors duration-200"
                                     >
-                                      <div className="font-medium text-[#004b87]">{dropdownItem.title}</div>
+                                      <div className="font-medium text-green-600">{dropdownItem.title}</div>
                                       <div className="text-sm text-gray-600">{dropdownItem.description}</div>
                                     </Link>
                                   ))}
@@ -197,7 +197,7 @@ export default function Navbar() {
                     ) : (
                       <Link
                         to={item.link}
-                        className="flex items-center space-x-2 px-4 py-2 text-[#004b87] hover:bg-green-50 hover:text-green-700 rounded-lg transition-all duration-300 font-medium"
+                        className="flex items-center space-x-2 px-4 py-2 text-green-600 hover:bg-green-50 hover:text-green-700 rounded-lg transition-all duration-300 font-medium"
                       >
                         {item.icon}
                         <span>{item.title}</span>
